@@ -1,9 +1,9 @@
 ---
 import LessonLayout from '~/layouts/LessonLayout.astro';
-import { getCollection } from 'astro:content';
+import { getCollection, type CollectionEntry } from 'astro:content';
 import { getLessonOrder, getModuleMeta } from '~/lib/utils';
 
-export function resolveLessonParams(entry: any) {
+export function resolveLessonParams(entry: CollectionEntry<'classroom'>) {
   const slugParts = entry.slug.split('/');
 
   if (slugParts.length >= 2) {
