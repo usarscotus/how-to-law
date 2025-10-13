@@ -1,0 +1,79 @@
+---
+title: Damages Basics
+description: Identify damage categories, valuation methods, and limits that shape monetary awards.
+module: remedies
+moduleTitle: Remedies
+order: 1
+estimatedTime: 20 minutes
+objectives:
+  - Explain compensatory, consequential, punitive, nominal, and liquidated damages.
+  - Apply common valuation tools for expectancy and reliance interests.
+  - Recognize constitutional and common-law limits on punitive damages.
+tags:
+  - remedies
+  - damages
+references:
+  - title: Restatement (Second) of Contracts §§ 347–349
+    url: https://www.restatementlaw.com/contracts/
+  - title: BMW of North America, Inc. v. Gore, 517 U.S. 559 (1996)
+    url: https://supreme.justia.com/cases/federal/us/517/559/
+---
+## Core categories
+
+**Compensatory damages** seek to place the plaintiff in the position they would have occupied absent the wrong. In contract cases, courts often measure expectancy by the market value of promised performance minus actual performance plus incidental and consequential losses. **Reliance damages** reimburse expenditures made in reliance on the contract when expectancy is too speculative. **Restitutionary damages** disgorge the value conferred on the defendant, preventing unjust enrichment.
+
+**Consequential damages** extend recovery to reasonably foreseeable losses that stem from special circumstances known to the defendant, as in *Hadley v. Baxendale*. Courts police certainty and mitigation: losses must be proven with reasonable certainty, and avoidable consequences are excluded when the plaintiff failed to mitigate.
+
+**Nominal damages** vindicate rights when no actual loss is proven. **Liquidated damages** clauses are enforceable if they were a reasonable forecast of harm at contracting and actual damages were difficult to estimate. Penalty clauses that seek to punish rather than compensate are unenforceable.
+
+## Punitive damages
+
+Punitive damages punish egregious conduct and deter future misconduct, typically for intentional torts or willful breaches with independent tortious elements. They are rarely available for mere contract breaches absent tort overlay. Many jurisdictions require clear and convincing evidence of malice, fraud, or oppression.
+
+Constitutional due process limits excessive punitive awards. The Supreme Court’s guideposts in *BMW v. Gore* evaluate (1) the reprehensibility of the conduct, (2) the ratio between punitive and compensatory damages, and (3) comparison to civil penalties for similar misconduct. Single-digit ratios are usually the outer limit, especially when compensatory damages are substantial.
+
+## Measuring loss
+
+Courts use market differentials, cost of completion, and diminution in value to quantify expectancy. For construction contracts, cost of completion is favored unless it produces economic waste, in which case diminution in value applies. Lost profits require proof of causation, foreseeability, and reasonable certainty, often supported by historical earnings or expert testimony.
+
+Reliance damages reimburse expenditures made in preparation or performance, but are capped by the contract price and may be offset by losses the plaintiff would have sustained. Restitution can be measured by the defendant’s saved costs, unjust gains, or the value of services rendered.
+
+## Mitigation and offsets
+
+The avoidable consequences doctrine requires plaintiffs to take reasonable steps to reduce losses, such as seeking substitute employment after wrongful termination. Failure to mitigate reduces recoverable damages by the amount that reasonable efforts would have avoided. Defendants bear the burden of proving lack of mitigation and the amount of loss thereby caused.
+
+<Callout kind="tip" title="Proof strategies">
+  Track documentary evidence—receipts, invoices, expert reports—to establish certainty and causation. Anticipate defenses by documenting mitigation efforts and separating speculative claims from reliably quantifiable losses.
+</Callout>
+
+<Quiz
+  id="remedies-damages-basics"
+  questions={[
+    {
+      id: 'foreseeability',
+      prompt: 'Consequential damages are recoverable when the additional loss was:',
+      choices: [
+        { id: 'a', label: 'Subjectively unexpected but severe.' },
+        { id: 'b', label: 'Foreseeable to the defendant at the time of contracting.' },
+        { id: 'c', label: 'Caused by the plaintiff\'s own negligence.' },
+        { id: 'd', label: 'Expressly disclaimed in the contract.' }
+      ],
+      answer: 'b',
+      explanation:
+        'Consequential damages require foreseeability—special losses must have been contemplated by both parties when the contract was formed.'
+    },
+    {
+      id: 'punitive-ratio',
+      prompt: 'Under BMW v. Gore, which consideration helps ensure punitive damages comport with due process?',
+      choices: [
+        { id: 'a', label: 'Whether the plaintiff waived a jury trial.' },
+        { id: 'b', label: 'Whether the punitive-to-compensatory ratio stays within single digits absent exceptional circumstances.' },
+        { id: 'c', label: 'Whether the defendant requested remittitur.' },
+        { id: 'd', label: 'Whether compensatory damages are nominal.' }
+      ],
+      answer: 'b',
+      explanation:
+        'The Court signaled that punitive damages typically should not exceed a single-digit ratio to compensatory damages, protecting against grossly excessive awards.'
+    }
+  ]}
+/>
