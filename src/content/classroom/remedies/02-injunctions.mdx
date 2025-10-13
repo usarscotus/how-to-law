@@ -1,0 +1,75 @@
+---
+title: Injunctions
+description: Evaluate equitable factors, procedural requirements, and drafting considerations for injunctive relief.
+module: remedies
+moduleTitle: Remedies
+order: 2
+estimatedTime: 20 minutes
+objectives:
+  - Distinguish temporary restraining orders, preliminary injunctions, and permanent injunctions.
+  - Apply the four-factor equitable test and understand tailoring requirements.
+  - Anticipate defenses and compliance issues associated with injunctive relief.
+tags:
+  - remedies
+  - equity
+references:
+  - title: Winter v. Natural Resources Defense Council, Inc., 555 U.S. 7 (2008)
+    url: https://supreme.justia.com/cases/federal/us/555/7/
+  - title: Federal Rule of Civil Procedure 65
+    url: https://www.law.cornell.edu/rules/frcp/rule_65
+---
+## Forms of injunctive relief
+
+**Temporary restraining orders (TROs)** maintain the status quo in emergencies. They can issue ex parte if the movant provides specific facts showing immediate and irreparable injury and certifies efforts to give notice. TROs expire within 14 days unless extended.
+
+**Preliminary injunctions** require notice and hearing. They demand proof of likelihood of success on the merits, irreparable harm absent relief, a balance of equities favoring the movant, and consideration of the public interest. *Winter* tightened the standard, insisting on a clear showing of likely irreparable harm.
+
+**Permanent injunctions** follow a merits determination and apply the four-factor test outlined in *eBay v. MercExchange*: irreparable injury, inadequacy of legal remedies, balance of hardships, and public interest.
+
+## Tailoring and specificity
+
+Rule 65(d) mandates that injunctions describe the restrained conduct in reasonable detail and bind parties, their officers, agents, employees, and those in active concert or participation with them who receive notice. Overbroad or vague orders risk reversal and complicate enforcement.
+
+Courts may grant **prohibitory** injunctions preventing certain conduct or **mandatory** injunctions compelling action. Mandatory orders require heightened scrutiny because they alter the status quo.
+
+## Defenses and limits
+
+Equitable defenses such as laches, unclean hands, undue hardship, and First Amendment concerns can defeat or narrow injunctions. Courts also weigh public interest factors, especially when injunctions affect governmental operations or third parties.
+
+Security bonds under Rule 65(c) protect enjoined parties from wrongful injunctions. Failure to post adequate security can limit recoverable damages for wrongful injunction.
+
+<Callout kind="warning" title="Drafting checklists">
+  Include precise definitions, effective dates, and compliance mechanisms. Coordinate with clients to ensure feasibility and document steps taken to avoid contempt exposure.
+</Callout>
+
+<Quiz
+  id="remedies-injunctions"
+  questions={[
+    {
+      id: 'winter-standard',
+      prompt: 'After Winter v. NRDC, a plaintiff seeking a preliminary injunction must show:',
+      choices: [
+        { id: 'a', label: 'A possibility of irreparable harm combined with a sliding scale of other factors.' },
+        { id: 'b', label: 'A clear likelihood of irreparable harm absent the injunction.' },
+        { id: 'c', label: 'That damages would be hard to collect from the defendant.' },
+        { id: 'd', label: 'That the injunction imposes no burden on the defendant.' }
+      ],
+      answer: 'b',
+      explanation:
+        '*Winter* rejected the Ninth Circuit\'s possibility-of-harm standard and requires a clear showing that irreparable injury is likely in the absence of an injunction.'
+    },
+    {
+      id: 'rule65d',
+      prompt: 'Rule 65(d) requires that an injunction:',
+      choices: [
+        { id: 'a', label: 'Be approved by the jury before issuance.' },
+        { id: 'b', label: 'Describe the restrained conduct in reasonable detail and bind those in active concert with notice.' },
+        { id: 'c', label: 'Include a punitive damages schedule for violations.' },
+        { id: 'd', label: 'Expire automatically after 30 days.' }
+      ],
+      answer: 'b',
+      explanation:
+        'Rule 65(d) enforces specificity and clarifies who is bound, ensuring that enjoined parties have clear notice of prohibited conduct.'
+    }
+  ]}
+/>
