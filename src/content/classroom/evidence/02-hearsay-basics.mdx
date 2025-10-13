@@ -1,0 +1,90 @@
+---
+title: Hearsay Basics
+description: Grasp the core definition of hearsay, common non-hearsay uses, and the structure of hearsay objections.
+module: evidence
+moduleTitle: Evidence
+order: 2
+estimatedTime: 20 minutes
+objectives:
+  - Define hearsay and identify statements that fall within the Federal Rules of Evidence.
+  - Differentiate between hearsay exclusions and exceptions at a high level.
+  - Organize an effective hearsay objection or response during trial.
+tags:
+  - evidence
+  - trial practice
+references:
+  - title: Federal Rules of Evidence, Rules 801-802
+    url: https://www.law.cornell.edu/rules/fre/rule_801
+  - title: Advisory Committee Notes to Rule 801
+    url: https://www.law.cornell.edu/rules/fre/rule_801#notes
+---
+## Defining hearsay
+
+Under Rule 801(c), hearsay is an out-of-court statement offered to prove the truth of the matter asserted. The definition turns
+on three components:
+
+1. **Statement**: oral or written assertion, or nonverbal conduct intended as an assertion.
+2. **Declarant**: the person who made the statement.
+3. **Purpose**: offered for its truth.
+
+If any element is missing, the statement is not hearsay and Rule 802’s exclusion does not apply.
+
+## Statements that are not hearsay by definition
+
+Certain statements avoid hearsay problems because they are not offered for their truth:
+
+- Effect on the listener (e.g., to show notice or motive).
+- Verbal acts that have independent legal significance, such as contract offers or defamatory words.
+- Impeachment statements showing inconsistency without relying on truth.
+
+<Callout kind="note" title="Multiple levels of hearsay">
+  Each layer of out-of-court statement must independently satisfy a hearsay exclusion or exception. Analyze each level and
+  articulate the applicable rule.
+</Callout>
+
+## Rule 801(d) exclusions
+
+Some statements are defined as “not hearsay” even though they would otherwise fit the definition:
+
+- Prior inconsistent statements made under oath at a proceeding.
+- Prior consistent statements to rebut a charge of fabrication or improper motive.
+- Prior identifications of a person after perceiving them.
+- Opposing party statements, including adoptive admissions and statements by authorized agents.
+
+## Responding to hearsay objections
+
+When objecting, move quickly: stand, identify the statement, cite Rule 802, and explain why the statement is offered for its
+truth. When responding, articulate the non-hearsay purpose or the specific rule that admits the statement. Judges expect concise,
+rule-based answers rather than broad policy appeals.
+
+<Quiz
+  id="evidence-hearsay-basics"
+  questions={[
+    {
+      id: 'definition',
+      prompt: 'Which element is required for a statement to qualify as hearsay under Rule 801(c)?',
+      choices: [
+        { id: 'a', label: 'It must be made by a criminal defendant.' },
+        { id: 'b', label: 'It must be offered to prove the truth of the matter asserted.' },
+        { id: 'c', label: 'It must be written rather than oral.' },
+        { id: 'd', label: 'It must be contemporaneous with an arrest.' }
+      ],
+      answer: 'b',
+      explanation:
+        'Hearsay requires an out-of-court statement offered to prove the truth of the matter asserted; statements with other purposes are not hearsay.'
+    },
+    {
+      id: 'nonhearsay',
+      prompt: 'Which of the following is typically NOT hearsay?',
+      choices: [
+        { id: 'a', label: 'A witness quoting a friend’s description of a suspect to prove the description is accurate.' },
+        { id: 'b', label: 'A letter offered solely to show the recipient had notice of a hazard.' },
+        { id: 'c', label: 'A police report offered to prove the events recorded happened.' },
+        { id: 'd', label: 'A transcript offered to show the declarant believed the statement was true.' }
+      ],
+      answer: 'b',
+      explanation:
+        'Statements offered to show their effect on the listener, such as notice, are not offered for their truth and therefore are not hearsay.'
+    }
+  ]}
+/>
