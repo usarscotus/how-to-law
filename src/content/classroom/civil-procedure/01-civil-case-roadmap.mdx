@@ -1,0 +1,56 @@
+---
+title: Civil Litigation Roadmap
+description: Track a civil case from complaint to judgment and understand the key procedural tools at each stage.
+module: civil-procedure
+moduleTitle: Civil Procedure
+order: 1
+estimatedTime: 18 minutes
+objectives:
+  - Outline the lifecycle of a civil lawsuit in federal court.
+  - Identify opportunities to resolve a case before trial through motions and settlement.
+  - Explain how discovery shapes the factual record for dispositive motions and trial.
+tags:
+  - civil procedure
+  - litigation
+references:
+  - title: Federal Rules of Civil Procedure
+    url: https://www.law.cornell.edu/rules/frcp
+  - title: Celotex Corp. v. Catrett, 477 U.S. 317 (1986)
+    url: https://supreme.justia.com/cases/federal/us/477/317/
+---
+## Filing and responsive pleadings
+
+A civil action begins with a complaint that states a plausible claim for relief. Service of process provides notice to defendants, who must respond with an answer or motion under Rule 12. Motions to dismiss test jurisdiction, venue, and the sufficiency of the pleading.
+
+## Discovery and case management
+
+Once the pleadings close, parties enter discovery. They exchange initial disclosures, interrogatories, document requests, and depositions. Judges use Rule 16 conferences to manage the schedule and encourage settlement.
+
+Discovery shapes the summary judgment record. Parties may move under Rule 56 when there is no genuine dispute of material fact, citing **Celotex** to show the absence of evidence on an essential element.
+
+## Trial and post-judgment
+
+If a case reaches trial, parties present evidence to a judge or jury. After verdict, parties can move for judgment as a matter of law or a new trial. Final judgments are appealable, while interlocutory orders are usually not.
+
+<Callout kind="info" title="Settlement pressure points">
+  Mediation and Rule 68 offers of judgment can shift leverage by imposing cost consequences on parties who decline reasonable settlements.
+</Callout>
+
+<Quiz
+  id="civil-procedure-roadmap"
+  questions={[
+    {
+      id: 'summary-judgment',
+      prompt: 'When is summary judgment appropriate under Rule 56?',
+      choices: [
+        { id: 'a', label: 'Whenever the plaintiff files a complaint.' },
+        { id: 'b', label: 'When no genuine dispute of material fact exists and the movant is entitled to judgment as a matter of law.' },
+        { id: 'c', label: 'Only after a jury verdict.' },
+        { id: 'd', label: 'Whenever discovery has not begun.' }
+      ],
+      answer: 'b',
+      explanation:
+        'Summary judgment resolves cases without trial when the evidence, viewed favorably to the nonmovant, shows no genuine dispute of material fact and the movant deserves judgment as a matter of law.'
+    }
+  ]}
+/>
