@@ -1,13 +1,18 @@
 import type { PropsWithChildren } from 'react';
 import { AlertTriangle, Info, Lightbulb } from 'lucide-react';
 
-export type CalloutKind = 'note' | 'tip' | 'warn';
+export type CalloutKind = 'note' | 'info' | 'tip' | 'warn';
 
 const variantStyles: Record<CalloutKind, { icon: JSX.Element; className: string; heading: string }> = {
   note: {
     icon: <Info className="h-5 w-5" aria-hidden="true" />,
     className: 'border-accent/40 bg-accent/5 text-foreground',
     heading: 'Note'
+  },
+  info: {
+    icon: <Info className="h-5 w-5" aria-hidden="true" />,
+    className: 'border-accent/40 bg-accent/5 text-foreground',
+    heading: 'Info'
   },
   tip: {
     icon: <Lightbulb className="h-5 w-5" aria-hidden="true" />,
@@ -31,7 +36,7 @@ export default function Callout({
   title,
   children
 }: PropsWithChildren<CalloutProps>) {
-  const variant = variantStyles[kind];
+  const variant = variantStyles[kind] ?? variantStyles.note;
   return (
     <aside
       className={`not-prose mt-6 flex items-start gap-3 rounded-2xl border p-4 shadow-subtle ${variant.className}`}
