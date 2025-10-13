@@ -1,12 +1,43 @@
 ---
 import LessonLayout from '~/layouts/LessonLayout.astro';
-import { getCollection } from 'astro:content';
+import { getCollection, type CollectionEntry } from 'astro:content';
 import { getLessonOrder, getModuleMeta } from '~/lib/utils';
+
+export function resolveLessonParams(entry: CollectionEntry<'classroom'>) {
+  const slugParts = entry.slug.split('/');
+
+  if (slugParts.length >= 2) {
+    return {
+      module: slugParts[0],
+      lesson: slugParts.slice(1).join('/')
+    };
+  }
+
+  if (slugParts.length === 1 && slugParts[0]) {
+    const idParts = entry.id.replace(/\.mdx?$/, '').split('/');
+    if (idParts.length >= 2) {
+      return {
+        module: idParts[0],
+        lesson: slugParts[0]
+      };
+    }
+  }
+
+  const idParts = entry.id.replace(/\.mdx?$/, '').split('/');
+  if (idParts.length >= 2) {
+    return {
+      module: idParts[idParts.length - 2],
+      lesson: idParts[idParts.length - 1]
+    };
+  }
+
+  throw new Error(`Unable to determine module and lesson for entry: ${entry.id}`);
+}
 
 export async function getStaticPaths() {
   const lessons = await getCollection('classroom');
   return lessons.map((entry) => {
-    const [module, lesson] = entry.slug.split('/');
+    const { module, lesson } = resolveLessonParams(entry);
     return {
       params: { module, lesson }
     };
@@ -15,16 +46,22 @@ export async function getStaticPaths() {
 
 const { module, lesson } = Astro.params;
 const lessons = await getCollection('classroom');
-const moduleLessons = lessons
-  .filter((entry) => entry.slug.startsWith(`${module}/`))
-  .sort((a, b) => getLessonOrder(a) - getLessonOrder(b));
+const normalizedLessons = lessons.map((entry) => ({
+  entry,
+  ...resolveLessonParams(entry)
+}));
 
-const entry = moduleLessons.find((item) => item.slug.split('/')[1] === lesson);
-if (!entry) {
+const moduleLessons = normalizedLessons
+  .filter((item) => item.module === module)
+  .sort((a, b) => getLessonOrder(a.entry) - getLessonOrder(b.entry));
+
+const currentItem = moduleLessons.find((item) => item.lesson === lesson);
+const entry = currentItem?.entry;
+if (!entry || !currentItem) {
   throw new Error('Lesson not found');
 }
 
-const index = moduleLessons.findIndex((item) => item.id === entry.id);
+const index = moduleLessons.findIndex((item) => item.entry.id === entry.id);
 const fallbackModuleTitle = entry.data.moduleTitle ?? entry.data.moduleLabel ?? entry.data.module;
 const moduleMeta = getModuleMeta(module ?? entry.data.module) ?? {
   id: entry.data.module,
@@ -35,7 +72,7 @@ const moduleMeta = getModuleMeta(module ?? entry.data.module) ?? {
 const prevEntry = index > 0 ? moduleLessons[index - 1] : undefined;
 const nextEntry = index < moduleLessons.length - 1 ? moduleLessons[index + 1] : undefined;
 
-const toUrl = (item: typeof entry) => `/how-to-law/classroom/${module}/${item.slug.split('/')[1]}/`;
+const toUrl = (item: (typeof moduleLessons)[number]) => `/how-to-law/classroom/${module}/${item.lesson}/`;
 ---
 <LessonLayout
   entry={entry}
@@ -43,6 +80,14 @@ const toUrl = (item: typeof entry) => `/how-to-law/classroom/${module}/${item.sl
   moduleTitle={moduleMeta.title}
   position={index + 1}
   totalLessons={moduleLessons.length}
-  prevLesson={prevEntry ? { title: prevEntry.data.title, url: toUrl(prevEntry) } : undefined}
-  nextLesson={nextEntry ? { title: nextEntry.data.title, url: toUrl(nextEntry) } : undefined}
+  prevLesson={
+    prevEntry
+      ? { title: prevEntry.entry.data.title, url: toUrl(prevEntry) }
+      : undefined
+  }
+  nextLesson={
+    nextEntry
+      ? { title: nextEntry.entry.data.title, url: toUrl(nextEntry) }
+      : undefined
+  }
 />
