@@ -8,8 +8,8 @@ interface Props {
 }
 
 const {
-  title = 'How to Law',
-  description = 'A concise classroom for learning the fundamentals of United States law.',
+  title = 'x',
+  description = 'USAR roleplay law tutorial 101',
   noIndex = false
 } = Astro.props as Props;
 
@@ -156,8 +156,8 @@ const navLinks = [
     <header class="sticky top-0 z-50 border-b border-border/60 bg-background/90 backdrop-blur supports-[backdrop-filter]:bg-background/75">
       <div class="mx-auto flex max-w-6xl items-center justify-between gap-6 px-4 py-4 sm:px-6 lg:px-8">
         <a href="/how-to-law/" class="flex items-center gap-3 text-lg font-semibold focus:outline-none focus-visible:ring-2 focus-visible:ring-accent">
-          <img src="/how-to-law/logo.svg" alt="How to Law" class="h-9 w-auto" />
-          <span class="hidden sm:inline">How to Law</span>
+          <img src="/how-to-law/logo.svg" alt="x" class="h-9 w-auto" />
+          <span class="hidden sm:inline">x</span>
         </a>
         <nav aria-label="Primary navigation" class="hidden items-center gap-6 text-sm font-medium md:flex">
           {navLinks.map((link) => (
@@ -198,11 +198,10 @@ const navLinks = [
     </main>
     <footer class="border-t border-border/60 bg-background/95">
       <div class="mx-auto flex max-w-6xl flex-col gap-4 px-4 py-10 text-sm text-muted sm:px-6 lg:px-8">
-        <p class="text-base font-semibold text-foreground">How to Law</p>
+        <p class="text-base font-semibold text-foreground">DISCLAIMER</p>
         <p class="max-w-3xl">
-          Educational content only. Nothing on this site is legal advice or a substitute for retaining licensed counsel.
+          Educational content only, tailored for the USAR legal community. Nothing on this site is legal advice or a substitute for retaining licensed counsel, and should not be used for real life legal advice.
         </p>
-        <p class="text-xs">© {new Date().getFullYear()} How to Law. All rights reserved.</p>
       </div>
     </footer>
   </body>
