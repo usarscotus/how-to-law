@@ -1,61 +1,70 @@
 ---
-title: "Sources of law"
-slug: "sources-of-law"
-module: "foundations"
-moduleLabel: "Foundations"
-level: "beginner"
-est_minutes: 10
-summary: "Track how constitutions, statutes, regulations, and cases interact across jurisdictions."
+title: Sources of Law
+description: The United States legal system draws authority from constitutions, statutes, regulations, and judicial decisions arranged in a hierarchy.
+module: foundations
+moduleTitle: Foundations
+order: 2
+estimatedTime: 12 minutes
 objectives:
-  - Map constitutional supremacy and preemption.
-  - Identify when agency rules carry the force of law.
-  - Apply RP overrides without breaking legal logic.
-prereqs:
-  - "What is law?"
-tags: [sources-of-law, hierarchy]
-quiz:
-  - type: mc
-    q: "What clause makes federal law supreme over conflicting state law?"
-    choices: ["Commerce Clause", "Supremacy Clause", "Necessary and Proper Clause", "Privileges and Immunities"]
-    answer: 1
-    explain: "The Supremacy Clause in Article VI prioritizes federal law when conflict arises."
-  - type: tf
-    q: "Agency regulations can sometimes preempt state statutes."
-    answer: 0
-    explain: "When Congress authorizes agencies to regulate, valid regulations carry the force of federal law."
-rp_diffs:
-  - id: "supremacy-flex"
-    baseline: "Federal law is supreme within its enumerated scope; states retain police powers."
-    rule: "RP campaigns may let city charters outrank federal statutes to highlight local factions."
+  - Identify the four primary sources of U.S. law and their relative hierarchy.
+  - Describe how agencies convert legislative delegations into enforceable regulations.
+  - Explain the role of precedent in interpreting statutes and constitutional provisions.
+tags:
+  - hierarchy
+  - interpretation
+references:
+  - title: U.S. Const. art. VI, cl. 2
+    url: https://constitution.congress.gov/constitution/article-6/
 ---
-import Term from '../../../components/Term.tsx';
-import Callout from '../../../components/Callout.tsx';
+## Constitutional supremacy
 
-In the US system, constitutions sit at the top. The federal Constitution binds everyone, while state constitutions control within their borders unless the <Term client:load id="supremacy-clause" /> steps in. Statutes fill in details, regulations operationalize, and cases interpret.
+The Constitution is the supreme law of the land. Article VI, the Supremacy Clause, binds judges in every state to follow federal law whenever it conflicts with a state enactment. Constitutional provisions require amendment to change. Courts use text, history, structure, and precedent to interpret constitutional meaning.
 
-### Constitutional authority
-
-Each government actor is limited by the text and structure of its constitution. Congress needs an enumerated power—often the <Term client:load id="commerce-clause" />—before legislating. States keep broad <Term client:load id="police-power" />s unless preempted.
-
-### Statutes and regulations
-
-Agencies don't legislate from scratch. They implement statutes, and courts review whether a rule stays within delegated authority. When agencies speak with the force of law, regulated parties must comply or face enforcement.
-
-<Callout
-  client:load
-  kind="warn"
-  title="Watch for double preemption"
->
-  In RP, it's easy to stack federal, state, and faction rules. If your RP world adds a magical council with override powers, note which level takes priority when conflicts arise.
+<Callout kind="note" title="Judicial review">
+  Judicial review allows courts to invalidate statutes or executive actions that conflict with the Constitution. It also requires courts to respect political branch choices when the Constitution commits decisions to those branches.
 </Callout>
 
-### RP override spotlight
+## Statutes and regulations
 
-<Callout
-  client:load
-  kind="rp"
-  baseline="Federal law is supreme within its enumerated scope; states retain police powers."
-  rule="RP campaigns may let city charters outrank federal statutes to highlight local factions."
+Congress enacts statutes that create rights, duties, and programs. Because modern governance demands technical detail, Congress often delegates implementation to administrative agencies. An agency proposes a rule, receives public comment, and publishes a final regulation in the Federal Register and Code of Federal Regulations. Regulations carry the force of law if they are within the scope of the delegation and follow required procedure.
+
+Agencies may also issue adjudicatory decisions or policy guidance, but only properly promulgated regulations bind the public. Courts reviewing an agency action examine statutory authority, procedure, and reasonableness.
+
+## Judicial decisions and precedent
+
+When a court decides a case, its opinion resolves the dispute and articulates the governing rule. The binding portion of an opinion is the holding: the rule necessary to decide the outcome on the facts presented. Under the doctrine of stare decisis, a lower court must follow controlling precedent from higher courts in its jurisdiction.
+
+Appellate courts may distinguish earlier decisions if the facts or legal issues materially differ. They may also overrule precedent when special justification exists, considering factors such as workability, reliance, and doctrinal coherence.
+
+## Putting the hierarchy together
+
+The hierarchy of authority typically runs Constitution → statute → regulation → judicial decision applying those sources. When authorities conflict, apply the higher source. When multiple authorities are valid and consistent, harmonize them to give effect to all.
+
+<Flow
+  title="Evaluating a legal source"
+  steps={[
+    { title: 'Identify the source', description: 'Determine whether the rule is constitutional text, a statute, a regulation, or case law.' },
+    { title: 'Check hierarchy', description: 'Confirm that the source is valid in light of higher-ranking authority.' },
+    { title: 'Confirm jurisdiction', description: 'Verify that the issuing body has authority over the dispute and parties.' },
+    { title: 'Synthesize precedent', description: 'Read related cases to understand how the rule has been applied or limited.' }
+  ]}
 />
 
-Even with this twist, try to keep a logic chain: if a city charter beats Congress, explain why the Supreme Court tolerates it. Maybe a treaty or ancient pact provides the carve-out. Those breadcrumbs help players follow cause and effect.
+<Quiz
+  id="foundations-sources-of-law"
+  questions={[
+    {
+      id: 'hierarchy',
+      prompt: 'A federal regulation conflicts with the unambiguous text of its enabling statute. What is the outcome?',
+      choices: [
+        { id: 'a', label: 'The regulation controls because agencies may fill statutory gaps however they choose.' },
+        { id: 'b', label: 'The statute prevails because regulations must be consistent with statutory authority.' },
+        { id: 'c', label: 'Both apply, and a court will average the two results.' },
+        { id: 'd', label: 'The agency may ignore the statute if it provides a reasoned explanation.' }
+      ],
+      answer: 'b',
+      explanation:
+        'Regulations derive their force from the statute that authorizes them. A regulation that conflicts with the statute is invalid and cannot be enforced.'
+    }
+  ]}
+/>

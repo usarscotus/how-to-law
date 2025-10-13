@@ -1,15 +1,16 @@
 {
   "name": "how-to-law",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "private": true,
-  "homepage": "https://<USER>.github.io/how-to-law",
+  "homepage": "https://example.github.io/how-to-law",
   "type": "module",
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "check": "npm run typecheck",
+    "check": "npm run typecheck && npm run lint",
     "typecheck": "astro check",
+    "lint": "eslint \"src/**/*.{ts,tsx,astro}\" --max-warnings=0",
     "format": "prettier --write ."
   },
   "dependencies": {
@@ -25,6 +26,9 @@
     "lucide-react": "^0.344.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "rehype-autolink-headings": "^7.1.0",
+    "rehype-slug": "^6.0.0",
+    "unist-util-visit": "^5.0.0",
     "zod": "^3.22.4"
   },
   "devDependencies": {
@@ -33,7 +37,15 @@
     "@types/node": "^20.11.19",
     "@types/react": "^18.2.45",
     "@types/react-dom": "^18.2.18",
+    "@typescript-eslint/eslint-plugin": "^7.10.0",
+    "@typescript-eslint/parser": "^7.10.0",
     "autoprefixer": "^10.4.16",
+    "eslint": "^8.57.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-astro": "^0.31.0",
+    "eslint-plugin-jsx-a11y": "^6.8.0",
+    "eslint-plugin-react": "^7.34.1",
+    "eslint-plugin-react-hooks": "^4.6.0",
     "postcss": "^8.4.32",
     "prettier": "^3.2.5",
     "tailwindcss": "^3.4.1",

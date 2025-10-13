@@ -1,0 +1,7 @@
+---
+import TermPopover from './Term';
+const { id } = Astro.props;
+---
+<TermPopover client:idle id={id}>
+  <slot />
+</TermPopover>

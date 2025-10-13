@@ -1,37 +1,29 @@
-import { ExternalLink } from 'lucide-react';
-import { ReactNode } from 'react';
-import { cx } from '../lib/utils';
+import type { PropsWithChildren, ReactNode } from 'react';
+import { ArrowUpRight } from 'lucide-react';
 
-type CaseCardProps = {
+interface CaseCardProps {
   title: string;
-  court: string;
-  year: number;
-  summary: ReactNode;
   href: string;
-  className?: string;
-};
+  description: string;
+  badge?: ReactNode;
+}
 
-export default function CaseCard({ title, court, year, summary, href, className }: CaseCardProps) {
+export default function CaseCard({ title, href, description, badge }: PropsWithChildren<CaseCardProps>) {
   return (
-    <article
-      className={cx(
-        'flex h-full flex-col justify-between rounded-2xl border border-muted/60 bg-card/70 p-6 shadow-subtle transition hover:border-accent',
-        className
-      )}
+    <a
+      href={href}
+      className="group flex flex-col justify-between rounded-2xl border border-border bg-card p-5 shadow-subtle transition hover:-translate-y-1 hover:border-accent/60 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+      target="_blank"
+      rel="noopener noreferrer"
     >
-      <div className="space-y-2">
-        <h3 className="text-lg font-semibold text-foreground">{title}</h3>
-        <p className="text-sm text-muted">{court} · {year}</p>
-        <div className="text-sm leading-relaxed text-foreground/80">{summary}</div>
+      <div className="space-y-3">
+        <div className="flex items-center justify-between gap-2">
+          <h3 className="text-lg font-semibold text-foreground">{title}</h3>
+          <ArrowUpRight className="h-4 w-4 text-muted transition group-hover:text-accent" aria-hidden="true" />
+        </div>
+        {badge ? <div className="text-xs uppercase tracking-wide text-muted">{badge}</div> : null}
+        <p className="text-sm text-foreground/90">{description}</p>
       </div>
-      <a
-        href={href}
-        className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-accent hover:underline"
-        target="_blank"
-        rel="noreferrer"
-      >
-        Read case <ExternalLink className="h-4 w-4" />
-      </a>
-    </article>
+    </a>
   );
 }

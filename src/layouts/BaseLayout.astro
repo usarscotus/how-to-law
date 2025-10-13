@@ -1,13 +1,22 @@
 ---
+import ThemeToggle from '~/components/ThemeToggle';
+
+interface Props {
+  title?: string;
+  description?: string;
+  noIndex?: boolean;
+}
+
 const {
   title = 'How to Law',
-  description = 'US law fundamentals, remixed for immersive roleplay worlds.'
-} = Astro.props;
-import ThemeToggle from '../components/ThemeToggle';
-import RpToggle from '../components/RpToggle';
-import MobileNav from '../components/MobileNav';
+  description = 'A concise classroom for learning the fundamentals of United States law.',
+  noIndex = false
+} = Astro.props as Props;
+
+const canonical = new URL(Astro.url.pathname, Astro.site?.href ?? 'https://<username>.github.io/how-to-law');
 
 const navLinks = [
+  { href: '/how-to-law/', label: 'Home' },
   { href: '/how-to-law/classroom/', label: 'Classroom' },
   { href: '/how-to-law/glossary/', label: 'Glossary' },
   { href: '/how-to-law/resources/', label: 'Resources' },
@@ -15,21 +24,35 @@ const navLinks = [
 ];
 ---
 <!DOCTYPE html>
-<html lang="en" class="min-h-full antialiased" data-theme>
+<html lang="en" class="min-h-full" data-theme="light">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content={description} />
     <title>{title}</title>
+    <meta name="description" content={description} />
+    {noIndex ? <meta name="robots" content="noindex" /> : null}
     <link rel="icon" type="image/svg+xml" href="/how-to-law/favicon.svg" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+    <link rel="canonical" href={canonical.toString()} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonical.toString()} />
     <meta property="og:image" content="/how-to-law/og-image.svg" />
     <meta name="twitter:card" content="summary_large_image" />
-    <script>
-      {`(function(){try{const key='htl:theme';const stored=localStorage.getItem(key);const system=window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';const theme=stored||'system';const resolved=theme==='system'?system:theme;document.documentElement.classList.toggle('dark',resolved==='dark');document.documentElement.setAttribute('data-theme',resolved);}catch(e){}})();`}
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content="/how-to-law/og-image.svg" />
+    <script type="module" is:inline>
+      {`try {
+  const stored = localStorage.getItem('htl:theme');
+  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const theme = stored ?? 'system';
+  const resolved = theme === 'system' ? (prefersDark ? 'dark' : 'light') : theme;
+  document.documentElement.dataset.theme = resolved;
+  document.documentElement.classList.toggle('dark', resolved === 'dark');
+} catch (error) {
+  console.warn('Unable to resolve stored theme', error);
+}`}
     </script>
     <slot name="head" />
     <style is:global>
@@ -38,23 +61,23 @@ const navLinks = [
       @tailwind utilities;
 
       :root {
-        --bg: #f9fafb;
+        --bg: #f8fafc;
         --fg: #0f172a;
-        --muted: #64748b;
-        --ring: #38bdf8;
-        --card: rgba(255, 255, 255, 0.95);
+        --muted: #475569;
+        --border: rgba(15, 23, 42, 0.12);
+        --card: rgba(255, 255, 255, 0.85);
         --accent: #2563eb;
         --accent-foreground: #f8fafc;
       }
 
       html.dark {
-        --bg: #0b1120;
+        --bg: #050816;
         --fg: #e2e8f0;
         --muted: #94a3b8;
-        --ring: #38bdf8;
-        --card: rgba(15, 23, 42, 0.9);
+        --border: rgba(148, 163, 184, 0.35);
+        --card: rgba(15, 23, 42, 0.85);
         --accent: #60a5fa;
-        --accent-foreground: #0f172a;
+        --accent-foreground: #0b1220;
       }
 
       body {
@@ -63,32 +86,59 @@ const navLinks = [
         background: var(--bg);
         color: var(--fg);
         font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-        display: flex;
-        flex-direction: column;
       }
 
       a {
         color: inherit;
       }
 
-      .prose :where(a):not(:where([class~='not-prose'] *)) {
-        color: var(--accent);
+      .shadow-subtle {
+        box-shadow: 0 18px 40px -30px rgba(15, 23, 42, 0.45);
+      }
+
+      .focus-ring:focus-visible {
+        outline: 2px solid var(--accent);
+        outline-offset: 3px;
       }
 
       .skip-link {
         position: absolute;
-        top: -40px;
-        left: 0;
+        top: -100px;
+        left: 1rem;
+        z-index: 999;
+        padding: 0.75rem 1rem;
+        border-radius: 999px;
         background: var(--accent);
         color: var(--accent-foreground);
-        padding: 0.75rem 1rem;
-        z-index: 1000;
-        border-radius: 999px;
         transition: top 0.2s ease;
       }
 
       .skip-link:focus {
         top: 1rem;
+      }
+
+      .heading-link {
+        color: inherit;
+        text-decoration: none;
+        position: relative;
+      }
+
+      .heading-link::after {
+        content: '#';
+        opacity: 0;
+        margin-left: 0.4rem;
+        color: var(--accent);
+        font-size: 0.85em;
+        transition: opacity 0.2s ease;
+      }
+
+      .heading-link:hover::after,
+      .heading-link:focus-visible::after {
+        opacity: 1;
+      }
+
+      h2, h3 {
+        scroll-margin-top: 7rem;
       }
 
       @media (prefers-reduced-motion: reduce) {
@@ -101,38 +151,58 @@ const navLinks = [
       }
     </style>
   </head>
-  <body>
+  <body class="flex min-h-screen flex-col bg-background text-foreground">
     <a href="#main" class="skip-link">Skip to content</a>
-    <header class="sticky top-0 z-40 border-b border-muted/20 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80">
-      <div class="relative mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-4 sm:px-6 lg:px-8">
-        <a href="/how-to-law/" class="flex items-center gap-3 text-lg font-semibold">
+    <header class="sticky top-0 z-50 border-b border-border/60 bg-background/90 backdrop-blur supports-[backdrop-filter]:bg-background/75">
+      <div class="mx-auto flex max-w-6xl items-center justify-between gap-6 px-4 py-4 sm:px-6 lg:px-8">
+        <a href="/how-to-law/" class="flex items-center gap-3 text-lg font-semibold focus:outline-none focus-visible:ring-2 focus-visible:ring-accent">
           <img src="/how-to-law/logo.svg" alt="How to Law" class="h-9 w-auto" />
           <span class="hidden sm:inline">How to Law</span>
         </a>
-        <nav aria-label="Primary" class="hidden items-center gap-6 text-sm font-medium md:flex">
+        <nav aria-label="Primary navigation" class="hidden items-center gap-6 text-sm font-medium md:flex">
           {navLinks.map((link) => (
-            <a href={link.href} class="hover:text-accent">
+            <a href={link.href} class="relative px-1 py-1 text-foreground/90 transition hover:text-accent focus:outline-none focus-visible:ring-2 focus-visible:ring-accent">
               {link.label}
             </a>
           ))}
         </nav>
         <div class="flex items-center gap-3">
-          <MobileNav client:load links={navLinks} />
-          <ThemeToggle client:load />
-          <RpToggle client:load />
+          <details class="relative md:hidden">
+            <summary
+              class="flex cursor-pointer items-center gap-2 rounded-full border border-border px-3 py-1 text-sm font-semibold focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+              aria-haspopup="true"
+            >
+              Menu
+            </summary>
+            <div
+              class="absolute right-0 mt-2 flex min-w-[180px] flex-col gap-2 rounded-2xl border border-border bg-card p-4 text-sm shadow-subtle"
+              role="menu"
+            >
+              {navLinks.map((link) => (
+                <a
+                  href={link.href}
+                  role="menuitem"
+                  class="rounded-full px-3 py-2 text-left transition hover:bg-accent/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+                >
+                  {link.label}
+                </a>
+              ))}
+            </div>
+          </details>
+          <ThemeToggle client:idle />
         </div>
       </div>
     </header>
     <main id="main" class="flex-1">
       <slot />
     </main>
-    <footer class="border-t border-muted/20 bg-background/90">
-      <div class="mx-auto max-w-7xl px-4 py-10 text-sm text-muted sm:px-6 lg:px-8">
-        <p class="font-semibold text-foreground">How to Law</p>
-        <p class="mt-2 max-w-2xl">
-          This project uses real US law except where RP rules provide otherwise. Nothing here is legal advice; always consult a licensed attorney for real-world matters.
+    <footer class="border-t border-border/60 bg-background/95">
+      <div class="mx-auto flex max-w-6xl flex-col gap-4 px-4 py-10 text-sm text-muted sm:px-6 lg:px-8">
+        <p class="text-base font-semibold text-foreground">How to Law</p>
+        <p class="max-w-3xl">
+          Educational content only. Nothing on this site is legal advice or a substitute for retaining licensed counsel.
         </p>
-        <p class="mt-6 text-xs">© {new Date().getFullYear()} How to Law RP Studio.</p>
+        <p class="text-xs">© {new Date().getFullYear()} How to Law. All rights reserved.</p>
       </div>
     </footer>
   </body>

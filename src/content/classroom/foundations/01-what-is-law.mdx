@@ -1,59 +1,68 @@
 ---
-title: "What is law?"
-slug: "what-is-law"
-module: "foundations"
-moduleLabel: "Foundations"
-level: "beginner"
-est_minutes: 8
-summary: "Understand what makes a rule legally enforceable and how RP tweaks change the landscape."
+title: What is Law?
+description: Law establishes authoritative rules backed by institutional power and provides a framework for resolving disputes.
+module: foundations
+moduleTitle: Foundations
+order: 1
+estimatedTime: 10 minutes
 objectives:
-  - Distinguish between statutes, regulations, and case law.
-  - Explain why precedent matters to legal actors.
-  - Identify where RP rules depart from baseline US doctrine.
-prereqs: []
-tags: [foundations, overview]
-quiz:
-  - type: mc
-    q: "Which source of law is typically created by legislatures?"
-    choices: ["Case law", "Statutes", "Executive orders", "Agency guidance"]
-    answer: 1
-    explain: "Statutes are enacted by legislatures; agencies then implement via regulations."
-  - type: tf
-    q: "In US law, judicial opinions can create binding precedent."
-    answer: 0
-    explain: "Published opinions can bind future courts within the same hierarchy."
-rp_diffs:
-  - id: "appeals-path"
-    baseline: "Appeals typically go District → Circuit → Supreme Court with discretionary review."
-    rule: "RP worlds allow direct petitions from District to Supreme Court, skipping circuits for dramatic pacing."
+  - Distinguish between legal norms and other social expectations.
+  - Identify the institutions that create and enforce legal rules in the United States.
+  - Explain why predictability and legitimacy matter to the rule of law.
+tags:
+  - doctrine
+  - institutions
+references:
+  - title: Marbury v. Madison, 5 U.S. (1 Cranch) 137 (1803)
+    url: https://supreme.justia.com/cases/federal/us/5/137/
 ---
-import Term from '../../../components/Term.tsx';
-import Callout from '../../../components/Callout.tsx';
+## Law as an authoritative system
 
-US law is built on layers. Legislatures pass <Term client:load id="statute" />s, agencies craft <Term client:load id="regulation" />, and courts publish opinions. Together they make up the "sources of law" that bind public actors and private parties alike.
+In the United States, law is a body of enforceable commands issued or recognized by legitimate public institutions. Those commands take written form—such as a statute, regulation, or constitutional provision—or they emerge through judicial decisions applying precedent. Law differs from etiquette or custom because it is backed by the coercive power of the state. Courts can enter a judgment, the executive can execute it, and private actors must comply.
 
-## The hierarchy that keeps order
+The Supreme Court in *Marbury v. Madison* emphasized that the Constitution is paramount law. Any conflicting act must yield, and it is the role of the judiciary to say what the law is. That judicial duty links the judicial branch to the legislative and executive branches in a system of separated powers.
 
-Consider the relationship between Congress, agencies, and courts. Congress writes statutes that delegate authority. Agencies like the Department of Justice create regulations within that statutory box. Courts interpret both statutes and regulations, producing case law. The doctrine of <Term client:load id="stare-decisis" /> keeps decisions consistent: lower courts must follow higher courts when facts align.
+## Functions of law
 
-<Callout client:load kind="tip" title="Anchor your RP">
-  Think about which institution has narrative control. If your story hinges on an agency rule, remember that Congress can override it—and so can your RP storytellers.
+Legal rules perform several core functions:
+
+- **Order and security.** Criminal and civil rules protect persons and property.
+- **Dispute resolution.** Courts provide a forum for resolving conflicts through structured process.
+- **Guidance and planning.** Predictable rules allow individuals and businesses to plan conduct and allocate risk.
+- **Legitimacy.** When government adheres to published rules, it promotes the rule of law rather than rule by discretion.
+
+<Callout kind="tip" title="Focus on institutional sources">
+  When analyzing a problem, ask which institution supplied the governing rule—Congress, an agency, a court, or the Constitution itself. The answer determines hierarchy, interpretive method, and available remedies.
 </Callout>
 
-## RP divergence: Appeals as a fast lane
+## Institutions that create law
 
-<Callout
-  client:load
-  kind="rp"
-  title="Appeals in fast-paced campaigns"
-  baseline="Appeals typically go District → Circuit → Supreme Court with discretionary review."
-  rule="RP worlds allow direct petitions from District to Supreme Court, skipping circuits for dramatic pacing."
+1. **Legislatures** enact statutes that establish prospective rules of general applicability.
+2. **Administrative agencies** adopt regulations and adjudicate disputes within delegated authority.
+3. **Courts** issue opinions that resolve specific controversies and, through precedent, articulate generally applicable principles.
+4. **Executive officials** implement and enforce the law through prosecution, investigation, and administration.
+
+These institutions operate under constitutional constraints, including due process and separation of powers. Understanding which branch produced the governing rule determines how that rule can change and which tribunal can review it.
+
+## Legitimacy and predictability
+
+The American system depends on transparent procedures, notice, and reasoned decision-making. Courts publish opinions explaining their holdings, agencies must follow the Administrative Procedure Act when issuing substantive rules, and legislatures enact laws through bicameralism and presentment. These procedures give citizens notice and allow them to contest government action.
+
+<Quiz
+  id="foundations-what-is-law"
+  questions={[
+    {
+      id: 'source',
+      prompt: 'Which characteristic best distinguishes legal rules from other social norms?',
+      choices: [
+        { id: 'a', label: 'They are always written in the Constitution.' },
+        { id: 'b', label: 'They are backed by institutional authority and enforceable remedies.' },
+        { id: 'c', label: 'They concern only criminal conduct.' },
+        { id: 'd', label: 'They originate solely from custom.' }
+      ],
+      answer: 'b',
+      explanation:
+        'Legal rules carry the backing of institutions such as courts and agencies that can impose binding remedies; social norms do not necessarily have that enforcement mechanism.'
+    }
+  ]}
 />
-
-This divergence fuels drama but changes leverage. In US courts, litigants rely on intermediate appellate rulings to build doctrine. In RP, parties may jump straight to the top, so precedent develops through marquee cases.
-
-## Why precedent still matters
-
-Even in RP, courts cite earlier decisions for legitimacy. A Supreme Court analog in your world likely references controlling authority to show continuity. That keeps the RP universe grounded in recognizable legal process.
-
-Look for cues in your narrative to show when characters invoke precedent: naming the case, citing the holding, or hinting at dissent. Those touches make the RP universe feel real.

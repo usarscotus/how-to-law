@@ -1,40 +1,27 @@
-import { z, defineCollection } from 'astro:content';
-
-const quizSchema = z.array(
-  z.object({
-    type: z.enum(['mc', 'tf']).default('mc'),
-    q: z.string(),
-    choices: z.array(z.string()).optional(),
-    answer: z.number(),
-    explain: z.string()
-  })
-);
-
-const rpDiffSchema = z.array(
-  z.object({
-    id: z.string(),
-    baseline: z.string(),
-    rule: z.string()
-  })
-);
+import { defineCollection, z } from 'astro:content';
 
 const classroom = defineCollection({
   type: 'content',
-  schema: z
-    .object({
-      title: z.string(),
-      module: z.string(),
-      moduleLabel: z.string().optional(),
-      level: z.enum(['beginner', 'intermediate', 'advanced']).default('beginner'),
-      est_minutes: z.number(),
-      objectives: z.array(z.string()),
-      prereqs: z.array(z.string()).default([]),
-      tags: z.array(z.string()).default([]),
-      summary: z.string().optional(),
-      quiz: quizSchema.optional(),
-      rp_diffs: rpDiffSchema.default([])
-    })
-    .passthrough()
+  schema: z.object({
+    title: z.string(),
+    description: z.string(),
+    module: z.string(),
+    moduleTitle: z.string(),
+    order: z.number().int().nonnegative(),
+    estimatedTime: z.string(),
+    objectives: z.array(z.string()).min(1),
+    tags: z.array(z.string()).default([]),
+    references: z
+      .array(
+        z.object({
+          title: z.string(),
+          url: z.string().url()
+        })
+      )
+      .default([])
+  })
 });
 
-export const collections = { classroom };
+export const collections = {
+  classroom
+};

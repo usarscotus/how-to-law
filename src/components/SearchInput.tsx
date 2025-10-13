@@ -1,99 +1,174 @@
-import { useEffect, useMemo, useState } from 'react';
-import { Search, ArrowUpRight } from 'lucide-react';
+import { useEffect, useMemo, useRef, useState } from 'react';
+import { Search } from 'lucide-react';
 import FlexSearch from 'flexsearch';
-import { groupByType, loadSearchIndex, type SearchDoc } from '../lib/search';
+import {
+  expandQuery,
+  fetchSearchDocuments,
+  highlightMatches,
+  type SearchDocument
+} from '~/lib/search';
 
-const documentIndex: any = new (FlexSearch as any).Document({
-  tokenize: 'forward',
-  document: {
-    id: 'id',
-    index: ['title', 'textSnippet', 'tags'],
-    store: ['id', 'title', 'textSnippet', 'url', 'tags', 'type']
-  }
-});
+type EnrichedResult = {
+  field: string;
+  result: Array<{
+    doc?: SearchDocument;
+  }>;
+};
 
-let seeded = false;
+type FlexDocument = {
+  add: (id: string, doc: SearchDocument) => void;
+  search: (query: string, options: { enrich: true }) => EnrichedResult[];
+};
+
+const FlexDocumentCtor = (FlexSearch as unknown as {
+  Document: new (options: unknown) => FlexDocument;
+}).Document;
+
+function groupResults(docs: SearchDocument[]) {
+  return docs.reduce<Record<'lesson' | 'glossary', SearchDocument[]>>(
+    (acc, doc) => {
+      acc[doc.type].push(doc);
+      return acc;
+    },
+    { lesson: [], glossary: [] }
+  );
+}
 
 export default function SearchInput() {
+  const indexRef = useRef<FlexDocument>();
   const [query, setQuery] = useState('');
-  const [results, setResults] = useState<SearchDoc[]>([]);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
+  const [results, setResults] = useState<SearchDocument[]>([]);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    async function seed() {
-      if (seeded) return;
-      setLoading(true);
-      const docs = await loadSearchIndex();
-      docs.forEach((doc) => documentIndex.add(doc));
-      seeded = true;
-      setLoading(false);
-    }
-    seed();
+    let cancelled = false;
+    const load = async () => {
+      try {
+        const docs = await fetchSearchDocuments();
+        if (cancelled) return;
+        const documentIndex = new FlexDocumentCtor(
+          {
+            tokenize: 'forward',
+            document: {
+              id: 'id',
+              store: true,
+              index: [
+                { field: 'title', weight: 9 },
+                { field: 'tags', weight: 5 },
+                { field: 'textSnippet', weight: 3 }
+              ]
+            }
+          }
+        );
+        docs.forEach((doc) => documentIndex.add(doc.id, doc));
+        indexRef.current = documentIndex;
+      } catch (err) {
+        console.error('Search index failed to load', err);
+        if (!cancelled) setError('Unable to load search index.');
+      } finally {
+        if (!cancelled) setLoading(false);
+      }
+    };
+    load();
+    return () => {
+      cancelled = true;
+    };
   }, []);
 
   useEffect(() => {
-    if (!query.trim()) {
+    const index = indexRef.current;
+    const expanded = expandQuery(query);
+    if (!index || !expanded) {
       setResults([]);
       return;
     }
-    const matched = documentIndex.search({ query, limit: 10, enrich: true }) as Array<any>;
-    const unique = new Map<string, SearchDoc>();
-    matched.forEach((group) => {
-      group.result?.forEach((item: any) => {
-        const doc = item.doc as SearchDoc | undefined;
-        if (doc && !unique.has(doc.id)) {
-          unique.set(doc.id, doc);
+    const hits = index.search(expanded, { enrich: true });
+    const documents: SearchDocument[] = [];
+    for (const fieldResult of hits) {
+      fieldResult.result.forEach((entry) => {
+        if (entry.doc) {
+          documents.push(entry.doc);
         }
       });
+    }
+    const unique = new Map<string, SearchDocument>();
+    documents.forEach((doc) => {
+      if (!unique.has(doc.id)) {
+        unique.set(doc.id, doc);
+      }
     });
     setResults(Array.from(unique.values()));
   }, [query]);
 
-  const grouped = useMemo(() => groupByType(results), [results]);
+  const grouped = useMemo(() => groupResults(results), [results]);
+  const highlightQuery = useMemo(() => expandQuery(query), [query]);
 
   return (
-    <div className="space-y-4">
-      <label htmlFor="global-search" className="block text-sm font-medium text-muted">
-        Search lessons & glossary
-      </label>
+    <div className="space-y-6">
       <div className="relative">
-        <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted" />
+        <label htmlFor="site-search" className="sr-only">
+          Search the site
+        </label>
+        <Search className="pointer-events-none absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-muted" aria-hidden="true" />
         <input
-          id="global-search"
+          id="site-search"
           type="search"
+          autoComplete="off"
+          placeholder="Search lessons and glossary"
           value={query}
           onChange={(event) => setQuery(event.target.value)}
-          placeholder={loading ? 'Loading index…' : 'Search by topic, term, or module'}
-          className="w-full rounded-full border border-muted/60 bg-background/80 px-10 py-3 text-base shadow-subtle placeholder:text-muted focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/60"
-          aria-label="Search How to Law"
+          className="w-full rounded-full border border-border bg-card py-3 pl-12 pr-4 text-base text-foreground shadow-subtle focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
         />
       </div>
-      {query && results.length === 0 && !loading && (
-        <p className="text-sm text-muted">No results yet. Try different keywords or check spelling.</p>
-      )}
-      <div className="space-y-6">
-        {Object.entries(grouped).map(([type, docs]) => (
-          <section key={type} aria-label={`${type} results`} className="space-y-3">
-            <h3 className="text-sm font-semibold uppercase tracking-wide text-muted">{type}</h3>
-            <ul className="space-y-2">
-              {docs.map((doc) => (
-                <li key={doc.id}>
-                  <a
-                    href={doc.url}
-                    className="flex items-center justify-between rounded-xl border border-muted/50 bg-card/70 p-4 text-left transition hover:border-accent"
-                  >
-                    <div>
-                      <p className="text-base font-semibold text-foreground">{doc.title}</p>
-                      <p className="mt-1 text-sm text-muted">{doc.textSnippet}</p>
-                    </div>
-                    <ArrowUpRight className="h-4 w-4 text-accent" aria-hidden />
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </section>
-        ))}
-      </div>
+      {loading ? <p className="text-sm text-muted">Loading search index…</p> : null}
+      {error ? <p className="text-sm text-amber-600">{error}</p> : null}
+      {!loading && !error && query && results.length === 0 ? (
+        <p className="text-sm text-muted">No results for “{query}”. Try different keywords.</p>
+      ) : null}
+      {!loading && results.length > 0 ? (
+        <div className="space-y-8">
+          {(['lesson', 'glossary'] as const).map((type) => {
+            const docs = grouped[type];
+            if (!docs.length) return null;
+            const heading = type === 'lesson' ? 'Lessons' : 'Glossary';
+            return (
+              <section key={type} aria-label={`${heading} results`} className="space-y-4">
+                <h2 className="text-lg font-semibold text-foreground">{heading}</h2>
+                <ul className="space-y-3">
+                  {docs.map((doc) => (
+                    <li key={doc.id}>
+                      <a
+                        href={doc.url}
+                        className="flex flex-col gap-2 rounded-2xl border border-border bg-card p-4 shadow-subtle transition hover:-translate-y-0.5 hover:border-accent/60 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+                      >
+                        <div className="flex flex-wrap items-center gap-3">
+                          <p
+                            className="text-base font-semibold text-foreground"
+                            dangerouslySetInnerHTML={{ __html: highlightMatches(doc.title, highlightQuery) }}
+                          />
+                          <span className="rounded-full bg-accent/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-accent">
+                            {doc.module}
+                          </span>
+                        </div>
+                        <p
+                          className="text-sm text-foreground/90"
+                          dangerouslySetInnerHTML={{ __html: highlightMatches(doc.textSnippet, highlightQuery) }}
+                        />
+                        {doc.tags?.length ? (
+                          <p className="text-xs uppercase tracking-wide text-muted">
+                            {doc.tags.join(' · ')}
+                          </p>
+                        ) : null}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </section>
+            );
+          })}
+        </div>
+      ) : null}
     </div>
   );
 }

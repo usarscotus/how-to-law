@@ -3,86 +3,135 @@ import react from '@astrojs/react';
 import mdx from '@astrojs/mdx';
 import tailwind from '@astrojs/tailwind';
 import sitemap from '@astrojs/sitemap';
-import fs from 'node:fs';
+import fs from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import rehypeSlug from 'rehype-slug';
+import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import matter from 'gray-matter';
-
-function getMarkdownFiles(dir) {
-  const entries = [];
-  for (const entry of fs.readdirSync(dir)) {
-    const full = path.join(dir, entry);
-    const stat = fs.statSync(full);
-    if (stat.isDirectory()) {
-      entries.push(...getMarkdownFiles(full));
-    } else if (full.endsWith('.mdx') || full.endsWith('.md')) {
-      entries.push(full);
-    }
-  }
-  return entries;
-}
-
-function extractSummary(body) {
-  const cleaned = body
-    .replace(/import[^;]+;?/g, ' ')
-    .replace(/<[^>]+>/g, ' ')
-    .replace(/\s+/g, ' ')
-    .trim();
-  return cleaned.split('. ').slice(0, 2).join('. ').trim();
-}
-
-function buildSearchIndex(outDir) {
-  const baseUrl = '/how-to-law';
-  const lessonsDir = path.resolve('src/content/classroom');
-  const glossaryPath = path.resolve('src/content/glossary/terms.json');
-  const lessonDocs = getMarkdownFiles(lessonsDir).map((file) => {
-    const raw = fs.readFileSync(file, 'utf-8');
-    const parsed = matter(raw);
-    const data = parsed.data ?? {};
-    const slug = data.slug ?? path.basename(file, path.extname(file));
-    const module = data.module ?? path.basename(path.dirname(file));
-    const url = `${baseUrl}/classroom/${module}/${slug}/`;
-    return {
-      type: 'lesson',
-      id: `${module}-${slug}`,
-      title: data.title ?? slug,
-      url,
-      tags: data.tags ?? [],
-      textSnippet: extractSummary(parsed.content)
-    };
-  });
-
-  let glossaryDocs = [];
-  if (fs.existsSync(glossaryPath)) {
-    const glossary = JSON.parse(fs.readFileSync(glossaryPath, 'utf-8'));
-    glossaryDocs = glossary.map((term) => ({
-      type: 'glossary',
-      id: term.id,
-      title: term.term,
-      url: `${baseUrl}/glossary/#${term.id}`,
-      tags: term.tags ?? [],
-      textSnippet: term.def
-    }));
-  }
-
-  const searchData = [...lessonDocs, ...glossaryDocs];
-  const outPath = path.join(outDir, 'search-index.json');
-  fs.mkdirSync(path.dirname(outPath), { recursive: true });
-  fs.writeFileSync(outPath, JSON.stringify(searchData, null, 2));
-}
+import remarkTerms from './src/plugins/remark-terms.js';
 
 const siteUrl = process.env.ASTRO_SITE ?? 'https://example.github.io/how-to-law';
+const basePath = '/how-to-law';
+const classroomDir = path.resolve('src/content/classroom');
+
+function createSnippet(body) {
+  if (!body) {
+    return '';
+  }
+  const text = body
+    .replace(/```[\s\S]*?```/g, ' ')
+    .replace(/`[^`]+`/g, ' ')
+    .replace(/<[^>]+>/g, ' ')
+    .replace(/\[(.*?)\]\([^)]*\)/g, '$1')
+    .replace(/[#*_>{}]/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+  if (!text) {
+    return '';
+  }
+  return text.length > 220 ? `${text.slice(0, 217)}…` : text;
+}
+
+async function readGlossary() {
+  try {
+    const glossaryPath = new URL('./src/content/glossary/terms.json', import.meta.url);
+    const raw = await fs.readFile(glossaryPath, 'utf-8');
+    return JSON.parse(raw);
+  } catch (error) {
+    console.warn('Unable to read glossary terms for search index.', error);
+    return [];
+  }
+}
+
+async function walkClassroom(dir) {
+  const entries = await fs.readdir(dir, { withFileTypes: true });
+  const files = [];
+  for (const entry of entries) {
+    const full = path.join(dir, entry.name);
+    if (entry.isDirectory()) {
+      files.push(...(await walkClassroom(full)));
+    } else if (/\.(md|mdx)$/i.test(entry.name)) {
+      files.push(full);
+    }
+  }
+  return files;
+}
+
+async function readLessons() {
+  const files = await walkClassroom(classroomDir);
+  const lessons = [];
+  for (const filePath of files) {
+    const raw = await fs.readFile(filePath, 'utf-8');
+    const parsed = matter(raw);
+    const relative = path.relative(classroomDir, filePath);
+    const segments = relative.split(path.sep);
+    const moduleSlug = segments[0];
+    const lessonSlug = path.basename(relative).replace(/\.(md|mdx)$/i, '');
+    const moduleTitle = parsed.data?.moduleTitle ?? moduleSlug;
+    const tags = Array.isArray(parsed.data?.tags) ? parsed.data.tags : [];
+    lessons.push({
+      id: `${moduleSlug}-${lessonSlug}`,
+      moduleSlug,
+      lessonSlug,
+      moduleTitle,
+      title: parsed.data?.title ?? lessonSlug,
+      description: parsed.data?.description ?? '',
+      tags,
+      content: parsed.content
+    });
+  }
+  return lessons;
+}
+
+async function writeSearchIndex(outDir) {
+  const lessons = await readLessons();
+  const glossary = await readGlossary();
+
+  const lessonDocs = lessons.map((lesson) => ({
+    type: 'lesson',
+    id: lesson.id,
+    title: lesson.title,
+    url: `${basePath}/classroom/${lesson.moduleSlug}/${lesson.lessonSlug}/`,
+    module: lesson.moduleTitle,
+    tags: lesson.tags,
+    textSnippet: createSnippet(lesson.content)
+  }));
+
+  const glossaryDocs = glossary.map((term) => ({
+    type: 'glossary',
+    id: term.id,
+    title: term.term,
+    url: `${basePath}/glossary/#${term.id}`,
+    module: 'Glossary',
+    tags: term.tags ?? [],
+    textSnippet: term.def
+  }));
+
+  const docs = [...lessonDocs, ...glossaryDocs];
+  const outPath = path.join(outDir, 'search-index.json');
+  await fs.mkdir(path.dirname(outPath), { recursive: true });
+  await fs.writeFile(outPath, JSON.stringify(docs, null, 2), 'utf-8');
+}
 
 export default defineConfig({
   site: siteUrl,
-  base: '/how-to-law',
+  base: basePath,
   trailingSlash: 'always',
-  integrations: [react(), mdx(), tailwind({ applyBaseStyles: false }), sitemap()],
+  integrations: [
+    react(),
+    mdx({
+      remarkPlugins: [remarkTerms],
+      rehypePlugins: [rehypeSlug, [rehypeAutolinkHeadings, { behavior: 'wrap', properties: { className: ['heading-link'] } }]]
+    }),
+    tailwind({ applyBaseStyles: false }),
+    sitemap()
+  ],
   hooks: {
     'astro:build:done': async ({ dir }) => {
-      const outDir = fileURLToPath(dir);
-      buildSearchIndex(outDir);
-      buildSearchIndex(path.resolve('public'));
+      const distPath = fileURLToPath(dir);
+      await writeSearchIndex(distPath);
+      await writeSearchIndex(path.resolve('public'));
     }
   }
 });

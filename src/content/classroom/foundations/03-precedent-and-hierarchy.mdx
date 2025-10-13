@@ -1,67 +1,60 @@
 ---
-title: "Precedent and hierarchy"
-slug: "precedent-and-hierarchy"
-module: "foundations"
-moduleLabel: "Foundations"
-level: "intermediate"
-est_minutes: 12
-summary: "Follow how precedent binds different courts and how RP adjustments change stakes."
+title: Precedent and Hierarchy
+description: Courts follow a structured hierarchy of precedent to maintain consistency and predictability in legal decisions.
+module: foundations
+moduleTitle: Foundations
+order: 3
+estimatedTime: 12 minutes
 objectives:
-  - Explain vertical and horizontal stare decisis.
-  - Identify persuasive versus binding authority.
-  - Script RP scenarios where precedent is intentionally broken.
-prereqs:
-  - "What is law?"
-  - "Sources of law"
-tags: [precedent, hierarchy]
-quiz:
-  - type: mc
-    q: "Which court's decision binds a federal district court in California?"
-    choices: ["Second Circuit", "Ninth Circuit", "Federal Circuit", "State appellate court"]
-    answer: 1
-    explain: "District courts follow their regional circuit—in this case, the Ninth Circuit."
-  - type: mc
-    q: "What do we call decisions from other jurisdictions that a court may consider but need not follow?"
-    choices: ["Binding precedent", "Persuasive authority", "Controlling dicta", "Mandatory guidance"]
-    answer: 1
-    explain: "Persuasive authority can influence but does not compel a court."
-rp_diffs:
-  - id: "precedent-breaker"
-    baseline: "Lower courts must follow higher courts on questions of law."
-    rule: "RP storytellers may let regional tribunals nullify high court precedent when factions seize power."
+  - Distinguish between binding precedent and persuasive authority.
+  - Apply the vertical structure of the federal judiciary to determine controlling decisions.
+  - Evaluate factors that justify overruling or distinguishing precedent.
+tags:
+  - precedent
+  - appellate practice
+references:
+  - title: Planned Parenthood of Southeastern Pennsylvania v. Casey, 505 U.S. 833 (1992)
+    url: https://supreme.justia.com/cases/federal/us/505/833/
 ---
-import Term from '../../../components/Term.tsx';
-import Callout from '../../../components/Callout.tsx';
+## Binding versus persuasive authority
 
-Hierarchy keeps the common law coherent. Vertical <Term client:load id="stare-decisis" /> means lower courts follow higher ones. Horizontal stare decisis means a court tries to follow its own precedent unless it has a strong reason to change course.
+Binding precedent compels a court to follow a rule announced by a higher tribunal in the same jurisdiction. For example, a District Court must apply holdings from its Court of Appeals and from the Supreme Court. Decisions from other circuits or state courts may be persuasive but are not binding.
 
-### Binding versus persuasive
+Persuasive authority includes treatises, law review articles, and decisions from other jurisdictions. Courts often consult persuasive sources to understand how similar issues were handled elsewhere, especially when binding precedent is sparse or ambiguous.
 
-Binding authority includes decisions from higher courts in the same jurisdiction. Persuasive authority covers everything else: sibling circuits, state courts, academic commentary. Judges cite persuasive sources to signal reasonableness or to tee up a doctrinal shift.
+## Vertical hierarchy in the federal courts
 
-### RP narrative twist
+The federal judicial system has three primary tiers: District Courts, Courts of Appeals, and the Supreme Court. District Courts handle trials and make findings of fact. Courts of Appeals review District Court decisions for legal error. The Supreme Court provides final appellate review on matters of federal law.
 
-<Callout
-  client:load
-  kind="rp"
-  baseline="Lower courts must follow higher courts on questions of law."
-  rule="RP storytellers may let regional tribunals nullify high court precedent when factions seize power."
+A panel decision of a Court of Appeals binds subsequent panels unless overruled by the court sitting en banc or by the Supreme Court. Likewise, District Courts within the circuit must follow that appellate precedent.
+
+## Overruling and distinguishing precedent
+
+A court may distinguish precedent by demonstrating that a material factual or legal difference makes the earlier rule inapplicable. Overruling occurs when the controlling court concludes that a precedent is unworkable, inconsistent with other doctrine, or unsupported by changed circumstances. The Supreme Court in *Casey* listed factors for overruling, including reliance interests and the quality of reasoning.
+
+<Callout kind="warn" title="Reliance matters">
+  Before urging a court to abandon precedent, evaluate whether parties have structured conduct around the existing rule. Significant reliance weighs against overruling.
+</Callout>
+
+## Building a precedent table
+
+Constructing a precedent table helps teams analyze controlling authorities. List relevant decisions, the issuing court, the holding, and whether the case supports or undermines your position. Update the table as new decisions emerge.
+
+<Quiz
+  id="foundations-precedent"
+  questions={[
+    {
+      id: 'vertical',
+      prompt: 'A federal District Court in the Second Circuit confronts a Supreme Court decision and a conflicting Ninth Circuit opinion. Which rule controls?',
+      choices: [
+        { id: 'a', label: 'The Ninth Circuit opinion because it is the most recent.' },
+        { id: 'b', label: 'The Supreme Court decision because it is binding on all federal courts.' },
+        { id: 'c', label: 'Neither; the District Court may choose whichever rule it prefers.' },
+        { id: 'd', label: 'The District Court may disregard both unless Congress has codified the rule.' }
+      ],
+      answer: 'b',
+      explanation:
+        'Supreme Court precedent binds every federal court. Decisions from other circuits are persuasive only.'
+    }
+  ]}
 />
-
-When you introduce a precedent-breaking faction, show the ripple effects: litigants rush to file in the new friendly forum, while opponents scramble for emergency relief in a different venue. That tension makes the world feel dynamic.
-
-### Spotlight the hierarchy visually
-
-A quick diagram can help players grasp who outranks whom.
-
-```
-US Supreme Court
-  ↓
-Circuit Courts of Appeals
-  ↓
-District Courts
-  ↓
-Agencies & Tribunals
-```
-
-In RP, you might swap in special tribunals or councils. Just keep the arrows clear so your cast knows who can overrule whom.

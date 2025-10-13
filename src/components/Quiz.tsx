@@ -1,186 +1,165 @@
 import { useEffect, useMemo, useState } from 'react';
-import { CheckCircle2, RotateCcw, XCircle } from 'lucide-react';
-import { markPerfect, scoreLesson } from '../lib/progress';
-import { cx } from '../lib/utils';
 
-type QuizItem = {
-  type: 'mc' | 'tf';
-  q: string;
-  choices?: string[];
-  answer: number;
-  explain: string;
-};
-
-type QuizProps = {
-  items: QuizItem[];
-  lessonId: string;
-};
-
-type ResultState = {
-  selected: number | null;
-  correct: boolean | null;
-};
-
-function seededShuffle<T>(values: T[], seed: string) {
-  const arr = [...values];
-  let hash = 0;
-  for (let i = 0; i < seed.length; i++) {
-    hash = Math.imul(31, hash) + seed.charCodeAt(i);
-  }
-  for (let i = arr.length - 1; i > 0; i--) {
-    const j = Math.abs((hash + i) % (i + 1));
-    [arr[i], arr[j]] = [arr[j], arr[i]];
-  }
-  return arr;
+export interface QuizChoice {
+  id: string;
+  label: string;
 }
 
-export default function Quiz({ items, lessonId }: QuizProps) {
-  const questions = useMemo(() => {
-    return items.map((item, index) => {
-      const choices = item.type === 'tf' ? ['True', 'False'] : item.choices ?? [];
-      const permuted = seededShuffle(
-        choices.map((choice, choiceIndex) => ({ choice, choiceIndex })),
-        `${lessonId}-${index}`
-      );
-      const answerIndex = permuted.findIndex((entry) => entry.choiceIndex === item.answer);
-      return {
-        ...item,
-        choices: permuted.map((entry) => entry.choice),
-        correctIndex: answerIndex
-      };
-    });
-  }, [items, lessonId]);
+export interface QuizQuestion {
+  id: string;
+  prompt: string;
+  choices: QuizChoice[];
+  answer: string;
+  explanation: string;
+}
 
-  const [results, setResults] = useState<ResultState[]>(() =>
-    questions.map(() => ({ selected: null, correct: null }))
-  );
+interface QuizProps {
+  id: string;
+  title?: string;
+  questions: QuizQuestion[];
+}
+
+const STORAGE_KEY_PREFIX = 'htl:quiz:';
+
+export default function Quiz({ id, title = 'Knowledge Check', questions }: QuizProps) {
+  const [responses, setResponses] = useState<Record<string, string>>({});
   const [submitted, setSubmitted] = useState(false);
+  const [bestScore, setBestScore] = useState(0);
 
-  const score = useMemo(
-    () => results.reduce((acc, item) => acc + (item.correct ? 1 : 0), 0),
-    [results]
-  );
+  useEffect(() => {
+    try {
+      const stored = localStorage.getItem(`${STORAGE_KEY_PREFIX}${id}`);
+      if (stored) {
+        setBestScore(Number.parseInt(stored, 10));
+      }
+    } catch (error) {
+      console.warn('Unable to read quiz score', error);
+    }
+  }, [id]);
+
+  const totalQuestions = questions.length;
+
+  const score = useMemo(() => {
+    if (!submitted) return 0;
+    return questions.reduce((count, question) => {
+      return count + (responses[question.id] === question.answer ? 1 : 0);
+    }, 0);
+  }, [submitted, questions, responses]);
 
   useEffect(() => {
     if (!submitted) return;
-    scoreLesson(lessonId, score, questions.length);
-    if (score === questions.length) {
-      markPerfect(lessonId, questions.length);
+    if (score <= bestScore) return;
+    setBestScore(score);
+    try {
+      localStorage.setItem(`${STORAGE_KEY_PREFIX}${id}`, String(score));
+    } catch (error) {
+      console.warn('Unable to store quiz score', error);
     }
-    if (typeof window !== 'undefined') {
-      window.dispatchEvent(
-        new CustomEvent('lesson-progress', {
-          detail: { lessonId, score, total: questions.length }
-        })
-      );
-    }
-  }, [submitted, score, lessonId, questions.length]);
+  }, [submitted, score, bestScore, id]);
 
-  function handleSubmit(e: React.FormEvent) {
-    e.preventDefault();
-    const newResults = results.map((result, index) => ({
-      ...result,
-      correct: result.selected === questions[index].correctIndex
-    }));
-    setResults(newResults);
+  const handleSelect = (questionId: string, choiceId: string) => {
+    setResponses((prev) => ({ ...prev, [questionId]: choiceId }));
+  };
+
+  const handleSubmit = () => {
     setSubmitted(true);
-  }
+  };
 
-  function resetQuiz() {
-    setResults(questions.map(() => ({ selected: null, correct: null })));
+  const handleRetry = () => {
+    setResponses({});
     setSubmitted(false);
-  }
+  };
 
   return (
-    <form onSubmit={handleSubmit} className="mt-12 space-y-6 rounded-2xl border border-muted/50 bg-card/70 p-6 shadow-subtle">
-      <div className="flex items-center justify-between">
-        <h3 className="text-lg font-semibold">Check your understanding</h3>
-        {submitted && (
-          <div className="flex items-center gap-2 text-sm font-medium">
-            {score === questions.length ? (
-              <span className="inline-flex items-center gap-1 text-accent">
-                <CheckCircle2 className="h-4 w-4" /> Perfect!
-              </span>
-            ) : (
-              <span className="inline-flex items-center gap-1 text-muted">
-                <XCircle className="h-4 w-4" /> {score}/{questions.length} correct
-              </span>
-            )}
-          </div>
-        )}
-      </div>
-      <fieldset className="space-y-8">
-        <legend className="sr-only">Lesson quiz</legend>
-        {questions.map((item, questionIndex) => (
-          <div key={questionIndex} className="space-y-4">
-            <p className="text-base font-medium text-foreground">{item.q}</p>
-            <div className="space-y-3">
-              {item.choices.map((choice, choiceIndex) => {
-                const id = `${lessonId}-${questionIndex}-${choiceIndex}`;
-                const selected = results[questionIndex]?.selected === choiceIndex;
-                const isAnswer = choiceIndex === item.correctIndex;
-                return (
-                  <label
-                    key={choiceIndex}
-                    htmlFor={id}
-                    className={cx(
-                      'flex cursor-pointer items-center gap-3 rounded-xl border border-muted/60 bg-background/60 p-3 transition focus-within:ring-2 focus-within:ring-accent',
-                      submitted && isAnswer && 'border-accent text-accent',
-                      submitted && selected && !isAnswer && 'border-red-400 text-red-500'
-                    )}
-                  >
-                    <input
-                      id={id}
-                      type="radio"
-                      name={`question-${questionIndex}`}
-                      className="sr-only"
-                      value={choiceIndex}
-                      onChange={() =>
-                        setResults((prev) => {
-                          const next = [...prev];
-                          next[questionIndex] = { selected: choiceIndex, correct: null };
-                          return next;
-                        })
-                      }
-                      checked={selected}
-                      disabled={submitted}
-                    />
-                    <span className="text-sm leading-relaxed">{choice}</span>
-                  </label>
-                );
-              })}
-            </div>
-            {submitted && results[questionIndex]?.correct === false && (
-              <p className="rounded-lg border border-orange-200 bg-orange-50/70 p-3 text-sm text-orange-800 dark:border-orange-900 dark:bg-orange-900/40 dark:text-orange-100">
-                {item.explain}
-              </p>
-            )}
-            {submitted && results[questionIndex]?.correct && (
-              <p className="rounded-lg border border-emerald-200 bg-emerald-50/70 p-3 text-sm text-emerald-800 dark:border-emerald-900 dark:bg-emerald-900/40 dark:text-emerald-100">
-                {item.explain}
-              </p>
-            )}
-          </div>
-        ))}
-      </fieldset>
-      <div className="flex items-center justify-between gap-4">
-        <button
-          type="submit"
-          className="inline-flex items-center gap-2 rounded-full bg-accent px-4 py-2 text-sm font-semibold text-accent-foreground transition hover:opacity-90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
-          disabled={submitted}
-        >
-          Submit answers
-        </button>
-        {submitted && (
+    <section className="not-prose mt-12 rounded-2xl border border-border bg-card p-6 shadow-subtle">
+      <header className="mb-4 flex items-center justify-between gap-4">
+        <h3 className="text-lg font-semibold text-foreground">{title}</h3>
+        <p className="text-sm text-muted">
+          Best score: {bestScore}/{totalQuestions}
+        </p>
+      </header>
+      <form
+        className="space-y-6"
+        onSubmit={(event) => {
+          event.preventDefault();
+          handleSubmit();
+        }}
+      >
+        {questions.map((question, index) => {
+          const selected = responses[question.id];
+          const isCorrect = selected === question.answer;
+          return (
+            <fieldset key={question.id} className="space-y-3">
+              <legend className="text-base font-semibold text-foreground">
+                {index + 1}. {question.prompt}
+              </legend>
+              <div className="space-y-2">
+                {question.choices.map((choice) => {
+                  const inputId = `${id}-${question.id}-${choice.id}`;
+                  const checked = selected === choice.id;
+                  const highlight =
+                    submitted && choice.id === question.answer
+                      ? 'border-emerald-400/60 bg-emerald-500/10'
+                      : checked
+                        ? 'border-accent/60 bg-accent/10'
+                        : 'border-border bg-card';
+                  return (
+                    <label
+                      key={choice.id}
+                      htmlFor={inputId}
+                      className={`flex cursor-pointer items-start gap-3 rounded-2xl border p-3 transition focus-within:ring-2 focus-within:ring-accent ${highlight}`}
+                    >
+                      <input
+                        id={inputId}
+                        type="radio"
+                        name={question.id}
+                        value={choice.id}
+                        checked={checked}
+                        onChange={() => handleSelect(question.id, choice.id)}
+                        className="mt-1 h-4 w-4 cursor-pointer accent-accent"
+                      />
+                      <span className="text-sm text-foreground/90">{choice.label}</span>
+                    </label>
+                  );
+                })}
+              </div>
+              {submitted ? (
+                <p
+                  className={`rounded-xl border p-3 text-sm ${
+                    isCorrect
+                      ? 'border-emerald-400/40 bg-emerald-500/10 text-emerald-700 dark:text-emerald-200'
+                      : 'border-amber-400/60 bg-amber-500/10 text-amber-700 dark:text-amber-200'
+                  }`}
+                >
+                  {question.explanation}
+                </p>
+              ) : null}
+            </fieldset>
+          );
+        })}
+        <div className="flex flex-wrap items-center gap-3 pt-2">
           <button
-            type="button"
-            onClick={resetQuiz}
-            className="inline-flex items-center gap-2 text-sm font-medium text-muted hover:text-foreground"
+            type="submit"
+            className="rounded-full bg-accent px-5 py-2 text-sm font-semibold text-accent-foreground shadow-subtle transition hover:shadow-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
           >
-            <RotateCcw className="h-4 w-4" /> Try again
+            Check answers
           </button>
-        )}
-      </div>
-    </form>
+          {submitted ? (
+            <button
+              type="button"
+              onClick={handleRetry}
+              className="rounded-full border border-border px-5 py-2 text-sm font-semibold text-foreground transition hover:border-accent/60 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+            >
+              Try again
+            </button>
+          ) : null}
+          {submitted ? (
+            <span className="text-sm font-medium text-foreground">
+              Score: {score}/{totalQuestions}
+            </span>
+          ) : null}
+        </div>
+      </form>
+    </section>
   );
 }

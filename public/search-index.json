@@ -1,57 +1,485 @@
 [
   {
     "type": "lesson",
-    "id": "crim-pro-overview",
-    "title": "Criminal procedure overview",
-    "url": "/how-to-law/classroom/crim-pro/overview/",
+    "id": "courts-01-jurisdiction-basics",
+    "title": "Subject-Matter vs. Personal Jurisdiction",
+    "url": "/how-to-law/classroom/courts/01-jurisdiction-basics/",
+    "module": "Courts & Jurisdiction",
     "tags": [
-      "criminal-law",
-      "procedure"
+      "jurisdiction",
+      "civil procedure"
     ],
-    "textSnippet": "Criminal procedure sets the cadence of the state's power. Prosecutors must show early, the accused gains counsel, and the court protects due process"
+    "textSnippet": "Subject-matter jurisdiction Subject-matter jurisdiction is the power of a court to hear a particular type of dispute. Federal courts have limited jurisdiction: they may hear cases arising under federal law, controvers…"
   },
   {
     "type": "lesson",
-    "id": "crim-pro-rp-flow",
-    "title": "RP criminal procedure flow",
-    "url": "/how-to-law/classroom/crim-pro/rp-flow/",
+    "id": "foundations-01-what-is-law",
+    "title": "What is Law?",
+    "url": "/how-to-law/classroom/foundations/01-what-is-law/",
+    "module": "Foundations",
     "tags": [
-      "criminal-law",
-      "rp"
+      "doctrine",
+      "institutions"
     ],
-    "textSnippet": "In campaign play, you may want a tighter loop. Here's a popular RP variant that still nods to core due process ideas"
+    "textSnippet": "Law as an authoritative system In the United States, law is a body of enforceable commands issued or recognized by legitimate public institutions. Those commands take written form—such as a statute, regulation, or con…"
   },
   {
     "type": "lesson",
-    "id": "foundations-what-is-law",
-    "title": "What is law?",
-    "url": "/how-to-law/classroom/foundations/what-is-law/",
+    "id": "foundations-02-sources-of-law",
+    "title": "Sources of Law",
+    "url": "/how-to-law/classroom/foundations/02-sources-of-law/",
+    "module": "Foundations",
     "tags": [
-      "foundations",
-      "overview"
+      "hierarchy",
+      "interpretation"
     ],
-    "textSnippet": "US law is built on layers. Legislatures pass s, agencies craft , and courts publish opinions"
+    "textSnippet": "Constitutional supremacy The Constitution is the supreme law of the land. Article VI, the Supremacy Clause, binds judges in every state to follow federal law whenever it conflicts with a state enactment. Constitutiona…"
   },
   {
     "type": "lesson",
-    "id": "foundations-sources-of-law",
-    "title": "Sources of law",
-    "url": "/how-to-law/classroom/foundations/sources-of-law/",
-    "tags": [
-      "sources-of-law",
-      "hierarchy"
-    ],
-    "textSnippet": "In the US system, constitutions sit at the top. The federal Constitution binds everyone, while state constitutions control within their borders unless the steps in"
-  },
-  {
-    "type": "lesson",
-    "id": "foundations-precedent-and-hierarchy",
-    "title": "Precedent and hierarchy",
-    "url": "/how-to-law/classroom/foundations/precedent-and-hierarchy/",
+    "id": "foundations-03-precedent-and-hierarchy",
+    "title": "Precedent and Hierarchy",
+    "url": "/how-to-law/classroom/foundations/03-precedent-and-hierarchy/",
+    "module": "Foundations",
     "tags": [
       "precedent",
-      "hierarchy"
+      "appellate practice"
     ],
-    "textSnippet": "Hierarchy keeps the common law coherent. Vertical means lower courts follow higher ones"
+    "textSnippet": "Binding versus persuasive authority Binding precedent compels a court to follow a rule announced by a higher tribunal in the same jurisdiction. For example, a District Court must apply holdings from its Court of Appea…"
+  },
+  {
+    "type": "lesson",
+    "id": "scotus-practice-01-overview",
+    "title": "Supreme Court Practice Overview",
+    "url": "/how-to-law/classroom/scotus-practice/01-overview/",
+    "module": "Appellate & Supreme Court Practice",
+    "tags": [
+      "appellate practice",
+      "supreme court"
+    ],
+    "textSnippet": "Jurisdiction and docket control The Supreme Court exercises appellate jurisdiction over cases arising from federal courts and state courts that decide federal questions. Most cases arrive by petition for a writ of cer…"
+  },
+  {
+    "type": "glossary",
+    "id": "adversary-system",
+    "title": "adversary system",
+    "url": "/how-to-law/glossary/#adversary-system",
+    "module": "Glossary",
+    "tags": [],
+    "textSnippet": "Structure of litigation in which opposing parties present evidence and arguments before a neutral decision maker."
+  },
+  {
+    "type": "glossary",
+    "id": "administrative-law",
+    "title": "administrative law",
+    "url": "/how-to-law/glossary/#administrative-law",
+    "module": "Glossary",
+    "tags": [],
+    "textSnippet": "Body of law governing the creation, operation, and review of actions by administrative agencies."
+  },
+  {
+    "type": "glossary",
+    "id": "appellate-review",
+    "title": "appellate review",
+    "url": "/how-to-law/glossary/#appellate-review",
+    "module": "Glossary",
+    "tags": [],
+    "textSnippet": "Examination of a lower tribunal's decision by a higher court for legal error."
+  },
+  {
+    "type": "glossary",
+    "id": "article-iii",
+    "title": "Article III",
+    "url": "/how-to-law/glossary/#article-iii",
+    "module": "Glossary",
+    "tags": [],
+    "textSnippet": "Constitutional article establishing the federal judicial branch and defining the limits of federal judicial power."
+  },
+  {
+    "type": "glossary",
+    "id": "brief",
+    "title": "brief",
+    "url": "/how-to-law/glossary/#brief",
+    "module": "Glossary",
+    "tags": [],
+    "textSnippet": "Written submission that explains a party's legal and factual arguments to a court."
+  },
+  {
+    "type": "glossary",
+    "id": "burden-of-proof",
+    "title": "burden of proof",
+    "url": "/how-to-law/glossary/#burden-of-proof",
+    "module": "Glossary",
+    "tags": [],
+    "textSnippet": "Obligation of a party to prove a fact or persuade the fact finder of a claim's validity."
+  },
+  {
+    "type": "glossary",
+    "id": "case-law",
+    "title": "case law",
+    "url": "/how-to-law/glossary/#case-law",
+    "module": "Glossary",
+    "tags": [],
+    "textSnippet": "Judicial decisions that interpret statutes, regulations, and constitutional provisions."
+  },
+  {
+    "type": "glossary",
+    "id": "certiorari",
+    "title": "certiorari",
+    "url": "/how-to-law/glossary/#certiorari",
+    "module": "Glossary",
+    "tags": [],
+    "textSnippet": "Discretionary order by which the Supreme Court agrees to review a lower court's judgment."
+  },
+  {
+    "type": "glossary",
+    "id": "civil-procedure",
+    "title": "civil procedure",
+    "url": "/how-to-law/glossary/#civil-procedure",
+    "module": "Glossary",
+    "tags": [],
+    "textSnippet": "Rules and statutes that govern the process of civil litigation from filing to judgment."
+  },
+  {
+    "type": "glossary",
+    "id": "common-law",
+    "title": "common law",
+    "url": "/how-to-law/glossary/#common-law",
+    "module": "Glossary",
+    "tags": [],
+    "textSnippet": "Judge-made law developed through precedent rather than enacted legislation."
+  },
+  {
+    "type": "glossary",
+    "id": "complaint",
+    "title": "complaint",
+    "url": "/how-to-law/glossary/#complaint",
+    "module": "Glossary",
+    "tags": [],
+    "textSnippet": "Initial pleading in a civil action that states the plaintiff's claims and requests relief."
+  },
+  {
+    "type": "glossary",
+    "id": "constitution",
+    "title": "Constitution",
+    "url": "/how-to-law/glossary/#constitution",
+    "module": "Glossary",
+    "tags": [],
+    "textSnippet": "Foundational legal charter establishing government structure and protecting individual rights."
+  },
+  {
+    "type": "glossary",
+    "id": "deference",
+    "title": "deference",
+    "url": "/how-to-law/glossary/#deference",
+    "module": "Glossary",
+    "tags": [],
+    "textSnippet": "Judicial respect for the decisions or interpretations of another branch or decision maker."
+  },
+  {
+    "type": "glossary",
+    "id": "discovery",
+    "title": "discovery",
+    "url": "/how-to-law/glossary/#discovery",
+    "module": "Glossary",
+    "tags": [],
+    "textSnippet": "Pretrial process for obtaining evidence from other parties or nonparties."
+  },
+  {
+    "type": "glossary",
+    "id": "district-court",
+    "title": "District Court",
+    "url": "/how-to-law/glossary/#district-court",
+    "module": "Glossary",
+    "tags": [],
+    "textSnippet": "General federal trial court with original jurisdiction over civil and criminal matters."
+  },
+  {
+    "type": "glossary",
+    "id": "due-process",
+    "title": "due process",
+    "url": "/how-to-law/glossary/#due-process",
+    "module": "Glossary",
+    "tags": [],
+    "textSnippet": "Constitutional requirement that government procedures be fair and follow established rules."
+  },
+  {
+    "type": "glossary",
+    "id": "en-banc",
+    "title": "en banc",
+    "url": "/how-to-law/glossary/#en-banc",
+    "module": "Glossary",
+    "tags": [],
+    "textSnippet": "Session in which a full appellate court, rather than a panel, hears and decides a case."
+  },
+  {
+    "type": "glossary",
+    "id": "equitable-relief",
+    "title": "equitable relief",
+    "url": "/how-to-law/glossary/#equitable-relief",
+    "module": "Glossary",
+    "tags": [],
+    "textSnippet": "Nonmonetary remedy such as injunction, declaratory judgment, or specific performance."
+  },
+  {
+    "type": "glossary",
+    "id": "evidence",
+    "title": "evidence",
+    "url": "/how-to-law/glossary/#evidence",
+    "module": "Glossary",
+    "tags": [],
+    "textSnippet": "Testimony, documents, or tangible objects presented to prove or disprove facts at issue."
+  },
+  {
+    "type": "glossary",
+    "id": "federal-question",
+    "title": "federal question",
+    "url": "/how-to-law/glossary/#federal-question",
+    "module": "Glossary",
+    "tags": [],
+    "textSnippet": "Claim arising under the Constitution, laws, or treaties of the United States."
+  },
+  {
+    "type": "glossary",
+    "id": "federalism",
+    "title": "federalism",
+    "url": "/how-to-law/glossary/#federalism",
+    "module": "Glossary",
+    "tags": [],
+    "textSnippet": "Constitutional division of authority between the federal government and the states."
+  },
+  {
+    "type": "glossary",
+    "id": "final-judgment",
+    "title": "final judgment rule",
+    "url": "/how-to-law/glossary/#final-judgment",
+    "module": "Glossary",
+    "tags": [],
+    "textSnippet": "Doctrine limiting appellate review to decisions that resolve all claims for all parties."
+  },
+  {
+    "type": "glossary",
+    "id": "flow-of-case",
+    "title": "case flow",
+    "url": "/how-to-law/glossary/#flow-of-case",
+    "module": "Glossary",
+    "tags": [],
+    "textSnippet": "Overall progression of a matter from investigation through final resolution."
+  },
+  {
+    "type": "glossary",
+    "id": "holding",
+    "title": "holding",
+    "url": "/how-to-law/glossary/#holding",
+    "module": "Glossary",
+    "tags": [],
+    "textSnippet": "Legal principle necessary to resolve the dispute before the court."
+  },
+  {
+    "type": "glossary",
+    "id": "injunction",
+    "title": "injunction",
+    "url": "/how-to-law/glossary/#injunction",
+    "module": "Glossary",
+    "tags": [],
+    "textSnippet": "Court order directing a party to do or refrain from doing a specific act."
+  },
+  {
+    "type": "glossary",
+    "id": "jurisdiction",
+    "title": "jurisdiction",
+    "url": "/how-to-law/glossary/#jurisdiction",
+    "module": "Glossary",
+    "tags": [],
+    "textSnippet": "Power of a court to hear and decide a case."
+  },
+  {
+    "type": "glossary",
+    "id": "legislative-history",
+    "title": "legislative history",
+    "url": "/how-to-law/glossary/#legislative-history",
+    "module": "Glossary",
+    "tags": [],
+    "textSnippet": "Materials generated during enactment of a statute that may inform interpretation."
+  },
+  {
+    "type": "glossary",
+    "id": "mens-rea",
+    "title": "mens rea",
+    "url": "/how-to-law/glossary/#mens-rea",
+    "module": "Glossary",
+    "tags": [],
+    "textSnippet": "Mental state required as an element of a crime, such as intent or knowledge."
+  },
+  {
+    "type": "glossary",
+    "id": "notice",
+    "title": "notice",
+    "url": "/how-to-law/glossary/#notice",
+    "module": "Glossary",
+    "tags": [],
+    "textSnippet": "Information that informs a person of legal proceedings or obligations affecting them."
+  },
+  {
+    "type": "glossary",
+    "id": "original-jurisdiction",
+    "title": "original jurisdiction",
+    "url": "/how-to-law/glossary/#original-jurisdiction",
+    "module": "Glossary",
+    "tags": [],
+    "textSnippet": "Authority of a court to hear a case in the first instance."
+  },
+  {
+    "type": "glossary",
+    "id": "personal-jurisdiction",
+    "title": "personal jurisdiction",
+    "url": "/how-to-law/glossary/#personal-jurisdiction",
+    "module": "Glossary",
+    "tags": [],
+    "textSnippet": "Court's power to render a judgment affecting a particular defendant's rights or obligations."
+  },
+  {
+    "type": "glossary",
+    "id": "plea-bargain",
+    "title": "plea bargain",
+    "url": "/how-to-law/glossary/#plea-bargain",
+    "module": "Glossary",
+    "tags": [],
+    "textSnippet": "Agreement in which a criminal defendant pleads guilty in exchange for concessions."
+  },
+  {
+    "type": "glossary",
+    "id": "precedent",
+    "title": "precedent",
+    "url": "/how-to-law/glossary/#precedent",
+    "module": "Glossary",
+    "tags": [],
+    "textSnippet": "Prior judicial decision that guides the outcome of later cases involving similar facts or law."
+  },
+  {
+    "type": "glossary",
+    "id": "probable-cause",
+    "title": "probable cause",
+    "url": "/how-to-law/glossary/#probable-cause",
+    "module": "Glossary",
+    "tags": [],
+    "textSnippet": "Reasonable ground to believe that a crime has been committed and that the suspect committed it."
+  },
+  {
+    "type": "glossary",
+    "id": "procedural-due-process",
+    "title": "procedural due process",
+    "url": "/how-to-law/glossary/#procedural-due-process",
+    "module": "Glossary",
+    "tags": [],
+    "textSnippet": "Requirement that the government follow fair procedures before depriving a person of life, liberty, or property."
+  },
+  {
+    "type": "glossary",
+    "id": "remand",
+    "title": "remand",
+    "url": "/how-to-law/glossary/#remand",
+    "module": "Glossary",
+    "tags": [],
+    "textSnippet": "Order by an appellate court sending a case back to a lower court for further proceedings."
+  },
+  {
+    "type": "glossary",
+    "id": "remedies",
+    "title": "remedies",
+    "url": "/how-to-law/glossary/#remedies",
+    "module": "Glossary",
+    "tags": [],
+    "textSnippet": "Legal or equitable relief provided to address a violation of rights."
+  },
+  {
+    "type": "glossary",
+    "id": "rule-of-law",
+    "title": "rule of law",
+    "url": "/how-to-law/glossary/#rule-of-law",
+    "module": "Glossary",
+    "tags": [],
+    "textSnippet": "Principle that government officials and citizens are bound by and accountable to the law."
+  },
+  {
+    "type": "glossary",
+    "id": "service-of-process",
+    "title": "service of process",
+    "url": "/how-to-law/glossary/#service-of-process",
+    "module": "Glossary",
+    "tags": [],
+    "textSnippet": "Formal delivery of legal documents to notify a party of proceedings."
+  },
+  {
+    "type": "glossary",
+    "id": "stare-decisis",
+    "title": "stare decisis",
+    "url": "/how-to-law/glossary/#stare-decisis",
+    "module": "Glossary",
+    "tags": [],
+    "textSnippet": "Doctrine requiring courts to follow controlling precedent absent a compelling reason to depart."
+  },
+  {
+    "type": "glossary",
+    "id": "statute",
+    "title": "statute",
+    "url": "/how-to-law/glossary/#statute",
+    "module": "Glossary",
+    "tags": [],
+    "textSnippet": "Law enacted by a legislature and codified in the United States Code or state code."
+  },
+  {
+    "type": "glossary",
+    "id": "subject-matter",
+    "title": "subject-matter jurisdiction",
+    "url": "/how-to-law/glossary/#subject-matter",
+    "module": "Glossary",
+    "tags": [],
+    "textSnippet": "Authority of a court to hear cases of a particular type or category."
+  },
+  {
+    "type": "glossary",
+    "id": "supreme-court",
+    "title": "Supreme Court",
+    "url": "/how-to-law/glossary/#supreme-court",
+    "module": "Glossary",
+    "tags": [],
+    "textSnippet": "Highest court in the United States with final authority over federal law and the Constitution."
+  },
+  {
+    "type": "glossary",
+    "id": "suppression",
+    "title": "suppression",
+    "url": "/how-to-law/glossary/#suppression",
+    "module": "Glossary",
+    "tags": [],
+    "textSnippet": "Exclusion of evidence obtained in violation of constitutional or statutory rights."
+  },
+  {
+    "type": "glossary",
+    "id": "venue",
+    "title": "venue",
+    "url": "/how-to-law/glossary/#venue",
+    "module": "Glossary",
+    "tags": [],
+    "textSnippet": "Proper geographic location for a court to hear a case."
+  },
+  {
+    "type": "glossary",
+    "id": "voir-dire",
+    "title": "voir dire",
+    "url": "/how-to-law/glossary/#voir-dire",
+    "module": "Glossary",
+    "tags": [],
+    "textSnippet": "Process of questioning prospective jurors to assess qualifications and impartiality."
+  },
+  {
+    "type": "glossary",
+    "id": "writ",
+    "title": "writ",
+    "url": "/how-to-law/glossary/#writ",
+    "module": "Glossary",
+    "tags": [],
+    "textSnippet": "Formal written order issued by a court directing a specific action."
   }
 ]
