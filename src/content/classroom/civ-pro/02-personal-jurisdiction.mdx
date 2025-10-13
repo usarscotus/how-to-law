@@ -1,0 +1,69 @@
+---
+title: Personal Jurisdiction and Notice
+description: Evaluate when a court can exercise power over defendants consistent with due process and procedural rules.
+module: civ-pro
+moduleTitle: Civil Procedure
+order: 2
+estimatedTime: 19 minutes
+objectives:
+  - Differentiate general and specific jurisdiction and apply the minimum contacts analysis.
+  - Recognize statutory authorization for jurisdiction through state long-arm statutes and Rule 4(k).
+  - Identify procedural mechanisms to challenge personal jurisdiction without waiving defenses.
+tags:
+  - civil procedure
+  - due process
+references:
+  - title: International Shoe Co. v. Washington, 326 U.S. 310 (1945)
+    url: https://supreme.justia.com/cases/federal/us/326/310/
+  - title: Federal Rule of Civil Procedure 4
+    url: https://www.law.cornell.edu/rules/frcp/rule_4
+---
+## Sources of personal jurisdiction
+
+A court needs statutory authorization and constitutional compliance to assert power over a defendant. State long-arm statutes may reach to the limits of due process or impose narrower bounds. In federal court, Rule 4(k) adopts the forum state's reach with limited nationwide service exceptions.
+
+<Callout kind="info" title="Consent and waiver">
+  Defendants can consent to jurisdiction through forum-selection clauses, registration statutes, or by appearing without timely objecting. Rule 12 requires asserting lack of personal jurisdiction in the first responsive filing or it is waived.
+</Callout>
+
+## General vs. specific jurisdiction
+
+General jurisdiction permits suit on any claim when the defendant is "at home" in the forum—typically the state of incorporation and principal place of business for corporations, or domicile for individuals. Specific jurisdiction applies when the suit arises out of or relates to the defendant's contacts with the forum.
+
+Courts apply the **International Shoe** minimum contacts test, asking whether the defendant purposefully availed itself of the forum, whether the claim arises from those contacts, and whether exercising jurisdiction is fair and reasonable.
+
+## Notice and service of process
+
+Due process also requires notice reasonably calculated to inform parties of the action. Service must comply with Rule 4, using methods like personal service, substituted service at the dwelling, or waiver of service. Defective service can defeat personal jurisdiction even when minimum contacts exist.
+
+<Quiz
+  id="civ-pro-personal-jurisdiction"
+  questions={[
+    {
+      id: 'minimum-contacts',
+      prompt: 'Which scenario most clearly establishes specific jurisdiction consistent with International Shoe?',
+      choices: [
+        { id: 'a', label: 'A manufacturer incorporated and headquartered in Illinois is sued in California for a slip-and-fall at its Chicago facility.' },
+        { id: 'b', label: 'A Delaware corporation with operations nationwide is sued in Delaware for a patent dispute unrelated to Delaware activities.' },
+        { id: 'c', label: 'A Texas online retailer that shipped customized goods into Colorado is sued in Colorado over defects in those goods.' },
+        { id: 'd', label: 'A Florida resident driving through Georgia is sued in Georgia for a contract signed in Florida with no relation to Georgia.' }
+      ],
+      answer: 'c',
+      explanation:
+        'Specific jurisdiction exists when the defendant purposefully avails itself of the forum and the claim arises from those contacts, as with the targeted shipments into Colorado.'
+    },
+    {
+      id: 'service-of-process',
+      prompt: 'How should a defendant preserve a personal jurisdiction challenge under Rule 12?',
+      choices: [
+        { id: 'a', label: 'Wait until after trial to move for dismissal.' },
+        { id: 'b', label: 'Raise the defense in the first responsive pleading or Rule 12 motion.' },
+        { id: 'c', label: 'File a counterclaim, then move to dismiss for lack of jurisdiction.' },
+        { id: 'd', label: 'Ignore the lawsuit to avoid consenting to jurisdiction.' }
+      ],
+      answer: 'b',
+      explanation:
+        'Rule 12(h) treats personal jurisdiction as waived unless asserted in the first responsive motion or pleading.'
+    }
+  ]}
+/>

@@ -1,0 +1,71 @@
+---
+title: Subject-Matter Jurisdiction Foundations
+description: Determine when federal courts can hear a case, and how to raise and preserve jurisdictional challenges.
+module: civ-pro
+moduleTitle: Civil Procedure
+order: 1
+estimatedTime: 18 minutes
+objectives:
+  - Distinguish federal question and diversity jurisdiction and identify supplemental jurisdiction bases.
+  - Apply the amount-in-controversy and complete diversity requirements under 28 U.S.C. § 1332.
+  - Evaluate strategies for challenging or curing jurisdictional defects before final judgment.
+tags:
+  - civil procedure
+  - federal courts
+references:
+  - title: 28 U.S.C. §§ 1331, 1332, 1367
+    url: https://www.law.cornell.edu/uscode/text/28
+  - title: Hertz Corp. v. Friend, 559 U.S. 77 (2010)
+    url: https://supreme.justia.com/cases/federal/us/559/77/
+---
+## Federal question jurisdiction
+
+Federal district courts have jurisdiction over "all civil actions arising under the Constitution, laws, or treaties of the United States." The well-pleaded complaint rule requires that a federal issue appear on the face of the plaintiff's properly pleaded complaint. Anticipated defenses invoking federal law are not enough.
+
+<Callout kind="tip" title="Embedded federal issues">
+  State-law claims may still arise under federal law when a federal issue is necessarily raised, actually disputed, substantial, and capable of resolution in federal court without disrupting the federal-state balance set by Congress (the *Grable* test).
+</Callout>
+
+## Diversity jurisdiction
+
+To invoke diversity jurisdiction under 28 U.S.C. § 1332, parties must be completely diverse—no plaintiff may share citizenship with any defendant—and the amount in controversy must exceed $75,000. Corporations have dual citizenship (state of incorporation and principal place of business), while unincorporated associations take the citizenship of all members.
+
+Courts determine the amount in controversy from the plaintiff's good-faith allegations unless it is legally certain the claim is for less than $75,000. Aggregation of claims is permitted when one plaintiff combines multiple claims against a single defendant.
+
+## Supplemental jurisdiction and timing
+
+Even when the primary claim supplies jurisdiction, federal courts may hear related state-law claims that form part of the same "case or controversy" under Article III. Section 1367 allows supplemental jurisdiction but instructs courts to decline it when state issues predominate or when federal claims drop out early in the case.
+
+Subject-matter jurisdiction cannot be waived. Parties and courts must raise defects sua sponte at any time before the case is final. If jurisdiction is lacking, the court must dismiss or, when justice requires, remand to state court.
+
+<Quiz
+  id="civ-pro-subject-matter-jurisdiction"
+  questions={[
+    {
+      id: 'diversity-jurisdiction',
+      prompt: 'Which combination satisfies diversity jurisdiction under 28 U.S.C. § 1332?',
+      choices: [
+        { id: 'a', label: 'A California plaintiff sues a Nevada corporation with its principal place of business in California for $50,000.' },
+        { id: 'b', label: 'A Texas plaintiff sues a Delaware corporation with its principal place of business in Texas for $100,000.' },
+        { id: 'c', label: 'A Florida plaintiff sues a New York corporation with its principal place of business in New York for $80,000.' },
+        { id: 'd', label: 'A Georgia plaintiff sues a Georgia defendant and an Alabama defendant for $90,000.' }
+      ],
+      answer: 'c',
+      explanation:
+        'Diversity jurisdiction requires complete diversity and more than $75,000 in controversy. Option c meets both criteria.'
+    },
+    {
+      id: 'well-pleaded-complaint',
+      prompt: 'Under the well-pleaded complaint rule, when does a case arise under federal law?',
+      choices: [
+        { id: 'a', label: 'Whenever a defendant asserts a federal defense.' },
+        { id: 'b', label: 'When the plaintiff’s properly pleaded complaint establishes that federal law creates the cause of action or is an essential element.' },
+        { id: 'c', label: 'When any party cites the Constitution in briefing.' },
+        { id: 'd', label: 'Only when Congress expressly states the claim must be filed in federal court.' }
+      ],
+      answer: 'b',
+      explanation:
+        'Federal question jurisdiction exists when the plaintiff’s well-pleaded complaint shows that federal law creates the cause of action or necessarily raises a substantial federal issue.'
+    }
+  ]}
+/>
