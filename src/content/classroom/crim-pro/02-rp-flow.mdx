@@ -1,0 +1,63 @@
+---
+title: "RP criminal procedure flow"
+slug: "rp-flow"
+module: "crim-pro"
+moduleLabel: "Criminal Procedure"
+level: "intermediate"
+est_minutes: 11
+summary: "Customize the criminal process for your campaign without losing stakes."
+objectives:
+  - Compare RP tribunal flow to federal procedure.
+  - Decide which safeguards to keep for drama.
+  - Communicate divergences clearly to players.
+prereqs:
+  - "Criminal procedure overview"
+tags: [criminal-law, rp]
+quiz:
+  - type: mc
+    q: "Why might an RP campaign add a mediation council before trial?"
+    choices: ["To mirror grand jury practice", "To give players roleplay time", "To replace sentencing", "To remove due process"]
+    answer: 1
+    explain: "A mediation council lets characters bargain and build alliances before the main conflict."
+  - type: tf
+    q: "Removing arraignment entirely still preserves due process."
+    answer: 1
+    explain: "False—arraignment is where charges are disclosed. Removing it hides the stakes from players."
+rp_diffs:
+  - id: "tribunal-fast-track"
+    baseline: "Federal cases require arraignment and discovery before trial."
+    rule: "RP guild tribunals may compress arraignment and discovery into a single dramatic council scene."
+---
+import Callout from '../../../components/Callout.tsx';
+import Flow from '../../../components/Flow.tsx';
+import Term from '../../../components/Term.tsx';
+
+In campaign play, you may want a tighter loop. Here's a popular RP variant that still nods to core due process ideas.
+
+<Flow
+  client:load
+  steps={[
+    { title: 'Accusation', description: 'A guild captain issues charges publicly—no sealed filings.' },
+    {
+      title: 'Council conclave',
+      description: (
+        <>
+          All factions meet; the accused hears charges (a stand-in for <Term client:load id="arraignment" />).
+        </>
+      )
+    },
+    { title: 'Truth rite', description: 'Magical or technological device approximates probable cause review.' },
+    { title: 'Negotiation interlude', description: 'Parties roleplay offers and alliances; evidence cards are exchanged.' },
+    { title: 'Tribunal showdown', description: 'Decision makers hear arguments and rule immediately.' },
+    { title: 'Aftermath review', description: 'A senior council reviews outcomes to maintain continuity.' }
+  ]}
+/>
+
+<Callout
+  client:load
+  kind="rp"
+  baseline="Federal cases require arraignment and discovery before trial."
+  rule="RP guild tribunals may compress arraignment and discovery into a single dramatic council scene."
+/>
+
+Tell players which safeguards still exist. If discovery is compressed, maybe evidence cards stand in for disclosures. If appeals go to a lore-heavy council, give them a name and show the political stakes.

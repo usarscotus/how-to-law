@@ -1,0 +1,71 @@
+---
+import BasicPage from '../layouts/BasicPage.astro';
+import { ExternalLink } from 'lucide-react';
+
+const resources = [
+  {
+    name: 'Legal Information Institute (Cornell)',
+    url: 'https://www.law.cornell.edu',
+    badge: 'Primary law',
+    description: 'Plain-language explanations plus the full text of statutes, regulations, and Supreme Court opinions.'
+  },
+  {
+    name: 'Oyez',
+    url: 'https://www.oyez.org',
+    badge: 'Supreme Court',
+    description: 'Case summaries, oral argument audio, and transcripts to bring high court storytelling to life.'
+  },
+  {
+    name: 'SCOTUSblog',
+    url: 'https://www.scotusblog.com',
+    badge: 'Analysis',
+    description: 'Expert coverage of Supreme Court cases and trends—great for RP plot seeds.'
+  },
+  {
+    name: 'Congress.gov',
+    url: 'https://www.congress.gov',
+    badge: 'Legislation',
+    description: 'Track bills, committee reports, and the legislative history your NPCs might cite.'
+  },
+  {
+    name: 'GovInfo',
+    url: 'https://www.govinfo.gov',
+    badge: 'Documents',
+    description: 'Official government publications, from the Federal Register to congressional hearings.'
+  },
+  {
+    name: 'CourtListener',
+    url: 'https://www.courtlistener.com',
+    badge: 'Case law',
+    description: 'Millions of court opinions with alerts and visualizations—perfect for discovering precedent.'
+  },
+  {
+    name: 'Justia',
+    url: 'https://www.justia.com',
+    badge: 'Practice',
+    description: 'Practice guides, dockets, and free law summaries to support applied storytelling.'
+  },
+  {
+    name: 'RECAP Archive',
+    url: 'https://www.courtlistener.com/recap/',
+    badge: 'Dockets',
+    description: 'Crowdsourced PACER filings—prime inspiration for realistic procedural twists.'
+  }
+];
+---
+<BasicPage title="Resources" description="Trusted research hubs to deepen your campaign lore.">
+  <div class="grid gap-6 md:grid-cols-2">
+    {resources.map((resource) => (
+      <article class="flex h-full flex-col justify-between rounded-3xl border border-muted/30 bg-card/70 p-6 shadow-subtle">
+        <div class="space-y-3">
+          <span class="inline-flex items-center rounded-full border border-accent/40 bg-accent/10 px-3 py-1 text-xs font-semibold text-accent">{resource.badge}</span>
+          <h2 class="text-xl font-semibold text-foreground">{resource.name}</h2>
+          <p class="text-sm text-muted">{resource.description}</p>
+        </div>
+        <a href={resource.url} target="_blank" rel="noreferrer" class="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-accent hover:underline">
+          Visit site <ExternalLink className="h-4 w-4" />
+        </a>
+      </article>
+    ))}
+  </div>
+</BasicPage>

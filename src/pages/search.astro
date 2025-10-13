@@ -1,0 +1,7 @@
+---
+import BasicPage from '../layouts/BasicPage.astro';
+import SearchInput from '../components/SearchInput';
+---
+<BasicPage title="Search" description="Look up lessons, glossary entries, and RP rules in one go.">
+  <SearchInput client:load />
+</BasicPage>

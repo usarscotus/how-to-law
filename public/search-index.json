@@ -1,0 +1,57 @@
+[
+  {
+    "type": "lesson",
+    "id": "crim-pro-overview",
+    "title": "Criminal procedure overview",
+    "url": "/how-to-law/classroom/crim-pro/overview/",
+    "tags": [
+      "criminal-law",
+      "procedure"
+    ],
+    "textSnippet": "Criminal procedure sets the cadence of the state's power. Prosecutors must show early, the accused gains counsel, and the court protects due process"
+  },
+  {
+    "type": "lesson",
+    "id": "crim-pro-rp-flow",
+    "title": "RP criminal procedure flow",
+    "url": "/how-to-law/classroom/crim-pro/rp-flow/",
+    "tags": [
+      "criminal-law",
+      "rp"
+    ],
+    "textSnippet": "In campaign play, you may want a tighter loop. Here's a popular RP variant that still nods to core due process ideas"
+  },
+  {
+    "type": "lesson",
+    "id": "foundations-what-is-law",
+    "title": "What is law?",
+    "url": "/how-to-law/classroom/foundations/what-is-law/",
+    "tags": [
+      "foundations",
+      "overview"
+    ],
+    "textSnippet": "US law is built on layers. Legislatures pass s, agencies craft , and courts publish opinions"
+  },
+  {
+    "type": "lesson",
+    "id": "foundations-sources-of-law",
+    "title": "Sources of law",
+    "url": "/how-to-law/classroom/foundations/sources-of-law/",
+    "tags": [
+      "sources-of-law",
+      "hierarchy"
+    ],
+    "textSnippet": "In the US system, constitutions sit at the top. The federal Constitution binds everyone, while state constitutions control within their borders unless the steps in"
+  },
+  {
+    "type": "lesson",
+    "id": "foundations-precedent-and-hierarchy",
+    "title": "Precedent and hierarchy",
+    "url": "/how-to-law/classroom/foundations/precedent-and-hierarchy/",
+    "tags": [
+      "precedent",
+      "hierarchy"
+    ],
+    "textSnippet": "Hierarchy keeps the common law coherent. Vertical means lower courts follow higher ones"
+  }
+]
