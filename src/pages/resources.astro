@@ -4,71 +4,158 @@ import CaseCard from '~/components/CaseCard';
 
 const groups = [
   {
-    title: 'Primary law',
-    description: 'Official sources for binding decisions, statutes, and filings.',
+    title: 'Primary law & official sources',
+    description: 'Authoritative portals for statutes, regulations, and court-issued materials.',
     items: [
       {
         title: 'Supreme Court of the United States',
         href: 'https://www.supremecourt.gov/',
-        description: 'Official docket, opinions, and rules from the Court itself.'
+        description: 'Official docket, slip opinions, bound volumes, rules, and filing guides direct from the Court.'
       },
       {
-        title: 'GovInfo',
+        title: 'GovInfo (GPO)',
         href: 'https://www.govinfo.gov/',
-        description: 'Authenticated access to the United States Code, Federal Register, and Code of Federal Regulations.'
+        description: 'Authenticated PDFs of the U.S. Code, Code of Federal Regulations, Federal Register, and congressional documents.'
       },
       {
         title: 'Congress.gov',
         href: 'https://www.congress.gov/',
-        description: 'Legislation, committee reports, and bill tracking from the Library of Congress.'
-      }
-    ]
-  },
-  {
-    title: 'Summaries & audio',
-    description: 'Secondary explanations and oral argument recordings for quick orientation.',
-    items: [
-      {
-        title: 'Legal Information Institute (Cornell)',
-        href: 'https://www.law.cornell.edu/',
-        description: 'Plain-language explanations of federal law and Supreme Court decisions.'
+        description: 'Bill text, tracking, and committee activity curated by the Library of Congress.'
       },
       {
-        title: 'Oyez',
-        href: 'https://www.oyez.org/',
-        description: 'Supreme Court case summaries, oral argument audio, and transcripts.'
+        title: 'U.S. Courts',
+        href: 'https://www.uscourts.gov/',
+        description: 'Portal for federal judiciary news, statistics, forms, and nationwide procedural rules.'
       }
     ]
   },
   {
-    title: 'Court data & research',
-    description: 'Analytical tools and free dockets for tracking litigation.',
+    title: 'Case law & docket research',
+    description: 'Free databases for opinions, briefs, and litigation monitoring.',
     items: [
       {
         title: 'CourtListener & RECAP Archive',
         href: 'https://www.courtlistener.com/',
-        description: 'Search opinions and access PACER filings collected through the RECAP project.'
+        description: 'Search millions of federal and state opinions plus PACER filings shared by the RECAP community.'
       },
       {
         title: 'Justia Dockets & Filings',
         href: 'https://dockets.justia.com/',
-        description: 'Aggregated federal docket summaries and filing histories.'
+        description: 'Aggregated docket summaries, party information, and filing histories across federal courts.'
+      },
+      {
+        title: 'Bloomberg Law Dockets (Public Access)',
+        href: 'https://www.bloomberglaw.com/bloomberglaw/dockets',
+        description: 'Limited free searches of state and federal dockets, with alerts and analytics for registered users.'
+      },
+      {
+        title: 'PACER (Public Access to Court Electronic Records)',
+        href: 'https://pacer.uscourts.gov/',
+        description: 'Official federal docket access system for filings, orders, and case-specific updates.'
       }
     ]
   },
   {
-    title: 'Rules & practice guides',
-    description: 'Procedural rules and practitioner-focused materials.',
+    title: 'Learning resources & summaries',
+    description: 'Plain-language explainers, study aids, and audio for doctrine review.',
+    items: [
+      {
+        title: 'Legal Information Institute (Cornell)',
+        href: 'https://www.law.cornell.edu/',
+        description: 'Free, plain-language explanations of federal law, Supreme Court cases, and key legal concepts.'
+      },
+      {
+        title: 'Oyez',
+        href: 'https://www.oyez.org/',
+        description: 'Supreme Court summaries, oral argument audio, and synchronized transcripts.'
+      },
+      {
+        title: 'SCOTUSblog',
+        href: 'https://www.scotusblog.com/',
+        description: 'In-depth reporting, case previews, and expert analysis for Supreme Court matters.'
+      },
+      {
+        title: 'Quimbee Free Resources',
+        href: 'https://www.quimbee.com/resources',
+        description: 'Study outlines, case briefs, and guides covering foundational law school subjects.'
+      }
+    ]
+  },
+  {
+    title: 'Practice guides & professional responsibility',
+    description: 'Guidance on courtroom practice, ethics, and career development.',
     items: [
       {
         title: 'Federal Rules of Civil Procedure',
         href: 'https://www.uscourts.gov/rules-policies/current-rules-practice-procedure',
-        description: 'Official text of the Federal Rules published by the Administrative Office of the U.S. Courts.'
+        description: 'Current federal procedural rules and advisory committee notes.'
       },
       {
-        title: 'Supreme Court Rules',
-        href: 'https://www.supremecourt.gov/ctrules/ctrules.aspx',
-        description: 'Procedural rules governing practice before the Supreme Court.'
+        title: 'Supreme Court Practice Guide (SCOTUS)',
+        href: 'https://www.supremecourt.gov/filingandrules/GuidetoFilingPaidCases.pdf',
+        description: 'Step-by-step instructions for filing paid cases in the Supreme Court of the United States.'
+      },
+      {
+        title: 'ABA Model Rules of Professional Conduct',
+        href: 'https://www.americanbar.org/groups/professional_responsibility/publications/model_rules_of_professional_conduct/',
+        description: 'Ethics rules and commentary adopted by many jurisdictions, hosted by the American Bar Association.'
+      },
+      {
+        title: 'NALP Career Tools',
+        href: 'https://www.nalp.org/careerdevelopment',
+        description: 'Professional development guides and recruiting data for law students and new attorneys.'
+      }
+    ]
+  },
+  {
+    title: 'Access to justice & public interest',
+    description: 'Resources focused on legal aid, pro bono opportunities, and civic education.',
+    items: [
+      {
+        title: 'Legal Services Corporation',
+        href: 'https://www.lsc.gov/',
+        description: 'Nationwide directory of federally funded legal aid programs and justice gap research.'
+      },
+      {
+        title: 'Pro Bono Net',
+        href: 'https://www.probono.net/',
+        description: 'Volunteer opportunities, legal aid tools, and self-help materials for underserved communities.'
+      },
+      {
+        title: 'National Center for State Courts',
+        href: 'https://www.ncsc.org/',
+        description: 'State court forms, self-help portals, and research on improving access to justice.'
+      },
+      {
+        title: 'USA.gov Legal Aid',
+        href: 'https://www.usa.gov/legal-aid',
+        description: 'Government-curated directory of free legal help by topic and location.'
+      }
+    ]
+  },
+  {
+    title: 'Policy, data & legislative analysis',
+    description: 'Nonpartisan research, statistics, and tools for understanding the law’s impact.',
+    items: [
+      {
+        title: 'Congressional Research Service Reports',
+        href: 'https://crsreports.congress.gov/',
+        description: 'In-depth, nonpartisan reports explaining policy issues and legal frameworks for Congress.'
+      },
+      {
+        title: 'Bureau of Justice Statistics',
+        href: 'https://bjs.ojp.gov/',
+        description: 'Data on crime, courts, corrections, and victims from the U.S. Department of Justice.'
+      },
+      {
+        title: 'Pew Charitable Trusts – Public Safety Performance Project',
+        href: 'https://www.pewtrusts.org/en/projects/public-safety-performance-project',
+        description: 'Empirical research on sentencing, corrections, and juvenile justice reform.'
+      },
+      {
+        title: 'National Conference of State Legislatures',
+        href: 'https://www.ncsl.org/',
+        description: 'State policy tracking, 50-state surveys, and legislative research tools.'
       }
     ]
   }
@@ -84,8 +171,8 @@ const groups = [
         <p class="text-sm font-semibold uppercase tracking-wide text-accent">Reference shelf</p>
         <h1 class="text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">Resources</h1>
         <p class="text-lg text-foreground/75">
-          Use these reputable portals to verify doctrine, gather filings, and listen to appellate argument. Each link opens in a
-          new tab and complements the classroom lessons.
+          Explore curated portals for primary law, case tracking, study aids, and access-to-justice efforts. Each link opens in a
+          new tab and complements the classroom lessons and practice tools.
         </p>
       </header>
       <div class="mt-12 space-y-12">
