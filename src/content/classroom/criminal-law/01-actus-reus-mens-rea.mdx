@@ -1,0 +1,90 @@
+---
+title: Actus Reus and Mens Rea Foundations
+description: Examine the physical and mental components of crimes, common drafting patterns, and evidentiary issues in proving culpability.
+module: criminal-law
+moduleTitle: Criminal Law (Substantive)
+order: 1
+estimatedTime: 18 minutes
+objectives:
+  - Distinguish actus reus conduct requirements from attendant circumstances and results.
+  - Compare common-law and Model Penal Code mental states and how they interact with statutory language.
+  - Apply evidentiary tools to prove or rebut the defendant's mental state.
+tags:
+  - criminal law
+  - doctrine
+references:
+  - title: Model Penal Code § 2.01–2.02
+    url: https://www.law.cornell.edu/model-penal-code
+  - title: Wayne R. LaFave, Substantive Criminal Law § 5.2 (3d ed.)
+    url: https://lawcat.berkeley.edu/record/1112889
+---
+
+## Defining the actus reus
+
+The **actus reus** encompasses the voluntary act (or omission where a legal duty exists), attendant circumstances, and sometimes a prohibited result. A voluntary act requires bodily movement guided by the actor's conscious mind; reflexes, convulsions, or movements while unconscious generally do not qualify. Nevertheless, the law recognizes that liability may attach for failing to act when a duty arises from statute, contract, special relationship, voluntary assumption of care, or creation of the risk.
+
+Attendant circumstances are the objective conditions that must exist—such as the value of property or the victim's status. They are part of the actus reus even if the actor need not be aware of them. Result elements, like the death of a victim in homicide, require proof of causation in addition to the physical act.
+
+<Callout kind="note" title="Omissions">
+  Criminal liability for omissions is exceptional. Always identify the source of the legal duty and whether the defendant had the capacity to comply before concluding an omission satisfies the actus reus.
+</Callout>
+
+## Mens rea categories
+
+At common law, crimes were often categorized as intent, knowledge, recklessness, or negligence offenses. The **Model Penal Code (MPC)** clarifies these categories:
+
+- **Purpose**: The actor has the conscious object to engage in the conduct or cause the result.
+- **Knowledge**: The actor is aware that conduct is of a certain nature or that a result is practically certain.
+- **Recklessness**: The actor consciously disregards a substantial and unjustifiable risk, grossly deviating from a law-abiding person's standard.
+- **Negligence**: The actor should be aware of a substantial and unjustifiable risk.
+
+The MPC presumes that a stated mental state applies to all material elements unless otherwise indicated. If a statute is silent, the MPC defaults to recklessness.
+
+## Proving mental states
+
+Direct evidence of intent is rare; prosecutors rely on circumstantial evidence such as statements, conduct before and after the act, or the natural and probable consequences of actions. Defense counsel may counter with evidence of mistake, intoxication (where relevant), or alternative explanations.
+
+Juries receive instructions that align statutory language with mens rea definitions. Trial counsel should scrutinize instructions to ensure they do not dilute the prosecution's burden. On appeal, ambiguous statutes invoke the **rule of lenity**, resolving doubts in favor of the accused.
+
+## Practical analysis steps
+
+1. **Identify each material element** of the statute, classifying it as conduct, circumstance, or result.
+2. **Assign the applicable mental state** by reading the statute carefully and noting whether a term like "knowingly" modifies all subsequent elements.
+3. **Assess proof**: What facts will the prosecution use to infer mental state? What contrary inferences can the defense raise?
+4. **Consider defenses** like mistake of fact or law (if available), voluntary intoxication, or diminished capacity, depending on the jurisdiction.
+
+<Callout kind="info" title="Exam tip">
+  When statutory language is ambiguous—"knowingly sells a controlled substance to a minor"—argue both sides: the prosecution claims knowledge applies to selling only, while the defense contends it applies to the buyer's status as well.
+</Callout>
+
+<Quiz
+  id="criminal-law-actus-reus-mens-rea"
+  questions={[
+    {
+      id: 'omission-duty',
+      prompt: 'Which situation most clearly creates a legal duty that can satisfy the actus reus through omission?',
+      choices: [
+        { id: 'a', label: 'Observing a stranger in peril on a public street.' },
+        { id: 'b', label: 'Failing to rescue after creating the danger through negligent conduct.' },
+        { id: 'c', label: 'Witnessing a crime while off-duty.' },
+        { id: 'd', label: 'Ignoring a voluntary promise to meet a friend for dinner.' }
+      ],
+      answer: 'b',
+      explanation:
+        'A person who creates a risk through their own conduct has a legal duty to mitigate it; failure to act can satisfy the actus reus of an omission-based offense.'
+    },
+    {
+      id: 'mens-rea-scope',
+      prompt: 'Under the Model Penal Code, if a statute requires that a person "knowingly possesses a firearm on school grounds," how is the mental state applied?',
+      choices: [
+        { id: 'a', label: 'Knowledge applies only to the act of possession.' },
+        { id: 'b', label: 'Knowledge applies to possession and to being on school grounds unless the statute specifies otherwise.' },
+        { id: 'c', label: 'Knowledge applies solely to the location element.' },
+        { id: 'd', label: 'Knowledge defaults to recklessness for all elements.' }
+      ],
+      answer: 'b',
+      explanation:
+        'The MPC presumes the stated mental state applies to each material element—here, both possession and the school-grounds circumstance—absent contrary legislative intent.'
+    }
+  ]}
+/>

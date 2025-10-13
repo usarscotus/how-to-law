@@ -1,0 +1,83 @@
+---
+title: Causation in Criminal Law
+description: Analyze factual and legal causation requirements, foreseeability doctrines, and intervening cause arguments in result crimes.
+module: criminal-law
+moduleTitle: Criminal Law (Substantive)
+order: 2
+estimatedTime: 17 minutes
+objectives:
+  - Distinguish actual cause tests from proximate cause analysis.
+  - Evaluate intervening causes and foreseeability in homicide and other result crimes.
+  - Apply causation doctrines to complex fact patterns with multiple actors.
+tags:
+  - criminal law
+  - doctrine
+references:
+  - title: Model Penal Code § 2.03
+    url: https://www.law.cornell.edu/model-penal-code/section-2.03
+  - title: People v. Acosta, 284 Cal. Rptr. 117 (Ct. App. 1991)
+    url: https://law.justia.com/cases/california/court-of-appeal/3d/284/117.html
+---
+
+## Actual cause
+
+Actual cause—sometimes called cause-in-fact—asks whether the defendant's conduct was a but-for cause of the prohibited result. The traditional **but-for test** considers whether the result would have occurred in the absence of the defendant's conduct. In cases with multiple sufficient causes, courts use the **substantial factor** test, treating each independently sufficient cause as actual cause.
+
+The MPC adopts a flexible approach: the defendant is an actual cause if the result would not have occurred but for the conduct, or if the conduct was a sufficient concurrent cause, unless the result is too remote or accidental to have a bearing on culpability.
+
+## Proximate cause
+
+Even when actual cause exists, proximate cause evaluates whether liability should attach as a matter of fairness and policy. Common considerations include:
+
+- **Foreseeability**: Was the result a reasonably foreseeable consequence of the defendant's conduct?
+- **Intervening causes**: Did an intervening event break the causal chain? Dependent (responsive) interventions—like medical treatment—rarely break the chain unless grossly negligent. Independent interventions, such as unrelated third-party acts, are more likely to sever liability if unforeseeable.
+- **Victim contribution**: Voluntary, informed acts by the victim may relieve the defendant if they constitute a superseding cause.
+
+<Callout kind="info" title="Medical care">
+  Negligent medical treatment typically does not break the causal chain unless it is so abnormal that it becomes the sole cause of death. Defendants take victims as they find them.
+</Callout>
+
+## Causation in result crimes
+
+Result crimes like homicide require proof that the defendant caused the victim's death. Prosecutors often rely on expert testimony linking the conduct to the result. Defense strategies include arguing an independent medical condition or intervening act.
+
+In felony-murder, causation can be complex. Some jurisdictions require that the felony set in motion events resulting in death, while others limit liability to killings committed in furtherance of the felony. Always analyze whether the felony continued at the time of the fatal act and whether the person causing death was a felon or a third party.
+
+## Analytical checklist
+
+1. **Identify the result element** and confirm the statute requires causation.
+2. **Apply but-for or substantial factor tests** to determine actual cause.
+3. **Assess proximate cause**: foreseeability, intervening acts, and policy considerations.
+4. **Conclude explicitly** whether causation is satisfied and note alternative arguments.
+
+<Quiz
+  id="criminal-law-causation"
+  questions={[
+    {
+      id: 'substantial-factor',
+      prompt: 'Two assailants independently inflict mortal wounds that together cause the victim\'s immediate death. How should actual cause be analyzed?',
+      choices: [
+        { id: 'a', label: 'Neither assailant is an actual cause because the other would have killed the victim anyway.' },
+        { id: 'b', label: 'Only the first attacker is liable because they acted first.' },
+        { id: 'c', label: 'Both assailants are actual causes under the substantial factor test.' },
+        { id: 'd', label: 'Actual cause is irrelevant when multiple actors are involved.' }
+      ],
+      answer: 'c',
+      explanation:
+        'When multiple independent acts are each sufficient to cause the result, courts treat each as an actual cause using the substantial factor framework.'
+    },
+    {
+      id: 'intervening-cause',
+      prompt: 'A defendant stabs a victim, who receives negligent medical treatment that marginally increases the risk of death. The victim dies. How does proximate cause analysis typically resolve liability?',
+      choices: [
+        { id: 'a', label: 'Negligent medical care is a superseding cause that eliminates liability.' },
+        { id: 'b', label: 'The defendant remains liable because negligent medical care is foreseeable and usually not superseding.' },
+        { id: 'c', label: 'Liability turns exclusively on whether the defendant foresaw negligence at that hospital.' },
+        { id: 'd', label: 'The victim\'s decision to seek treatment always breaks the chain.' }
+      ],
+      answer: 'b',
+      explanation:
+        'Ordinary medical negligence is a foreseeable response to injury and does not ordinarily break the causal chain, so the defendant remains liable.'
+    }
+  ]}
+/>
