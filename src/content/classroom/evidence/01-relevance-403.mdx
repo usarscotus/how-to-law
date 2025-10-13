@@ -1,0 +1,105 @@
+---
+title: Relevance and Rule 403 Balancing
+description: Understand how relevance operates and how judges weigh probative value against prejudice under Rule 403.
+module: evidence
+moduleTitle: Evidence
+order: 1
+estimatedTime: 18 minutes
+objectives:
+  - Distinguish logical and legal relevance under the Federal Rules of Evidence.
+  - Apply the Rule 403 balancing test to common trial scenarios.
+  - Develop arguments for admitting or excluding marginally relevant proof.
+tags:
+  - evidence
+  - trial practice
+references:
+  - title: Federal Rules of Evidence, Rules 401-403
+    url: https://www.law.cornell.edu/rules/fre/rule_403
+  - title: Old Chief v. United States, 519 U.S. 172 (1997)
+    url: https://supreme.justia.com/cases/federal/us/519/172/
+---
+## Logical relevance
+
+Rule 401 defines relevant evidence as any proof that has a tendency to make a fact of consequence more or less probable. Logical
+relevance is a low bar, and most disputes focus on whether the fact is material or whether the inference chain is too attenuated.
+Courts consider the factual context, the proponent's theory of the case, and alternative explanations for the evidence.
+
+- **Materiality** asks whether the fact matters under the substantive law.
+- **Probativeness** asks whether the evidence shifts the probability, even slightly.
+
+<Callout kind="tip" title="Remember the chain of inferences">
+  Map the reasoning step-by-step. If too many speculative leaps are needed, expect a relevance objection.
+</Callout>
+
+## Legal relevance and Rule 403
+
+Even relevant evidence may be excluded when its probative value is substantially outweighed by dangers such as unfair prejudice,
+confusing the issues, misleading the jury, undue delay, wasting time, or needlessly presenting cumulative evidence. Courts weigh:
+
+1. The strength of the connection between the evidence and the fact of consequence.
+2. The availability of alternative evidence that is less prejudicial.
+3. The effectiveness of limiting instructions or redactions to reduce risk.
+4. The potential to inflame jurors or distract from core disputes.
+
+### Case spotlight: *Old Chief*
+
+In *Old Chief*, the Supreme Court held that when the only contested issue is whether a defendant has a prior felony conviction,
+the government must accept a stipulation rather than introduce the name and nature of the prior offense if doing so avoids unfair
+prejudice. The case illustrates how judges compare probative value with the danger of juror misuse.
+
+## Strategic considerations
+
+- Frame your argument around the specific Rule 403 danger at issue, backing it up with concrete examples.
+- Offer less prejudicial alternatives to show reasonableness, such as stipulations, limiting instructions, or redacted exhibits.
+- When opposing exclusion, emphasize the necessity of the evidence for telling a coherent story.
+
+<Quiz
+  id="evidence-relevance-403"
+  questions={[
+    {
+      id: 'rule403',
+      prompt:
+        'Under Rule 403, when should a court exclude relevant evidence due to unfair prejudice?',
+      choices: [
+        { id: 'a', label: 'Whenever the evidence paints the defendant in a negative light.' },
+        {
+          id: 'b',
+          label:
+            'Only when the evidence is both prejudicial and cumulative of other admitted exhibits.'
+        },
+        {
+          id: 'c',
+          label:
+            'When the probative value is substantially outweighed by the danger of unfair prejudice or other listed harms.'
+        },
+        { id: 'd', label: 'Whenever the opposing party raises a timely objection.' }
+      ],
+      answer: 'c',
+      explanation:
+        'Rule 403 authorizes exclusion only when the probative value is substantially outweighed by dangers such as unfair prejudice, confusion, or waste of time.'
+    },
+    {
+      id: 'stipulation',
+      prompt:
+        'What lesson does Old Chief v. United States teach about the Rule 403 balancing test?',
+      choices: [
+        { id: 'a', label: 'Rule 403 never applies to stipulations offered by criminal defendants.' },
+        {
+          id: 'b',
+          label: 'Courts must always admit prior convictions in their entirety for completeness.'
+        },
+        {
+          id: 'c',
+          label: 'If a stipulation provides the same probative value with less prejudice, it can tip the balance toward exclusion.'
+        },
+        {
+          id: 'd',
+          label: 'Rule 403 requires judges to defer to the prosecutor’s narrative choices.'
+        }
+      ],
+      answer: 'c',
+      explanation:
+        'Old Chief emphasized that judges may favor stipulations or alternatives that preserve probative value while minimizing prejudice under Rule 403.'
+    }
+  ]}
+/>
