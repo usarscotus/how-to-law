@@ -1,0 +1,42 @@
+{
+  "name": "how-to-law",
+  "version": "0.0.1",
+  "private": true,
+  "homepage": "https://<USER>.github.io/how-to-law",
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "check": "npm run typecheck",
+    "typecheck": "astro check",
+    "format": "prettier --write ."
+  },
+  "dependencies": {
+    "@astrojs/mdx": "^3.0.0",
+    "@astrojs/react": "^3.0.0",
+    "@astrojs/sitemap": "^3.0.1",
+    "@astrojs/tailwind": "^5.0.0",
+    "@radix-ui/react-popover": "^1.0.7",
+    "astro": "^4.0.0",
+    "clsx": "^2.1.0",
+    "flexsearch": "^0.7.31",
+    "gray-matter": "^4.0.3",
+    "lucide-react": "^0.344.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "zod": "^3.22.4"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.4",
+    "@tailwindcss/typography": "^0.5.19",
+    "@types/node": "^20.11.19",
+    "@types/react": "^18.2.45",
+    "@types/react-dom": "^18.2.18",
+    "autoprefixer": "^10.4.16",
+    "postcss": "^8.4.32",
+    "prettier": "^3.2.5",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5.3.3"
+  }
+}

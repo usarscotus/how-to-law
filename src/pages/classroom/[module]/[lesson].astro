@@ -1,0 +1,58 @@
+---
+import LessonLayout from '../../../layouts/LessonLayout.astro';
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+  const lessons = await getCollection('classroom');
+  return lessons.map((entry) => ({
+    params: {
+      module: entry.data.module,
+      lesson: (entry.data.slug as string | undefined) ?? entry.slug.split('/').pop() ?? entry.slug
+    }
+  }));
+}
+
+const { module, lesson } = Astro.params;
+const lessons = await getCollection('classroom', (entry) => entry.data.module === module);
+const withSlugs = lessons.map((entry) => ({
+  entry,
+  slug: (entry.data.slug as string | undefined) ?? entry.slug.split('/').pop() ?? entry.slug,
+  sortKey: entry.slug
+}));
+const sorted = withSlugs
+  .slice()
+  .sort((a, b) => a.sortKey.localeCompare(b.sortKey));
+const current = sorted.find((item) => item.slug === lesson);
+
+if (!current) {
+  throw Astro.redirect('/how-to-law/classroom/');
+}
+
+const index = sorted.findIndex((item) => item.slug === lesson);
+const prev = index > 0 ? sorted[index - 1] : undefined;
+const next = index < sorted.length - 1 ? sorted[index + 1] : undefined;
+
+const { Content } = await current.entry.render();
+const moduleId = module ?? current.entry.data.module;
+---
+<LessonLayout
+  frontmatter={current.entry.data}
+  moduleId={moduleId}
+  slug={current.slug}
+  prev=
+    {prev
+      ? {
+          title: prev.entry.data.title,
+          url: `/how-to-law/classroom/${moduleId}/${prev.slug}/`
+        }
+      : undefined}
+  next=
+    {next
+      ? {
+          title: next.entry.data.title,
+          url: `/how-to-law/classroom/${moduleId}/${next.slug}/`
+        }
+      : undefined}
+>
+  <Content />
+</LessonLayout>

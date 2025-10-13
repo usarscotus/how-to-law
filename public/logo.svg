@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 40" role="img" aria-label="How to Law logo">
+  <rect x="0" y="4" width="40" height="32" rx="8" fill="#1f2937" />
+  <path d="M12 16h16v4H12zm3 8h10v4H15z" fill="#f8fafc" />
+  <text x="56" y="25" font-family="'Inter', sans-serif" font-size="18" fill="#1f2937" font-weight="600">How to Law</text>
+</svg>

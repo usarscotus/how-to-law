@@ -1,0 +1,130 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ResumeProgress from '../components/ResumeProgress';
+import { getCollection } from 'astro:content';
+import { formatMinutes } from '../lib/utils';
+
+const lessons = await getCollection('classroom');
+const getLessonSlug = (entry: typeof lessons[number]) => (entry.data as Record<string, any>).slug ?? entry.slug;
+const lessonRefs = lessons.map((lesson) => {
+  const lessonSlug = getLessonSlug(lesson);
+  return {
+    id: `${lesson.data.module}-${lessonSlug}`,
+    title: lesson.data.title,
+    url: `/how-to-law/classroom/${lesson.data.module}/${lessonSlug}/`
+  };
+});
+
+const modules = lessons.reduce((acc, lesson) => {
+  const moduleId = lesson.data.module;
+  if (!acc[moduleId]) {
+    acc[moduleId] = {
+      id: moduleId,
+      title: lesson.data.moduleLabel ?? moduleId,
+      lessons: [],
+      totalMinutes: 0
+    };
+  }
+  acc[moduleId].lessons.push(lesson);
+  acc[moduleId].totalMinutes += lesson.data.est_minutes;
+  return acc;
+}, {} as Record<string, { id: string; title: string; lessons: typeof lessons; totalMinutes: number }>);
+---
+<BaseLayout title="How to Law" description="US law fundamentals, remixed for immersive RP worlds.">
+  <section class="bg-gradient-to-b from-background via-background to-card/70">
+    <div class="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:px-8">
+      <div class="grid gap-12 lg:grid-cols-2 lg:items-center">
+        <div class="space-y-6">
+          <p class="text-sm font-semibold uppercase tracking-wide text-accent">Roleplay-ready doctrine</p>
+          <h1 class="text-4xl font-bold text-foreground sm:text-5xl">How to Law</h1>
+          <p class="text-lg text-muted">
+            Learn the fundamentals of United States law with hooks for your tabletop or LARP campaign. We keep the doctrine solid—and spotlight where your world can safely diverge.
+          </p>
+          <div class="flex flex-wrap items-center gap-4">
+            <a
+              href="/how-to-law/classroom/"
+              class="inline-flex items-center justify-center rounded-full bg-accent px-6 py-3 text-base font-semibold text-accent-foreground shadow-subtle transition hover:opacity-90"
+            >
+              Start learning
+            </a>
+            <ResumeProgress client:load lessons={lessonRefs} />
+          </div>
+        </div>
+        <div class="rounded-3xl border border-muted/30 bg-card/80 p-8 shadow-subtle">
+          <h2 class="text-lg font-semibold text-foreground">What you'll explore</h2>
+          <ul class="mt-6 space-y-4 text-sm text-muted">
+            <li class="flex items-start gap-3">
+              <span class="mt-1 inline-flex h-2 w-2 flex-shrink-0 rounded-full bg-accent" aria-hidden />
+              Build literacy across statutes, regulations, and precedent.
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="mt-1 inline-flex h-2 w-2 flex-shrink-0 rounded-full bg-accent" aria-hidden />
+              Toggle RP rule variants without losing legal stakes.
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="mt-1 inline-flex h-2 w-2 flex-shrink-0 rounded-full bg-accent" aria-hidden />
+              Check your understanding with interactive quizzes and flows.
+            </li>
+          </ul>
+          <p class="mt-6 text-xs uppercase tracking-wide text-muted">Fast facts</p>
+          <dl class="mt-2 grid grid-cols-2 gap-4 text-sm">
+            <div>
+              <dt class="text-muted">Modules</dt>
+              <dd class="text-lg font-semibold text-foreground">{Object.keys(modules).length}</dd>
+            </div>
+            <div>
+              <dt class="text-muted">Lessons</dt>
+              <dd class="text-lg font-semibold text-foreground">{lessons.length}</dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="border-t border-muted/20 bg-background">
+    <div class="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:px-8">
+      <h2 class="text-2xl font-semibold text-foreground">Classroom modules</h2>
+      <p class="mt-2 text-muted">Choose a path that fits your campaign timeline.</p>
+      <div class="mt-10 grid gap-8 md:grid-cols-2">
+        {Object.values(modules).map((module) => (
+          <div class="rounded-3xl border border-muted/30 bg-card/70 p-6 shadow-subtle">
+            <div class="flex items-center justify-between">
+              <h3 class="text-xl font-semibold text-foreground">{module.title}</h3>
+              <span class="text-sm text-muted">{module.lessons.length} lessons · {formatMinutes(module.totalMinutes)}</span>
+            </div>
+            <ul class="mt-4 space-y-3 text-sm text-muted">
+              {module.lessons
+                .slice()
+                .sort((a, b) => a.slug.localeCompare(b.slug))
+                .map((lesson) => {
+                  const lessonSlug = getLessonSlug(lesson);
+                  return (
+                    <li class="flex items-center justify-between gap-3">
+                      <span>{lesson.data.title}</span>
+                      <a href={`/how-to-law/classroom/${lesson.data.module}/${lessonSlug}/`} class="text-accent hover:underline text-xs font-semibold">
+                        View
+                      </a>
+                    </li>
+                  );
+                })}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="border-t border-muted/20 bg-card/60">
+    <div class="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:px-8">
+      <h2 class="text-2xl font-semibold text-foreground">Resources for deeper dives</h2>
+      <p class="mt-2 text-muted">Head to the Resources page for curated links to LII, Oyez, Congress.gov, and more.</p>
+      <a
+        href="/how-to-law/resources/"
+        class="mt-6 inline-flex items-center justify-center rounded-full border border-accent/60 bg-accent/10 px-4 py-2 text-sm font-semibold text-accent transition hover:border-accent hover:bg-accent/20"
+      >
+        Explore resources
+      </a>
+    </div>
+  </section>
+</BaseLayout>

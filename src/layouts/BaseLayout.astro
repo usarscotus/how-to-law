@@ -1,0 +1,139 @@
+---
+const {
+  title = 'How to Law',
+  description = 'US law fundamentals, remixed for immersive roleplay worlds.'
+} = Astro.props;
+import ThemeToggle from '../components/ThemeToggle';
+import RpToggle from '../components/RpToggle';
+import MobileNav from '../components/MobileNav';
+
+const navLinks = [
+  { href: '/how-to-law/classroom/', label: 'Classroom' },
+  { href: '/how-to-law/glossary/', label: 'Glossary' },
+  { href: '/how-to-law/resources/', label: 'Resources' },
+  { href: '/how-to-law/search/', label: 'Search' }
+];
+---
+<!DOCTYPE html>
+<html lang="en" class="min-h-full antialiased" data-theme>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <title>{title}</title>
+    <link rel="icon" type="image/svg+xml" href="/how-to-law/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content="/how-to-law/og-image.svg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <script>
+      {`(function(){try{const key='htl:theme';const stored=localStorage.getItem(key);const system=window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';const theme=stored||'system';const resolved=theme==='system'?system:theme;document.documentElement.classList.toggle('dark',resolved==='dark');document.documentElement.setAttribute('data-theme',resolved);}catch(e){}})();`}
+    </script>
+    <slot name="head" />
+    <style is:global>
+      @tailwind base;
+      @tailwind components;
+      @tailwind utilities;
+
+      :root {
+        --bg: #f9fafb;
+        --fg: #0f172a;
+        --muted: #64748b;
+        --ring: #38bdf8;
+        --card: rgba(255, 255, 255, 0.95);
+        --accent: #2563eb;
+        --accent-foreground: #f8fafc;
+      }
+
+      html.dark {
+        --bg: #0b1120;
+        --fg: #e2e8f0;
+        --muted: #94a3b8;
+        --ring: #38bdf8;
+        --card: rgba(15, 23, 42, 0.9);
+        --accent: #60a5fa;
+        --accent-foreground: #0f172a;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        background: var(--bg);
+        color: var(--fg);
+        font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        display: flex;
+        flex-direction: column;
+      }
+
+      a {
+        color: inherit;
+      }
+
+      .prose :where(a):not(:where([class~='not-prose'] *)) {
+        color: var(--accent);
+      }
+
+      .skip-link {
+        position: absolute;
+        top: -40px;
+        left: 0;
+        background: var(--accent);
+        color: var(--accent-foreground);
+        padding: 0.75rem 1rem;
+        z-index: 1000;
+        border-radius: 999px;
+        transition: top 0.2s ease;
+      }
+
+      .skip-link:focus {
+        top: 1rem;
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        *, *::before, *::after {
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+          transition-duration: 0.01ms !important;
+          scroll-behavior: auto !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <a href="#main" class="skip-link">Skip to content</a>
+    <header class="sticky top-0 z-40 border-b border-muted/20 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80">
+      <div class="relative mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-4 sm:px-6 lg:px-8">
+        <a href="/how-to-law/" class="flex items-center gap-3 text-lg font-semibold">
+          <img src="/how-to-law/logo.svg" alt="How to Law" class="h-9 w-auto" />
+          <span class="hidden sm:inline">How to Law</span>
+        </a>
+        <nav aria-label="Primary" class="hidden items-center gap-6 text-sm font-medium md:flex">
+          {navLinks.map((link) => (
+            <a href={link.href} class="hover:text-accent">
+              {link.label}
+            </a>
+          ))}
+        </nav>
+        <div class="flex items-center gap-3">
+          <MobileNav client:load links={navLinks} />
+          <ThemeToggle client:load />
+          <RpToggle client:load />
+        </div>
+      </div>
+    </header>
+    <main id="main" class="flex-1">
+      <slot />
+    </main>
+    <footer class="border-t border-muted/20 bg-background/90">
+      <div class="mx-auto max-w-7xl px-4 py-10 text-sm text-muted sm:px-6 lg:px-8">
+        <p class="font-semibold text-foreground">How to Law</p>
+        <p class="mt-2 max-w-2xl">
+          This project uses real US law except where RP rules provide otherwise. Nothing here is legal advice; always consult a licensed attorney for real-world matters.
+        </p>
+        <p class="mt-6 text-xs">© {new Date().getFullYear()} How to Law RP Studio.</p>
+      </div>
+    </footer>
+  </body>
+</html>
