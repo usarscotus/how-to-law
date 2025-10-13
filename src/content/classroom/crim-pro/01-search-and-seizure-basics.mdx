@@ -1,0 +1,91 @@
+---
+title: Search and Seizure Basics
+description: Ground yourself in the constitutional limits on searches and the key vocabulary used throughout the course.
+module: crim-pro
+moduleTitle: Criminal Procedure
+order: 1
+estimatedTime: 20 minutes
+objectives:
+  - Distinguish between searches, seizures, and consensual encounters.
+  - Apply the probable cause and reasonable suspicion standards to common fact patterns.
+  - Explain how the Fourth Amendment is enforced through suppression and civil remedies.
+tags:
+  - criminal procedure
+  - fourth amendment
+references:
+  - title: Fourth Amendment to the U.S. Constitution
+    url: https://constitution.congress.gov/browse/amendment-4/
+  - title: Katz v. United States, 389 U.S. 347 (1967)
+    url: https://supreme.justia.com/cases/federal/us/389/347/
+---
+
+## When the Fourth Amendment applies
+
+The Fourth Amendment protects people against unreasonable searches and seizures. It is triggered only when government action invades a reasonable expectation of privacy or physically intrudes on persons, houses, papers, or effects for investigative purposes. Purely private action is beyond its scope unless the private actor is acting as a government agent.
+
+Not every encounter is a seizure. A seizure occurs when an officer, by force or show of authority, restrains a person's freedom of movement and a reasonable person would not feel free to leave. Encounters that remain consensual require no objective justification.
+
+## Probable cause and reasonable suspicion
+
+Two core standards govern criminal investigations. **Probable cause** exists when the facts and circumstances would lead a reasonable officer to believe that evidence of a crime will be found in the place to be searched or that a person committed the crime. **Reasonable suspicion** is a lower standard requiring specific, articulable facts suggesting criminal activity. Anonymous tips, informant reliability, and officer experience all matter when assessing these thresholds.
+
+Magistrates evaluate probable cause based on the totality of the circumstances. Warrants must describe with particularity the place to be searched and items to be seized. Officers executing a warrant may search areas where the items described could reasonably be found.
+
+## Scope of searches and seizures
+
+Even when the Fourth Amendment applies, reasonableness is the touchstone. Courts balance the intrusion on individual privacy against the government's interest. The degree of suspicion required rises as the intrusion intensifies: brief stops demand reasonable suspicion, full custodial arrests require probable cause, and a home entry generally needs a warrant supported by probable cause.
+
+Technological surveillance raises special concerns. Under *Katz*, wiretaps or other surveillance that captures conversations require a warrant unless they fall within a recognized exception. Thermal imaging of a home and use of GPS tracking devices typically require warrants because they reveal private details not otherwise exposed to the public.
+
+## Remedies for violations
+
+The principal tool for enforcing the Fourth Amendment is the exclusionary rule, which suppresses unlawfully obtained evidence in criminal trials. Derivative evidence, or "fruit of the poisonous tree," may also be excluded unless an exception—such as independent source, inevitable discovery, or attenuation—applies. Civil remedies, including 42 U.S.C. § 1983 suits, offer another avenue for redress.
+
+<Callout kind="tip" title="Practice pointer">
+  Always identify the government action, the individual's expectation of privacy, the justification asserted, and the available remedies. This structure keeps Fourth Amendment analysis organized.
+</Callout>
+
+<Quiz
+  id="crim-pro-search-basics"
+  questions={[
+    {
+      id: 'expectation-of-privacy',
+      prompt: 'A police officer listens to a suspect\'s conversation by placing an ear against the wall of a shared apartment hallway. Does the Fourth Amendment apply?',
+      choices: [
+        { id: 'a', label: 'Yes, because hallways are always private.' },
+        { id: 'b', label: 'Yes, because there is a reasonable expectation of privacy in the conversation.' },
+        { id: 'c', label: 'No, because the officer used only unenhanced senses in a public space.' },
+        { id: 'd', label: 'No, because the officer had probable cause.' }
+      ],
+      answer: 'c',
+      explanation:
+        'Listening with unenhanced senses from a common hallway is generally not a search; the Fourth Amendment is not triggered.'
+    },
+    {
+      id: 'probable-cause-standard',
+      prompt: 'Probable cause for a search warrant requires which showing?',
+      choices: [
+        { id: 'a', label: 'Proof beyond a reasonable doubt that contraband is present.' },
+        { id: 'b', label: 'A fair probability that evidence will be found in the place described.' },
+        { id: 'c', label: 'Specific facts creating reasonable suspicion.' },
+        { id: 'd', label: 'An admission by the suspect.' }
+      ],
+      answer: 'b',
+      explanation:
+        'Probable cause means a fair probability that contraband or evidence is in the specified location.'
+    },
+    {
+      id: 'exclusionary-rule',
+      prompt: 'Which statement best describes the exclusionary rule?',
+      choices: [
+        { id: 'a', label: 'It automatically dismisses all charges when a violation occurs.' },
+        { id: 'b', label: 'It suppresses unlawfully obtained evidence and may extend to derivative evidence.' },
+        { id: 'c', label: 'It allows civil damages but never affects criminal cases.' },
+        { id: 'd', label: 'It applies only in federal court.' }
+      ],
+      answer: 'b',
+      explanation:
+        'Suppression of illegally obtained evidence is the central Fourth Amendment remedy, subject to exceptions.'
+    }
+  ]}
+/>

@@ -1,0 +1,107 @@
+---
+title: Warrants and Their Exceptions
+description: Learn the warrant requirement, how to obtain one, and the major exceptions that allow warrantless searches.
+module: crim-pro
+moduleTitle: Criminal Procedure
+order: 2
+estimatedTime: 22 minutes
+objectives:
+  - Outline the procedural steps for securing and executing a valid warrant.
+  - Compare the doctrinal requirements for key warrant exceptions.
+  - Evaluate whether suppression applies when officers rely on defective warrants.
+tags:
+  - criminal procedure
+  - fourth amendment
+references:
+  - title: Illinois v. Gates, 462 U.S. 213 (1983)
+    url: https://supreme.justia.com/cases/federal/us/462/213/
+  - title: Riley v. California, 573 U.S. 373 (2014)
+    url: https://supreme.justia.com/cases/federal/us/573/373/
+---
+
+## Obtaining a warrant
+
+A warrant must be issued by a neutral and detached magistrate, based on probable cause supported by oath or affirmation, and must particularly describe the place to be searched and the items or persons to be seized. Officers may rely on affidavits incorporating hearsay, provided the totality of the circumstances establishes probable cause. When time is limited, telephonic or electronic warrants are often available, but officers must still document the probable cause showing and comply with statutory requirements.
+
+The warrant must be executed within the time period authorized and typically during daytime hours unless good cause justifies a nighttime search. Officers must knock and announce their presence absent reasonable suspicion that doing so would be dangerous, futile, or compromise the investigation.
+
+## Major exceptions to the warrant requirement
+
+Because reasonableness is the benchmark, courts recognize several carefully defined exceptions that permit warrantless action when probable cause and exigencies align.
+
+### Exigent circumstances
+
+Imminent threats to life, risk of serious injury, hot pursuit of a fleeing felon, or the imminent destruction of evidence can justify entering a home without a warrant. Once the exigency ends, officers must leave unless another justification arises.
+
+### Search incident to arrest
+
+Following a lawful custodial arrest, officers may search the arrestee and the grab area for weapons or evidence. In vehicle contexts, the search is limited to areas within the arrestee's reach or when it is reasonable to believe the vehicle contains evidence of the offense of arrest. Digital data on cell phones requires a warrant absent exigent circumstances.
+
+### Automobile exception
+
+If officers have probable cause that a vehicle contains contraband or evidence, they may search it without a warrant due to the inherent mobility of vehicles. The search extends to containers within the vehicle that could hold the object of the search.
+
+### Consent
+
+Voluntary consent by someone with actual or apparent authority eliminates the warrant requirement and probable cause. Consent can be revoked or limited. Co-occupants present and objecting to the search can override consent given by another resident for shared spaces.
+
+### Plain view
+
+Officers lawfully present may seize evidence in plain view when its incriminating nature is immediately apparent and they have lawful access to the object.
+
+### Inventory, administrative, and special-needs searches
+
+Impounded vehicles, incarcerated persons, and regulated industries may be subject to standardized inventory or administrative searches. Schools and border crossings also operate under modified standards when the government's needs outweigh privacy interests.
+
+## Good-faith reliance and suppression
+
+Even if a warrant is later found defective, evidence may be admitted if officers acted in objectively reasonable reliance on the warrant, barring circumstances such as knowing falsehoods in the affidavit or a magistrate wholly abandoning a neutral role. For warrantless searches, officers must articulate facts supporting the exception; failure to do so may lead to suppression unless an exception to the exclusionary rule, like inevitable discovery, applies.
+
+<Callout kind="tip" title="Checklist before suppressing">
+  Confirm: (1) government action, (2) reasonable expectation of privacy or trespass, (3) lack of valid warrant or exception, and (4) no attenuation or good-faith escape valve.
+</Callout>
+
+<Quiz
+  id="crim-pro-warrants-exceptions"
+  questions={[
+    {
+      id: 'consent-scope',
+      prompt: 'Officers obtain voluntary consent from a homeowner to search the living room. Which statement is accurate?',
+      choices: [
+        { id: 'a', label: 'Consent automatically extends to all rooms in the house.' },
+        { id: 'b', label: 'Officers may search the living room and any areas the homeowner expressly authorized.' },
+        { id: 'c', label: 'Consent is invalid unless given in writing.' },
+        { id: 'd', label: 'Consent requires probable cause plus exigent circumstances.' }
+      ],
+      answer: 'b',
+      explanation:
+        'Consent can be limited; officers must stay within the scope authorized by the consenting party.'
+    },
+    {
+      id: 'auto-exception',
+      prompt: 'Under the automobile exception, officers with probable cause to believe drugs are hidden in a car may:',
+      choices: [
+        { id: 'a', label: 'Search the vehicle immediately without a warrant.' },
+        { id: 'b', label: 'Only detain the car until a warrant issues.' },
+        { id: 'c', label: 'Search the car only if the driver consents.' },
+        { id: 'd', label: 'Search the car only after arresting all occupants.' }
+      ],
+      answer: 'a',
+      explanation:
+        'Probable cause plus the vehicle’s mobility justifies a warrantless search of areas that could contain the object sought.'
+    },
+    {
+      id: 'good-faith',
+      prompt: 'Evidence seized under a warrant later invalidated for lack of probable cause may still be admitted when:',
+      choices: [
+        { id: 'a', label: 'Officers acted in objectively reasonable reliance on the warrant.' },
+        { id: 'b', label: 'The defendant testifies at trial.' },
+        { id: 'c', label: 'The warrant lacked particularity on its face.' },
+        { id: 'd', label: 'The magistrate was not neutral.' }
+      ],
+      answer: 'a',
+      explanation:
+        'The good-faith exception preserves evidence unless officers were reckless, dishonest, or relied on a rubber-stamp magistrate.'
+    }
+  ]}
+/>
