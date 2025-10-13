@@ -17,7 +17,7 @@ How to Law is a static Astro v4 site that teaches United States legal fundamenta
 2. (Optional) export `ASTRO_SITE=https://<USER>.github.io/how-to-law` before building, or edit `astro.config.mjs` to point at your custom domain/base.
 3. `npm run dev`
 4. Commit and push to `main`
-5. Ensure GitHub Pages is set to deploy from the `gh-pages` branch (the provided workflow handles publishing)
+5. Ensure GitHub Pages is set to deploy from the `gh-pages` branch (the provided workflow handles publishing and drops a `.nojekyll` file so the generated `_astro` assets are served correctly)
 6. Hosting at another base path? Update `site` and `base` in `astro.config.mjs`
 
 ## Scripts
