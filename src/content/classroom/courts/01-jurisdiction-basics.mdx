@@ -1,52 +1,58 @@
 ---
-title: Subject-Matter vs. Personal Jurisdiction
-description: Courts must have power over the type of case and the parties before issuing binding judgments.
+title: Jurisdiction Basics
+slug: jurisdiction-basics
 module: courts
-moduleTitle: Courts & Jurisdiction
-order: 1
-estimatedTime: 15 minutes
+moduleLabel: Courts & Jurisdiction
+level: introductory
+est_minutes: 12
+summary: Courts need both subject-matter jurisdiction over the dispute and personal jurisdiction over the parties before they may issue binding judgments.
 objectives:
-  - Define subject-matter jurisdiction and explain its nonwaivable character.
-  - Outline the constitutional and statutory foundations of personal jurisdiction.
-  - Apply the minimum contacts analysis to determine whether asserting jurisdiction is fair.
+  - Define subject-matter jurisdiction and explain why parties cannot waive it.
+  - Describe how personal jurisdiction arises from state long-arm statutes and constitutional due process limits.
+  - Compare general and specific jurisdiction when evaluating a defendant’s contacts with the forum.
+prereqs:
+  - what-is-law
+  - sources-of-law
 tags:
   - jurisdiction
-  - civil procedure
-references:
-  - title: 28 U.S.C. § 1331
-    url: https://www.law.cornell.edu/uscode/text/28/1331
+  - civil-procedure
+quiz:
+  - id: courts-jurisdiction-basics
+    prompt: What must a plaintiff show to establish specific personal jurisdiction over an out-of-state corporation?
+    options:
+      - The corporation maintains its principal place of business in the forum state.
+      - The corporation’s forum contacts give rise to the claim and asserting jurisdiction is consistent with fair play and substantial justice.
+      - The corporation has registered to do business anywhere in the United States.
+      - The corporation’s executives travel through the forum state once a year.
+    answer: The corporation’s forum contacts give rise to the claim and asserting jurisdiction is consistent with fair play and substantial justice.
+    explanation: Specific jurisdiction turns on purposeful forum contacts connected to the dispute and a fairness assessment rooted in due process.
+further_reading:
+  - title: International Shoe Co. v. Washington, 326 U.S. 310 (1945)
+    url: https://supreme.justia.com/cases/federal/us/326/310/
 ---
-## Subject-matter jurisdiction
+A court cannot adjudicate a dispute unless it has subject-matter jurisdiction. Federal district courts are tribunals of limited jurisdiction: Article III and statutes like 28 U.S.C. § 1331 authorize them to hear federal question cases, diversity suits exceeding the amount-in-controversy threshold, and certain specialized matters. If jurisdiction is absent, the court must dismiss at any time, even if the parties wish to proceed.
 
-Subject-matter jurisdiction is the power of a court to hear a particular type of dispute. Federal courts have limited jurisdiction: they may hear cases arising under federal law, controversies between citizens of different states exceeding the statutory amount in controversy, and certain specialized matters. Because subject-matter jurisdiction stems from Article III and federal statutes, parties cannot create it by agreement. A court lacking subject-matter jurisdiction must dismiss the case at any stage.
+Personal jurisdiction addresses the court’s authority over particular defendants. Federal courts typically borrow the personal jurisdiction rules of the state in which they sit, subject to due process limits. A state’s long-arm statute identifies the contacts—such as transacting business, committing a tort, or owning property—that allow courts to exercise power over nonresidents.
 
-<Callout kind="note" title="Checking federal question jurisdiction">
-  A case arises under federal law when the plaintiff's well-pleaded complaint establishes a right to relief under federal statutes or the Constitution. Anticipated defenses do not create jurisdiction.
-</Callout>
+Due process requires that exercising jurisdiction comport with traditional notions of fair play and substantial justice. Defendants with continuous and systematic contacts may be subject to general jurisdiction, permitting suit on any claim. More commonly, litigants rely on specific jurisdiction: the plaintiff must show that the dispute arises out of or relates to the defendant’s purposeful forum contacts and that asserting jurisdiction is reasonable.
 
-## Personal jurisdiction
-
-Personal jurisdiction concerns a court's authority to bind specific defendants. In federal court, personal jurisdiction usually tracks the law of the state where the District Court sits, subject to constitutional due process limits. States use long-arm statutes to reach defendants who have certain connections with the forum.
-
-The Due Process Clause requires that a defendant have sufficient minimum contacts with the forum such that exercising jurisdiction does not offend traditional notions of fair play and substantial justice. Contacts may support **general jurisdiction**, allowing suits on any claim, or **specific jurisdiction**, tied to the defendant's forum-related conduct.
-
-Courts evaluate purposeful availment, foreseeability, and fairness factors when assessing specific jurisdiction. A defendant may consent to personal jurisdiction by appearing and not objecting, but subject-matter jurisdiction cannot be waived.
+Strategic litigators evaluate both forms of jurisdiction at the outset. A defendant who lacks minimum contacts should timely object, or risk consenting by appearing without raising the issue. Conversely, subject-matter jurisdiction cannot be waived; even a final judgment may be vacated if the court lacked power to hear the case.
 
 <Quiz
-  id="courts-jurisdiction"
+  id="courts-jurisdiction-basics"
   questions={[
     {
-      id: 'minimum-contacts',
-      prompt: 'Which statement best captures the difference between subject-matter and personal jurisdiction?',
+      id: 'specific-jurisdiction',
+      prompt: 'What must a plaintiff show to establish specific personal jurisdiction over an out-of-state corporation?',
       choices: [
-        { id: 'a', label: 'Subject-matter jurisdiction can be waived, but personal jurisdiction cannot.' },
-        { id: 'b', label: 'Personal jurisdiction derives from the Constitution, while subject-matter jurisdiction is purely statutory.' },
-        { id: 'c', label: 'Subject-matter jurisdiction concerns the court’s power over the case type; personal jurisdiction concerns its power over particular parties.' },
-        { id: 'd', label: 'Only personal jurisdiction is reviewed on appeal.' }
+        { id: 'a', label: 'The corporation maintains its principal place of business in the forum state.' },
+        { id: 'b', label: 'The corporation’s forum contacts give rise to the claim and asserting jurisdiction is consistent with fair play and substantial justice.' },
+        { id: 'c', label: 'The corporation has registered to do business anywhere in the United States.' },
+        { id: 'd', label: 'The corporation’s executives travel through the forum state once a year.' }
       ],
-      answer: 'c',
+      answer: 'b',
       explanation:
-        'Subject-matter jurisdiction addresses the class of cases a court may hear, while personal jurisdiction addresses whether it may bind the parties before it.'
+        'Specific jurisdiction turns on purposeful forum contacts connected to the dispute and a fairness assessment rooted in due process.'
     }
   ]}
 />

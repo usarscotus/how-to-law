@@ -1,60 +1,65 @@
 ---
 title: Supreme Court Practice Overview
-description: Effective Supreme Court advocacy requires careful attention to jurisdiction, standards of review, and persuasive briefing.
+slug: scotus-practice-overview
 module: scotus-practice
-moduleTitle: Appellate & Supreme Court Practice
-order: 1
-estimatedTime: 18 minutes
+moduleLabel: Supreme Court Practice
+level: intermediate
+est_minutes: 18
+summary: Supreme Court advocacy demands mastery of jurisdictional gateways, certiorari strategy, and merits briefing tailored to the Court’s institutional role.
 objectives:
-  - Describe the Supreme Court’s discretionary docket and jurisdictional bases.
-  - Outline the timeline for preparing a petition for a writ of certiorari.
-  - Identify the essential components of merits briefing and oral argument preparation.
+  - Identify the statutory and prudential requirements for invoking the Supreme Court’s jurisdiction.
+  - Outline the stages of a Supreme Court case from judgment below through opinion issuance.
+  - Evaluate strategic considerations that influence whether and how to seek certiorari.
+prereqs:
+  - what-is-law
+  - sources-of-law
+  - precedent-and-hierarchy
+  - jurisdiction-basics
 tags:
-  - appellate practice
-  - supreme court
-references:
-  - title: Supreme Court Rule 10
-    url: https://www.supremecourt.gov/ctrules/2019RulesoftheCourt.pdf
+  - supreme-court
+  - appellate
+  - strategy
+quiz:
+  - id: scotus-practice-overview
+    prompt: Why do most petitions for certiorari fail even when the lower court may be wrong?
+    options:
+      - The Supreme Court lacks statutory authority to correct legal errors.
+      - The Court focuses on cases presenting important federal questions or conflicts, not routine error correction.
+      - Petitioners must obtain unanimous consent from the Solicitor General before filing.
+      - Denials automatically signal that the Court agrees with the lower court’s reasoning.
+    answer: The Court focuses on cases presenting important federal questions or conflicts, not routine error correction.
+    explanation: Certiorari is discretionary; the Court selects cases with national significance, splits, or institutional importance rather than simply correcting every mistake.
+further_reading:
+  - title: Supreme Court Practice (11th ed.) – Stern & Gressman
+    url: https://store.americanbar.org/s/Product/supreme-court-practice-eleventh-edition/187239
 ---
-## Jurisdiction and docket control
+The Supreme Court sits at the apex of the federal judiciary, exercising limited original jurisdiction and broad but discretionary appellate jurisdiction. Understanding how a case reaches the Court is the first step in developing an advocacy plan. In this project, appeals from the District Court go directly to the Supreme Court.
 
-The Supreme Court exercises appellate jurisdiction over cases arising from federal courts and state courts that decide federal questions. Most cases arrive by petition for a writ of certiorari, which the Court grants only when important federal questions or conflicts among lower courts warrant review. The Court also retains limited original jurisdiction over disputes between states.
+Two statutory pathways matter most in federal practice. Title 28 U.S.C. § 1254 governs review of federal courts of appeals through certiorari or certified questions. Section 1257 covers review of final judgments from the highest state courts when federal issues are implicated. Even when the statute authorizes review, the Court typically requires a final judgment below and a properly preserved federal question.
 
-<Callout kind="note" title="Project assumption">
-  In this project, appeals from the District Court go directly to the Supreme Court.
-</Callout>
+The petition for certiorari is the gatekeeper. Rule 10 explains that the Court grants review to resolve conflicts among circuits or state high courts, address important federal questions, or correct egregious departures from accepted jurisprudence. Advocates frame the question presented to highlight the broader implications beyond the parties’ dispute.
 
-Rule 10 explains the considerations for granting certiorari. The Court is more likely to grant review when lower courts disagree on a question of federal law, when a lower court has decided an important question in a way that conflicts with Supreme Court precedent, or when a federal court has departed markedly from accepted judicial procedures.
+Once the Court grants certiorari, the case follows a disciplined schedule. Parties submit merits briefs, the respondent may raise justiciability defenses like standing or mootness, and amici curiae offer additional perspectives. Oral argument provides the Justices with an opportunity to test doctrinal limits and policy consequences. After argument, the Court conferences, assigns opinions, and issues a written decision that binds all lower courts.
 
-## Petition practice
+Effective Supreme Court advocates tailor arguments to the institution. They confront adverse precedent directly, marshal statutory text and history, and anticipate questions about federalism and separation of powers. They also consider whether alternative vehicles—such as waiting for a circuit split to deepen—might produce a stronger petition.
 
-The party seeking review files a petition for a writ of certiorari within 90 days of the judgment below. The petition should succinctly identify the question presented, relevant facts, procedural history, and reasons for granting the writ. The opposing party may file a brief in opposition. Four votes—the Rule of Four—are required to grant certiorari.
-
-<Callout kind="tip" title="Strategic screening">
-  Experienced advocates consult the Court’s docket and cert statistics to gauge the likelihood of review. Narrowing the question presented to one or two issues increases the chance that the Justices will view the case as a suitable vehicle.
-</Callout>
-
-## Merits briefing and argument
-
-If the Court grants certiorari, the case proceeds to merits briefing. The petitioner files the opening brief, followed by the respondent’s brief and any reply. Amicus curiae submissions can provide additional perspectives but must comply with Rule 37. Briefs should focus on the governing precedent, policy implications, and institutional concerns.
-
-Oral argument typically occurs several months after briefing. Advocates should be prepared to answer questions on doctrinal nuance, practical consequences, and the appropriate standard of review. Following argument, the Justices conference and assign an opinion author.
+Finally, counsel must manage the record. The Court rarely entertains new evidence; its review is limited to the materials produced below. Preserving objections, framing the constitutional question cleanly, and aligning the remedy with the Court’s institutional concerns can make the difference between a grant and a denial.
 
 <Quiz
-  id="scotus-overview"
+  id="scotus-practice-overview"
   questions={[
     {
       id: 'certiorari',
-      prompt: 'How many Justices must vote to grant a petition for a writ of certiorari?',
+      prompt: 'Why do most petitions for certiorari fail even when the lower court may be wrong?',
       choices: [
-        { id: 'a', label: 'Five, a simple majority of the Court.' },
-        { id: 'b', label: 'Four, under the longstanding Rule of Four.' },
-        { id: 'c', label: 'Six, because a supermajority is required to control the docket.' },
-        { id: 'd', label: 'One, provided the Chief Justice supports review.' }
+        { id: 'a', label: 'The Supreme Court lacks statutory authority to correct legal errors.' },
+        { id: 'b', label: 'The Court focuses on cases presenting important federal questions or conflicts, not routine error correction.' },
+        { id: 'c', label: 'Petitioners must obtain unanimous consent from the Solicitor General before filing.' },
+        { id: 'd', label: 'Denials automatically signal that the Court agrees with the lower court’s reasoning.' }
       ],
       answer: 'b',
       explanation:
-        'The Supreme Court follows the Rule of Four, meaning four Justices may vote to grant certiorari even if a majority is not yet prepared to reverse.'
+        'Certiorari is discretionary; the Court selects cases with national significance, splits, or institutional importance rather than simply correcting every mistake.'
     }
   ]}
 />
