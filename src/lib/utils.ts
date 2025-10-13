@@ -1,3 +1,4 @@
+import type { CollectionEntry } from 'astro:content';
 import terms from '~/content/glossary/terms.json';
 
 export type ModuleMeta = {
@@ -83,4 +84,18 @@ export function formatNumber(value: number, options: Intl.NumberFormatOptions = 
     maximumFractionDigits: 0,
     ...options
   }).format(value);
+}
+
+export function getLessonOrder(entry: CollectionEntry<'classroom'>): number {
+  if (typeof entry.data.order === 'number') {
+    return entry.data.order;
+  }
+
+  const slugPart = entry.slug.split('/').pop() ?? '';
+  const match = slugPart.match(/^(\d+)/);
+  if (match) {
+    return Number.parseInt(match[1], 10);
+  }
+
+  return Number.MAX_SAFE_INTEGER;
 }

@@ -34,9 +34,13 @@ const {
 
 const { Content, headings } = await entry.render();
 const lessonTitle = entry.data.title;
-const description = entry.data.description;
+const description = entry.data.description ?? entry.data.summary ?? 'No description available.';
 const progressValue = Math.round((position / totalLessons) * 100);
-const estimatedTime = entry.data.estimatedTime;
+const estimatedTime =
+  entry.data.estimatedTime ??
+  (typeof entry.data.est_minutes === 'number'
+    ? `${entry.data.est_minutes} minute${entry.data.est_minutes === 1 ? '' : 's'}`
+    : 'Time estimate unavailable');
 const breadcrumbItems = [
   { label: 'Home', href: '/how-to-law/' },
   { label: 'Classroom', href: '/how-to-law/classroom/' },

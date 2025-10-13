@@ -1,7 +1,7 @@
 ---
 import LessonLayout from '~/layouts/LessonLayout.astro';
 import { getCollection } from 'astro:content';
-import { getModuleMeta } from '~/lib/utils';
+import { getLessonOrder, getModuleMeta } from '~/lib/utils';
 
 export async function getStaticPaths() {
   const lessons = await getCollection('classroom');
@@ -17,7 +17,7 @@ const { module, lesson } = Astro.params;
 const lessons = await getCollection('classroom');
 const moduleLessons = lessons
   .filter((entry) => entry.slug.startsWith(`${module}/`))
-  .sort((a, b) => a.data.order - b.data.order);
+  .sort((a, b) => getLessonOrder(a) - getLessonOrder(b));
 
 const entry = moduleLessons.find((item) => item.slug.split('/')[1] === lesson);
 if (!entry) {
@@ -25,10 +25,11 @@ if (!entry) {
 }
 
 const index = moduleLessons.findIndex((item) => item.id === entry.id);
+const fallbackModuleTitle = entry.data.moduleTitle ?? entry.data.moduleLabel ?? entry.data.module;
 const moduleMeta = getModuleMeta(module ?? entry.data.module) ?? {
   id: entry.data.module,
-  title: entry.data.moduleTitle,
-  description: entry.data.moduleTitle
+  title: fallbackModuleTitle,
+  description: fallbackModuleTitle
 };
 
 const prevEntry = index > 0 ? moduleLessons[index - 1] : undefined;
