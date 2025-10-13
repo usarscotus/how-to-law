@@ -61,6 +61,11 @@
     "def": "Foundational legal charter establishing government structure and protecting individual rights."
   },
   {
+    "id": "chevron-deference",
+    "term": "Chevron deference",
+    "def": "Doctrine requiring courts to defer to a reasonable agency interpretation of an ambiguous statute the agency administers."
+  },
+  {
     "id": "deference",
     "term": "deference",
     "def": "Judicial respect for the decisions or interpretations of another branch or decision maker."
@@ -106,6 +111,16 @@
     "def": "Constitutional division of authority between the federal government and the states."
   },
   {
+    "id": "judicial-deference",
+    "term": "judicial deference",
+    "def": "Principle that courts give weight to coordinate branches or agencies when evaluating their actions or interpretations."
+  },
+  {
+    "id": "judicial-review",
+    "term": "judicial review",
+    "def": "Authority of courts to invalidate government action that conflicts with the Constitution or governing law."
+  },
+  {
     "id": "final-judgment",
     "term": "final judgment rule",
     "def": "Doctrine limiting appellate review to decisions that resolve all claims for all parties."
@@ -116,6 +131,11 @@
     "def": "Overall progression of a matter from investigation through final resolution."
   },
   {
+    "id": "celotex",
+    "term": "Celotex Corp. v. Catrett",
+    "def": "1986 Supreme Court decision clarifying that summary judgment is appropriate when the nonmoving party lacks evidence on an essential element."
+  },
+  {
     "id": "holding",
     "term": "holding",
     "def": "Legal principle necessary to resolve the dispute before the court."
@@ -124,6 +144,16 @@
     "id": "injunction",
     "term": "injunction",
     "def": "Court order directing a party to do or refrain from doing a specific act."
+  },
+  {
+    "id": "marbury-v-madison",
+    "term": "Marbury v. Madison",
+    "def": "1803 Supreme Court decision establishing the judiciary's power to review and invalidate unconstitutional government actions."
+  },
+  {
+    "id": "brown-v-board",
+    "term": "Brown v. Board of Education",
+    "def": "1954 Supreme Court decision holding that racial segregation in public schools violates the Equal Protection Clause."
   },
   {
     "id": "jurisdiction",
@@ -141,6 +171,16 @@
     "def": "Mental state required as an element of a crime, such as intent or knowledge."
   },
   {
+    "id": "miranda-v-arizona",
+    "term": "Miranda v. Arizona",
+    "def": "1966 Supreme Court decision requiring warnings before custodial interrogation to protect the Fifth Amendment privilege."
+  },
+  {
+    "id": "terry-v-ohio",
+    "term": "Terry v. Ohio",
+    "def": "1968 Supreme Court decision permitting brief investigatory stops and frisks based on reasonable suspicion."
+  },
+  {
     "id": "notice",
     "term": "notice",
     "def": "Information that informs a person of legal proceedings or obligations affecting them."
@@ -154,6 +194,11 @@
     "id": "personal-jurisdiction",
     "term": "personal jurisdiction",
     "def": "Court's power to render a judgment affecting a particular defendant's rights or obligations."
+  },
+  {
+    "id": "exclusionary-rule",
+    "term": "exclusionary rule",
+    "def": "Judicially created remedy that suppresses evidence obtained in violation of constitutional rights."
   },
   {
     "id": "plea-bargain",
@@ -185,6 +230,16 @@
     "id": "remedies",
     "term": "remedies",
     "def": "Legal or equitable relief provided to address a violation of rights."
+  },
+  {
+    "id": "daubert",
+    "term": "Daubert standard",
+    "def": "Test for admitting expert testimony that examines methodology, testing, error rates, and peer review."
+  },
+  {
+    "id": "ebay-v-mercexchange",
+    "term": "eBay v. MercExchange",
+    "def": "2006 Supreme Court case articulating the four-factor test for permanent injunctions that applies across equity."
   },
   {
     "id": "rule-of-law",

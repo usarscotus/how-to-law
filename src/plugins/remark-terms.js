@@ -69,6 +69,8 @@ export default function remarkTerms() {
       return;
     }
 
+    const seen = new Set();
+
     visit(tree, 'text', (node, index, parent) => {
       if (!parent || typeof index !== 'number') return;
       if (
@@ -103,18 +105,23 @@ export default function remarkTerms() {
         if (start > lastIndex) {
           segments.push({ type: 'text', value: value.slice(lastIndex, start) });
         }
-        segments.push({
-          type: 'mdxJsxTextElement',
-          name: 'Term',
-          attributes: [
-            {
-              type: 'mdxJsxAttribute',
-              name: 'id',
-              value: termId
-            }
-          ],
-          children: [{ type: 'text', value: matched }]
-        });
+        if (seen.has(termId)) {
+          segments.push({ type: 'text', value: matched });
+        } else {
+          seen.add(termId);
+          segments.push({
+            type: 'mdxJsxTextElement',
+            name: 'Term',
+            attributes: [
+              {
+                type: 'mdxJsxAttribute',
+                name: 'id',
+                value: termId
+              }
+            ],
+            children: [{ type: 'text', value: matched }]
+          });
+        }
         lastIndex = start + matched.length;
       }
 
