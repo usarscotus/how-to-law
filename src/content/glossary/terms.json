@@ -1,294 +1,1618 @@
 [
   {
+    "id": "adequate-and-independent-state-grounds",
+    "term": "adequate and independent state grounds",
+    "def": "Doctrine barring Supreme Court review when state judgment rests on independent state law grounds adequate to support decision.",
+    "cite": "Michigan v. Long (1983)"
+  },
+  {
+    "id": "administrative-search",
+    "term": "administrative search",
+    "def": "Regulatory inspection requiring reasonableness balancing rather than individualized probable cause.",
+    "cite": "Camara (1967)"
+  },
+  {
+    "id": "admissibility",
+    "term": "admissibility",
+    "def": "Threshold question whether evidence may be considered by the factfinder."
+  },
+  {
     "id": "adversary-system",
     "term": "adversary system",
-    "def": "Structure of litigation in which opposing parties present evidence and arguments before a neutral decision maker."
+    "def": "Structure of litigation where opposing parties present evidence before a neutral decision maker."
   },
   {
-    "id": "administrative-law",
-    "term": "administrative law",
-    "def": "Body of law governing the creation, operation, and review of actions by administrative agencies."
+    "id": "affirmative-defense",
+    "term": "affirmative defense",
+    "def": "Defense requiring defendant to produce evidence to avoid liability despite proven elements of the offense."
   },
   {
-    "id": "appellate-review",
-    "term": "appellate review",
-    "def": "Examination of a lower tribunal's decision by a higher court for legal error.",
-    "aliases": ["appeal"]
+    "id": "aggravating-circumstance",
+    "term": "aggravating circumstance",
+    "def": "Fact increasing sentencing range or penalty severity, often needing jury finding beyond a reasonable doubt.",
+    "cite": "Ring (2002)"
   },
   {
-    "id": "article-iii",
-    "term": "Article III",
-    "def": "Constitutional article establishing the federal judicial branch and defining the limits of federal judicial power."
+    "id": "aiding-and-abetting",
+    "term": "aiding and abetting",
+    "def": "Intentionally assisting or encouraging another to commit a crime, creating accomplice liability."
   },
   {
-    "id": "brief",
-    "term": "brief",
-    "def": "Written submission that explains a party's legal and factual arguments to a court."
+    "id": "all-writs-power",
+    "term": "all writs power",
+    "def": "Authority allowing federal courts to issue writs necessary to support their jurisdiction.",
+    "cite": "28 U.S.C. § 1651"
   },
   {
-    "id": "burden-of-proof",
-    "term": "burden of proof",
-    "def": "Obligation of a party to prove a fact or persuade the fact finder of a claim's validity."
+    "id": "alford-plea",
+    "term": "Alford plea",
+    "def": "Guilty plea where defendant maintains innocence but concedes evidence would likely lead to conviction.",
+    "cite": "Alford (1970)"
   },
   {
-    "id": "case-law",
-    "term": "case law",
-    "def": "Judicial decisions that interpret statutes, regulations, and constitutional provisions."
+    "id": "alternative-dispute-resolution",
+    "term": "alternative dispute resolution",
+    "def": "Processes like mediation or arbitration used to resolve disputes outside formal litigation."
   },
   {
-    "id": "certiorari",
-    "term": "certiorari",
-    "def": "Discretionary order by which the Supreme Court agrees to review a lower court's judgment."
+    "id": "amelioration-doctrine",
+    "term": "amelioration doctrine",
+    "def": "Rule allowing retroactive benefit of lighter penalties enacted before final judgment absent contrary legislative intent."
   },
   {
-    "id": "civil-procedure",
-    "term": "civil procedure",
-    "def": "Rules and statutes that govern the process of civil litigation from filing to judgment."
+    "id": "amicus-curiae",
+    "term": "amicus curiae",
+    "def": "Nonparty offering information or argument to assist the court in deciding a case."
   },
   {
-    "id": "common-law",
-    "term": "common law",
-    "def": "Judge-made law developed through precedent rather than enacted legislation."
+    "id": "anti-commandeering",
+    "term": "anti-commandeering",
+    "def": "Principle that Congress cannot require states to enact or administer federal regulatory programs.",
+    "cite": "Printz (1997)"
   },
   {
-    "id": "complaint",
-    "term": "complaint",
-    "def": "Initial pleading in a civil action that states the plaintiff's claims and requests relief."
+    "id": "apparent-authority",
+    "term": "apparent authority",
+    "def": "Belief reasonably induced by principal that agent has authority, binding the principal to agent acts."
   },
   {
-    "id": "constitution",
-    "term": "Constitution",
-    "def": "Foundational legal charter establishing government structure and protecting individual rights."
+    "id": "appeal-as-of-right",
+    "term": "appeal as of right",
+    "def": "Review guaranteed by statute or constitution without need for discretionary permission."
   },
   {
-    "id": "chevron-deference",
-    "term": "Chevron deference",
-    "def": "Doctrine requiring courts to defer to a reasonable agency interpretation of an ambiguous statute the agency administers."
+    "id": "appearance-of-impropriety",
+    "term": "appearance of impropriety",
+    "def": "Ethics standard instructing judges and lawyers to avoid conduct creating perception of misconduct."
   },
   {
-    "id": "deference",
-    "term": "deference",
-    "def": "Judicial respect for the decisions or interpretations of another branch or decision maker."
+    "id": "appellate-standing",
+    "term": "appellate standing",
+    "def": "Requirement that an appealing party show injury from the judgment and a stake in reversal."
   },
   {
-    "id": "discovery",
-    "term": "discovery",
-    "def": "Pretrial process for obtaining evidence from other parties or nonparties."
+    "id": "arbitration",
+    "term": "arbitration",
+    "def": "Binding dispute resolution before a neutral arbitrator whose decision is enforceable like a judgment."
   },
   {
-    "id": "district-court",
-    "term": "District Court",
-    "def": "General federal trial court with original jurisdiction over civil and criminal matters."
+    "id": "arraignment",
+    "term": "arraignment",
+    "def": "Initial court appearance where charges are read and plea is entered."
   },
   {
-    "id": "due-process",
-    "term": "due process",
-    "def": "Constitutional requirement that government procedures be fair and follow established rules."
+    "id": "arrest",
+    "term": "arrest",
+    "def": "Seizure of a person supported by probable cause that a crime was committed."
   },
   {
-    "id": "en-banc",
-    "term": "en banc",
-    "def": "Session in which a full appellate court, rather than a panel, hears and decides a case."
+    "id": "article-iii-standing",
+    "term": "Article III standing",
+    "def": "Need for concrete, particularized injury fairly traceable to defendant and likely redressable by the court.",
+    "cite": "Lujan (1992)"
   },
   {
-    "id": "equitable-relief",
-    "term": "equitable relief",
-    "def": "Nonmonetary remedy such as injunction, declaratory judgment, or specific performance."
+    "id": "attempt",
+    "term": "attempt",
+    "def": "Substantial step toward committing a crime with intent to complete it."
   },
   {
-    "id": "evidence",
-    "term": "evidence",
-    "def": "Testimony, documents, or tangible objects presented to prove or disprove facts at issue."
+    "id": "attenuation-doctrine",
+    "term": "attenuation doctrine",
+    "def": "Exclusionary rule exception when connection between unlawful police conduct and evidence is remote.",
+    "cite": "Brown v. Illinois (1975)"
   },
   {
-    "id": "federal-question",
-    "term": "federal question",
-    "def": "Claim arising under the Constitution, laws, or treaties of the United States."
+    "id": "attractive-nuisance",
+    "term": "attractive nuisance",
+    "def": "Tort doctrine imposing duty to protect child trespassers from dangerous artificial conditions."
   },
   {
-    "id": "federalism",
-    "term": "federalism",
-    "def": "Constitutional division of authority between the federal government and the states."
+    "id": "automobile-exception",
+    "term": "automobile exception",
+    "def": "Warrantless vehicle search allowed with probable cause to believe evidence is inside.",
+    "cite": "Carroll (1925)"
   },
   {
-    "id": "judicial-deference",
-    "term": "judicial deference",
-    "def": "Principle that courts give weight to coordinate branches or agencies when evaluating their actions or interpretations."
+    "id": "bail",
+    "term": "bail",
+    "def": "Security ensuring defendant's appearance in court while allowing release pending proceedings."
   },
   {
-    "id": "judicial-review",
-    "term": "judicial review",
-    "def": "Authority of courts to invalidate government action that conflicts with the Constitution or governing law."
+    "id": "battered-spouse-syndrome",
+    "term": "battered spouse syndrome",
+    "def": "Expert evidence explaining defendant's perception of danger in self-defense cases."
   },
   {
-    "id": "final-judgment",
-    "term": "final judgment rule",
-    "def": "Doctrine limiting appellate review to decisions that resolve all claims for all parties."
+    "id": "bench-trial",
+    "term": "bench trial",
+    "def": "Trial conducted before a judge without a jury."
   },
   {
-    "id": "flow-of-case",
-    "term": "case flow",
-    "def": "Overall progression of a matter from investigation through final resolution."
+    "id": "beyond-a-reasonable-doubt",
+    "term": "beyond a reasonable doubt",
+    "def": "Highest burden of proof requiring near certainty of guilt in criminal cases."
   },
   {
-    "id": "celotex",
-    "term": "Celotex Corp. v. Catrett",
-    "def": "1986 Supreme Court decision clarifying that summary judgment is appropriate when the nonmoving party lacks evidence on an essential element."
+    "id": "bill-of-attainder",
+    "term": "bill of attainder",
+    "def": "Legislative act inflicting punishment without judicial trial, prohibited by the Constitution."
   },
   {
-    "id": "holding",
-    "term": "holding",
-    "def": "Legal principle necessary to resolve the dispute before the court."
+    "id": "bill-of-rights-incorporation",
+    "term": "incorporation",
+    "def": "Process applying Bill of Rights protections to the states through the Fourteenth Amendment.",
+    "cite": "McDonald (2010)"
   },
   {
-    "id": "injunction",
-    "term": "injunction",
-    "def": "Court order directing a party to do or refrain from doing a specific act."
+    "id": "bluebook-citation",
+    "term": "Bluebook citation",
+    "def": "Standardized legal citation format used in U.S. legal writing."
   },
   {
-    "id": "marbury-v-madison",
-    "term": "Marbury v. Madison",
-    "def": "1803 Supreme Court decision establishing the judiciary's power to review and invalidate unconstitutional government actions."
+    "id": "brady-disclosure",
+    "term": "Brady disclosure",
+    "def": "Prosecution duty to disclose material exculpatory evidence to the defense.",
+    "cite": "Brady (1963)"
   },
   {
-    "id": "brown-v-board",
-    "term": "Brown v. Board of Education",
-    "def": "1954 Supreme Court decision holding that racial segregation in public schools violates the Equal Protection Clause."
-  },
-  {
-    "id": "jurisdiction",
-    "term": "jurisdiction",
-    "def": "Power of a court to hear and decide a case."
-  },
-  {
-    "id": "legislative-history",
-    "term": "legislative history",
-    "def": "Materials generated during enactment of a statute that may inform interpretation."
-  },
-  {
-    "id": "mens-rea",
-    "term": "mens rea",
-    "def": "Mental state required as an element of a crime, such as intent or knowledge."
-  },
-  {
-    "id": "miranda-v-arizona",
-    "term": "Miranda v. Arizona",
-    "def": "1966 Supreme Court decision requiring warnings before custodial interrogation to protect the Fifth Amendment privilege."
-  },
-  {
-    "id": "terry-v-ohio",
-    "term": "Terry v. Ohio",
-    "def": "1968 Supreme Court decision permitting brief investigatory stops and frisks based on reasonable suspicion."
-  },
-  {
-    "id": "notice",
-    "term": "notice",
-    "def": "Information that informs a person of legal proceedings or obligations affecting them."
-  },
-  {
-    "id": "original-jurisdiction",
-    "term": "original jurisdiction",
-    "def": "Authority of a court to hear a case in the first instance."
-  },
-  {
-    "id": "personal-jurisdiction",
-    "term": "personal jurisdiction",
-    "def": "Court's power to render a judgment affecting a particular defendant's rights or obligations."
-  },
-  {
-    "id": "exclusionary-rule",
-    "term": "exclusionary rule",
-    "def": "Judicially created remedy that suppresses evidence obtained in violation of constitutional rights."
-  },
-  {
-    "id": "plea-bargain",
-    "term": "plea bargain",
-    "def": "Agreement in which a criminal defendant pleads guilty in exchange for concessions."
-  },
-  {
-    "id": "precedent",
-    "term": "precedent",
-    "def": "Prior judicial decision that guides the outcome of later cases involving similar facts or law."
+    "id": "bright-line-rule",
+    "term": "bright-line rule",
+    "def": "Clear, inflexible legal standard leaving little room for discretion."
   },
   {
     "id": "probable-cause",
     "term": "probable cause",
-    "def": "Reasonable ground to believe that a crime has been committed and that the suspect committed it.",
-    "aliases": ["pc"]
+    "def": "Reasonable grounds to believe a crime occurred and the suspect committed it."
+  },
+  {
+    "id": "fruit-of-the-poisonous-tree",
+    "term": "fruit of the poisonous tree",
+    "def": "Evidence derived from illegal search or seizure, subject to suppression unless attenuated."
+  },
+  {
+    "id": "burden-of-production",
+    "term": "burden of production",
+    "def": "Obligation to introduce enough evidence on an issue to avoid directed verdict."
+  },
+  {
+    "id": "burden-of-proof",
+    "term": "burden of proof",
+    "def": "Responsibility to establish a fact or claim to the required legal standard."
+  },
+  {
+    "id": "burglary",
+    "term": "burglary",
+    "def": "Breaking and entering of a dwelling at night with intent to commit a felony inside."
+  },
+  {
+    "id": "business-records",
+    "term": "business records",
+    "def": "Hearsay exception for regularly kept records of a business activity."
+  },
+  {
+    "id": "bystander-liability",
+    "term": "bystander liability",
+    "def": "Potential liability for failing to intervene when a special relationship imposes duty to act."
+  },
+  {
+    "id": "case-or-controversy",
+    "term": "case or controversy",
+    "def": "Constitutional requirement that federal courts hear only actual, adverse disputes."
+  },
+  {
+    "id": "causation-in-fact",
+    "term": "causation in fact",
+    "def": "But-for link showing defendant conduct produced the harm."
+  },
+  {
+    "id": "certiorari",
+    "term": "certiorari",
+    "def": "Discretionary order by a higher court to review decision of a lower court."
+  },
+  {
+    "id": "change-of-venue",
+    "term": "change of venue",
+    "def": "Transfer of trial location to ensure impartial jury or convenience."
+  },
+  {
+    "id": "character-evidence",
+    "term": "character evidence",
+    "def": "Proof of a person's character traits, generally inadmissible to show conduct conformity."
+  },
+  {
+    "id": "charge-to-the-jury",
+    "term": "charge to the jury",
+    "def": "Judge's instructions on law governing jury deliberations."
+  },
+  {
+    "id": "choice-of-law",
+    "term": "choice of law",
+    "def": "Rules deciding which jurisdiction's substantive law applies to a multistate dispute."
+  },
+  {
+    "id": "circumstantial-evidence",
+    "term": "circumstantial evidence",
+    "def": "Proof requiring inference to establish a fact, contrasted with direct evidence."
+  },
+  {
+    "id": "civil-contempt",
+    "term": "civil contempt",
+    "def": "Coercive sanction to compel compliance with a court order, lifted when obeyed."
+  },
+  {
+    "id": "civil-forfeiture",
+    "term": "civil forfeiture",
+    "def": "Government seizure of property connected to wrongdoing through civil proceedings."
+  },
+  {
+    "id": "class-action",
+    "term": "class action",
+    "def": "Representative lawsuit allowing similarly situated persons to litigate collectively."
+  },
+  {
+    "id": "clear-and-convincing",
+    "term": "clear and convincing evidence",
+    "def": "Intermediate proof standard requiring a high probability of truth."
+  },
+  {
+    "id": "collateral-estoppel",
+    "term": "collateral estoppel",
+    "def": "Issue preclusion preventing relitigation of matters actually litigated and decided."
+  },
+  {
+    "id": "collateral-order-doctrine",
+    "term": "collateral order doctrine",
+    "def": "Allows immediate appeal of orders conclusively resolving important issues separate from merits.",
+    "cite": "Cohen (1949)"
+  },
+  {
+    "id": "commerce-clause",
+    "term": "Commerce Clause",
+    "def": "Constitutional grant allowing Congress to regulate interstate commerce activities.",
+    "cite": "Gibbons v. Ogden (1824)"
+  },
+  {
+    "id": "community-caretaking",
+    "term": "community caretaking",
+    "def": "Doctrine allowing police to act to protect public safety without criminal suspicion.",
+    "cite": "Cady v. Dombrowski (1973)"
+  },
+  {
+    "id": "compensatory-damages",
+    "term": "compensatory damages",
+    "def": "Monetary award intended to make plaintiff whole for actual losses."
+  },
+  {
+    "id": "complaint",
+    "term": "complaint",
+    "def": "Initial pleading stating plaintiff's claims and grounds for relief."
+  },
+  {
+    "id": "compulsory-process",
+    "term": "compulsory process",
+    "def": "Criminal defendant's right to obtain witnesses and evidence in their favor.",
+    "cite": "Washington v. Texas (1967)"
+  },
+  {
+    "id": "concurrent-jurisdiction",
+    "term": "concurrent jurisdiction",
+    "def": "Shared authority of different courts to hear the same type of case."
+  },
+  {
+    "id": "confrontation-clause",
+    "term": "Confrontation Clause",
+    "def": "Sixth Amendment right to face adverse witnesses and challenge testimonial statements.",
+    "cite": "Crawford (2004)"
+  },
+  {
+    "id": "consent-search",
+    "term": "consent search",
+    "def": "Warrantless search justified by voluntary permission from someone with authority."
+  },
+  {
+    "id": "conspiracy",
+    "term": "conspiracy",
+    "def": "Agreement between two or more persons to commit an unlawful act plus an overt act in furtherance."
+  },
+  {
+    "id": "constructive-possession",
+    "term": "constructive possession",
+    "def": "Control or dominion over property without physical custody, sufficient for possession crimes."
+  },
+  {
+    "id": "constructive-trust",
+    "term": "constructive trust",
+    "def": "Equitable remedy imposing fiduciary duty to transfer property to the rightful owner."
+  },
+  {
+    "id": "continuance",
+    "term": "continuance",
+    "def": "Court order postponing proceedings to a later date."
+  },
+  {
+    "id": "contributory-negligence",
+    "term": "contributory negligence",
+    "def": "Tort rule barring recovery if plaintiff negligence contributed to injury."
+  },
+  {
+    "id": "conversion",
+    "term": "conversion",
+    "def": "Tort for intentional exercise of dominion over chattel seriously interfering with another's rights."
+  },
+  {
+    "id": "corpus-delicti",
+    "term": "corpus delicti",
+    "def": "Requirement to establish that a crime occurred independent of a confession."
+  },
+  {
+    "id": "counterclaim",
+    "term": "counterclaim",
+    "def": "Claim filed by a defendant against a plaintiff within the same lawsuit."
+  },
+  {
+    "id": "courts-of-limited-jurisdiction",
+    "term": "courts of limited jurisdiction",
+    "def": "Courts authorized to hear only specific types of cases defined by statute."
+  },
+  {
+    "id": "cruel-and-unusual-punishment",
+    "term": "cruel and unusual punishment",
+    "def": "Punishment forbidden when grossly disproportionate or contrary to evolving standards.",
+    "cite": "Eighth Amendment"
+  },
+  {
+    "id": "custodial-interrogation",
+    "term": "custodial interrogation",
+    "def": "Questioning by law enforcement after custody has been established."
+  },
+  {
+    "id": "cy-pres",
+    "term": "cy pres",
+    "def": "Equitable doctrine allowing modification of charitable trusts to fulfill donor intent as nearly as possible."
+  },
+  {
+    "id": "damages",
+    "term": "damages",
+    "def": "Money awarded to compensate or punish for a legal wrong."
+  },
+  {
+    "id": "declaratory-judgment",
+    "term": "declaratory judgment",
+    "def": "Court order stating rights or obligations without awarding damages or injunction."
+  },
+  {
+    "id": "default-judgment",
+    "term": "default judgment",
+    "def": "Judgment entered because defendant failed to respond or appear."
+  },
+  {
+    "id": "defense-of-others",
+    "term": "defense of others",
+    "def": "Justification allowing reasonable force to protect a third person from imminent harm."
+  },
+  {
+    "id": "defense-of-property",
+    "term": "defense of property",
+    "def": "Limited right to use force to prevent unlawful interference with one's property."
+  },
+  {
+    "id": "definite-terms",
+    "term": "definite terms",
+    "def": "Contract doctrine requiring essential terms to be reasonably certain for enforcement."
+  },
+  {
+    "id": "deliberate-indifference",
+    "term": "deliberate indifference",
+    "def": "Standard requiring conscious disregard of known risk, often in prison liability cases.",
+    "cite": "Farmer v. Brennan (1994)"
+  },
+  {
+    "id": "demurrer",
+    "term": "demurrer",
+    "def": "Pleading asserting that even if facts are true, complaint fails to state a legal claim."
+  },
+  {
+    "id": "deposition",
+    "term": "deposition",
+    "def": "Out-of-court sworn testimony taken during discovery for later use at trial."
+  },
+  {
+    "id": "deterrence",
+    "term": "deterrence",
+    "def": "Purpose of punishment aimed at discouraging crime by example."
+  },
+  {
+    "id": "devolution",
+    "term": "devolution",
+    "def": "Transfer of power from federal to state or local authorities."
+  },
+  {
+    "id": "diminished-capacity",
+    "term": "diminished capacity",
+    "def": "Defense claiming mental impairment prevented formation of required mens rea."
+  },
+  {
+    "id": "directed-verdict",
+    "term": "judgment as a matter of law",
+    "def": "Court ruling taking case from jury because no reasonable juror could find otherwise."
+  },
+  {
+    "id": "discovery",
+    "term": "discovery",
+    "def": "Pretrial process for exchanging information through depositions, interrogatories, and requests."
+  },
+  {
+    "id": "dismissal-with-prejudice",
+    "term": "dismissal with prejudice",
+    "def": "Termination barring plaintiff from refiling the same claim."
+  },
+  {
+    "id": "dissent",
+    "term": "dissent",
+    "def": "Judicial opinion disagreeing with the majority decision."
+  },
+  {
+    "id": "diversity-jurisdiction",
+    "term": "diversity jurisdiction",
+    "def": "Federal subject matter jurisdiction over civil suits between citizens of different states exceeding statutory amount."
+  },
+  {
+    "id": "docket",
+    "term": "docket",
+    "def": "Court's schedule of cases awaiting action."
+  },
+  {
+    "id": "double-jeopardy",
+    "term": "Double Jeopardy Clause",
+    "def": "Bars multiple prosecutions or punishments for the same offense after acquittal or conviction.",
+    "cite": "Fifth Amendment"
+  },
+  {
+    "id": "due-process",
+    "term": "due process",
+    "def": "Guarantee that government will follow fair procedures and respect fundamental rights before depriving life, liberty, or property."
+  },
+  {
+    "id": "duress",
+    "term": "duress",
+    "def": "Defense excusing crime committed under threat of imminent serious harm when no reasonable escape exists."
+  },
+  {
+    "id": "dying-declaration",
+    "term": "dying declaration",
+    "def": "Hearsay exception for statement made while believing death is imminent about its cause."
+  },
+  {
+    "id": "equal-protection",
+    "term": "Equal Protection Clause",
+    "def": "Requires government treat similarly situated persons alike unless classification passes appropriate scrutiny."
+  },
+  {
+    "id": "equitable-lien",
+    "term": "equitable lien",
+    "def": "Court-imposed security interest in property to secure payment of debt."
+  },
+  {
+    "id": "equitable-maxims",
+    "term": "equitable maxims",
+    "def": "Traditional equity principles guiding discretionary remedies like clean hands."
+  },
+  {
+    "id": "erie-doctrine",
+    "term": "Erie doctrine",
+    "def": "Mandates federal courts in diversity apply state substantive law and federal procedural law.",
+    "cite": "Erie (1938)"
+  },
+  {
+    "id": "estoppel",
+    "term": "estoppel",
+    "def": "Doctrine preventing a party from asserting claim inconsistent with earlier position relied on by others."
+  },
+  {
+    "id": "eviction",
+    "term": "eviction",
+    "def": "Removal of a tenant or occupant pursuant to legal process."
+  },
+  {
+    "id": "excited-utterance",
+    "term": "excited utterance",
+    "def": "Hearsay exception for statement relating to startling event made while under stress."
+  },
+  {
+    "id": "exclusionary-rule",
+    "term": "exclusionary rule",
+    "def": "Remedy suppressing evidence obtained in violation of constitutional rights."
+  },
+  {
+    "id": "executive-privilege",
+    "term": "executive privilege",
+    "def": "President's qualified power to withhold confidential communications from other branches.",
+    "cite": "United States v. Nixon (1974)"
+  },
+  {
+    "id": "exigent-circumstances",
+    "term": "exigent circumstances",
+    "def": "Situations allowing warrantless entry to prevent harm, destruction, or escape."
+  },
+  {
+    "id": "expectation-of-privacy",
+    "term": "expectation of privacy",
+    "def": "Reasonable expectation triggering Fourth Amendment protection against searches."
+  },
+  {
+    "id": "expert-testimony",
+    "term": "expert testimony",
+    "def": "Opinion evidence from a qualified specialist to help factfinder understand complex issues."
+  },
+  {
+    "id": "express-preemption",
+    "term": "express preemption",
+    "def": "Federal law explicitly displacing conflicting state regulations."
+  },
+  {
+    "id": "felony-murder",
+    "term": "felony murder",
+    "def": "Homicide liability for death occurring during commission of an inherently dangerous felony."
+  },
+  {
+    "id": "fifth-amendment-privilege",
+    "term": "Fifth Amendment privilege",
+    "def": "Right to refuse to answer questions that could incriminate oneself."
+  },
+  {
+    "id": "final-judgment-rule",
+    "term": "final judgment rule",
+    "def": "Limits appeals to final decisions resolving all claims."
+  },
+  {
+    "id": "foreseeability",
+    "term": "foreseeability",
+    "def": "Concept asking whether harm was reasonably predictable for duty and causation analysis."
+  },
+  {
+    "id": "forum-non-conveniens",
+    "term": "forum non conveniens",
+    "def": "Discretionary dismissal allowing litigation in more convenient forum."
+  },
+  {
+    "id": "fraudulent-concealment",
+    "term": "fraudulent concealment",
+    "def": "Deliberate hiding of material fact, tolling limitations or supporting fraud claim."
+  },
+  {
+    "id": "freedom-of-association",
+    "term": "freedom of association",
+    "def": "First Amendment protection for joining with others to advance beliefs."
+  },
+  {
+    "id": "freedom-of-speech",
+    "term": "freedom of speech",
+    "def": "Constitutional right limiting government regulation of expression."
+  },
+  {
+    "id": "fundamental-right",
+    "term": "fundamental right",
+    "def": "Right deeply rooted in history or essential to ordered liberty, triggering strict scrutiny."
+  },
+  {
+    "id": "general-intent",
+    "term": "general intent",
+    "def": "Mens rea satisfied by awareness of acting, without need for specific purpose."
+  },
+  {
+    "id": "general-jurisdiction",
+    "term": "general jurisdiction",
+    "def": "Court's power to hear any claim against a defendant essentially at home in the forum."
+  },
+  {
+    "id": "grand-jury",
+    "term": "grand jury",
+    "def": "Body deciding whether probable cause exists to indict for serious offenses."
+  },
+  {
+    "id": "graph-expert",
+    "term": "handwriting expert",
+    "def": "Witness qualified to compare handwriting samples for authenticity."
+  },
+  {
+    "id": "habit-evidence",
+    "term": "habit evidence",
+    "def": "Proof of person's regular response to specific situation, admissible to show conduct."
+  },
+  {
+    "id": "habeas-corpus",
+    "term": "habeas corpus",
+    "def": "Petition challenging legality of detention and seeking release."
+  },
+  {
+    "id": "harmless-error",
+    "term": "harmless error",
+    "def": "Error not affecting substantial rights, so conviction or judgment stands."
+  },
+  {
+    "id": "hearsay",
+    "term": "hearsay",
+    "def": "Out-of-court statement offered to prove truth of matter asserted, generally inadmissible."
+  },
+  {
+    "id": "heightened-scrutiny",
+    "term": "intermediate scrutiny",
+    "def": "Review requiring law be substantially related to important governmental interest."
+  },
+  {
+    "id": "hostile-witness",
+    "term": "hostile witness",
+    "def": "Witness showing adversity, allowing leading questions by sponsoring party."
+  },
+  {
+    "id": "hung-jury",
+    "term": "hung jury",
+    "def": "Jury unable to reach unanimous verdict, leading to mistrial."
+  },
+  {
+    "id": "hypothetical-question",
+    "term": "hypothetical question",
+    "def": "Imagined scenario posed to expert to elicit opinion based on assumed facts."
+  },
+  {
+    "id": "independent-source",
+    "term": "independent source",
+    "def": "Exclusionary rule exception when evidence is later obtained from lawful source."
+  },
+  {
+    "id": "indictment",
+    "term": "indictment",
+    "def": "Formal charge returned by grand jury accusing a person of a crime."
+  },
+  {
+    "id": "ineffective-assistance",
+    "term": "ineffective assistance of counsel",
+    "def": "Claim requiring deficient performance and prejudice to defendant.",
+    "cite": "Strickland (1984)"
+  },
+  {
+    "id": "injunction",
+    "term": "injunction",
+    "def": "Court order requiring a party to do or refrain from specific acts."
+  },
+  {
+    "id": "insanity-defense",
+    "term": "insanity defense",
+    "def": "Excuse asserting defendant lacked mental capacity to appreciate wrongfulness or conform conduct."
+  },
+  {
+    "id": "insufficient-service",
+    "term": "insufficient service",
+    "def": "Defense arguing process was not properly delivered to the defendant."
+  },
+  {
+    "id": "intentional-infliction",
+    "term": "intentional infliction of emotional distress",
+    "def": "Tort requiring extreme conduct causing severe emotional harm."
+  },
+  {
+    "id": "interlocutory-appeal",
+    "term": "interlocutory appeal",
+    "def": "Appeal taken before final judgment, usually requiring statutory permission."
+  },
+  {
+    "id": "rational-basis-review",
+    "term": "rational basis review",
+    "def": "Lowest level of constitutional scrutiny requiring law be rationally related to legitimate interest."
+  },
+  {
+    "id": "interpleader",
+    "term": "interpleader",
+    "def": "Procedure allowing stakeholder to join adverse claimants to resolve rights in property or funds."
+  },
+  {
+    "id": "interrogatories",
+    "term": "interrogatories",
+    "def": "Written discovery questions answered under oath by parties."
+  },
+  {
+    "id": "interstate-commerce",
+    "term": "interstate commerce",
+    "def": "Economic activity crossing state lines or affecting trade among the states."
+  },
+  {
+    "id": "intervention",
+    "term": "intervention",
+    "def": "Process allowing nonparty to enter ongoing lawsuit to protect interests."
+  },
+  {
+    "id": "involuntary-confession",
+    "term": "involuntary confession",
+    "def": "Statement excluded because police coercion overbore the suspect's will."
+  },
+  {
+    "id": "involuntary-manslaughter",
+    "term": "involuntary manslaughter",
+    "def": "Unintentional killing resulting from criminal negligence or during unlawful act not a felony."
+  },
+  {
+    "id": "joinder-of-claims",
+    "term": "joinder of claims",
+    "def": "Combining multiple claims against a defendant in one action when jurisdictional rules permit."
+  },
+  {
+    "id": "joinder-of-parties",
+    "term": "joinder of parties",
+    "def": "Rules allowing multiple parties to litigate together when claims arise from same transaction."
+  },
+  {
+    "id": "judicial-review",
+    "term": "judicial review",
+    "def": "Power of courts to declare governmental acts unconstitutional.",
+    "cite": "Marbury (1803)"
+  },
+  {
+    "id": "jurisdiction-personal",
+    "term": "personal jurisdiction",
+    "def": "Court's authority over a particular defendant, requiring minimum contacts and fairness."
+  },
+  {
+    "id": "jury-instruction",
+    "term": "jury instruction",
+    "def": "Directions given by judge to guide the jury's fact-finding and application of law."
+  },
+  {
+    "id": "jury-nullification",
+    "term": "jury nullification",
+    "def": "Jury's power to acquit despite evidence of guilt by refusing to apply the law."
+  },
+  {
+    "id": "knock-and-announce",
+    "term": "knock-and-announce",
+    "def": "Rule requiring officers to announce presence before entering with a warrant, subject to exceptions.",
+    "cite": "Wilson v. Arkansas (1995)"
+  },
+  {
+    "id": "larceny",
+    "term": "larceny",
+    "def": "Trespassory taking and carrying away of personal property of another with intent to permanently deprive."
+  },
+  {
+    "id": "larceny-by-trick",
+    "term": "larceny by trick",
+    "def": "Obtaining possession through fraud to steal property."
+  },
+  {
+    "id": "laches",
+    "term": "laches",
+    "def": "Equitable defense barring relief when plaintiff unreasonably delays and prejudice results."
+  },
+  {
+    "id": "law-of-the-case",
+    "term": "law of the case",
+    "def": "Doctrine that prior rulings in same case generally govern later stages."
+  },
+  {
+    "id": "leading-question",
+    "term": "leading question",
+    "def": "Question suggesting the desired answer, generally limited on direct examination."
+  },
+  {
+    "id": "lesser-included-offense",
+    "term": "lesser included offense",
+    "def": "Offense whose elements are entirely contained within greater crime."
+  },
+  {
+    "id": "limited-public-forum",
+    "term": "limited public forum",
+    "def": "Government space opened for certain groups or subjects, allowing reasonable content-based limits."
+  },
+  {
+    "id": "lineup",
+    "term": "lineup",
+    "def": "Police identification procedure presenting suspect among fillers for witness selection."
+  },
+  {
+    "id": "liquidated-damages",
+    "term": "liquidated damages",
+    "def": "Contractual sum agreed upon as reasonable estimate of future breach damages."
+  },
+  {
+    "id": "long-arm-statute",
+    "term": "long-arm statute",
+    "def": "State law authorizing courts to exercise jurisdiction over out-of-state defendants in specified circumstances."
+  },
+  {
+    "id": "malice-aforethought",
+    "term": "malice aforethought",
+    "def": "Mental state distinguishing murder, including intent to kill or cause serious harm."
+  },
+  {
+    "id": "mandamus",
+    "term": "writ of mandamus",
+    "def": "Order directing an official to perform a nondiscretionary duty."
+  },
+  {
+    "id": "mandatory-minimum",
+    "term": "mandatory minimum",
+    "def": "Statutory requirement setting lowest permissible sentence for certain crimes."
+  },
+  {
+    "id": "materiality",
+    "term": "materiality",
+    "def": "Significance of a fact to the outcome of a case or to a reasonable investor."
+  },
+  {
+    "id": "mens-rea",
+    "term": "mens rea",
+    "def": "Mental state required for criminal liability, such as intent, knowledge, recklessness, or negligence."
+  },
+  {
+    "id": "miranda-warnings",
+    "term": "Miranda warnings",
+    "def": "Advice of rights police must give before custodial interrogation.",
+    "cite": "Miranda (1966)"
+  },
+  {
+    "id": "misdemeanor",
+    "term": "misdemeanor",
+    "def": "Crime punishable by less than a year of incarceration."
+  },
+  {
+    "id": "mitigation-of-damages",
+    "term": "mitigation of damages",
+    "def": "Duty requiring injured party to take reasonable steps to limit losses."
+  },
+  {
+    "id": "mistake-of-fact",
+    "term": "mistake of fact",
+    "def": "Defense claiming honest error negated required mental state."
+  },
+  {
+    "id": "mistrial",
+    "term": "mistrial",
+    "def": "Termination of trial without verdict due to error or hung jury."
+  },
+  {
+    "id": "mitigating-circumstance",
+    "term": "mitigating circumstance",
+    "def": "Fact reducing perceived culpability and potentially lowering sentence."
+  },
+  {
+    "id": "model-penal-code",
+    "term": "Model Penal Code",
+    "def": "Influential synthesis of criminal law principles adopted by many states."
+  },
+  {
+    "id": "mootness",
+    "term": "mootness",
+    "def": "Doctrine requiring live controversy; case dismissed if issues become academic."
+  },
+  {
+    "id": "motion-in-limine",
+    "term": "motion in limine",
+    "def": "Pretrial request to admit or exclude anticipated evidence."
+  },
+  {
+    "id": "necessity",
+    "term": "necessity",
+    "def": "Justification for crime committed to prevent greater imminent harm."
+  },
+  {
+    "id": "negligence-per-se",
+    "term": "negligence per se",
+    "def": "Negligence established by violating statute designed to protect plaintiff from type of harm."
+  },
+  {
+    "id": "neutral-principles",
+    "term": "neutral principles of law",
+    "def": "Method requiring courts to decide cases using objective legal rules, often in church property disputes."
+  },
+  {
+    "id": "no-contest",
+    "term": "nolo contendere",
+    "def": "Plea accepting conviction without admitting guilt, with limited collateral use."
+  },
+  {
+    "id": "nondelegation",
+    "term": "nondelegation doctrine",
+    "def": "Principle that Congress must provide an intelligible principle when delegating power to agencies."
+  },
+  {
+    "id": "nonpublic-forum",
+    "term": "nonpublic forum",
+    "def": "Government property not open for public speech where restrictions need only be reasonable and viewpoint neutral."
+  },
+  {
+    "id": "objection-hearsay",
+    "term": "hearsay objection",
+    "def": "Challenge that testimony repeats out-of-court statement offered for truth."
+  },
+  {
+    "id": "objection-relevance",
+    "term": "relevance objection",
+    "def": "Challenge asserting evidence does not make a fact of consequence more or less probable."
+  },
+  {
+    "id": "offensive-collateral-estoppel",
+    "term": "offensive collateral estoppel",
+    "def": "Use of prior judgment by new plaintiff to prevent defendant relitigating issues."
+  },
+  {
+    "id": "open-fields",
+    "term": "open fields",
+    "def": "Area outside curtilage lacking Fourth Amendment protection.",
+    "cite": "Oliver v. United States (1984)"
+  },
+  {
+    "id": "overbreadth",
+    "term": "overbreadth",
+    "def": "First Amendment doctrine invalidating laws sweeping in substantial protected speech."
+  },
+  {
+    "id": "parens-patriae",
+    "term": "parens patriae",
+    "def": "Government role as guardian of those unable to protect themselves."
+  },
+  {
+    "id": "parol-evidence",
+    "term": "parol evidence rule",
+    "def": "Contract doctrine barring extrinsic evidence to vary integrated written agreement."
+  },
+  {
+    "id": "partial-summary-judgment",
+    "term": "partial summary judgment",
+    "def": "Order resolving fewer than all claims where no factual dispute exists."
+  },
+  {
+    "id": "peremptory-challenge",
+    "term": "peremptory challenge",
+    "def": "Attorney's limited ability to strike jurors without stated cause, subject to equal protection limits.",
+    "cite": "Batson (1986)"
+  },
+  {
+    "id": "permissive-joinder",
+    "term": "permissive joinder",
+    "def": "Allows parties to join when claims arise from same transaction and share legal questions."
+  },
+  {
+    "id": "personal-recognizance",
+    "term": "personal recognizance",
+    "def": "Release of accused based on promise to appear without monetary bail."
+  },
+  {
+    "id": "petition-clause",
+    "term": "Petition Clause",
+    "def": "First Amendment protection for seeking redress from government."
+  },
+  {
+    "id": "plain-error",
+    "term": "plain error",
+    "def": "Appellate review standard for clear mistake affecting substantial rights despite lack of objection."
+  },
+  {
+    "id": "plain-view",
+    "term": "plain view",
+    "def": "Exception allowing seizure of evidence seen lawfully in plain sight with probable cause."
+  },
+  {
+    "id": "plea-bargain",
+    "term": "plea bargain",
+    "def": "Agreement where defendant pleads guilty for concessions like reduced charges."
+  },
+  {
+    "id": "plenary-power",
+    "term": "plenary power",
+    "def": "Full authority vested in a branch to act within defined sphere, such as Congress over tribes."
+  },
+  {
+    "id": "precedent",
+    "term": "precedent",
+    "def": "Prior judicial decision that guides resolution of similar future disputes."
+  },
+  {
+    "id": "preemption",
+    "term": "preemption",
+    "def": "Supremacy of federal law displacing conflicting state regulation."
+  },
+  {
+    "id": "prejudicial-vs-probative",
+    "term": "Rule 403 balancing",
+    "def": "Standard allowing exclusion of relevant evidence if unfair prejudice substantially outweighs probative value."
+  },
+  {
+    "id": "preliminary-injunction",
+    "term": "preliminary injunction",
+    "def": "Temporary order preserving status quo pending final decision, requiring likelihood of success and irreparable harm."
+  },
+  {
+    "id": "present-sense-impression",
+    "term": "present sense impression",
+    "def": "Hearsay exception for statement describing event while perceiving it."
+  },
+  {
+    "id": "preservation-of-error",
+    "term": "preservation of error",
+    "def": "Requirement to object timely to claim error on appeal."
+  },
+  {
+    "id": "pretext-stop",
+    "term": "pretext stop",
+    "def": "Traffic stop justified by probable cause despite officer's ulterior motives.",
+    "cite": "Whren (1996)"
+  },
+  {
+    "id": "pretrial-diversion",
+    "term": "pretrial diversion",
+    "def": "Program allowing defendants to avoid conviction by completing conditions."
+  },
+  {
+    "id": "privity",
+    "term": "privity",
+    "def": "Close legal relationship often required for contract enforcement or collateral estoppel."
+  },
+  {
+    "id": "probation",
+    "term": "probation",
+    "def": "Sentence allowing offender to remain in community under conditions instead of incarceration."
   },
   {
     "id": "procedural-due-process",
     "term": "procedural due process",
-    "def": "Requirement that the government follow fair procedures before depriving a person of life, liberty, or property."
+    "def": "Requirement of notice and meaningful opportunity to be heard before deprivation."
+  },
+  {
+    "id": "professional-responsibility",
+    "term": "professional responsibility",
+    "def": "Ethical duties governing lawyer conduct."
+  },
+  {
+    "id": "proffer",
+    "term": "proffer",
+    "def": "Offer of proof explaining excluded evidence for appellate review."
+  },
+  {
+    "id": "promissory-estoppel",
+    "term": "promissory estoppel",
+    "def": "Enforces promise when reliance was foreseeable, actual, and injustice can be avoided only by enforcement."
+  },
+  {
+    "id": "protective-order",
+    "term": "protective order",
+    "def": "Court directive limiting discovery or contact to prevent harassment or harm."
+  },
+  {
+    "id": "public-forum",
+    "term": "public forum",
+    "def": "Government property traditionally open to speech where content-based restrictions face strict scrutiny."
+  },
+  {
+    "id": "punitive-damages",
+    "term": "punitive damages",
+    "def": "Monetary award punishing egregious misconduct and deterring future violations."
+  },
+  {
+    "id": "qualified-immunity",
+    "term": "qualified immunity",
+    "def": "Defense shielding officials from damages unless they violated clearly established rights.",
+    "cite": "Harlow (1982)"
+  },
+  {
+    "id": "quantum-meruit",
+    "term": "quantum meruit",
+    "def": "Restitution measure awarding reasonable value of services rendered."
+  },
+  {
+    "id": "question-of-law",
+    "term": "question of law",
+    "def": "Issue regarding legal principles decided by the court, not the jury."
+  },
+  {
+    "id": "reasonable-suspicion",
+    "term": "reasonable suspicion",
+    "def": "Specific, articulable facts suggesting crime, supporting brief detention."
+  },
+  {
+    "id": "rebuttal",
+    "term": "rebuttal",
+    "def": "Evidence offered to contradict or explain opposing party's case."
+  },
+  {
+    "id": "redressability",
+    "term": "redressability",
+    "def": "Element of standing requiring court relief likely to remedy injury."
+  },
+  {
+    "id": "regulatory-taking",
+    "term": "regulatory taking",
+    "def": "Government regulation that goes too far and requires compensation under Takings Clause.",
+    "cite": "Penn Central (1978)"
+  },
+  {
+    "id": "rehearing-en-banc",
+    "term": "rehearing en banc",
+    "def": "Appellate review by full court rather than initial panel."
+  },
+  {
+    "id": "reformation",
+    "term": "reformation",
+    "def": "Equitable remedy correcting written contract to reflect actual agreement."
   },
   {
     "id": "remand",
     "term": "remand",
-    "def": "Order by an appellate court sending a case back to a lower court for further proceedings."
+    "def": "Appellate instruction sending case back to lower court for further proceedings."
   },
   {
     "id": "remedies",
     "term": "remedies",
-    "def": "Legal or equitable relief provided to address a violation of rights."
+    "def": "Means by which a court enforces a right or compensates for violation."
   },
   {
-    "id": "daubert",
-    "term": "Daubert standard",
-    "def": "Test for admitting expert testimony that examines methodology, testing, error rates, and peer review."
+    "id": "remittitur",
+    "term": "remittitur",
+    "def": "Court order reducing excessive jury award with option for new trial."
   },
   {
-    "id": "ebay-v-mercexchange",
-    "term": "eBay v. MercExchange",
-    "def": "2006 Supreme Court case articulating the four-factor test for permanent injunctions that applies across equity."
+    "id": "removal",
+    "term": "removal",
+    "def": "Process transferring case from state court to federal court when jurisdictional prerequisites met."
   },
   {
-    "id": "rule-of-law",
-    "term": "rule of law",
-    "def": "Principle that government officials and citizens are bound by and accountable to the law."
+    "id": "reprisal",
+    "term": "retaliation claim",
+    "def": "Cause of action alleging adverse action in response to protected activity."
+  },
+  {
+    "id": "res-ipsa-loquitur",
+    "term": "res ipsa loquitur",
+    "def": "Inference of negligence when accident ordinarily does not occur absent negligence and defendant controlled instrumentality."
+  },
+  {
+    "id": "res-judicata",
+    "term": "claim preclusion",
+    "def": "Bars relitigation of claims that were or could have been raised in prior action with final judgment."
+  },
+  {
+    "id": "respondeat-superior",
+    "term": "respondeat superior",
+    "def": "Doctrine holding employers liable for torts committed by employees within scope of employment."
+  },
+  {
+    "id": "restitution",
+    "term": "restitution",
+    "def": "Remedy requiring return of unjust gains to prevent enrichment."
+  },
+  {
+    "id": "restrictive-covenant",
+    "term": "restrictive covenant",
+    "def": "Promise limiting use of land or conduct, enforceable when reasonable."
+  },
+  {
+    "id": "restraining-order",
+    "term": "restraining order",
+    "def": "Court order prohibiting contact or specific acts to protect a person from harm."
+  },
+  {
+    "id": "retribution",
+    "term": "retribution",
+    "def": "Punishment rationale focusing on moral blameworthiness."
+  },
+  {
+    "id": "revocation-hearing",
+    "term": "revocation hearing",
+    "def": "Proceeding to determine whether probation or parole should be revoked."
+  },
+  {
+    "id": "right-to-counsel",
+    "term": "right to counsel",
+    "def": "Guarantee that criminal defendants have assistance of attorney at critical stages.",
+    "cite": "Gideon (1963)"
+  },
+  {
+    "id": "right-to-jury",
+    "term": "right to jury trial",
+    "def": "Guarantee of trial by jury in serious criminal cases and certain civil actions.",
+    "cite": "Sixth Amendment"
+  },
+  {
+    "id": "ripeness",
+    "term": "ripeness doctrine",
+    "def": "Requirement that dispute be sufficiently developed and not speculative for judicial review."
+  },
+  {
+    "id": "rule-11",
+    "term": "Rule 11 sanctions",
+    "def": "Penalties for filings lacking legal or factual basis in federal civil practice."
+  },
+  {
+    "id": "rule-against-perpetuities",
+    "term": "Rule Against Perpetuities",
+    "def": "Future interests must vest, if at all, within 21 years after a life in being."
+  },
+  {
+    "id": "rule-of-lenity",
+    "term": "rule of lenity",
+    "def": "Ambiguous criminal statutes are construed in favor of the defendant."
+  },
+  {
+    "id": "rule-of-mandate",
+    "term": "mandate rule",
+    "def": "Lower court must follow appellate court instructions on remand."
+  },
+  {
+    "id": "sameday-arraignment",
+    "term": "initial appearance",
+    "def": "First judicial proceeding where defendant hears charges and conditions of release are set."
+  },
+  {
+    "id": "scienter",
+    "term": "scienter",
+    "def": "Knowledge of wrongdoing or intent required for certain offenses or securities claims."
+  },
+  {
+    "id": "search-incident",
+    "term": "search incident to arrest",
+    "def": "Warrantless search of arrestee and area within immediate control to ensure safety and preserve evidence."
+  },
+  {
+    "id": "selective-incorporation",
+    "term": "selective incorporation",
+    "def": "Gradual application of specific Bill of Rights protections to the states via Due Process Clause."
+  },
+  {
+    "id": "selective-prosecution",
+    "term": "selective prosecution",
+    "def": "Defense claiming prosecution based on unjustifiable standards like race or speech."
+  },
+  {
+    "id": "self-defense",
+    "term": "self-defense",
+    "def": "Justification allowing reasonable force to prevent imminent unlawful harm."
+  },
+  {
+    "id": "separate-sovereigns",
+    "term": "separate sovereigns doctrine",
+    "def": "Allows successive prosecutions by different sovereigns for same conduct.",
+    "cite": "Gamble (2019)"
   },
   {
     "id": "service-of-process",
     "term": "service of process",
-    "def": "Formal delivery of legal documents to notify a party of proceedings."
+    "def": "Delivery of summons and complaint to notify defendant of lawsuit."
   },
   {
-    "id": "stare-decisis",
-    "term": "stare decisis",
-    "def": "Doctrine requiring courts to follow controlling precedent absent a compelling reason to depart."
+    "id": "severability",
+    "term": "severability",
+    "def": "Judicial practice of invalidating unconstitutional portions of statute while leaving rest intact."
   },
   {
-    "id": "statute",
-    "term": "statute",
-    "def": "Law enacted by a legislature and codified in the United States Code or state code."
+    "id": "severance",
+    "term": "severance",
+    "def": "Court order splitting joined charges or defendants into separate trials."
   },
   {
-    "id": "subject-matter",
-    "term": "subject-matter jurisdiction",
-    "def": "Authority of a court to hear cases of a particular type or category."
+    "id": "shifting-burden",
+    "term": "burden shifting",
+    "def": "Doctrine transferring obligation of production or persuasion to opposing party after prima facie showing."
   },
   {
-    "id": "supreme-court",
-    "term": "Supreme Court",
-    "def": "Highest court in the United States with final authority over federal law and the Constitution."
+    "id": "sixth-amendment-speedy",
+    "term": "speedy trial right",
+    "def": "Sixth Amendment guarantee that criminal charges be resolved without undue delay.",
+    "cite": "Barker v. Wingo (1972)"
   },
   {
-    "id": "suppression",
-    "term": "suppression",
-    "def": "Exclusion of evidence obtained in violation of constitutional or statutory rights."
+    "id": "specific-intent",
+    "term": "specific intent",
+    "def": "Mental state requiring desire to achieve a particular result beyond the basic act."
+  },
+  {
+    "id": "specific-jurisdiction",
+    "term": "specific jurisdiction",
+    "def": "Power to hear claims arising out of defendant's forum contacts."
+  },
+  {
+    "id": "specific-performance",
+    "term": "specific performance",
+    "def": "Equitable remedy compelling party to perform contractual duty."
+  },
+  {
+    "id": "spoliation",
+    "term": "spoliation",
+    "def": "Destruction or significant alteration of evidence, often leading to sanctions or adverse inference."
+  },
+  {
+    "id": "standing",
+    "term": "standing",
+    "def": "Requirement that plaintiff have personal stake and injury traceable to defendant."
+  },
+  {
+    "id": "state-action",
+    "term": "state action",
+    "def": "Requirement that constitutional claims target government conduct rather than private behavior."
+  },
+  {
+    "id": "statute-of-limitations",
+    "term": "statute of limitations",
+    "def": "Deadline for filing legal claims after cause of action accrues."
+  },
+  {
+    "id": "statutory-interpretation",
+    "term": "statutory interpretation",
+    "def": "Process courts use to determine meaning of legislation."
+  },
+  {
+    "id": "stay",
+    "term": "stay",
+    "def": "Order halting proceedings or enforcement temporarily."
+  },
+  {
+    "id": "strict-liability",
+    "term": "strict liability",
+    "def": "Liability without fault for certain activities or product defects."
+  },
+  {
+    "id": "strict-scrutiny",
+    "term": "strict scrutiny",
+    "def": "Highest judicial review requiring law be narrowly tailored to compelling interest."
+  },
+  {
+    "id": "subject-matter-jurisdiction",
+    "term": "subject matter jurisdiction",
+    "def": "Court's authority to hear particular type of case."
+  },
+  {
+    "id": "subpoena",
+    "term": "subpoena",
+    "def": "Court order requiring witness appearance or document production."
+  },
+  {
+    "id": "substantive-due-process",
+    "term": "substantive due process",
+    "def": "Protects fundamental rights from government interference regardless of process."
+  },
+  {
+    "id": "successive-petition",
+    "term": "successive petition",
+    "def": "Repeat habeas filing requiring authorization due to stringent limits."
+  },
+  {
+    "id": "summons",
+    "term": "summons",
+    "def": "Document formally notifying defendant of lawsuit and need to respond."
+  },
+  {
+    "id": "summary-judgment",
+    "term": "summary judgment",
+    "def": "Judgment without trial when no genuine dispute of material fact and movant deserves judgment."
+  },
+  {
+    "id": "summary-contempt",
+    "term": "summary contempt",
+    "def": "Immediate punishment for contemptuous conduct occurring in court's presence."
+  },
+  {
+    "id": "suppression-hearing",
+    "term": "suppression hearing",
+    "def": "Proceeding to determine admissibility of challenged evidence."
+  },
+  {
+    "id": "supremacy-clause",
+    "term": "Supremacy Clause",
+    "def": "Provision making federal law supreme over conflicting state law.",
+    "cite": "Article VI"
+  },
+  {
+    "id": "surety",
+    "term": "surety",
+    "def": "Person who guarantees another's obligation and pays if debtor defaults."
+  },
+  {
+    "id": "surreply",
+    "term": "surreply",
+    "def": "Additional brief allowed to respond to new matters raised in a reply."
+  },
+  {
+    "id": "surveillance",
+    "term": "surveillance",
+    "def": "Observation of persons or places, potentially implicating Fourth Amendment when expectations of privacy exist."
+  },
+  {
+    "id": "sworn-statement",
+    "term": "sworn statement",
+    "def": "Written declaration made under oath, subject to perjury penalties."
+  },
+  {
+    "id": "takings-clause",
+    "term": "Takings Clause",
+    "def": "Requires government to pay just compensation when taking private property for public use."
+  },
+  {
+    "id": "temporary-restraining-order",
+    "term": "temporary restraining order",
+    "def": "Short-term injunction issued without notice to prevent immediate harm."
+  },
+  {
+    "id": "terry-stop",
+    "term": "Terry stop",
+    "def": "Brief investigative detention based on reasonable suspicion of criminal activity.",
+    "cite": "Terry (1968)"
+  },
+  {
+    "id": "third-party-beneficiary",
+    "term": "third-party beneficiary",
+    "def": "Person not party to contract but intended to benefit and may enforce it."
+  },
+  {
+    "id": "three-strikes",
+    "term": "three strikes law",
+    "def": "Sentencing scheme imposing severe penalties after multiple serious convictions."
+  },
+  {
+    "id": "time-place-manner",
+    "term": "time, place, and manner",
+    "def": "Content-neutral restrictions on speech if narrowly tailored and leaving ample alternatives."
+  },
+  {
+    "id": "tolling",
+    "term": "tolling",
+    "def": "Suspension of limitations period due to specified circumstances."
+  },
+  {
+    "id": "tortious-interference",
+    "term": "tortious interference",
+    "def": "Claim for wrongful disruption of contractual or business relationships."
+  },
+  {
+    "id": "totality-of-circumstances",
+    "term": "totality of the circumstances",
+    "def": "Holistic analysis considering all factors rather than a rigid test."
+  },
+  {
+    "id": "transfer",
+    "term": "transfer",
+    "def": "Movement of case to different court or division for convenience or justice."
+  },
+  {
+    "id": "transferred-intent",
+    "term": "transferred intent",
+    "def": "Doctrine applying intent toward one victim to unintended victim harmed."
+  },
+  {
+    "id": "trial-de-novo",
+    "term": "trial de novo",
+    "def": "New trial in appellate court as if original trial had not occurred."
+  },
+  {
+    "id": "trial-in-absentia",
+    "term": "trial in absentia",
+    "def": "Proceeding continuing without defendant who knowingly waives presence."
+  },
+  {
+    "id": "trusts",
+    "term": "trust",
+    "def": "Fiduciary arrangement where trustee holds property for beneficiary benefit."
+  },
+  {
+    "id": "truth-in-sentencing",
+    "term": "truth in sentencing",
+    "def": "Policies ensuring offenders serve substantial portion of imposed sentence."
+  },
+  {
+    "id": "two-step-interrogation",
+    "term": "two-step interrogation",
+    "def": "Strategy splitting unwarned questioning and later Mirandized confession, scrutinized for deliberate use.",
+    "cite": "Missouri v. Seibert (2004)"
+  },
+  {
+    "id": "unanimous-verdict",
+    "term": "unanimous verdict",
+    "def": "Requirement that all jurors agree on verdict in most criminal cases.",
+    "cite": "Ramos v. Louisiana (2020)"
+  },
+  {
+    "id": "unclean-hands",
+    "term": "unclean hands",
+    "def": "Equity doctrine denying relief to party acting unfairly in the matter at issue."
+  },
+  {
+    "id": "unconscionability",
+    "term": "unconscionability",
+    "def": "Contract defense for oppressive terms and absence of meaningful choice."
+  },
+  {
+    "id": "undue-burden",
+    "term": "undue burden",
+    "def": "Standard invalidating laws that place substantial obstacle in the path of protected liberty.",
+    "cite": "Planned Parenthood v. Casey (1992)"
+  },
+  {
+    "id": "united-states-supreme-court",
+    "term": "Supreme Court of the United States",
+    "def": "Highest federal court with final authority on federal law."
   },
   {
     "id": "venue",
     "term": "venue",
-    "def": "Proper geographic location for a court to hear a case."
+    "def": "Geographic location where lawsuit should be heard based on statutory criteria."
   },
   {
     "id": "voir-dire",
     "term": "voir dire",
-    "def": "Process of questioning prospective jurors to assess qualifications and impartiality."
+    "def": "Process of questioning prospective jurors to assess impartiality."
   },
   {
-    "id": "writ",
-    "term": "writ",
-    "def": "Formal written order issued by a court directing a specific action."
+    "id": "voluntary-confession",
+    "term": "voluntary confession",
+    "def": "Statement admissible because made freely without coercion."
+  },
+  {
+    "id": "voluntary-dismissal",
+    "term": "voluntary dismissal",
+    "def": "Plaintiff's decision to terminate lawsuit, sometimes without prejudice."
+  },
+  {
+    "id": "voluntary-manslaughter",
+    "term": "voluntary manslaughter",
+    "def": "Intentional killing in heat of passion or under adequate provocation."
+  },
+  {
+    "id": "voir-dire-challenge",
+    "term": "challenge for cause",
+    "def": "Request to excuse prospective juror due to demonstrated bias."
+  },
+  {
+    "id": "warrant",
+    "term": "warrant",
+    "def": "Judicial authorization for search or arrest based on probable cause."
+  },
+  {
+    "id": "warrantless-search",
+    "term": "warrantless search",
+    "def": "Search conducted without warrant, requiring recognized exception to Fourth Amendment."
+  },
+  {
+    "id": "weight-of-the-evidence",
+    "term": "weight of the evidence",
+    "def": "Persuasive force of evidence, distinct from sufficiency standard."
+  },
+  {
+    "id": "with-prejudice",
+    "term": "with prejudice",
+    "def": "Case dismissed permanently, barring future litigation on same claim."
+  },
+  {
+    "id": "work-product",
+    "term": "work product doctrine",
+    "def": "Qualified privilege protecting attorney materials prepared in anticipation of litigation.",
+    "cite": "Hickman v. Taylor (1947)"
+  },
+  {
+    "id": "writ-of-certiorari",
+    "term": "writ of certiorari",
+    "def": "Order from higher court directing lower court to send up record for review."
+  },
+  {
+    "id": "younger-abstention",
+    "term": "Younger abstention",
+    "def": "Federal courts decline to interfere with ongoing state proceedings absent extraordinary circumstances.",
+    "cite": "Younger (1971)"
   }
 ]
