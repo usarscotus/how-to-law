@@ -1,41 +1,45 @@
 # How to Law
 
-How to Law is a static Astro v4 site that teaches United States legal fundamentals with optional roleplay (RP) twists. It is designed for GitHub Pages hosting at `https://<USER>.github.io/how-to-law/` (replace `<USER>` with your GitHub handle).
+How to Law is a professional Astro site that teaches foundational United States law with concise lessons, interactive quizzes, and a robust glossary. The project is optimized for GitHub Pages deployment at `/how-to-law`.
 
 ## Features
 
-- Astro + MDX content collections for modular lessons
-- Tailwind CSS theming with light/dark support and CSS variables
-- React islands for RP toggles, quizzes, progress rings, flows, and search
-- Client-side FlexSearch index built at build time
-- Persistent progress tracking in localStorage
-- GitHub Pages deployment with base path `/how-to-law`
+- **Astro v4 + MDX** for fast static pages with React islands only where interaction is required.
+- **Structured curriculum** covering foundations, courts & jurisdiction, and Supreme Court practice with breadcrumbs, lesson objectives, and progress visuals.
+- **Glossary autolink plugin** that automatically wraps defined terms in popovers sourced from `src/content/glossary/terms.json`.
+- **FlexSearch-powered site search** with weighted fields, synonym handling, and highlighted results.
+- **Accessible design** featuring WCAG AA-compliant colors, keyboard navigation, skip links, and respect for prefers-reduced-motion.
+- **Tooling** including ESLint, Prettier, Tailwind CSS, and automated GitHub Actions that check, lint, and build the project.
 
 ## Getting started
 
-1. `npm install`
-2. (Optional) export `ASTRO_SITE=https://<USER>.github.io/how-to-law` before building, or edit `astro.config.mjs` to point at your custom domain/base.
-3. `npm run dev`
-4. Commit and push to `main`
-5. Ensure GitHub Pages is set to deploy from the `gh-pages` branch (the provided workflow handles publishing and drops a `.nojekyll` file so the generated `_astro` assets are served correctly)
-6. Hosting at another base path? Update `site` and `base` in `astro.config.mjs`
+```bash
+npm install
+npm run dev
+```
+
+The site is served at `http://localhost:4321/how-to-law` during development. Astro automatically rebuilds pages when content or components change.
 
 ## Scripts
 
-- `npm run dev` – start the development server
-- `npm run build` – generate the production build (`dist/`)
-- `npm run preview` – preview the production build locally
-- `npm run typecheck` – run `astro check`
-- `npm run format` – format the project with Prettier
+- `npm run dev` – start the development server.
+- `npm run check` – run `astro check` and ESLint.
+- `npm run build` – generate the production build in `dist/`.
+- `npm run preview` – preview the production build locally.
+- `npm run format` – format files with Prettier.
+
+## Content structure
+
+- `src/content/classroom` – MDX lessons organized by module.
+- `src/content/glossary/terms.json` – glossary definitions used throughout the site.
+- `src/layouts` – shared page and lesson layouts with navigation, metadata, and accessibility features.
+- `src/components` – UI components such as `Callout`, `Flow`, `Quiz`, `SearchInput`, and `Term` popovers.
+- `src/plugins/remark-terms.js` – remark plugin for auto-linking glossary terms.
 
 ## Deployment
 
-Pushes to `main` trigger the workflow in `.github/workflows/deploy.yml`. The workflow installs dependencies, builds the project, uploads the `dist/` artifact, and publishes to GitHub Pages using the official action. The Astro configuration already sets the required `site` and `base` for a project site at `/how-to-law`.
+The project is configured for GitHub Pages. Set the repository’s Pages source to “Deploy from GitHub Actions.” The build output uses `base: '/how-to-law'` and `trailingSlash: 'always'` for stable URLs.
 
-## Content & data
+## License
 
-- Lessons live in `src/content/classroom/**` with MDX frontmatter describing metadata, quiz items, and RP differences.
-- Glossary terms (`src/content/glossary/terms.json`) power inline definitions and the glossary browser.
-- A build hook writes `dist/search-index.json` using lesson and glossary metadata for FlexSearch.
-
-> **Note:** The content is educational and narrative-focused—it is not legal advice.
+Content and code are provided for educational purposes only and do not constitute legal advice.

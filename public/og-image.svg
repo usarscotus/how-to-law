@@ -1,26 +1,19 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
-  <title id="title">How to Law – US Law Fundamentals for RP</title>
-  <desc id="desc">Open graph image with brand banner and tagline for the How to Law project.</desc>
+  <title id="title">How to Law Open Graph Image</title>
+  <desc id="desc">Blue background with the site title and a short tagline.</desc>
   <defs>
     <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#0f172a" />
-      <stop offset="100%" stop-color="#1e3a8a" />
-    </linearGradient>
-    <linearGradient id="accent" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#38bdf8" />
-      <stop offset="100%" stop-color="#0ea5e9" />
+      <stop offset="100%" stop-color="#1d4ed8" />
     </linearGradient>
   </defs>
-  <rect width="1200" height="630" fill="url(#bg)" />
-  <rect x="64" y="96" width="280" height="280" rx="32" fill="rgba(15,23,42,0.65)" stroke="url(#accent)" stroke-width="6" />
-  <g transform="translate(104 160)">
-    <circle cx="96" cy="96" r="88" fill="none" stroke="#38bdf8" stroke-width="10" opacity="0.45" />
-    <path d="M38 118c18-56 54-84 94-94 40 10 76 38 94 94" fill="none" stroke="#38bdf8" stroke-width="12" stroke-linecap="round" />
-    <text x="96" y="110" text-anchor="middle" font-family="'Inter', 'Segoe UI', sans-serif" font-size="72" font-weight="700" fill="#f8fafc">§</text>
+  <rect width="1200" height="630" fill="url(#bg)" rx="48" />
+  <g fill="#e2e8f0">
+    <text x="80" y="190" font-size="82" font-weight="700" letter-spacing="0.04em">How to Law</text>
+    <text x="80" y="280" font-size="36" font-weight="500" fill="#cbd5f5">U.S. law fundamentals for advocates and students</text>
   </g>
-  <text x="384" y="210" font-family="'Inter', 'Segoe UI', sans-serif" font-size="80" font-weight="700" fill="#e2e8f0">How to Law</text>
-  <text x="384" y="290" font-family="'Inter', 'Segoe UI', sans-serif" font-size="40" font-weight="600" fill="#bae6fd">US law fundamentals for immersive roleplay worlds</text>
-  <rect x="384" y="330" width="720" height="4" fill="#38bdf8" opacity="0.6" />
-  <text x="384" y="410" font-family="'Inter', 'Segoe UI', sans-serif" font-size="28" fill="#cbd5f5">Foundations · Criminal Procedure · RP divergences explained</text>
-  <text x="384" y="470" font-family="'Inter', 'Segoe UI', sans-serif" font-size="28" fill="#cbd5f5">Interactive glossaries, quizzes, and persistent progress tracking.</text>
+  <g transform="translate(80 360)">
+    <rect width="260" height="80" rx="20" fill="#f8fafc" opacity="0.15" />
+    <text x="32" y="52" font-size="34" font-weight="600" fill="#f8fafc">Research. Reason. Advocate.</text>
+  </g>
 </svg>

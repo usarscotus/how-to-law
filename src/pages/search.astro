@@ -1,7 +1,21 @@
 ---
-import BasicPage from '../layouts/BasicPage.astro';
-import SearchInput from '../components/SearchInput';
+import BaseLayout from '~/layouts/BaseLayout.astro';
+import SearchInput from '~/components/SearchInput';
 ---
-<BasicPage title="Search" description="Look up lessons, glossary entries, and RP rules in one go.">
-  <SearchInput client:load />
-</BasicPage>
+<BaseLayout title="Search" description="Search across lessons and glossary definitions with weighted FlexSearch indexing.">
+  <section class="bg-background">
+    <div class="mx-auto max-w-3xl px-4 py-16 sm:px-6 lg:px-8">
+      <header class="space-y-4">
+        <p class="text-sm font-semibold uppercase tracking-wide text-accent">Site search</p>
+        <h1 class="text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">Search</h1>
+        <p class="text-lg text-foreground/75">
+          Enter keywords, case names, or abbreviations. The index prioritises lesson titles, tags, and contextual snippets, and
+          recognises common synonyms such as “PC” for probable cause.
+        </p>
+      </header>
+      <div class="mt-10 rounded-3xl border border-border bg-card/90 p-6 shadow-subtle">
+        <SearchInput client:idle />
+      </div>
+    </div>
+  </section>
+</BaseLayout>

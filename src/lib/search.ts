@@ -1,29 +1,48 @@
-export type SearchDoc = {
-  type: 'lesson' | 'glossary';
+export type SearchDocument = {
   id: string;
+  type: 'lesson' | 'glossary';
   title: string;
   url: string;
-  tags?: string[];
+  module: string;
+  tags: string[];
   textSnippet: string;
 };
 
-let cache: SearchDoc[] | null = null;
+export const SEARCH_INDEX_PATH = '/how-to-law/search-index.json';
 
-export async function loadSearchIndex() {
-  if (cache) return cache;
-  const res = await fetch('/how-to-law/search-index.json');
-  if (!res.ok) {
-    throw new Error('Failed to load search index');
-  }
-  const data = (await res.json()) as SearchDoc[];
-  cache = data;
-  return data;
+export const SYNONYMS: Record<string, string> = {
+  pc: 'probable cause',
+  scotus: 'Supreme Court',
+  constitution: 'Constitution'
+};
+
+export function expandQuery(query: string) {
+  const normalized = query.trim().toLowerCase();
+  if (!normalized) return '';
+  const parts = normalized.split(/\s+/);
+  const expanded = parts.flatMap((part) => {
+    const synonym = SYNONYMS[part];
+    return synonym ? [part, synonym] : [part];
+  });
+  return Array.from(new Set(expanded)).join(' ');
 }
 
-export function groupByType(docs: SearchDoc[]) {
-  return docs.reduce<Record<string, SearchDoc[]>>((acc, doc) => {
-    if (!acc[doc.type]) acc[doc.type] = [];
-    acc[doc.type].push(doc);
-    return acc;
-  }, {});
+export function highlightMatches(text: string, query: string) {
+  if (!query) return text;
+  const escaped = query
+    .split(/\s+/)
+    .filter(Boolean)
+    .map((word) => word.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'))
+    .join('|');
+  if (!escaped) return text;
+  const regex = new RegExp(`(${escaped})`, 'gi');
+  return text.replace(regex, '<mark>$1</mark>');
+}
+
+export async function fetchSearchDocuments(signal?: AbortSignal): Promise<SearchDocument[]> {
+  const response = await fetch(SEARCH_INDEX_PATH, { credentials: 'omit', signal });
+  if (!response.ok) {
+    throw new Error(`Search index request failed: ${response.status}`);
+  }
+  return (await response.json()) as SearchDocument[];
 }

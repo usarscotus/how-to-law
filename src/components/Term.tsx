@@ -1,57 +1,93 @@
+import { useEffect, useMemo, useState } from 'react';
 import * as Popover from '@radix-ui/react-popover';
-import { useState } from 'react';
-import { BookOpen } from 'lucide-react';
-import terms from '../content/glossary/terms.json';
-import { cx } from '../lib/utils';
+import { ExternalLink } from 'lucide-react';
+import { getGlossaryTerm } from '~/lib/utils';
 
-type TermProps = {
+interface TermPopoverProps {
   id: string;
-  className?: string;
-};
+  children: string | string[];
+}
 
-const termMap = new Map(terms.map((entry) => [entry.id, entry]));
+const STORAGE_KEY = 'htl:term-open';
 
-export default function Term({ id, className }: TermProps) {
-  const entry = termMap.get(id);
+export default function TermPopover({ id, children }: TermPopoverProps) {
+  const term = useMemo(() => getGlossaryTerm(id), [id]);
   const [open, setOpen] = useState(false);
-  const label = entry ? `${entry.term} definition` : 'Term definition';
+
+  useEffect(() => {
+    const handleKey = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        setOpen(false);
+      }
+    };
+    window.addEventListener('keydown', handleKey);
+    return () => window.removeEventListener('keydown', handleKey);
+  }, []);
+
+  useEffect(() => {
+    if (!open) return;
+    try {
+      sessionStorage.setItem(STORAGE_KEY, id);
+    } catch (error) {
+      console.debug('term session storage unavailable', error);
+    }
+  }, [open, id]);
+
+  if (!term) {
+    return <span>{children}</span>;
+  }
+
+  const display = Array.isArray(children) ? children.join('') : children;
 
   return (
-    <Popover.Root open={open} onOpenChange={setOpen}>
-      <Popover.Trigger asChild aria-haspopup="dialog" aria-expanded={open} aria-controls={`${id}-definition`}>
+    <Popover.Root open={open} onOpenChange={setOpen} modal={false}>
+      <Popover.Trigger
+        asChild
+        aria-describedby={`${id}-definition`}
+        aria-expanded={open}
+        aria-haspopup="dialog"
+      >
         <button
           type="button"
-          className={cx(
-            'underline decoration-dotted underline-offset-4 transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent',
-            className
-          )}
-          aria-label={label}
+          className="relative inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-sm font-medium text-accent hover:text-accent focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-accent"
         >
-          {entry?.term ?? id}
+          <span className="underline decoration-dotted underline-offset-2">{display}</span>
         </button>
       </Popover.Trigger>
       <Popover.Portal>
         <Popover.Content
+          side="top"
           align="center"
-          sideOffset={8}
-          className="z-50 max-w-xs rounded-xl border border-muted/60 bg-card p-4 text-sm text-foreground shadow-subtle data-[state=open]:animate-fade"
-          id={`${id}-definition`}
+          collisionPadding={16}
+          className="z-50 w-72 rounded-2xl border border-border bg-card p-4 text-left text-sm shadow-subtle focus:outline-none"
+          onCloseAutoFocus={(event) => {
+            if (event) {
+              event.preventDefault();
+            }
+          }}
         >
-          <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-accent">
-            <BookOpen className="h-4 w-4" aria-hidden />
-            Term
+          <div className="flex items-start justify-between gap-4">
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-wide text-muted">Glossary</p>
+              <h3 className="mt-1 text-base font-semibold text-foreground">{term.term}</h3>
+            </div>
+            <Popover.Close
+              className="rounded-full p-1 text-muted transition hover:text-foreground focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+              aria-label="Close glossary definition"
+            >
+              ×
+            </Popover.Close>
           </div>
-          <h4 className="mt-2 text-base font-semibold">{entry?.term ?? id}</h4>
-          <p className="mt-2 leading-relaxed text-muted">{entry?.def ?? 'Definition coming soon.'}</p>
-          {entry?.cite && <p className="mt-2 text-xs text-muted">Source: {entry.cite}</p>}
+          <p id={`${id}-definition`} className="mt-3 text-sm leading-relaxed text-foreground">
+            {term.def}
+          </p>
           <a
-            href={`/how-to-law/glossary/#${id}`}
-            className="mt-3 inline-flex items-center gap-1 text-sm font-medium text-accent hover:underline"
-            onClick={() => setOpen(false)}
+            href={`/how-to-law/glossary/#${term.id}`}
+            className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-accent hover:underline"
           >
-            Learn more
+            Read more
+            <ExternalLink className="h-3.5 w-3.5" aria-hidden="true" />
           </a>
-          <Popover.Arrow className="fill-card" />
         </Popover.Content>
       </Popover.Portal>
     </Popover.Root>

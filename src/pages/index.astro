@@ -1,80 +1,77 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-import ResumeProgress from '../components/ResumeProgress';
+import BaseLayout from '~/layouts/BaseLayout.astro';
+import { modules } from '~/lib/utils';
 import { getCollection } from 'astro:content';
-import { formatMinutes } from '../lib/utils';
 
 const lessons = await getCollection('classroom');
-const getLessonSlug = (entry: typeof lessons[number]) => (entry.data as Record<string, any>).slug ?? entry.slug;
-const lessonRefs = lessons.map((lesson) => {
-  const lessonSlug = getLessonSlug(lesson);
+const lessonCount = lessons.length;
+const moduleMeta = modules.map((module) => {
+  const moduleLessons = lessons
+    .filter((lesson) => lesson.data.module === module.id)
+    .sort((a, b) => a.data.order - b.data.order);
   return {
-    id: `${lesson.data.module}-${lessonSlug}`,
-    title: lesson.data.title,
-    url: `/how-to-law/classroom/${lesson.data.module}/${lessonSlug}/`
+    ...module,
+    lessonCount: moduleLessons.length,
+    nextLesson: moduleLessons[0]
+      ? `/how-to-law/classroom/${module.id}/${moduleLessons[0].slug.split('/')[1]}/`
+      : '/how-to-law/classroom/'
   };
 });
-
-const modules = lessons.reduce((acc, lesson) => {
-  const moduleId = lesson.data.module;
-  if (!acc[moduleId]) {
-    acc[moduleId] = {
-      id: moduleId,
-      title: lesson.data.moduleLabel ?? moduleId,
-      lessons: [],
-      totalMinutes: 0
-    };
-  }
-  acc[moduleId].lessons.push(lesson);
-  acc[moduleId].totalMinutes += lesson.data.est_minutes;
-  return acc;
-}, {} as Record<string, { id: string; title: string; lessons: typeof lessons; totalMinutes: number }>);
+const activeModules = moduleMeta.filter((module) => module.lessonCount > 0);
 ---
-<BaseLayout title="How to Law" description="US law fundamentals, remixed for immersive RP worlds.">
-  <section class="bg-gradient-to-b from-background via-background to-card/70">
-    <div class="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:px-8">
-      <div class="grid gap-12 lg:grid-cols-2 lg:items-center">
+<BaseLayout
+  title="How to Law"
+  description="A professional classroom delivering the essentials of United States law for students and practitioners."
+>
+  <section class="bg-background">
+    <div class="mx-auto max-w-6xl px-4 py-20 sm:px-6 lg:px-8">
+      <div class="grid gap-12 lg:grid-cols-[1.4fr_1fr] lg:items-center">
         <div class="space-y-6">
-          <p class="text-sm font-semibold uppercase tracking-wide text-accent">Roleplay-ready doctrine</p>
-          <h1 class="text-4xl font-bold text-foreground sm:text-5xl">How to Law</h1>
-          <p class="text-lg text-muted">
-            Learn the fundamentals of United States law with hooks for your tabletop or LARP campaign. We keep the doctrine solid—and spotlight where your world can safely diverge.
+          <p class="text-sm font-semibold uppercase tracking-wide text-accent">Structured legal learning</p>
+          <h1 class="text-4xl font-bold tracking-tight text-foreground sm:text-5xl">
+            Master the fundamentals of U.S. law with clear examples and authoritative sources.
+          </h1>
+          <p class="text-lg text-foreground/75">
+            How to Law brings the classroom online. Each module distills doctrine, procedure, and strategy into concise lessons
+            anchored in primary law and professional practice norms.
           </p>
           <div class="flex flex-wrap items-center gap-4">
             <a
               href="/how-to-law/classroom/"
-              class="inline-flex items-center justify-center rounded-full bg-accent px-6 py-3 text-base font-semibold text-accent-foreground shadow-subtle transition hover:opacity-90"
+              class="inline-flex items-center justify-center rounded-full bg-accent px-6 py-3 text-base font-semibold text-accent-foreground shadow-subtle transition hover:opacity-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
             >
-              Start learning
+              Enter the classroom
             </a>
-            <ResumeProgress client:load lessons={lessonRefs} />
+            <a
+              href="/how-to-law/resources/"
+              class="inline-flex items-center justify-center rounded-full border border-border px-6 py-3 text-base font-semibold text-foreground transition hover:border-accent/60 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+            >
+              View resources
+            </a>
           </div>
         </div>
-        <div class="rounded-3xl border border-muted/30 bg-card/80 p-8 shadow-subtle">
-          <h2 class="text-lg font-semibold text-foreground">What you'll explore</h2>
-          <ul class="mt-6 space-y-4 text-sm text-muted">
-            <li class="flex items-start gap-3">
-              <span class="mt-1 inline-flex h-2 w-2 flex-shrink-0 rounded-full bg-accent" aria-hidden />
-              Build literacy across statutes, regulations, and precedent.
-            </li>
-            <li class="flex items-start gap-3">
-              <span class="mt-1 inline-flex h-2 w-2 flex-shrink-0 rounded-full bg-accent" aria-hidden />
-              Toggle RP rule variants without losing legal stakes.
-            </li>
-            <li class="flex items-start gap-3">
-              <span class="mt-1 inline-flex h-2 w-2 flex-shrink-0 rounded-full bg-accent" aria-hidden />
-              Check your understanding with interactive quizzes and flows.
-            </li>
-          </ul>
-          <p class="mt-6 text-xs uppercase tracking-wide text-muted">Fast facts</p>
-          <dl class="mt-2 grid grid-cols-2 gap-4 text-sm">
-            <div>
-              <dt class="text-muted">Modules</dt>
-              <dd class="text-lg font-semibold text-foreground">{Object.keys(modules).length}</dd>
+        <div class="rounded-3xl border border-border bg-card/80 p-8 shadow-subtle">
+          <h2 class="text-lg font-semibold text-foreground">Program snapshot</h2>
+          <dl class="mt-6 space-y-4 text-sm text-foreground/80">
+            <div class="flex items-center justify-between">
+              <dt class="font-medium text-muted">Modules published</dt>
+              <dd class="text-lg font-semibold text-foreground">{activeModules.length}</dd>
             </div>
-            <div>
-              <dt class="text-muted">Lessons</dt>
-              <dd class="text-lg font-semibold text-foreground">{lessons.length}</dd>
+            <div class="flex items-center justify-between">
+              <dt class="font-medium text-muted">Lessons available</dt>
+              <dd class="text-lg font-semibold text-foreground">{lessonCount}</dd>
+            </div>
+            <div class="flex items-start gap-3 rounded-2xl bg-background/70 p-4">
+              <span class="mt-1 inline-flex h-2 w-2 shrink-0 rounded-full bg-accent" aria-hidden="true" />
+              <p>
+                Lessons include objectives, worked examples, glossary popovers, and knowledge checks with explanations.
+              </p>
+            </div>
+            <div class="flex items-start gap-3 rounded-2xl bg-background/70 p-4">
+              <span class="mt-1 inline-flex h-2 w-2 shrink-0 rounded-full bg-accent" aria-hidden="true" />
+              <p>
+                Built-in accessibility and responsive design make the material usable on any device or assistive technology.
+              </p>
             </div>
           </dl>
         </div>
@@ -82,49 +79,65 @@ const modules = lessons.reduce((acc, lesson) => {
     </div>
   </section>
 
-  <section class="border-t border-muted/20 bg-background">
+  <section class="border-t border-border/50 bg-card/40">
     <div class="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:px-8">
-      <h2 class="text-2xl font-semibold text-foreground">Classroom modules</h2>
-      <p class="mt-2 text-muted">Choose a path that fits your campaign timeline.</p>
+      <h2 class="text-2xl font-semibold text-foreground">Explore the modules</h2>
+      <p class="mt-2 text-foreground/70">Start with foundations, then branch into doctrine, procedure, and Supreme Court practice.</p>
       <div class="mt-10 grid gap-8 md:grid-cols-2">
-        {Object.values(modules).map((module) => (
-          <div class="rounded-3xl border border-muted/30 bg-card/70 p-6 shadow-subtle">
-            <div class="flex items-center justify-between">
+        {activeModules.map((module) => (
+          <article class="flex h-full flex-col justify-between rounded-3xl border border-border bg-background/80 p-6 shadow-subtle">
+            <div class="space-y-3">
               <h3 class="text-xl font-semibold text-foreground">{module.title}</h3>
-              <span class="text-sm text-muted">{module.lessons.length} lessons · {formatMinutes(module.totalMinutes)}</span>
+              <p class="text-sm text-foreground/80">{module.description}</p>
+              <p class="text-xs uppercase tracking-wide text-muted">{module.lessonCount} lesson{module.lessonCount === 1 ? '' : 's'}</p>
             </div>
-            <ul class="mt-4 space-y-3 text-sm text-muted">
-              {module.lessons
-                .slice()
-                .sort((a, b) => a.slug.localeCompare(b.slug))
-                .map((lesson) => {
-                  const lessonSlug = getLessonSlug(lesson);
-                  return (
-                    <li class="flex items-center justify-between gap-3">
-                      <span>{lesson.data.title}</span>
-                      <a href={`/how-to-law/classroom/${lesson.data.module}/${lessonSlug}/`} class="text-accent hover:underline text-xs font-semibold">
-                        View
-                      </a>
-                    </li>
-                  );
-                })}
-            </ul>
-          </div>
+            <a
+              href={module.nextLesson}
+              class="mt-6 inline-flex items-center justify-center rounded-full bg-accent/10 px-4 py-2 text-sm font-semibold text-accent transition hover:bg-accent/15 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+            >
+              View module
+            </a>
+          </article>
         ))}
       </div>
     </div>
   </section>
 
-  <section class="border-t border-muted/20 bg-card/60">
+  <section class="border-t border-border/40 bg-background">
     <div class="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:px-8">
-      <h2 class="text-2xl font-semibold text-foreground">Resources for deeper dives</h2>
-      <p class="mt-2 text-muted">Head to the Resources page for curated links to LII, Oyez, Congress.gov, and more.</p>
-      <a
-        href="/how-to-law/resources/"
-        class="mt-6 inline-flex items-center justify-center rounded-full border border-accent/60 bg-accent/10 px-4 py-2 text-sm font-semibold text-accent transition hover:border-accent hover:bg-accent/20"
-      >
-        Explore resources
-      </a>
+      <div class="grid gap-8 lg:grid-cols-2 lg:items-center">
+        <div class="space-y-4">
+          <h2 class="text-2xl font-semibold text-foreground">Learning approach</h2>
+          <ul class="space-y-3 text-sm text-foreground/80">
+            <li class="flex items-start gap-3">
+              <span class="mt-1 inline-flex h-2 w-2 shrink-0 rounded-full bg-accent" aria-hidden="true" />
+              Primary sources drive every explanation, with cross-references to statutes, rules, and landmark decisions.
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="mt-1 inline-flex h-2 w-2 shrink-0 rounded-full bg-accent" aria-hidden="true" />
+              Worked hypotheticals show how doctrine operates from investigation through appeal.
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="mt-1 inline-flex h-2 w-2 shrink-0 rounded-full bg-accent" aria-hidden="true" />
+              FlexSearch powers fast lookup across lessons and the glossary for on-demand review.
+            </li>
+          </ul>
+        </div>
+        <div class="rounded-3xl border border-border bg-card/80 p-6 shadow-subtle">
+          <h3 class="text-lg font-semibold text-foreground">Featured tools</h3>
+          <ul class="mt-4 space-y-3 text-sm text-foreground/80">
+            <li>
+              <strong class="text-foreground">Glossary popovers:</strong> hover or focus on key terms for definitions and citations.
+            </li>
+            <li>
+              <strong class="text-foreground">Interactive quizzes:</strong> build retention with feedback and stored best scores.
+            </li>
+            <li>
+              <strong class="text-foreground">Process flows:</strong> follow procedural steps for litigation, appeals, and remedies.
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
   </section>
 </BaseLayout>

@@ -1,1010 +1,239 @@
 [
   {
-    "id": "stare-decisis",
-    "term": "Stare decisis",
-    "def": "Doctrine requiring courts to follow precedent.",
-    "cite": "Black's Law Dictionary"
+    "id": "adversary-system",
+    "term": "adversary system",
+    "def": "Structure of litigation in which opposing parties present evidence and arguments before a neutral decision maker."
   },
   {
-    "id": "statute",
-    "term": "Statute",
-    "def": "A law enacted by a legislative body.",
-    "cite": "1 U.S.C. \u00a7 1"
+    "id": "administrative-law",
+    "term": "administrative law",
+    "def": "Body of law governing the creation, operation, and review of actions by administrative agencies."
   },
   {
-    "id": "regulation",
-    "term": "Regulation",
-    "def": "A rule issued by an administrative agency under delegated authority.",
-    "cite": "5 U.S.C. \u00a7 551"
+    "id": "appellate-review",
+    "term": "appellate review",
+    "def": "Examination of a lower tribunal's decision by a higher court for legal error.",
+    "aliases": ["appeal"]
   },
   {
-    "id": "precedent",
-    "term": "Precedent",
-    "def": "A prior judicial decision that guides future cases with similar facts.",
-    "cite": null
+    "id": "article-iii",
+    "term": "Article III",
+    "def": "Constitutional article establishing the federal judicial branch and defining the limits of federal judicial power."
   },
   {
-    "id": "probable-cause",
-    "term": "Probable cause",
-    "def": "Reasonable grounds to believe a crime has been committed.",
-    "cite": "Illinois v. Gates, 462 U.S. 213 (1983)"
-  },
-  {
-    "id": "arraignment",
-    "term": "Arraignment",
-    "def": "Initial court appearance where charges are read and a plea is entered.",
-    "cite": "Fed. R. Crim. P. 10"
-  },
-  {
-    "id": "subject-matter-jurisdiction",
-    "term": "Subject-matter jurisdiction",
-    "def": "Power of a court to hear a particular type of case.",
-    "cite": null
-  },
-  {
-    "id": "personal-jurisdiction",
-    "term": "Personal jurisdiction",
-    "def": "Authority over the parties to a lawsuit.",
-    "cite": null
-  },
-  {
-    "id": "venue",
-    "term": "Venue",
-    "def": "Geographic location where a case may be heard.",
-    "cite": null
-  },
-  {
-    "id": "summary-judgment",
-    "term": "Summary judgment",
-    "def": "Court ruling without trial because no material fact is disputed.",
-    "cite": "Fed. R. Civ. P. 56"
-  },
-  {
-    "id": "discovery",
-    "term": "Discovery",
-    "def": "Pretrial exchange of evidence between parties.",
-    "cite": null
-  },
-  {
-    "id": "voir-dire",
-    "term": "Voir dire",
-    "def": "Jury selection process involving questioning of prospective jurors.",
-    "cite": null
-  },
-  {
-    "id": "indictment",
-    "term": "Indictment",
-    "def": "Formal charge issued by a grand jury.",
-    "cite": null
-  },
-  {
-    "id": "information",
-    "term": "Information",
-    "def": "Formal criminal charge filed by a prosecutor without a grand jury.",
-    "cite": null
-  },
-  {
-    "id": "plea-bargain",
-    "term": "Plea bargain",
-    "def": "Agreement where defendant pleads guilty in exchange for concessions.",
-    "cite": null
-  },
-  {
-    "id": "double-jeopardy",
-    "term": "Double jeopardy",
-    "def": "Protection against being tried twice for the same offense.",
-    "cite": "U.S. Const. amend. V"
-  },
-  {
-    "id": "due-process",
-    "term": "Due process",
-    "def": "Procedural and substantive protections against arbitrary government action.",
-    "cite": "U.S. Const. amends. V & XIV"
-  },
-  {
-    "id": "equal-protection",
-    "term": "Equal protection",
-    "def": "Constitutional guarantee of equal treatment under the law.",
-    "cite": "U.S. Const. amend. XIV"
-  },
-  {
-    "id": "commerce-clause",
-    "term": "Commerce Clause",
-    "def": "Provision granting Congress power to regulate interstate commerce.",
-    "cite": "U.S. Const. art. I, \u00a7 8"
-  },
-  {
-    "id": "necessary-and-proper",
-    "term": "Necessary and Proper Clause",
-    "def": "Allows Congress to pass laws needed to execute its powers.",
-    "cite": "U.S. Const. art. I, \u00a7 8"
-  },
-  {
-    "id": "supremacy-clause",
-    "term": "Supremacy Clause",
-    "def": "Establishes federal law as supreme over conflicting state law.",
-    "cite": "U.S. Const. art. VI"
-  },
-  {
-    "id": "police-power",
-    "term": "Police power",
-    "def": "State authority to regulate for health, safety, and welfare.",
-    "cite": null
-  },
-  {
-    "id": "standing",
-    "term": "Standing",
-    "def": "Requirement that a party have a concrete stake in the dispute.",
-    "cite": null
-  },
-  {
-    "id": "ripeness",
-    "term": "Ripeness",
-    "def": "Doctrine requiring a dispute to be ready for judicial review.",
-    "cite": null
-  },
-  {
-    "id": "mootness",
-    "term": "Mootness",
-    "def": "Bars cases where issues are no longer live.",
-    "cite": null
-  },
-  {
-    "id": "injunction",
-    "term": "Injunction",
-    "def": "Court order requiring a party to do or refrain from doing something.",
-    "cite": null
-  },
-  {
-    "id": "writ-of-certiorari",
-    "term": "Writ of certiorari",
-    "def": "Order by which the Supreme Court reviews a lower court decision.",
-    "cite": null
-  },
-  {
-    "id": "en-banc",
-    "term": "En banc",
-    "def": "When all active judges of an appellate court hear a case together.",
-    "cite": null
-  },
-  {
-    "id": "amicus-brief",
-    "term": "Amicus brief",
-    "def": "Submission by a nonparty offering information to the court.",
-    "cite": null
-  },
-  {
-    "id": "res-judicata",
-    "term": "Res judicata",
-    "def": "Doctrine preventing relitigation of claims already decided.",
-    "cite": null
-  },
-  {
-    "id": "collateral-estoppel",
-    "term": "Collateral estoppel",
-    "def": "Doctrine barring relitigation of an issue previously resolved.",
-    "cite": null
-  },
-  {
-    "id": "harmless-error",
-    "term": "Harmless error",
-    "def": "Error that does not affect substantial rights and does not warrant reversal.",
-    "cite": null
-  },
-  {
-    "id": "structural-error",
-    "term": "Structural error",
-    "def": "Fundamental defect affecting framework of the trial requiring reversal.",
-    "cite": null
-  },
-  {
-    "id": "standard-of-review",
-    "term": "Standard of review",
-    "def": "Level of deference an appellate court gives to lower court decisions.",
-    "cite": null
-  },
-  {
-    "id": "abuse-of-discretion",
-    "term": "Abuse of discretion",
-    "def": "Appellate standard deferring unless decision was unreasonable.",
-    "cite": null
-  },
-  {
-    "id": "de-novo",
-    "term": "De novo",
-    "def": "Review where the appellate court considers an issue anew.",
-    "cite": null
-  },
-  {
-    "id": "clearly-erroneous",
-    "term": "Clearly erroneous",
-    "def": "Standard for reviewing factual findings in bench trials.",
-    "cite": null
-  },
-  {
-    "id": "statute-of-limitations",
-    "term": "Statute of limitations",
-    "def": "Deadline for filing a legal action.",
-    "cite": null
-  },
-  {
-    "id": "tolling",
-    "term": "Tolling",
-    "def": "Suspension or extension of a limitations period.",
-    "cite": null
-  },
-  {
-    "id": "mens-rea",
-    "term": "Mens rea",
-    "def": "Mental state required for a crime.",
-    "cite": null
-  },
-  {
-    "id": "actus-reus",
-    "term": "Actus reus",
-    "def": "Physical act required for a crime.",
-    "cite": null
-  },
-  {
-    "id": "strict-liability",
-    "term": "Strict liability",
-    "def": "Liability without regard to fault.",
-    "cite": null
-  },
-  {
-    "id": "negligence",
-    "term": "Negligence",
-    "def": "Failure to exercise reasonable care.",
-    "cite": null
-  },
-  {
-    "id": "duty-of-care",
-    "term": "Duty of care",
-    "def": "Obligation to conform to a standard to protect others from unreasonable risk.",
-    "cite": null
-  },
-  {
-    "id": "breach",
-    "term": "Breach",
-    "def": "Violation of a duty.",
-    "cite": null
-  },
-  {
-    "id": "causation-in-fact",
-    "term": "Causation in fact",
-    "def": "Actual cause of harm, often shown by the but-for test.",
-    "cite": null
-  },
-  {
-    "id": "proximate-cause",
-    "term": "Proximate cause",
-    "def": "Legal cause limiting liability to foreseeable harms.",
-    "cite": null
-  },
-  {
-    "id": "damages",
-    "term": "Damages",
-    "def": "Monetary compensation for loss or injury.",
-    "cite": null
-  },
-  {
-    "id": "punitive-damages",
-    "term": "Punitive damages",
-    "def": "Damages intended to punish and deter wrongful conduct.",
-    "cite": null
-  },
-  {
-    "id": "compensatory-damages",
-    "term": "Compensatory damages",
-    "def": "Damages intended to make the plaintiff whole.",
-    "cite": null
-  },
-  {
-    "id": "injunctive-relief",
-    "term": "Injunctive relief",
-    "def": "Non-monetary order compelling or prohibiting action.",
-    "cite": null
-  },
-  {
-    "id": "equity",
-    "term": "Equity",
-    "def": "Body of law providing remedies other than money damages.",
-    "cite": null
-  },
-  {
-    "id": "fiduciary-duty",
-    "term": "Fiduciary duty",
-    "def": "Obligation to act in another's best interest with loyalty and care.",
-    "cite": null
-  },
-  {
-    "id": "trust",
-    "term": "Trust",
-    "def": "Legal arrangement where property is managed by a trustee for beneficiaries.",
-    "cite": null
-  },
-  {
-    "id": "consideration",
-    "term": "Consideration",
-    "def": "Something of value exchanged to form a binding contract.",
-    "cite": null
-  },
-  {
-    "id": "offer",
-    "term": "Offer",
-    "def": "Manifestation of willingness to enter into a bargain.",
-    "cite": null
-  },
-  {
-    "id": "acceptance",
-    "term": "Acceptance",
-    "def": "Assent to the terms of an offer, creating a contract.",
-    "cite": null
-  },
-  {
-    "id": "capacity",
-    "term": "Capacity",
-    "def": "Legal ability to enter into a contract.",
-    "cite": null
-  },
-  {
-    "id": "breach-of-contract",
-    "term": "Breach of contract",
-    "def": "Failure to perform contractual obligations.",
-    "cite": null
-  },
-  {
-    "id": "anticipatory-repudiation",
-    "term": "Anticipatory repudiation",
-    "def": "Declared intent not to perform before performance is due.",
-    "cite": null
-  },
-  {
-    "id": "mitigation",
-    "term": "Mitigation",
-    "def": "Duty to reduce damages after a breach.",
-    "cite": null
-  },
-  {
-    "id": "parol-evidence",
-    "term": "Parol evidence",
-    "def": "Extrinsic evidence of prior or contemporaneous agreements.",
-    "cite": null
-  },
-  {
-    "id": "statute-of-frauds",
-    "term": "Statute of Frauds",
-    "def": "Requirement that certain contracts be in writing.",
-    "cite": null
-  },
-  {
-    "id": "ueta",
-    "term": "Uniform Electronic Transactions Act",
-    "def": "Model law validating electronic signatures.",
-    "cite": null
-  },
-  {
-    "id": "ucc",
-    "term": "Uniform Commercial Code",
-    "def": "Uniform set of laws governing commercial transactions.",
-    "cite": null
-  },
-  {
-    "id": "article-2",
-    "term": "UCC Article 2",
-    "def": "Article governing the sale of goods.",
-    "cite": null
-  },
-  {
-    "id": "secured-transaction",
-    "term": "Secured transaction",
-    "def": "Loan backed by collateral giving the creditor security interest.",
-    "cite": null
-  },
-  {
-    "id": "perfection",
-    "term": "Perfection",
-    "def": "Process of giving public notice of a security interest.",
-    "cite": null
-  },
-  {
-    "id": "priority",
-    "term": "Priority",
-    "def": "Ranking of competing security interests.",
-    "cite": null
-  },
-  {
-    "id": "bankruptcy",
-    "term": "Bankruptcy",
-    "def": "Legal process to address insolvent debtors.",
-    "cite": null
-  },
-  {
-    "id": "chapter-7",
-    "term": "Chapter 7",
-    "def": "Bankruptcy liquidation proceeding.",
-    "cite": null
-  },
-  {
-    "id": "chapter-11",
-    "term": "Chapter 11",
-    "def": "Reorganization bankruptcy for businesses.",
-    "cite": null
-  },
-  {
-    "id": "chapter-13",
-    "term": "Chapter 13",
-    "def": "Repayment plan bankruptcy for individuals.",
-    "cite": null
-  },
-  {
-    "id": "automatic-stay",
-    "term": "Automatic stay",
-    "def": "Immediate halt to collection efforts when bankruptcy is filed.",
-    "cite": null
-  },
-  {
-    "id": "discharge",
-    "term": "Discharge",
-    "def": "Release of debtor from personal liability for certain debts.",
-    "cite": null
-  },
-  {
-    "id": "secured-creditor",
-    "term": "Secured creditor",
-    "def": "Creditor with collateral backing a debt.",
-    "cite": null
-  },
-  {
-    "id": "unsecured-creditor",
-    "term": "Unsecured creditor",
-    "def": "Creditor without collateral backing a debt.",
-    "cite": null
-  },
-  {
-    "id": "grand-jury",
-    "term": "Grand jury",
-    "def": "Body that determines whether probable cause exists to indict.",
-    "cite": null
-  },
-  {
-    "id": "petit-jury",
-    "term": "Petit jury",
-    "def": "Trial jury that determines guilt or liability.",
-    "cite": null
+    "id": "brief",
+    "term": "brief",
+    "def": "Written submission that explains a party's legal and factual arguments to a court."
   },
   {
     "id": "burden-of-proof",
-    "term": "Burden of proof",
-    "def": "Obligation to prove facts to a specified level.",
-    "cite": null
+    "term": "burden of proof",
+    "def": "Obligation of a party to prove a fact or persuade the fact finder of a claim's validity."
   },
   {
-    "id": "beyond-a-reasonable-doubt",
-    "term": "Beyond a reasonable doubt",
-    "def": "Highest standard of proof used in criminal cases.",
-    "cite": null
+    "id": "case-law",
+    "term": "case law",
+    "def": "Judicial decisions that interpret statutes, regulations, and constitutional provisions."
   },
   {
-    "id": "preponderance",
-    "term": "Preponderance of the evidence",
-    "def": "Standard requiring proof that something is more likely than not.",
-    "cite": null
+    "id": "certiorari",
+    "term": "certiorari",
+    "def": "Discretionary order by which the Supreme Court agrees to review a lower court's judgment."
   },
   {
-    "id": "clear-and-convincing",
-    "term": "Clear and convincing evidence",
-    "def": "Intermediate burden requiring high probability of truth.",
-    "cite": null
+    "id": "civil-procedure",
+    "term": "civil procedure",
+    "def": "Rules and statutes that govern the process of civil litigation from filing to judgment."
   },
   {
-    "id": "appeal",
-    "term": "Appeal",
-    "def": "Review of a lower court decision by a higher court.",
-    "cite": null
+    "id": "common-law",
+    "term": "common law",
+    "def": "Judge-made law developed through precedent rather than enacted legislation."
   },
   {
-    "id": "remand",
-    "term": "Remand",
-    "def": "Appellate order sending a case back for further proceedings.",
-    "cite": null
+    "id": "complaint",
+    "term": "complaint",
+    "def": "Initial pleading in a civil action that states the plaintiff's claims and requests relief."
   },
   {
-    "id": "injury-in-fact",
-    "term": "Injury in fact",
-    "def": "Concrete, particularized harm required for standing.",
-    "cite": null
+    "id": "constitution",
+    "term": "Constitution",
+    "def": "Foundational legal charter establishing government structure and protecting individual rights."
   },
   {
-    "id": "causation",
-    "term": "Causation",
-    "def": "Connection between the injury and the challenged conduct.",
-    "cite": null
+    "id": "deference",
+    "term": "deference",
+    "def": "Judicial respect for the decisions or interpretations of another branch or decision maker."
   },
   {
-    "id": "redressability",
-    "term": "Redressability",
-    "def": "Likelihood a court decision will remedy the injury.",
-    "cite": null
+    "id": "discovery",
+    "term": "discovery",
+    "def": "Pretrial process for obtaining evidence from other parties or nonparties."
   },
   {
-    "id": "prerogative-writ",
-    "term": "Prerogative writ",
-    "def": "Extraordinary writ like mandamus or prohibition.",
-    "cite": null
+    "id": "district-court",
+    "term": "District Court",
+    "def": "General federal trial court with original jurisdiction over civil and criminal matters."
   },
   {
-    "id": "mandamus",
-    "term": "Mandamus",
-    "def": "Court order compelling a public official to perform a duty.",
-    "cite": null
+    "id": "due-process",
+    "term": "due process",
+    "def": "Constitutional requirement that government procedures be fair and follow established rules."
   },
   {
-    "id": "prohibition",
-    "term": "Prohibition",
-    "def": "Writ directing a lower court to stop a prohibited act.",
-    "cite": null
+    "id": "en-banc",
+    "term": "en banc",
+    "def": "Session in which a full appellate court, rather than a panel, hears and decides a case."
   },
   {
-    "id": "habeas-corpus",
-    "term": "Habeas corpus",
-    "def": "Petition challenging unlawful detention.",
-    "cite": null
+    "id": "equitable-relief",
+    "term": "equitable relief",
+    "def": "Nonmonetary remedy such as injunction, declaratory judgment, or specific performance."
   },
   {
-    "id": "bill-of-rights",
-    "term": "Bill of Rights",
-    "def": "First ten amendments to the U.S. Constitution.",
-    "cite": null
+    "id": "evidence",
+    "term": "evidence",
+    "def": "Testimony, documents, or tangible objects presented to prove or disprove facts at issue."
   },
   {
-    "id": "incorporation",
-    "term": "Incorporation",
-    "def": "Application of Bill of Rights to states via the Fourteenth Amendment.",
-    "cite": null
+    "id": "federal-question",
+    "term": "federal question",
+    "def": "Claim arising under the Constitution, laws, or treaties of the United States."
   },
   {
-    "id": "miranda-rights",
-    "term": "Miranda rights",
-    "def": "Warnings police must give before custodial interrogation.",
-    "cite": "Miranda v. Arizona, 384 U.S. 436 (1966)"
+    "id": "federalism",
+    "term": "federalism",
+    "def": "Constitutional division of authority between the federal government and the states."
   },
   {
-    "id": "exclusionary-rule",
-    "term": "Exclusionary rule",
-    "def": "Prohibits use of evidence obtained in violation of constitutional rights.",
-    "cite": null
+    "id": "final-judgment",
+    "term": "final judgment rule",
+    "def": "Doctrine limiting appellate review to decisions that resolve all claims for all parties."
   },
   {
-    "id": "fruit-of-the-poisonous-tree",
-    "term": "Fruit of the poisonous tree",
-    "def": "Evidence derived from illegal searches is inadmissible.",
-    "cite": null
-  },
-  {
-    "id": "stop-and-frisk",
-    "term": "Stop and frisk",
-    "def": "Brief detention and pat-down based on reasonable suspicion.",
-    "cite": "Terry v. Ohio, 392 U.S. 1 (1968)"
-  },
-  {
-    "id": "reasonable-suspicion",
-    "term": "Reasonable suspicion",
-    "def": "Specific, articulable facts suggesting criminal activity.",
-    "cite": null
-  },
-  {
-    "id": "search-warrant",
-    "term": "Search warrant",
-    "def": "Judicial authorization to search property.",
-    "cite": null
-  },
-  {
-    "id": "plain-view",
-    "term": "Plain view doctrine",
-    "def": "Allows seizure of evidence visible during lawful observation.",
-    "cite": null
-  },
-  {
-    "id": "consent-search",
-    "term": "Consent search",
-    "def": "Search conducted with voluntary agreement.",
-    "cite": null
-  },
-  {
-    "id": "exigent-circumstances",
-    "term": "Exigent circumstances",
-    "def": "Emergency allowing warrantless search.",
-    "cite": null
-  },
-  {
-    "id": "grandfather-clause",
-    "term": "Grandfather clause",
-    "def": "Provision allowing existing conditions to continue despite new rules.",
-    "cite": null
-  },
-  {
-    "id": "sunset-clause",
-    "term": "Sunset clause",
-    "def": "Provision causing a law to expire unless renewed.",
-    "cite": null
-  },
-  {
-    "id": "delegation",
-    "term": "Delegation",
-    "def": "Transfer of authority from legislature to agency.",
-    "cite": null
-  },
-  {
-    "id": "chevron-deference",
-    "term": "Chevron deference",
-    "def": "Judicial deference to reasonable agency interpretations of ambiguous statutes.",
-    "cite": "Chevron U.S.A. Inc. v. NRDC, 467 U.S. 837 (1984)"
-  },
-  {
-    "id": "major-questions",
-    "term": "Major questions doctrine",
-    "def": "Courts demand clear congressional authorization for agency actions of vast significance.",
-    "cite": null
-  },
-  {
-    "id": "notice-and-comment",
-    "term": "Notice-and-comment",
-    "def": "Process for agencies to promulgate regulations.",
-    "cite": "5 U.S.C. \u00a7 553"
-  },
-  {
-    "id": "rulemaking",
-    "term": "Rulemaking",
-    "def": "Agency process of creating new regulations.",
-    "cite": null
-  },
-  {
-    "id": "adjudication",
-    "term": "Adjudication",
-    "def": "Agency process of resolving disputes.",
-    "cite": null
-  },
-  {
-    "id": "standing-order",
-    "term": "Standing order",
-    "def": "Court directive governing procedures in a particular courtroom.",
-    "cite": null
-  },
-  {
-    "id": "protective-order",
-    "term": "Protective order",
-    "def": "Court order shielding information from disclosure.",
-    "cite": null
-  },
-  {
-    "id": "contested-hearing",
-    "term": "Contested hearing",
-    "def": "Evidentiary proceeding to resolve disputed facts.",
-    "cite": null
-  },
-  {
-    "id": "bench-trial",
-    "term": "Bench trial",
-    "def": "Trial before a judge without a jury.",
-    "cite": null
-  },
-  {
-    "id": "jury-trial",
-    "term": "Jury trial",
-    "def": "Trial where a jury is fact finder.",
-    "cite": null
-  },
-  {
-    "id": "voir-dire-challenge",
-    "term": "Voir dire challenge",
-    "def": "Objection to a prospective juror for cause or peremptory.",
-    "cite": null
-  },
-  {
-    "id": "peremptory-challenge",
-    "term": "Peremptory challenge",
-    "def": "Ability to strike a juror without stating a reason.",
-    "cite": null
-  },
-  {
-    "id": "batson-challenge",
-    "term": "Batson challenge",
-    "def": "Objection to peremptory strike based on race or gender discrimination.",
-    "cite": "Batson v. Kentucky, 476 U.S. 79 (1986)"
-  },
-  {
-    "id": "sentencing-guidelines",
-    "term": "Sentencing guidelines",
-    "def": "Framework guiding federal sentencing decisions.",
-    "cite": null
-  },
-  {
-    "id": "restorative-justice",
-    "term": "Restorative justice",
-    "def": "Process focusing on repairing harm through collaboration.",
-    "cite": null
-  },
-  {
-    "id": "community-service",
-    "term": "Community service",
-    "def": "Court-ordered service as part of sentence.",
-    "cite": null
-  },
-  {
-    "id": "parole",
-    "term": "Parole",
-    "def": "Conditional release from prison under supervision.",
-    "cite": null
-  },
-  {
-    "id": "probation",
-    "term": "Probation",
-    "def": "Sentence allowing offender to remain in community under conditions.",
-    "cite": null
-  },
-  {
-    "id": "revocation",
-    "term": "Revocation",
-    "def": "Termination of probation or parole for violations.",
-    "cite": null
-  },
-  {
-    "id": "civil-rights",
-    "term": "Civil rights",
-    "def": "Rights protecting individuals from unequal treatment.",
-    "cite": null
-  },
-  {
-    "id": "civil-liberties",
-    "term": "Civil liberties",
-    "def": "Freedoms protected from government interference.",
-    "cite": null
-  },
-  {
-    "id": "administrative-record",
-    "term": "Administrative record",
-    "def": "Materials compiled by agency supporting its decision.",
-    "cite": null
-  },
-  {
-    "id": "arbitrary-and-capricious",
-    "term": "Arbitrary and capricious",
-    "def": "Standard for reviewing agency actions for rationality.",
-    "cite": null
-  },
-  {
-    "id": "standing-order-rp",
-    "term": "Standing order (RP)",
-    "def": "RP-specific directive shaping courtroom flavor, such as mandatory cloaks.",
-    "cite": null
-  },
-  {
-    "id": "lore-precedent",
-    "term": "Lore precedent",
-    "def": "Fictional case history used to justify RP rules.",
-    "cite": null
-  },
-  {
-    "id": "guild-council",
-    "term": "Guild council",
-    "def": "RP governing body adjudicating disputes between factions.",
-    "cite": null
-  },
-  {
-    "id": "truth-sigil",
-    "term": "Truth sigil",
-    "def": "RP device used to approximate lie-detection during hearings.",
-    "cite": null
-  },
-  {
-    "id": "shadow-appeal",
-    "term": "Shadow appeal",
-    "def": "RP mechanism allowing off-record challenges to rulings.",
-    "cite": null
-  },
-  {
-    "id": "chronicle",
-    "term": "Chronicle",
-    "def": "In-universe record of decisions that functions like an official reporter.",
-    "cite": null
-  },
-  {
-    "id": "appeal-bond",
-    "term": "Appeal bond",
-    "def": "Security to stay enforcement during appeal.",
-    "cite": null
-  },
-  {
-    "id": "injunction-pending-appeal",
-    "term": "Injunction pending appeal",
-    "def": "Order maintaining status quo while appeal is resolved.",
-    "cite": null
-  },
-  {
-    "id": "protective-custody",
-    "term": "Protective custody",
-    "def": "Detention to safeguard a witness or defendant.",
-    "cite": null
-  },
-  {
-    "id": "bail",
-    "term": "Bail",
-    "def": "Security ensuring a defendant's appearance in court.",
-    "cite": null
-  },
-  {
-    "id": "bail-reform",
-    "term": "Bail reform",
-    "def": "Movement to reduce reliance on cash bail.",
-    "cite": null
-  },
-  {
-    "id": "speedy-trial",
-    "term": "Speedy trial",
-    "def": "Right to a timely trial.",
-    "cite": "U.S. Const. amend. VI"
-  },
-  {
-    "id": "public-trial",
-    "term": "Public trial",
-    "def": "Right to have proceedings open to the public.",
-    "cite": null
-  },
-  {
-    "id": "confrontation",
-    "term": "Confrontation right",
-    "def": "Right to cross-examine witnesses.",
-    "cite": "U.S. Const. amend. VI"
-  },
-  {
-    "id": "compulsory-process",
-    "term": "Compulsory process",
-    "def": "Right to compel witnesses to testify.",
-    "cite": null
-  },
-  {
-    "id": "self-incrimination",
-    "term": "Self-incrimination",
-    "def": "Privilege against being forced to testify against oneself.",
-    "cite": "U.S. Const. amend. V"
-  },
-  {
-    "id": "grand-jury-secrecy",
-    "term": "Grand jury secrecy",
-    "def": "Requirement that proceedings remain confidential.",
-    "cite": null
-  },
-  {
-    "id": "plea-colloquy",
-    "term": "Plea colloquy",
-    "def": "Court's dialogue ensuring a plea is knowing and voluntary.",
-    "cite": null
-  },
-  {
-    "id": "allocution",
-    "term": "Allocution",
-    "def": "Defendant's statement before sentencing.",
-    "cite": null
-  },
-  {
-    "id": "post-conviction",
-    "term": "Post-conviction relief",
-    "def": "Procedures to challenge convictions after direct appeal.",
-    "cite": null
-  },
-  {
-    "id": "ineffective-assistance",
-    "term": "Ineffective assistance",
-    "def": "Claim that defense counsel's performance was constitutionally deficient.",
-    "cite": "Strickland v. Washington, 466 U.S. 668 (1984)"
-  },
-  {
-    "id": "certpool",
-    "term": "Cert pool",
-    "def": "Process where Supreme Court clerks share review of petitions.",
-    "cite": null
-  },
-  {
-    "id": "shadow-docket",
-    "term": "Shadow docket",
-    "def": "Supreme Court's emergency orders outside full briefing.",
-    "cite": null
-  },
-  {
-    "id": "per-curiam",
-    "term": "Per curiam",
-    "def": "Unsigned opinion of the court.",
-    "cite": null
-  },
-  {
-    "id": "majority-opinion",
-    "term": "Majority opinion",
-    "def": "Opinion reflecting the view of most judges in a case.",
-    "cite": null
-  },
-  {
-    "id": "concurrence",
-    "term": "Concurrence",
-    "def": "Opinion agreeing with result but not reasoning.",
-    "cite": null
-  },
-  {
-    "id": "dissent",
-    "term": "Dissent",
-    "def": "Opinion disagreeing with the majority decision.",
-    "cite": null
+    "id": "flow-of-case",
+    "term": "case flow",
+    "def": "Overall progression of a matter from investigation through final resolution."
   },
   {
     "id": "holding",
-    "term": "Holding",
-    "def": "Legal principle necessary to resolve a case.",
-    "cite": null
+    "term": "holding",
+    "def": "Legal principle necessary to resolve the dispute before the court."
   },
   {
-    "id": "dicta",
-    "term": "Dicta",
-    "def": "Statements in an opinion not essential to the decision.",
-    "cite": null
+    "id": "injunction",
+    "term": "injunction",
+    "def": "Court order directing a party to do or refrain from doing a specific act."
   },
   {
-    "id": "remittitur",
-    "term": "Remittitur",
-    "def": "Reduction of a jury award by a judge.",
-    "cite": null
+    "id": "jurisdiction",
+    "term": "jurisdiction",
+    "def": "Power of a court to hear and decide a case."
   },
   {
-    "id": "additur",
-    "term": "Additur",
-    "def": "Increase of a jury award by a judge (not permitted in federal courts).",
-    "cite": null
+    "id": "legislative-history",
+    "term": "legislative history",
+    "def": "Materials generated during enactment of a statute that may inform interpretation."
   },
   {
-    "id": "joinder",
-    "term": "Joinder",
-    "def": "Combining parties or claims in a single lawsuit.",
-    "cite": null
+    "id": "mens-rea",
+    "term": "mens rea",
+    "def": "Mental state required as an element of a crime, such as intent or knowledge."
   },
   {
-    "id": "class-action",
-    "term": "Class action",
-    "def": "Lawsuit brought by representative plaintiffs on behalf of a group.",
-    "cite": null
+    "id": "notice",
+    "term": "notice",
+    "def": "Information that informs a person of legal proceedings or obligations affecting them."
   },
   {
-    "id": "certification",
-    "term": "Class certification",
-    "def": "Court approval allowing a case to proceed as a class action.",
-    "cite": null
+    "id": "original-jurisdiction",
+    "term": "original jurisdiction",
+    "def": "Authority of a court to hear a case in the first instance."
   },
   {
-    "id": "opt-out",
-    "term": "Opt-out",
-    "def": "Ability of class members to exclude themselves from a class action.",
-    "cite": null
+    "id": "personal-jurisdiction",
+    "term": "personal jurisdiction",
+    "def": "Court's power to render a judgment affecting a particular defendant's rights or obligations."
   },
   {
-    "id": "dispositive-motion",
-    "term": "Dispositive motion",
-    "def": "Motion seeking to resolve claims without trial.",
-    "cite": null
+    "id": "plea-bargain",
+    "term": "plea bargain",
+    "def": "Agreement in which a criminal defendant pleads guilty in exchange for concessions."
   },
   {
-    "id": "motion-in-limine",
-    "term": "Motion in limine",
-    "def": "Motion to exclude evidence before trial.",
-    "cite": null
+    "id": "precedent",
+    "term": "precedent",
+    "def": "Prior judicial decision that guides the outcome of later cases involving similar facts or law."
   },
   {
-    "id": "protective-ward",
-    "term": "Protective ward",
-    "def": "RP concept for safe housing witnesses between sessions.",
-    "cite": null
+    "id": "probable-cause",
+    "term": "probable cause",
+    "def": "Reasonable ground to believe that a crime has been committed and that the suspect committed it.",
+    "aliases": ["pc"]
   },
   {
-    "id": "chronicle-writ",
-    "term": "Chronicle writ",
-    "def": "RP emergency appeal to lore keepers.",
-    "cite": null
+    "id": "procedural-due-process",
+    "term": "procedural due process",
+    "def": "Requirement that the government follow fair procedures before depriving a person of life, liberty, or property."
+  },
+  {
+    "id": "remand",
+    "term": "remand",
+    "def": "Order by an appellate court sending a case back to a lower court for further proceedings."
+  },
+  {
+    "id": "remedies",
+    "term": "remedies",
+    "def": "Legal or equitable relief provided to address a violation of rights."
+  },
+  {
+    "id": "rule-of-law",
+    "term": "rule of law",
+    "def": "Principle that government officials and citizens are bound by and accountable to the law."
+  },
+  {
+    "id": "service-of-process",
+    "term": "service of process",
+    "def": "Formal delivery of legal documents to notify a party of proceedings."
+  },
+  {
+    "id": "stare-decisis",
+    "term": "stare decisis",
+    "def": "Doctrine requiring courts to follow controlling precedent absent a compelling reason to depart."
+  },
+  {
+    "id": "statute",
+    "term": "statute",
+    "def": "Law enacted by a legislature and codified in the United States Code or state code."
+  },
+  {
+    "id": "subject-matter",
+    "term": "subject-matter jurisdiction",
+    "def": "Authority of a court to hear cases of a particular type or category."
+  },
+  {
+    "id": "supreme-court",
+    "term": "Supreme Court",
+    "def": "Highest court in the United States with final authority over federal law and the Constitution."
+  },
+  {
+    "id": "suppression",
+    "term": "suppression",
+    "def": "Exclusion of evidence obtained in violation of constitutional or statutory rights."
+  },
+  {
+    "id": "venue",
+    "term": "venue",
+    "def": "Proper geographic location for a court to hear a case."
+  },
+  {
+    "id": "voir-dire",
+    "term": "voir dire",
+    "def": "Process of questioning prospective jurors to assess qualifications and impartiality."
+  },
+  {
+    "id": "writ",
+    "term": "writ",
+    "def": "Formal written order issued by a court directing a specific action."
   }
 ]

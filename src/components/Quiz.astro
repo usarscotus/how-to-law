@@ -1,0 +1,12 @@
+---
+import QuizClient, { type QuizQuestion } from './Quiz';
+
+interface Props {
+  id: string;
+  title?: string;
+  questions: QuizQuestion[];
+}
+
+const { id, title, questions } = Astro.props as Props;
+---
+<QuizClient client:idle {id} {title} {questions} />
