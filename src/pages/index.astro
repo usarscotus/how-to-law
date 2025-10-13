@@ -1,14 +1,17 @@
 ---
 import BaseLayout from '~/layouts/BaseLayout.astro';
-import { modules } from '~/lib/utils';
+import { getLessonOrder, modules } from '~/lib/utils';
 import { getCollection } from 'astro:content';
 
 const lessons = await getCollection('classroom');
 const lessonCount = lessons.length;
 const moduleMeta = modules.map((module) => {
   const moduleLessons = lessons
-    .filter((lesson) => lesson.data.module === module.id)
-    .sort((a, b) => a.data.order - b.data.order);
+    .filter((lesson) => {
+      const lessonModule = lesson.data.module ?? lesson.slug.split('/')[0];
+      return lessonModule === module.id;
+    })
+    .sort((a, b) => getLessonOrder(a) - getLessonOrder(b));
   return {
     ...module,
     lessonCount: moduleLessons.length,
