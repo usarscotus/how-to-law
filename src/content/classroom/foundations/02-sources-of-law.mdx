@@ -1,70 +1,66 @@
 ---
 title: Sources of Law
-description: The United States legal system draws authority from constitutions, statutes, regulations, and judicial decisions arranged in a hierarchy.
+slug: sources-of-law
 module: foundations
-moduleTitle: Foundations
-order: 2
-estimatedTime: 12 minutes
+moduleLabel: Foundations
+level: introductory
+est_minutes: 15
+summary: U.S. law flows from constitutions, statutes, regulations, and judicial opinions that operate within a hierarchy of authority.
 objectives:
-  - Identify the four primary sources of U.S. law and their relative hierarchy.
-  - Describe how agencies convert legislative delegations into enforceable regulations.
-  - Explain the role of precedent in interpreting statutes and constitutional provisions.
+  - Identify the primary sources of American law and the institutions responsible for creating them.
+  - Explain how the Supremacy Clause and jurisdictional limits organize conflicts among legal sources.
+  - Apply the hierarchy of authority to determine which rule governs a sample dispute.
+prereqs:
+  - what-is-law
 tags:
+  - doctrine
   - hierarchy
-  - interpretation
-references:
-  - title: U.S. Const. art. VI, cl. 2
-    url: https://constitution.congress.gov/constitution/article-6/
+  - sources
+quiz:
+  - id: foundations-sources-of-law
+    prompt: Which source of law controls when a federal statute conflicts with a state ordinance on the same subject?
+    options:
+      - The ordinance controls because it is more specific.
+      - The federal statute controls because the Supremacy Clause gives enacted federal law priority.
+      - Neither source controls until the Supreme Court resolves the dispute.
+      - Both sources apply and the party may choose the more favorable rule.
+    answer: The federal statute controls because the Supremacy Clause gives enacted federal law priority.
+    explanation: Valid federal statutes enacted within Congress's authority supersede conflicting state or local law under the Supremacy Clause.
+further_reading:
+  - title: U.S. Const. art. VI, cl. 2 (Supremacy Clause)
+    url: https://constitution.congress.gov/browse/article-6/
+  - title: 5 U.S.C. § 553 (Administrative Procedure Act rulemaking provision)
+    url: https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section553&num=0&edition=prelim
 ---
-## Constitutional supremacy
+The United States legal system rests on a hierarchy of sources. At the top sit constitutions—most importantly, the U.S. Constitution and each state's charter. A constitution allocates power, sets structural rules, and protects rights. When a statute conflicts with constitutional text, judges must follow the supreme law of the land.
 
-The Constitution is the supreme law of the land. Article VI, the Supremacy Clause, binds judges in every state to follow federal law whenever it conflicts with a state enactment. Constitutional provisions require amendment to change. Courts use text, history, structure, and precedent to interpret constitutional meaning.
+Below constitutions are statutes. Congress and state legislatures enact statutes through formal procedures that require bicameral passage and executive signature (or a veto override). Statutes state general rules that bind courts and agencies. For example, Title VII of the Civil Rights Act prohibits employment discrimination, and state motor vehicle codes set licensing requirements.
 
-<Callout kind="note" title="Judicial review">
-  Judicial review allows courts to invalidate statutes or executive actions that conflict with the Constitution. It also requires courts to respect political branch choices when the Constitution commits decisions to those branches.
-</Callout>
+Statutes often delegate details to administrative agencies. Agencies adopt regulations that carry the force of law so long as they remain within the bounds of the statute and the agency's jurisdiction. The Environmental Protection Agency issues emissions standards; the Social Security Administration defines eligibility criteria. Regulations must follow the Administrative Procedure Act's notice-and-comment process unless an exception applies.
 
-## Statutes and regulations
+Judicial opinions interpret all of these materials. Courts resolve disputes, construe statutes and regulations, and develop common law doctrines where legislatures are silent. When an appellate court issues precedent, lower courts within the same hierarchy must follow it. That is why a trial court in the Second Circuit cannot disregard a controlling Supreme Court interpretation of a federal statute.
 
-Congress enacts statutes that create rights, duties, and programs. Because modern governance demands technical detail, Congress often delegates implementation to administrative agencies. An agency proposes a rule, receives public comment, and publishes a final regulation in the Federal Register and Code of Federal Regulations. Regulations carry the force of law if they are within the scope of the delegation and follow required procedure.
+Local governments contribute a fourth layer. Municipal councils enact ordinances on zoning, noise, and public safety. These ordinances operate only within the city's boundaries and must remain consistent with state enabling statutes and constitutional limits on police power.
 
-Agencies may also issue adjudicatory decisions or policy guidance, but only properly promulgated regulations bind the public. Courts reviewing an agency action examine statutory authority, procedure, and reasonableness.
+Conflicts arise when sources collide. The Supremacy Clause makes valid federal law superior to state law. Within a single system, the doctrine of preemption ensures that a federal statute can displace contrary state rules, while state constitutions constrain local ordinances. Jurisdiction also matters: a court cannot enforce a regulation issued by an agency that lacks statutory authority, and a city cannot legislate beyond its borders.
 
-## Judicial decisions and precedent
-
-When a court decides a case, its opinion resolves the dispute and articulates the governing rule. The binding portion of an opinion is the holding: the rule necessary to decide the outcome on the facts presented. Under the doctrine of stare decisis, a lower court must follow controlling precedent from higher courts in its jurisdiction.
-
-Appellate courts may distinguish earlier decisions if the facts or legal issues materially differ. They may also overrule precedent when special justification exists, considering factors such as workability, reliance, and doctrinal coherence.
-
-## Putting the hierarchy together
-
-The hierarchy of authority typically runs Constitution → statute → regulation → judicial decision applying those sources. When authorities conflict, apply the higher source. When multiple authorities are valid and consistent, harmonize them to give effect to all.
-
-<Flow
-  title="Evaluating a legal source"
-  steps={[
-    { title: 'Identify the source', description: 'Determine whether the rule is constitutional text, a statute, a regulation, or case law.' },
-    { title: 'Check hierarchy', description: 'Confirm that the source is valid in light of higher-ranking authority.' },
-    { title: 'Confirm jurisdiction', description: 'Verify that the issuing body has authority over the dispute and parties.' },
-    { title: 'Synthesize precedent', description: 'Read related cases to understand how the rule has been applied or limited.' }
-  ]}
-/>
+When analyzing a problem, start with the question presented: what tribunal is deciding the case, and what sources bind that tribunal? If a plaintiff challenges a state ordinance in federal district court, the judge will examine the U.S. Constitution, the relevant federal statute, and any on-point precedent. State law may fill gaps, but it cannot override controlling federal authority.
 
 <Quiz
   id="foundations-sources-of-law"
   questions={[
     {
-      id: 'hierarchy',
-      prompt: 'A federal regulation conflicts with the unambiguous text of its enabling statute. What is the outcome?',
+      id: 'supremacy',
+      prompt: 'Which source of law controls when a federal statute conflicts with a state ordinance on the same subject?',
       choices: [
-        { id: 'a', label: 'The regulation controls because agencies may fill statutory gaps however they choose.' },
-        { id: 'b', label: 'The statute prevails because regulations must be consistent with statutory authority.' },
-        { id: 'c', label: 'Both apply, and a court will average the two results.' },
-        { id: 'd', label: 'The agency may ignore the statute if it provides a reasoned explanation.' }
+        { id: 'a', label: 'The ordinance controls because it is more specific.' },
+        { id: 'b', label: 'The federal statute controls because the Supremacy Clause gives enacted federal law priority.' },
+        { id: 'c', label: 'Neither source controls until the Supreme Court resolves the dispute.' },
+        { id: 'd', label: 'Both sources apply and the party may choose the more favorable rule.' }
       ],
       answer: 'b',
       explanation:
-        'Regulations derive their force from the statute that authorizes them. A regulation that conflicts with the statute is invalid and cannot be enforced.'
+        'Valid federal statutes enacted within Congress\'s authority supersede conflicting state or local law under the Supremacy Clause.'
     }
   ]}
 />
