@@ -1,45 +1,40 @@
 # How to Law
 
-How to Law is a professional Astro site that teaches foundational United States law with concise lessons, interactive quizzes, and a robust glossary. The project is optimized for GitHub Pages deployment at `/how-to-law`.
+## What this project is
+- A free, community-built learning hub for people exploring the foundations of United States law.
+- A place to share plain-language explainers, interactive lessons, and curated resources anyone can improve together.
 
-## Features
-
-- **Astro v4 + MDX** for fast static pages with React islands only where interaction is required.
-- **Structured curriculum** covering foundations, courts & jurisdiction, and Supreme Court practice with breadcrumbs, lesson objectives, and progress visuals.
-- **Glossary autolink plugin** that automatically wraps defined terms in popovers sourced from `src/content/glossary/terms.json`.
-- **FlexSearch-powered site search** with weighted fields, synonym handling, and highlighted results.
-- **Accessible design** featuring WCAG AA-compliant colors, keyboard navigation, skip links, and respect for prefers-reduced-motion.
-- **Tooling** including ESLint, Prettier, Tailwind CSS, and automated GitHub Actions that check, lint, and build the project.
+## What this project is not
+- A source of legal advice or a substitute for personalized counsel. Everything here is educational only.
 
 ## Getting started
-
 ```bash
 npm install
 npm run dev
 ```
+The dev server runs at `http://localhost:4321/how-to-law` so content loads under the same base path the production site uses.
 
-The site is served at `http://localhost:4321/how-to-law` during development. Astro automatically rebuilds pages when content or components change.
+## Contributing
+- **Write in plain English.** Example: say “The court reviews the evidence” instead of “Herein the tribunal evaluates exhibits.”
+- **State rules succinctly, then illustrate.** Lead with the rule sentence, then add a short example or scenario to show how it works.
+- **Cite primary sources when helpful.** Link to trusted references like Cornell’s LII or Oyez when you explain doctrines or cases.
+- **Skip roleplay content.** No mock client dramas or simulated attorney conversations—keep explanations factual and instructional.
 
-## Scripts
-
-- `npm run dev` – start the development server.
-- `npm run check` – run `astro check` and ESLint.
-- `npm run build` – generate the production build in `dist/`.
-- `npm run preview` – preview the production build locally.
-- `npm run format` – format files with Prettier.
-
-## Content structure
-
-- `src/content/classroom` – MDX lessons organized by module.
-- `src/content/glossary/terms.json` – glossary definitions used throughout the site.
-- `src/layouts` – shared page and lesson layouts with navigation, metadata, and accessibility features.
-- `src/components` – UI components such as `Callout`, `Flow`, `Quiz`, `SearchInput`, and `Term` popovers.
-- `src/plugins/remark-terms.js` – remark plugin for auto-linking glossary terms.
+When you open a pull request, mention the lesson or glossary item you updated and note any new sources you linked.
 
 ## Deployment
+- GitHub Actions workflow `Deploy Astro site` runs on pushes to `main` or manual dispatch.
+- The build job installs dependencies (`npm ci`), runs `npm run check`, builds the site, and uploads the `dist` artifact.
+- The deploy job publishes that artifact to GitHub Pages. The public site lives at `https://example.github.io/how-to-law/` (replace `example` with the repository owner) and must retain the `/how-to-law` base path.
 
-The project is configured for GitHub Pages. Set the repository’s Pages source to “Deploy from GitHub Actions.” The build output uses `base: '/how-to-law'` and `trailingSlash: 'always'` for stable URLs.
+## Accessibility & performance checklist
+- Provide descriptive link text and alt text for images.
+- Preserve keyboard focus order and include skip links where relevant.
+- Meet WCAG AA color contrast and respect reduced-motion preferences.
+- Keep headings hierarchical (no skipping levels) and use semantic HTML.
+- Minimize bundle cost: prefer static Markdown content and lightweight islands only when interaction is necessary.
 
-## License
-
-Content and code are provided for educational purposes only and do not constitute legal advice.
+## Code style
+- Use ESLint and Prettier via `npm run check` and `npm run format` before committing.
+- Keep frontmatter fields ordered logically: metadata first, then arrays (`objectives`, `prereqs`, `tags`), followed by quiz or further reading. Use the numeric `order` field to control lesson sequencing (increment from 1 within each module).
+- Module IDs currently in use (directory names under `src/content/classroom`): `civ-pro`, `civil-procedure`, `constitutional-law`, `courts`, `crim-pro`, `criminal-law`, `criminal-procedure`, `evidence`, `foundations`, `remedies`, `scotus-practice`.
