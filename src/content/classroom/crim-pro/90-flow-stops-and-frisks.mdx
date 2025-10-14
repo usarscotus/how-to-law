@@ -1,0 +1,28 @@
+---
+title: Stop-and-Frisk Decision Flow
+slug: flow-stops-and-frisks
+module: crim-pro
+moduleLabel: Criminal Procedure
+level: beginner
+est_minutes: 5
+summary: Visualize the sequence officers follow when deciding to stop, frisk, or escalate encounters on the street.
+objectives:
+  - Distinguish each decision point in a Terry-style stop.
+  - Connect factual observations to the legal thresholds for frisking and arresting.
+  - Spot when additional documentation or warnings are required during the encounter.
+tags:
+  - criminal procedure
+  - policing
+order: 90
+---
+Street encounters hinge on whether officers can articulate <Term>reasonable suspicion</Term> to detain an individual. Each subsequent decision must build on that foundation to stay within constitutional boundaries.
+
+Use this flow to test how evolving facts may justify a frisk or transition to <Term>probable cause</Term> for arrest, highlighting the safeguards that protect personal liberty.
+
+<Flow client:load items={[
+  { title: "Observe Conduct", description: "Officer notices unusual behavior or reliable tips suggesting criminal activity." },
+  { title: "Initiate Stop", description: "Based on reasonable suspicion, officer temporarily detains and identifies the individual." },
+  { title: "Conduct Frisk", description: "If the officer reasonably believes the person is armed, a limited pat-down for weapons is performed." },
+  { title: "Clarify or Escalate", description: "Officer asks questions, issues warnings, or collects information to confirm or dispel suspicion." },
+  { title: "Develop Probable Cause", description: "New facts may justify arrest, search, or the need to release the person if suspicion fades." }
+]} />
