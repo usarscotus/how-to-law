@@ -183,7 +183,10 @@
   {
     "id": "probable-cause",
     "term": "probable cause",
-    "def": "Reasonable grounds to believe a crime occurred and the suspect committed it."
+    "def": "Reasonable grounds to believe a crime occurred and the suspect committed it.",
+    "aliases": [
+      "PC"
+    ]
   },
   {
     "id": "fruit-of-the-poisonous-tree",
@@ -228,7 +231,10 @@
   {
     "id": "certiorari",
     "term": "certiorari",
-    "def": "Discretionary order by a higher court to review decision of a lower court."
+    "def": "Discretionary order by a higher court to review decision of a lower court.",
+    "aliases": [
+      "cert"
+    ]
   },
   {
     "id": "change-of-venue",
@@ -397,6 +403,17 @@
     "def": "Money awarded to compensate or punish for a legal wrong."
   },
   {
+    "id": "daubert",
+    "term": "Daubert standard",
+    "aliases": [
+      "Daubert",
+      "Rule 702",
+      "expert gatekeeping"
+    ],
+    "def": "Requirement that judges assess reliability and relevance of expert testimony before admission.",
+    "cite": "Daubert (1993)"
+  },
+  {
     "id": "declaratory-judgment",
     "term": "declaratory judgment",
     "def": "Court order stating rights or obligations without awarding damages or injunction."
@@ -455,7 +472,11 @@
   {
     "id": "directed-verdict",
     "term": "judgment as a matter of law",
-    "def": "Court ruling taking case from jury because no reasonable juror could find otherwise."
+    "def": "Court ruling taking case from jury because no reasonable juror could find otherwise.",
+    "aliases": [
+      "JMOL",
+      "JNOV"
+    ]
   },
   {
     "id": "discovery",
@@ -569,6 +590,30 @@
     "id": "express-preemption",
     "term": "express preemption",
     "def": "Federal law explicitly displacing conflicting state regulations."
+  },
+  {
+    "id": "federal-rules-of-civil-procedure",
+    "term": "Federal Rules of Civil Procedure",
+    "aliases": [
+      "FRCP"
+    ],
+    "def": "Comprehensive rules governing civil litigation in United States federal courts."
+  },
+  {
+    "id": "federal-rules-of-criminal-procedure",
+    "term": "Federal Rules of Criminal Procedure",
+    "aliases": [
+      "FRCrP"
+    ],
+    "def": "Rules regulating federal criminal proceedings from charging through appeal."
+  },
+  {
+    "id": "federal-rules-of-evidence",
+    "term": "Federal Rules of Evidence",
+    "aliases": [
+      "FRE"
+    ],
+    "def": "Rules governing admissibility and presentation of evidence in federal courts."
   },
   {
     "id": "felony-murder",
@@ -689,7 +734,11 @@
     "id": "ineffective-assistance",
     "term": "ineffective assistance of counsel",
     "def": "Claim requiring deficient performance and prejudice to defendant.",
-    "cite": "Strickland (1984)"
+    "cite": "Strickland (1984)",
+    "aliases": [
+      "Strickland",
+      "Strickland test"
+    ]
   },
   {
     "id": "injunction",
@@ -770,7 +819,12 @@
   {
     "id": "jurisdiction-personal",
     "term": "personal jurisdiction",
-    "def": "Court's authority over a particular defendant, requiring minimum contacts and fairness."
+    "def": "Court's authority over a particular defendant, requiring minimum contacts and fairness.",
+    "aliases": [
+      "PJ",
+      "specific jurisdiction",
+      "general jurisdiction"
+    ]
   },
   {
     "id": "jury-instruction",
@@ -867,7 +921,10 @@
     "id": "miranda-warnings",
     "term": "Miranda warnings",
     "def": "Advice of rights police must give before custodial interrogation.",
-    "cite": "Miranda (1966)"
+    "cite": "Miranda (1966)",
+    "aliases": [
+      "Miranda"
+    ]
   },
   {
     "id": "misdemeanor",
@@ -1242,6 +1299,15 @@
     "def": "Penalties for filings lacking legal or factual basis in federal civil practice."
   },
   {
+    "id": "rule-404b",
+    "term": "Rule 404(b)",
+    "aliases": [
+      "404(b)"
+    ],
+    "def": "Evidence rule permitting prior bad acts to show non-propensity purposes like motive, intent, or plan.",
+    "cite": "Fed. R. Evid. 404(b)"
+  },
+  {
     "id": "rule-against-perpetuities",
     "term": "Rule Against Perpetuities",
     "def": "Future interests must vest, if at all, within 21 years after a life in being."
@@ -1376,7 +1442,10 @@
   {
     "id": "subject-matter-jurisdiction",
     "term": "subject matter jurisdiction",
-    "def": "Court's authority to hear particular type of case."
+    "def": "Court's authority to hear particular type of case.",
+    "aliases": [
+      "SMJ"
+    ]
   },
   {
     "id": "subpoena",
@@ -1401,7 +1470,10 @@
   {
     "id": "summary-judgment",
     "term": "summary judgment",
-    "def": "Judgment without trial when no genuine dispute of material fact and movant deserves judgment."
+    "def": "Judgment without trial when no genuine dispute of material fact and movant deserves judgment.",
+    "aliases": [
+      "Rule 56"
+    ]
   },
   {
     "id": "summary-contempt",
