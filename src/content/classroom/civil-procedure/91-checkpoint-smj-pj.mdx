@@ -1,0 +1,91 @@
+// FILE: src/content/classroom/civil-procedure/91-checkpoint-smj-pj.mdx
+---
+title: "Checkpoint: SMJ and PJ Essentials"
+slug: "checkpoint-smj-pj"
+module: "civil-procedure"
+moduleLabel: "Civil Procedure"
+level: "Introductory"
+est_minutes: 6
+summary: "Reinforce the dual gatekeepers of federal subject-matter and personal jurisdiction before moving forward."
+objectives:
+  - "Verify the requirements for federal question and diversity jurisdiction."
+  - "Check the steps for establishing constitutionally valid personal jurisdiction."
+  - "Spot common pitfalls that destroy jurisdiction or invite dismissal."
+tags:
+  - "civil procedure"
+  - "jurisdiction"
+  - "checkpoint"
+order: 91
+quiz:
+  - id: checkpoint-smj-basics
+    prompt: "Complete diversity under 28 U.S.C. § 1332 requires:"
+    options:
+      - "Every plaintiff diverse from every defendant and an amount in controversy exceeding $75,000."
+      - "At least one diverse party on each side regardless of amount in controversy."
+      - "Citizenship of each party matching their state of residence on the filing date."
+      - "Agreement by the parties to litigate in federal court."
+    answer: "Every plaintiff diverse from every defendant and an amount in controversy exceeding $75,000."
+    explanation: "Section 1332 demands complete diversity plus the statutory amount, both measured at filing."
+  - id: checkpoint-pj-contacts
+    prompt: "True or False: A single, purposeful sale into the forum that gives rise to the claim can satisfy specific jurisdiction."
+    options:
+      - "True"
+      - "False"
+    answer: "True"
+    explanation: "Specific jurisdiction hinges on purposeful availment tied to the claim; even one deliberate, forum-directed transaction may suffice."
+  - id: checkpoint-pj-waiver
+    prompt: "Which action most clearly waives a defendant’s personal jurisdiction objection?"
+    options:
+      - "Filing a timely Rule 12(b)(2) motion before any other responsive pleading."
+      - "Joining issue on the merits without raising the defense in the first responsive filing."
+      - "Removing the case to federal court and simultaneously objecting to personal jurisdiction."
+      - "Executing a special appearance solely to contest jurisdiction."
+    answer: "Joining issue on the merits without raising the defense in the first responsive filing."
+    explanation: "Under Rule 12(h), failing to include personal jurisdiction in the initial responsive motion or answer waives the defense."
+---
+
+Subject-matter jurisdiction is the nonwaivable authority of a federal court to hear a case. Federal question jurisdiction under § 1331 requires a well-pleaded claim arising under federal law, while diversity jurisdiction under § 1332 mandates complete diversity and an amount in controversy exceeding $75,000. Jurisdiction is assessed at filing; later changes rarely destroy it, though post-filing joinder of nondiverse parties can eliminate diversity.
+
+Personal jurisdiction ensures the forum’s power over a defendant. Start with the state long-arm statute, then confirm minimum contacts and fairness under the Due Process Clause. Specific jurisdiction demands purposeful availment and a claim arising from those contacts, whereas general jurisdiction exists only where a defendant is “at home,” typically its domicile or place of incorporation and principal place of business for corporations.
+
+Even when the statutory and constitutional bases exist, procedural missteps can forfeit objections. Defendants must raise lack of personal jurisdiction in their first Rule 12 motion or responsive pleading. Plaintiffs should confirm complete diversity and citizenship allegations before filing, and avoid forum manipulation that could trigger dismissal. Keeping these checklists in mind protects the case from premature defeat.
+
+<Quiz id="checkpoint-smj-pj" questions={[
+  {
+    id: 'checkpoint-smj-basics',
+    prompt: 'Complete diversity under 28 U.S.C. § 1332 requires:',
+    choices: [
+      { id: 'a', label: 'Every plaintiff diverse from every defendant and an amount in controversy exceeding $75,000.' },
+      { id: 'b', label: 'At least one diverse party on each side regardless of amount in controversy.' },
+      { id: 'c', label: 'Citizenship of each party matching their state of residence on the filing date.' },
+      { id: 'd', label: 'Agreement by the parties to litigate in federal court.' }
+    ],
+    answer: 'a',
+    explanation:
+      'Section 1332 demands complete diversity plus the statutory amount, both measured at filing.'
+  },
+  {
+    id: 'checkpoint-pj-contacts',
+    prompt: 'True or False: A single, purposeful sale into the forum that gives rise to the claim can satisfy specific jurisdiction.',
+    choices: [
+      { id: 'a', label: 'True' },
+      { id: 'b', label: 'False' }
+    ],
+    answer: 'a',
+    explanation:
+      'Specific jurisdiction hinges on purposeful availment tied to the claim; even one deliberate, forum-directed transaction may suffice.'
+  },
+  {
+    id: 'checkpoint-pj-waiver',
+    prompt: 'Which action most clearly waives a defendant’s personal jurisdiction objection?',
+    choices: [
+      { id: 'a', label: 'Filing a timely Rule 12(b)(2) motion before any other responsive pleading.' },
+      { id: 'b', label: 'Joining issue on the merits without raising the defense in the first responsive filing.' },
+      { id: 'c', label: 'Removing the case to federal court and simultaneously objecting to personal jurisdiction.' },
+      { id: 'd', label: 'Executing a special appearance solely to contest jurisdiction.' }
+    ],
+    answer: 'b',
+    explanation:
+      'Under Rule 12(h), failing to include personal jurisdiction in the initial responsive motion or answer waives the defense.'
+  }
+]} />

@@ -1,0 +1,91 @@
+// FILE: src/content/classroom/crim-pro/91-checkpoint-4a-4b.mdx
+---
+title: "Checkpoint: Fourth Amendment & Exclusion"
+slug: "checkpoint-4a-4b"
+module: "crim-pro"
+moduleLabel: "Criminal Procedure"
+level: "Intermediate"
+est_minutes: 6
+summary: "Recap search-and-seizure triggers, warrant requirements, and the exclusionary rule before tackling advanced applications."
+objectives:
+  - "Differentiate searches from seizures and identify when the Fourth Amendment applies."
+  - "Refresh the core warrant requirements and key exceptions."
+  - "Review the scope and limits of the exclusionary rule and its exceptions."
+tags:
+  - "criminal procedure"
+  - "fourth amendment"
+  - "checkpoint"
+order: 91
+quiz:
+  - id: checkpoint-4a-trigger
+    prompt: "A Fourth Amendment search occurs when the government:"
+    options:
+      - "Physically intrudes on a constitutionally protected area to obtain information or violates a reasonable expectation of privacy."
+      - "Questions a suspect in a public space without physical contact."
+      - "Issues a subpoena for business records."
+      - "Conducts an undercover operation with voluntary conversations."
+    answer: "Physically intrudes on a constitutionally protected area to obtain information or violates a reasonable expectation of privacy."
+    explanation: "The Supreme Court recognizes both trespass and reasonable-expectation frameworks for identifying a search."
+  - id: checkpoint-4a-exceptions
+    prompt: "True or False: The automobile exception allows officers to search a vehicle without a warrant if they have probable cause it contains contraband."
+    options:
+      - "True"
+      - "False"
+    answer: "True"
+    explanation: "Probable cause plus the vehicle’s inherent mobility permit a warrantless search of containers within the car."
+  - id: checkpoint-4b-fruit
+    prompt: "Which doctrine most often saves derivative evidence despite an initial Fourth Amendment violation?"
+    options:
+      - "Inevitable discovery"
+      - "Automatic reversal"
+      - "Per se exclusion"
+      - "Strict liability deterrence"
+    answer: "Inevitable discovery"
+    explanation: "If the government can show the evidence would have been found through lawful means, the exclusionary rule does not apply."
+---
+
+The Fourth Amendment restrains government searches and seizures, so the threshold question is whether state action invaded a reasonable expectation of privacy or trespassed on a protected area. Encounters like consensual questioning or observations from a lawful vantage point fall outside its reach. Once triggered, the Amendment demands probable cause and, absent an exception, a valid warrant issued by a neutral magistrate.
+
+Warrants require particularity and probable cause supported by oath or affirmation. Yet officers often rely on exceptions such as exigent circumstances, consent, searches incident to arrest, automobile searches, and plain view. Each exception has precise boundaries—consent must be voluntary and within scope, exigency must be real, and automobile searches remain tied to probable cause.
+
+When violations occur, the exclusionary rule suppresses evidence obtained directly or as “fruit of the poisonous tree,” but several safety valves limit suppression. Good-faith reliance on defective warrants, inevitable discovery, independent source, and attenuation doctrines can keep evidence admissible. Effective analysis tracks both the initial intrusion and any exception the prosecution might invoke to salvage the evidence.
+
+<Quiz id="checkpoint-4a-4b" questions={[
+  {
+    id: 'checkpoint-4a-trigger',
+    prompt: 'A Fourth Amendment search occurs when the government:',
+    choices: [
+      { id: 'a', label: 'Physically intrudes on a constitutionally protected area to obtain information or violates a reasonable expectation of privacy.' },
+      { id: 'b', label: 'Questions a suspect in a public space without physical contact.' },
+      { id: 'c', label: 'Issues a subpoena for business records.' },
+      { id: 'd', label: 'Conducts an undercover operation with voluntary conversations.' }
+    ],
+    answer: 'a',
+    explanation:
+      'The Supreme Court recognizes both trespass and reasonable-expectation frameworks for identifying a search.'
+  },
+  {
+    id: 'checkpoint-4a-exceptions',
+    prompt: 'True or False: The automobile exception allows officers to search a vehicle without a warrant if they have probable cause it contains contraband.',
+    choices: [
+      { id: 'a', label: 'True' },
+      { id: 'b', label: 'False' }
+    ],
+    answer: 'a',
+    explanation:
+      'Probable cause plus the vehicle’s inherent mobility permit a warrantless search of containers within the car.'
+  },
+  {
+    id: 'checkpoint-4b-fruit',
+    prompt: 'Which doctrine most often saves derivative evidence despite an initial Fourth Amendment violation?',
+    choices: [
+      { id: 'a', label: 'Inevitable discovery' },
+      { id: 'b', label: 'Automatic reversal' },
+      { id: 'c', label: 'Per se exclusion' },
+      { id: 'd', label: 'Strict liability deterrence' }
+    ],
+    answer: 'a',
+    explanation:
+      'If the government can show the evidence would have been found through lawful means, the exclusionary rule does not apply.'
+  }
+]} />

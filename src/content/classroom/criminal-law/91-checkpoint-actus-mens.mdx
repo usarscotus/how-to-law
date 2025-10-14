@@ -1,0 +1,91 @@
+// FILE: src/content/classroom/criminal-law/91-checkpoint-actus-mens.mdx
+---
+title: "Checkpoint: Actus Reus & Mens Rea"
+slug: "checkpoint-actus-mens"
+module: "criminal-law"
+moduleLabel: "Criminal Law"
+level: "Introductory"
+est_minutes: 6
+summary: "Solidify the union of act and mental state so you can analyze offenses with confidence."
+objectives:
+  - "Differentiate voluntary acts from mere status or omissions."
+  - "Match common mens rea standards to statutory language."
+  - "Apply concurrence principles linking actus reus with mens rea."
+tags:
+  - "criminal law"
+  - "mens rea"
+  - "checkpoint"
+order: 91
+quiz:
+  - id: checkpoint-actus-voluntary
+    prompt: "Which of the following qualifies as a voluntary act for criminal liability?"
+    options:
+      - "A reflexive muscle spasm while asleep"
+      - "An act performed during an epileptic seizure"
+      - "Possession maintained after discovering contraband and having time to discard it"
+      - "A status of being addicted to narcotics"
+    answer: "Possession maintained after discovering contraband and having time to discard it"
+    explanation: "Continuing possession after awareness constitutes a voluntary act because the defendant can terminate control."
+  - id: checkpoint-mens-intent
+    prompt: 'True or False: Acting "purposely" under the Model Penal Code requires the defendant to be aware that the result is practically certain.'
+    options:
+      - "True"
+      - "False"
+    answer: "False"
+    explanation: "Purpose requires a conscious object to cause the result; awareness of practical certainty defines knowledge."
+  - id: checkpoint-concurrence
+    prompt: "Concurrence means:"
+    options:
+      - "The actus reus and mens rea occur together so the guilty mind drives the guilty act."
+      - "Multiple defendants share the same mental state."
+      - "The defendant has both motive and opportunity."
+      - "A guilty plea is entered simultaneously with sentencing."
+    answer: "The actus reus and mens rea occur together so the guilty mind drives the guilty act."
+    explanation: "Liability generally demands that the requisite mental state coincide with the voluntary act or omission causing harm."
+---
+
+Actus reus is the voluntary physical component of an offense. Reflexes, convulsions, and unconscious movements do not count, nor does mere status. Omissions become culpable only when there is a legal duty to act, such as duties arising from statute, contract, special relationships, or voluntary assumption of care. Possession is a special case: once aware of contraband, continuing control can satisfy the voluntary act requirement.
+
+Mens rea captures the mental state prescribed by the statute. The Model Penal Code hierarchy runs from purpose and knowledge to recklessness and negligence, each requiring different degrees of awareness and risk-taking. Statutes may specify their own intent terms, but default culpability often aligns with these MPC standards unless the legislature plainly intends strict liability.
+
+To impose liability, the mental state must concur with the actus reus. The defendant must possess the required mens rea at the moment the voluntary act or omission occurs. Separate mental states forming before or after the act are insufficient, though continuing offenses like possession can satisfy concurrence when awareness and control overlap. Always confirm the statute’s elements and ensure the mental state attaches to each material element.
+
+<Quiz id="checkpoint-actus-mens" questions={[
+  {
+    id: 'checkpoint-actus-voluntary',
+    prompt: 'Which of the following qualifies as a voluntary act for criminal liability?',
+    choices: [
+      { id: 'a', label: 'A reflexive muscle spasm while asleep' },
+      { id: 'b', label: 'An act performed during an epileptic seizure' },
+      { id: 'c', label: 'Possession maintained after discovering contraband and having time to discard it' },
+      { id: 'd', label: 'A status of being addicted to narcotics' }
+    ],
+    answer: 'c',
+    explanation:
+      'Continuing possession after awareness constitutes a voluntary act because the defendant can terminate control.'
+  },
+  {
+    id: 'checkpoint-mens-intent',
+    prompt: 'True or False: Acting "purposely" under the Model Penal Code requires the defendant to be aware that the result is practically certain.',
+    choices: [
+      { id: 'a', label: 'True' },
+      { id: 'b', label: 'False' }
+    ],
+    answer: 'b',
+    explanation:
+      'Purpose requires a conscious object to cause the result; awareness of practical certainty defines knowledge.'
+  },
+  {
+    id: 'checkpoint-concurrence',
+    prompt: 'Concurrence means:',
+    choices: [
+      { id: 'a', label: 'The actus reus and mens rea occur together so the guilty mind drives the guilty act.' },
+      { id: 'b', label: 'Multiple defendants share the same mental state.' },
+      { id: 'c', label: 'The defendant has both motive and opportunity.' },
+      { id: 'd', label: 'A guilty plea is entered simultaneously with sentencing.' }
+    ],
+    answer: 'a',
+    explanation:
+      'Liability generally demands that the requisite mental state coincide with the voluntary act or omission causing harm.'
+  }
+]} />

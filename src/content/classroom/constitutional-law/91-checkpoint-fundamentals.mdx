@@ -1,0 +1,91 @@
+// FILE: src/content/classroom/constitutional-law/91-checkpoint-fundamentals.mdx
+---
+title: "Checkpoint: Constitutional Fundamentals"
+slug: "checkpoint-fundamentals"
+module: "constitutional-law"
+moduleLabel: "Constitutional Law"
+level: "Intermediate"
+est_minutes: 6
+summary: "Quickly revisit judicial review, federalism, and individual rights before moving deeper into doctrine."
+objectives:
+  - "Confirm how judicial review frames constitutional litigation."
+  - "Distinguish key federalism limits on national and state power."
+  - "Reinforce the tiers of scrutiny governing individual rights."
+tags:
+  - "constitutional law"
+  - "review"
+  - "checkpoint"
+order: 91
+quiz:
+  - id: checkpoint-fundamentals-scope
+    prompt: "Which statement best captures the purpose of judicial review established in Marbury v. Madison?"
+    options:
+      - "It authorizes Congress to rewrite constitutional provisions by statute."
+      - "It empowers federal courts to invalidate government action that conflicts with the Constitution."
+      - "It allows the President to suspend laws that seem unconstitutional."
+      - "It requires state courts to follow advisory opinions issued by the Supreme Court."
+    answer: "It empowers federal courts to invalidate government action that conflicts with the Constitution."
+    explanation: "Judicial review gives courts the authority to refuse enforcement of laws or executive actions that contravene the Constitution."
+  - id: checkpoint-fundamentals-federalism
+    prompt: "True or False: The anti-commandeering doctrine prevents Congress from compelling state officials to enforce federal regulatory programs."
+    options:
+      - "True"
+      - "False"
+    answer: "True"
+    explanation: "Cases like Printz v. United States hold that Congress cannot command state executive officers to administer federal regulatory schemes."
+  - id: checkpoint-fundamentals-rights
+    prompt: "When a law burdens a fundamental right, which level of scrutiny generally applies?"
+    options:
+      - "Rational basis"
+      - "Intermediate scrutiny"
+      - "Strict scrutiny"
+      - "Balancing test without tiers"
+    answer: "Strict scrutiny"
+    explanation: "Fundamental rights usually trigger strict scrutiny, requiring the government to prove a compelling interest pursued through narrow tailoring."
+---
+
+Judicial review ensures that every constitutional question begins with the courts’ willingness to measure legislative and executive acts against the nation’s charter. Remember that justiciability doctrines—standing, ripeness, and mootness—help channel disputes into the kind of concrete controversies the judiciary can resolve. When those thresholds are met, litigants must connect their arguments to text, history, structure, and precedent to persuade a court to exercise its reviewing power.
+
+Federalism principles allocate power between the national government and the states. Enumerated powers authorize Congress to legislate in specific domains, while the Tenth Amendment reserves other powers to the states. Limits like the anti-commandeering doctrine and restrictions on state discrimination against interstate commerce preserve the balance. Spotting the relevant source of power or restraint is critical before you dive into the granular doctrines of commerce, spending, or preemption.
+
+Individual rights analysis operates through tiers of scrutiny. Economic regulation ordinarily receives deferential rational basis review, while laws targeting suspect classifications or burdening fundamental rights face more searching scrutiny. Keep the tiers and their triggers in mind so you can quickly map any rights problem to the proper analytical framework.
+
+<Quiz id="checkpoint-fundamentals" questions={[
+  {
+    id: 'checkpoint-fundamentals-scope',
+    prompt: 'Which statement best captures the purpose of judicial review established in Marbury v. Madison?',
+    choices: [
+      { id: 'a', label: 'It authorizes Congress to rewrite constitutional provisions by statute.' },
+      { id: 'b', label: 'It empowers federal courts to invalidate government action that conflicts with the Constitution.' },
+      { id: 'c', label: 'It allows the President to suspend laws that seem unconstitutional.' },
+      { id: 'd', label: 'It requires state courts to follow advisory opinions issued by the Supreme Court.' }
+    ],
+    answer: 'b',
+    explanation:
+      'Judicial review gives courts the authority to refuse enforcement of laws or executive actions that contravene the Constitution.'
+  },
+  {
+    id: 'checkpoint-fundamentals-federalism',
+    prompt: 'True or False: The anti-commandeering doctrine prevents Congress from compelling state officials to enforce federal regulatory programs.',
+    choices: [
+      { id: 'a', label: 'True' },
+      { id: 'b', label: 'False' }
+    ],
+    answer: 'a',
+    explanation:
+      'Cases like Printz v. United States hold that Congress cannot command state executive officers to administer federal regulatory schemes.'
+  },
+  {
+    id: 'checkpoint-fundamentals-rights',
+    prompt: 'When a law burdens a fundamental right, which level of scrutiny generally applies?',
+    choices: [
+      { id: 'a', label: 'Rational basis' },
+      { id: 'b', label: 'Intermediate scrutiny' },
+      { id: 'c', label: 'Strict scrutiny' },
+      { id: 'd', label: 'Balancing test without tiers' }
+    ],
+    answer: 'c',
+    explanation:
+      'Fundamental rights usually trigger strict scrutiny, requiring the government to prove a compelling interest pursued through narrow tailoring.'
+  }
+]} />

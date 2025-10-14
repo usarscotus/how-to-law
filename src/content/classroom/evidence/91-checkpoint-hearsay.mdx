@@ -1,0 +1,91 @@
+// FILE: src/content/classroom/evidence/91-checkpoint-hearsay.mdx
+---
+title: "Checkpoint: Hearsay Essentials"
+slug: "checkpoint-hearsay"
+module: "evidence"
+moduleLabel: "Evidence"
+level: "Intermediate"
+est_minutes: 6
+summary: "Confirm the definition of hearsay, common exclusions, and leading exceptions before diving deeper."
+objectives:
+  - "Rehearse the baseline definition of hearsay and its purpose."
+  - "Distinguish frequently tested exclusions under Rule 801(d)."
+  - "Prioritize core exceptions that often admit out-of-court statements."
+tags:
+  - "evidence"
+  - "hearsay"
+  - "checkpoint"
+order: 91
+quiz:
+  - id: checkpoint-hearsay-definition
+    prompt: "Hearsay is an out-of-court statement offered:"
+    options:
+      - "To show its effect on the listener."
+      - "For the truth of the matter asserted."
+      - "Only if made in writing."
+      - "Only if the declarant is unavailable."
+    answer: "For the truth of the matter asserted."
+    explanation: "Hearsay hinges on using the statement as proof of the assertion’s truth."
+  - id: checkpoint-hearsay-party
+    prompt: "True or False: A party’s own statement offered against that party is defined as hearsay but admissible under an exception."
+    options:
+      - "True"
+      - "False"
+    answer: "False"
+    explanation: "Rule 801(d)(2) treats opposing-party statements as non-hearsay exclusions, not exceptions."
+  - id: checkpoint-hearsay-exceptions
+    prompt: "Which exception most readily admits a present-sense impression?"
+    options:
+      - "Rule 803(1)"
+      - "Rule 803(6)"
+      - "Rule 804(b)(1)"
+      - "Rule 807"
+    answer: "Rule 803(1)"
+    explanation: "Rule 803(1) admits statements describing or explaining an event made while perceiving it or immediately thereafter."
+---
+
+Hearsay doctrine screens out unreliable out-of-court statements offered to prove the truth of what they assert. Begin with the Rule 801 definition: a statement is any oral, written, or nonverbal assertion intended as such, and hearsay applies only when offered for its truth. If the proponent offers the statement for another purpose—like effect on the listener or notice—it falls outside hearsay altogether.
+
+Rule 801(d) removes certain statements from the hearsay label. Opposing-party statements, adoptive admissions, and prior statements of testifying witnesses (in specified circumstances) are treated as non-hearsay, meaning they are admissible without meeting an exception. When an exclusion does not apply, turn to the Rule 803 exceptions, which do not require unavailability, and Rule 804 exceptions, which do.
+
+Key exceptions include present-sense impressions, excited utterances, statements for medical diagnosis or treatment, business records, and former testimony when the declarant is unavailable. The residual exception in Rule 807 can sometimes rescue reliable statements that do not fit elsewhere. Navigating hearsay efficiently means cycling through the definition, exclusions, and core exceptions before resorting to residuary arguments.
+
+<Quiz id="checkpoint-hearsay" questions={[
+  {
+    id: 'checkpoint-hearsay-definition',
+    prompt: 'Hearsay is an out-of-court statement offered:',
+    choices: [
+      { id: 'a', label: 'To show its effect on the listener.' },
+      { id: 'b', label: 'For the truth of the matter asserted.' },
+      { id: 'c', label: 'Only if made in writing.' },
+      { id: 'd', label: 'Only if the declarant is unavailable.' }
+    ],
+    answer: 'b',
+    explanation:
+      'Hearsay hinges on using the statement as proof of the assertion’s truth.'
+  },
+  {
+    id: 'checkpoint-hearsay-party',
+    prompt: 'True or False: A party’s own statement offered against that party is defined as hearsay but admissible under an exception.',
+    choices: [
+      { id: 'a', label: 'True' },
+      { id: 'b', label: 'False' }
+    ],
+    answer: 'b',
+    explanation:
+      'Rule 801(d)(2) treats opposing-party statements as non-hearsay exclusions, not exceptions.'
+  },
+  {
+    id: 'checkpoint-hearsay-exceptions',
+    prompt: 'Which exception most readily admits a present-sense impression?',
+    choices: [
+      { id: 'a', label: 'Rule 803(1)' },
+      { id: 'b', label: 'Rule 803(6)' },
+      { id: 'c', label: 'Rule 804(b)(1)' },
+      { id: 'd', label: 'Rule 807' }
+    ],
+    answer: 'a',
+    explanation:
+      'Rule 803(1) admits statements describing or explaining an event made while perceiving it or immediately thereafter.'
+  }
+]} />
