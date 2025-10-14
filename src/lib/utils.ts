@@ -105,14 +105,44 @@ function extractLessonParts(
   return null;
 }
 
+function hasEntryId(
+  entry: CollectionEntry<'classroom'>
+): entry is CollectionEntry<'classroom'> & { id: string } {
+  return 'id' in entry && typeof entry.id === 'string';
+}
+
+function buildModuleSlugCandidate(entry: CollectionEntry<'classroom'>): string | undefined {
+  const slug = entry.data.slug?.trim();
+
+  if (slug) {
+    const module = entry.data.module?.trim();
+
+    if (module) {
+      return `${module}/${slug}`;
+    }
+
+    return slug;
+  }
+
+  return undefined;
+}
+
 export function toLessonUrl(entry: CollectionEntry<'classroom'>): string {
-  const parts = extractLessonParts(entry.slug) ?? extractLessonParts(entry.id);
+  const entryId = hasEntryId(entry) ? entry.id : undefined;
+  const moduleSlugCandidate = buildModuleSlugCandidate(entry);
+
+  const parts =
+    extractLessonParts(entry.slug) ??
+    extractLessonParts(moduleSlugCandidate) ??
+    extractLessonParts(entryId);
 
   if (parts) {
     return `/how-to-law/classroom/${parts.module}/${parts.lessonSlug}/`;
   }
 
-  const fallbackSegments = (entry.slug ?? entry.id)
+  const fallbackSource = entry.slug ?? moduleSlugCandidate ?? entryId ?? '';
+
+  const fallbackSegments = fallbackSource
     .split('/')
     .map((segment) => segment.trim())
     .filter(Boolean);
