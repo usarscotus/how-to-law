@@ -79,6 +79,54 @@ export function getGlossaryTerm(id: string): GlossaryTerm | undefined {
   return glossaryMap.get(id);
 }
 
+function extractLessonParts(
+  value: string | undefined
+): { module: string; lessonSlug: string } | null {
+  if (!value) {
+    return null;
+  }
+
+  const segments = value
+    .split('/')
+    .map((segment) => segment.trim())
+    .filter(Boolean);
+
+  if (segments[0] === 'classroom') {
+    segments.shift();
+  }
+
+  if (segments.length >= 2) {
+    return {
+      module: segments[0]!,
+      lessonSlug: segments.slice(1).join('/')
+    };
+  }
+
+  return null;
+}
+
+export function toLessonUrl(entry: CollectionEntry<'classroom'>): string {
+  const parts = extractLessonParts(entry.slug) ?? extractLessonParts(entry.id);
+
+  if (parts) {
+    return `/how-to-law/classroom/${parts.module}/${parts.lessonSlug}/`;
+  }
+
+  const fallbackSegments = (entry.slug ?? entry.id)
+    .split('/')
+    .map((segment) => segment.trim())
+    .filter(Boolean);
+
+  if (fallbackSegments[0] === 'classroom') {
+    fallbackSegments.shift();
+  }
+
+  const module = fallbackSegments[0] ?? 'lesson';
+  const lessonSlug = fallbackSegments.slice(1).join('/') || module;
+
+  return `/how-to-law/classroom/${module}/${lessonSlug}/`;
+}
+
 export function formatNumber(value: number, options: Intl.NumberFormatOptions = {}) {
   return new Intl.NumberFormat('en-US', {
     maximumFractionDigits: 0,

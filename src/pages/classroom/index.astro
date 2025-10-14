@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '~/layouts/BaseLayout.astro';
-import { getLessonOrder, modules } from '~/lib/utils';
+import { getLessonOrder, modules, toLessonUrl } from '~/lib/utils';
 import { getCollection } from 'astro:content';
 
 const lessons = await getCollection('classroom');
@@ -16,7 +16,7 @@ const modulesWithLessons = modules.map((module) => {
     lessons: moduleLessons.map((lesson) => ({
       title: lesson.data.title,
       description: lesson.data.description ?? lesson.data.summary ?? 'Lesson overview coming soon.',
-      url: `/how-to-law/classroom/${module.id}/${lesson.slug.split('/')[1]}/`
+      url: toLessonUrl(lesson)
     }))
   };
 });
