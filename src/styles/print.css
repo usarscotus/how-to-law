@@ -1,0 +1,69 @@
+/* Print-specific styles to create clean, single-page lesson exports. */
+
+@media print {
+  :root {
+    color-scheme: light;
+  }
+
+  html,
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+    font-family: "Georgia", "Times New Roman", Times, serif;
+    font-size: 12pt;
+    line-height: 1.6;
+  }
+
+  body * {
+    color: #000000 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  header,
+  footer,
+  nav,
+  button,
+  .print-hidden {
+    display: none !important;
+  }
+
+  a {
+    color: inherit !important;
+    text-decoration: none;
+  }
+
+  a::after {
+    content: " (" attr(href) ")";
+    font-size: 0.9em;
+    word-break: break-word;
+  }
+
+  h1 {
+    font-size: 20pt;
+    margin-bottom: 0.5em;
+  }
+
+  body h2,
+  body h3 {
+    page-break-before: always;
+    break-before: page;
+  }
+
+  body h2:first-of-type,
+  body h3:first-of-type {
+    page-break-before: avoid;
+    break-before: auto;
+  }
+
+  .prose,
+  article,
+  section {
+    max-width: none !important;
+  }
+
+  .shadow-subtle {
+    box-shadow: none !important;
+  }
+}
