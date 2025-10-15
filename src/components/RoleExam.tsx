@@ -111,6 +111,23 @@ export default function RoleExam() {
     setValidationError(null);
   };
 
+  const totalQuestions = selectedExam?.questions.length ?? 0;
+  const currentQuestion = selectedExam ? selectedExam.questions[currentIndex] : null;
+  const selectedChoice = currentQuestion ? responses[currentQuestion.id] : undefined;
+  const progress = totalQuestions === 0 ? 0 : ((currentIndex + (selectedChoice ? 1 : 0)) / totalQuestions) * 100;
+
+  const score = useMemo(() => {
+    if (!showResults || !selectedExam) return 0;
+    return selectedExam.questions.reduce((sum, question) => {
+      return sum + (responses[question.id] === question.answer ? 1 : 0);
+    }, 0);
+  }, [responses, selectedExam, showResults]);
+
+  const breakdown: AreaBreakdown[] = useMemo(() => {
+    if (!showResults || !selectedExam) return [];
+    return calculateBreakdown(selectedExam, responses);
+  }, [responses, selectedExam, showResults]);
+
   if (!selectedExam) {
     return (
       <section className="space-y-12">
@@ -155,22 +172,9 @@ export default function RoleExam() {
     );
   }
 
-  const totalQuestions = selectedExam.questions.length;
-  const currentQuestion = selectedExam.questions[currentIndex];
-  const selectedChoice = responses[currentQuestion.id];
-  const progress = ((currentIndex + (selectedChoice ? 1 : 0)) / totalQuestions) * 100;
-
-  const score = useMemo(() => {
-    if (!showResults || !selectedExam) return 0;
-    return selectedExam.questions.reduce((sum, question) => {
-      return sum + (responses[question.id] === question.answer ? 1 : 0);
-    }, 0);
-  }, [responses, selectedExam, showResults]);
-
-  const breakdown: AreaBreakdown[] = useMemo(() => {
-    if (!showResults || !selectedExam) return [];
-    return calculateBreakdown(selectedExam, responses);
-  }, [responses, selectedExam, showResults]);
+  if (!currentQuestion) {
+    return null;
+  }
 
   return (
     <section className="space-y-10">
@@ -290,7 +294,7 @@ export default function RoleExam() {
               You answered {score} of {totalQuestions} questions correctly.
             </p>
             <p className="text-base font-semibold text-foreground">
-              Grade: {formatPercent(score / totalQuestions)}
+              Grade: {formatPercent(totalQuestions === 0 ? 0 : score / totalQuestions)}
             </p>
           </div>
           <div className="overflow-hidden rounded-2xl border border-border">
