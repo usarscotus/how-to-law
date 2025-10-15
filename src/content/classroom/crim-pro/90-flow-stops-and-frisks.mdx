@@ -19,10 +19,42 @@ Street encounters hinge on whether officers can articulate <Term>reasonable susp
 
 Use this flow to test how evolving facts may justify a frisk or transition to <Term>probable cause</Term> for arrest, highlighting the safeguards that protect personal liberty.
 
-<Flow client:load items={[
-  { title: "Observe Conduct", description: "Officer notices unusual behavior or reliable tips suggesting criminal activity." },
-  { title: "Initiate Stop", description: "Based on reasonable suspicion, officer temporarily detains and identifies the individual." },
-  { title: "Conduct Frisk", description: "If the officer reasonably believes the person is armed, a limited pat-down for weapons is performed." },
-  { title: "Clarify or Escalate", description: "Officer asks questions, issues warnings, or collects information to confirm or dispel suspicion." },
-  { title: "Develop Probable Cause", description: "New facts may justify arrest, search, or the need to release the person if suspicion fades." }
-]} />
+<section className="not-prose mt-8 rounded-2xl border border-border bg-card p-6 shadow-subtle">
+  <ol className="space-y-6">
+    <li className="flex gap-4">
+      <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-accent text-sm font-semibold text-accent-foreground">1</span>
+      <div className="space-y-2">
+        <h4 className="text-base font-semibold text-foreground">Observe Conduct</h4>
+        <div className="text-sm text-foreground/90">Officer notices unusual behavior or reliable tips suggesting criminal activity.</div>
+      </div>
+    </li>
+    <li className="flex gap-4">
+      <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-accent text-sm font-semibold text-accent-foreground">2</span>
+      <div className="space-y-2">
+        <h4 className="text-base font-semibold text-foreground">Initiate Stop</h4>
+        <div className="text-sm text-foreground/90">Based on reasonable suspicion, officer temporarily detains and identifies the individual.</div>
+      </div>
+    </li>
+    <li className="flex gap-4">
+      <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-accent text-sm font-semibold text-accent-foreground">3</span>
+      <div className="space-y-2">
+        <h4 className="text-base font-semibold text-foreground">Conduct Frisk</h4>
+        <div className="text-sm text-foreground/90">If the officer reasonably believes the person is armed, a limited pat-down for weapons is performed.</div>
+      </div>
+    </li>
+    <li className="flex gap-4">
+      <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-accent text-sm font-semibold text-accent-foreground">4</span>
+      <div className="space-y-2">
+        <h4 className="text-base font-semibold text-foreground">Clarify or Escalate</h4>
+        <div className="text-sm text-foreground/90">Officer asks questions, issues warnings, or collects information to confirm or dispel suspicion.</div>
+      </div>
+    </li>
+    <li className="flex gap-4">
+      <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-accent text-sm font-semibold text-accent-foreground">5</span>
+      <div className="space-y-2">
+        <h4 className="text-base font-semibold text-foreground">Develop Probable Cause</h4>
+        <div className="text-sm text-foreground/90">New facts may justify arrest, search, or the need to release the person if suspicion fades.</div>
+      </div>
+    </li>
+  </ol>
+</section>
