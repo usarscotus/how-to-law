@@ -11,7 +11,8 @@
     "check": "npm run typecheck && npm run lint",
     "typecheck": "astro check",
     "lint": "eslint \"src/**/*.{ts,tsx,astro}\" --max-warnings=0",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "lint:voice": "node scripts/lint-voice.mjs"
   },
   "dependencies": {
     "@astrojs/mdx": "^3.0.0",
