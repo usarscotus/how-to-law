@@ -1,255 +1,102 @@
-#!/usr/bin/env node
-import fs from 'node:fs/promises';
+import { readdir, readFile } from 'node:fs/promises';
 import path from 'node:path';
-import process from 'node:process';
+import { fileURLToPath } from 'node:url';
 import matter from 'gray-matter';
 
-const CLASSROOM_ROOT = path.resolve(process.cwd(), 'src/content/classroom');
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+const classroomDir = path.resolve(__dirname, '../src/content/classroom');
 
-async function findMdxFiles(dir) {
-  const results = [];
-  const queue = [dir];
+async function walk(dir) {
+  const entries = await readdir(dir, { withFileTypes: true });
+  const files = [];
 
-  while (queue.length > 0) {
-    const current = queue.pop();
-    const entries = await fs.readdir(current, { withFileTypes: true });
-
-    for (const entry of entries) {
-      const entryPath = path.join(current, entry.name);
-      if (entry.isDirectory()) {
-        queue.push(entryPath);
-      } else if (entry.isFile() && entry.name.toLowerCase().endsWith('.mdx')) {
-        results.push(entryPath);
-      }
+  for (const entry of entries) {
+    const fullPath = path.join(dir, entry.name);
+    if (entry.isDirectory()) {
+      files.push(...(await walk(fullPath)));
+    } else if (entry.isFile() && path.extname(entry.name) === '.mdx') {
+      files.push(fullPath);
     }
   }
 
-  return results;
+  return files;
 }
 
-function toModuleInfo(filePath) {
-  const relativeToClassroom = path.relative(CLASSROOM_ROOT, filePath);
-  const segments = relativeToClassroom.split(path.sep);
-  const moduleName = segments[0];
-  if (!moduleName) {
-    throw new Error(`Could not determine module for file: ${filePath}`);
+function formatList(items) {
+  if (!items.length) {
+    return '-';
   }
 
-  const relativeWithinModule = segments.slice(1).join(path.sep) || path.basename(filePath);
-
-  return { moduleName, relativeWithinModule };
+  return items.map((item) => `• ${item}`).join('\n');
 }
 
-function normalizeOrder(rawOrder) {
-  if (typeof rawOrder === 'number') {
-    return Number.isFinite(rawOrder) ? rawOrder : null;
-  }
+async function main() {
+  const mdxFiles = await walk(classroomDir);
+  const results = new Map();
 
-  if (typeof rawOrder === 'string') {
-    const trimmed = rawOrder.trim();
-    if (!trimmed) {
-      return null;
+  for (const filePath of mdxFiles) {
+    const relativePath = path.relative(classroomDir, filePath);
+    const [moduleName] = relativePath.split(path.sep);
+
+    if (!moduleName) continue;
+
+    if (!results.has(moduleName)) {
+      results.set(moduleName, {
+        missing: [],
+        seenOrders: new Map(),
+      });
     }
 
-    const numeric = Number(trimmed);
-    return Number.isFinite(numeric) ? numeric : null;
-  }
+    const moduleData = results.get(moduleName);
+    const content = await readFile(filePath, 'utf8');
+    const { data } = matter(content);
+    const order = data?.order;
 
-  return null;
-}
-
-function compressNumberRanges(numbers) {
-  if (numbers.length === 0) {
-    return '';
-  }
-
-  const sorted = [...new Set(numbers)].sort((a, b) => a - b);
-  const ranges = [];
-  let rangeStart = sorted[0];
-  let previous = sorted[0];
-
-  for (let i = 1; i < sorted.length; i += 1) {
-    const current = sorted[i];
-    if (current === previous + 1) {
-      previous = current;
+    if (order === undefined || order === null) {
+      moduleData.missing.push(relativePath);
       continue;
     }
 
-    ranges.push([rangeStart, previous]);
-    rangeStart = current;
-    previous = current;
+    const orderKey = String(order);
+    const existing = moduleData.seenOrders.get(orderKey) ?? [];
+    existing.push(relativePath);
+    moduleData.seenOrders.set(orderKey, existing);
   }
 
-  ranges.push([rangeStart, previous]);
+  const tableData = [];
 
-  return ranges
-    .map(([start, end]) => (start === end ? `${start}` : `${start}-${end}`))
-    .join(', ');
-}
-
-function renderTable(rows) {
-  const processedRows = rows.flatMap(([issue, detail]) => {
-    const detailLines = detail.split('\n');
-    return detailLines.map((line, index) => [index === 0 ? issue : '', line]);
-  });
-
-  const header = ['Issue', 'Details'];
-  const allRows = [header, ...processedRows];
-  const colWidths = [0, 0];
-
-  for (const row of allRows) {
-    row.forEach((cell, index) => {
-      colWidths[index] = Math.max(colWidths[index], cell.length);
-    });
-  }
-
-  const borders = {
-    top: `┌${'─'.repeat(colWidths[0] + 2)}┬${'─'.repeat(colWidths[1] + 2)}┐`,
-    middle: `├${'─'.repeat(colWidths[0] + 2)}┼${'─'.repeat(colWidths[1] + 2)}┤`,
-    bottom: `└${'─'.repeat(colWidths[0] + 2)}┴${'─'.repeat(colWidths[1] + 2)}┘`,
-  };
-
-  const formatRow = (row) =>
-    `│ ${row[0].padEnd(colWidths[0])} │ ${row[1].padEnd(colWidths[1])} │`;
-
-  const body = processedRows.length
-    ? processedRows.map(formatRow).join('\n')
-    : formatRow(['', '']);
-
-  return [borders.top, formatRow(header), borders.middle, body, borders.bottom].join('\n');
-}
-
-async function audit() {
-  try {
-    await fs.access(CLASSROOM_ROOT);
-  } catch (error) {
-    console.error(`Classroom directory not found at ${CLASSROOM_ROOT}`);
-    process.exitCode = 1;
-    return;
-  }
-
-  const mdxFiles = await findMdxFiles(CLASSROOM_ROOT);
-  const modules = new Map();
-
-  for (const filePath of mdxFiles) {
-    const { moduleName, relativeWithinModule } = toModuleInfo(filePath);
-    const moduleEntry = modules.get(moduleName) ?? [];
-    moduleEntry.push({ filePath, relativeWithinModule });
-    modules.set(moduleName, moduleEntry);
-  }
-
-  const results = [];
-  let hasBlockingIssues = false;
-
-  for (const [moduleName, files] of Array.from(modules.entries()).sort(([a], [b]) =>
-    a.localeCompare(b),
+  for (const [moduleName, moduleData] of [...results.entries()].sort((a, b) =>
+    a[0].localeCompare(b[0])
   )) {
-    const missingOrders = [];
-    const invalidOrders = [];
-    const orderMap = new Map();
+    const duplicateEntries = [];
 
-    for (const file of files) {
-      let data;
-      try {
-        const raw = await fs.readFile(file.filePath, 'utf8');
-        ({ data } = matter(raw));
-      } catch (error) {
-        invalidOrders.push(`${file.relativeWithinModule} (failed to parse frontmatter: ${error.message})`);
-        continue;
-      }
-
-      const hasOrder = Object.prototype.hasOwnProperty.call(data, 'order');
-      const normalizedOrder = normalizeOrder(data.order);
-
-      if (!hasOrder) {
-        missingOrders.push(file.relativeWithinModule);
-        continue;
-      }
-
-      if (normalizedOrder === null || !Number.isInteger(normalizedOrder) || normalizedOrder <= 0) {
-        invalidOrders.push(
-          `${file.relativeWithinModule} (invalid order value: ${JSON.stringify(data.order)})`,
-        );
-        continue;
-      }
-
-      const existing = orderMap.get(normalizedOrder) ?? [];
-      existing.push(file.relativeWithinModule);
-      orderMap.set(normalizedOrder, existing);
-    }
-
-    const duplicateOrders = [];
-    for (const [order, paths] of [...orderMap.entries()].sort((a, b) => a[0] - b[0])) {
-      if (paths.length > 1) {
-        duplicateOrders.push(`order ${order}: ${paths.join(', ')}`);
+    for (const [order, files] of moduleData.seenOrders.entries()) {
+      if (files.length > 1) {
+        duplicateEntries.push(`order ${order}: ${files.join(', ')}`);
       }
     }
 
-    const presentOrders = [...orderMap.keys()].sort((a, b) => a - b);
-    const missingNumbers = [];
-
-    if (presentOrders.length > 0) {
-      const highest = presentOrders[presentOrders.length - 1];
-      const presentSet = new Set(presentOrders);
-      for (let expected = 1; expected < highest; expected += 1) {
-        if (!presentSet.has(expected)) {
-          missingNumbers.push(expected);
-        }
-      }
+    if (moduleData.missing.length || duplicateEntries.length) {
+      tableData.push({
+        Module: moduleName,
+        'Missing order fields': formatList(moduleData.missing),
+        'Duplicate order values': formatList(duplicateEntries),
+      });
     }
-
-    const gapDetails = missingNumbers.length
-      ? `Missing orders: ${compressNumberRanges(missingNumbers)}`
-      : '';
-
-    const tableRows = [];
-
-    if (missingOrders.length > 0) {
-      tableRows.push(['Missing order', missingOrders.join('\n')]);
-    }
-
-    if (invalidOrders.length > 0) {
-      tableRows.push(['Invalid order', invalidOrders.join('\n')]);
-    }
-
-    if (duplicateOrders.length > 0) {
-      tableRows.push(['Duplicate order', duplicateOrders.join('\n')]);
-    }
-
-    if (gapDetails) {
-      tableRows.push(['Gaps', gapDetails]);
-    }
-
-    if (tableRows.length === 0) {
-      tableRows.push(['Status', 'OK']);
-    } else {
-      hasBlockingIssues ||= missingOrders.length > 0 || invalidOrders.length > 0 || duplicateOrders.length > 0;
-    }
-
-    results.push({
-      moduleName,
-      table: renderTable(tableRows),
-    });
   }
 
-  for (const result of results) {
-    console.log(`\nModule: ${result.moduleName}`);
-    console.log(result.table);
+  if (tableData.length === 0) {
+    console.log('No missing or duplicate order fields found.');
+    process.exit(0);
   }
 
-  if (results.length === 0) {
-    console.log('No modules found under src/content/classroom.');
-  }
-
-  if (hasBlockingIssues) {
-    console.log('\nOrdering issues detected.');
-    process.exitCode = 1;
-  } else {
-    console.log('\nAll modules have sequential lesson orders.');
-  }
+  console.log('Order audit issues found:');
+  console.table(tableData);
+  process.exit(1);
 }
 
-audit().catch((error) => {
-  console.error('Failed to run audit:', error);
-  process.exitCode = 1;
+main().catch((error) => {
+  console.error('Error running order audit:', error);
+  process.exit(1);
 });
