@@ -1,0 +1,97 @@
+@media print {
+  *, *::before, *::after {
+    color: #111 !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+    background: transparent !important;
+  }
+
+  body {
+    font-family: 'Georgia', 'Times New Roman', serif;
+    font-size: 12pt;
+    line-height: 1.5;
+    background: #fff !important;
+    color: #000 !important;
+  }
+
+  header,
+  nav,
+  .skip-link,
+  .fc-controls,
+  .fc-hint,
+  .dt-controls,
+  .htl-timeline__marker,
+  [data-theme] .ThemeToggle,
+  button,
+  details > summary::before {
+    display: none !important;
+  }
+
+  .fc-card,
+  .fc-card-inner,
+  .fc-face {
+    transform: none !important;
+    position: relative !important;
+    pointer-events: none !important;
+  }
+
+  .fc-card-inner {
+    min-height: auto !important;
+  }
+
+  .fc-face {
+    display: block !important;
+    border: 1px solid #ccc !important;
+    padding: 1em !important;
+    margin-bottom: 0.75em !important;
+  }
+
+  .fc-face--back {
+    transform: none !important;
+  }
+
+  a[href^='http']:after {
+    content: ' (' attr(href) ')';
+    font-size: 10pt;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    page-break-after: avoid;
+    page-break-inside: avoid;
+    break-after: avoid;
+    break-inside: avoid;
+    margin-top: 1.5em;
+  }
+
+  p,
+  ul,
+  ol,
+  table,
+  blockquote {
+    page-break-inside: avoid;
+  }
+
+  table {
+    width: 100% !important;
+    border-collapse: collapse !important;
+  }
+
+  th,
+  td {
+    border: 1px solid #444 !important;
+    padding: 0.4em !important;
+  }
+
+  details[open] > *,
+  details:not([open]) > * {
+    display: block !important;
+  }
+
+  @page {
+    margin: 1in;
+  }
+}
