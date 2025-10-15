@@ -1,0 +1,68 @@
+---
+title: "Homicide Ladder Timeline"
+slug: "diagram-homicide-ladder"
+module: "criminal-law"
+moduleLabel: "Criminal Law"
+level: "Beginner"
+est_minutes: 7
+summary: "Walk the ladder from murder to manslaughter using a quick timeline of culpability markers."
+objectives:
+  - "Distinguish malice aforethought categories for common law murder."
+  - "Identify mitigation pathways that reduce murder to voluntary manslaughter."
+  - "Recall how negligent homicides differ from depraved heart killings."
+tags:
+  - "criminal law"
+  - "homicide"
+order: 90
+---
+
+Homicide doctrine often feels like a jumble of labels. Visualizing the progression from intentional killings to involuntary manslaughter clarifies how mental state, provocation, and risk awareness affect grading.
+
+The timeline highlights key decision points—intent, provocation, recklessness, and negligence—so you can quickly slot a fact pattern into the right offense and anticipate defenses.
+
+<Timeline
+  client:load
+  title="From Intentional Murder to Negligent Homicide"
+  events={[
+    {
+      id: 'premeditated',
+      label: 'Intentional & Premeditated',
+      description: 'Purposeful killing with deliberation → First-degree murder.'
+    },
+    {
+      id: 'intentional',
+      label: 'Intent to Kill without Premeditation',
+      description: 'Express malice aforethought → Second-degree murder.'
+    },
+    {
+      id: 'serious-bodily',
+      label: 'Intent to Cause Serious Bodily Injury',
+      description: 'Knowledge death is a natural consequence → Murder via implied malice.'
+    },
+    {
+      id: 'depraved-heart',
+      label: 'Depraved Heart Recklessness',
+      description: 'Extreme indifference to human life → Second-degree murder.'
+    },
+    {
+      id: 'provocation',
+      label: 'Adequate Provocation & Heat of Passion',
+      description: 'Mitigates murder to voluntary manslaughter if cooling off absent.'
+    },
+    {
+      id: 'felony-murder',
+      label: 'Felony Murder Rule',
+      description: 'Killing during enumerated felony → Strict liability murder unless felony merges.'
+    },
+    {
+      id: 'reckless',
+      label: 'Reckless Manslaughter',
+      description: 'Conscious disregard of substantial risk → Involuntary manslaughter.'
+    },
+    {
+      id: 'negligent',
+      label: 'Criminally Negligent Homicide',
+      description: 'Gross negligence or MPC negligence → Lowest rung on the ladder.'
+    }
+  ]}
+/>

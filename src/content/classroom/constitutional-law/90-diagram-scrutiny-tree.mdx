@@ -1,0 +1,78 @@
+---
+title: "Scrutiny Decision Tree"
+slug: "diagram-scrutiny-tree"
+module: "constitutional-law"
+moduleLabel: "Constitutional Law"
+level: "Intermediate"
+est_minutes: 7
+summary: "Trace the sequence for selecting the right level of constitutional scrutiny when challenging government action."
+objectives:
+  - "Differentiate between suspect, quasi-suspect, and non-suspect classifications."
+  - "Match government burdens on fundamental rights to the correct scrutiny tier."
+  - "Spot when rational basis review still has bite for animus-driven regulations."
+tags:
+  - "constitutional law"
+  - "equal protection"
+order: 90
+---
+
+When a statute or policy is challenged under the Equal Protection Clause, the first task is to identify the classification or right at stake. That determines whether strict scrutiny, intermediate scrutiny, or rational basis review governs the analysis, and whether the government bears the burden of justification.
+
+Use this visual to map how courts move from state action to the choice of scrutiny and on to likely outcomes. Keep doctrines like fundamental rights, quasi-suspect classifications, and rational basis with bite in mind as you advise clients or craft arguments.
+
+<DecisionTree
+  client:load
+  title="Choosing the Level of Scrutiny"
+  nodes={[
+    {
+      id: 'start',
+      label: 'Is there state action?',
+      children: [
+        {
+          id: 'no-state-action',
+          label: 'No → Equal Protection does not apply (consider other doctrines).'
+        },
+        {
+          id: 'state-action',
+          label: 'Yes → Identify the classification or burden.',
+          children: [
+            {
+              id: 'suspect',
+              label: 'Suspect class (race, national origin) or fundamental right?',
+              children: [
+                {
+                  id: 'strict',
+                  label: 'Strict Scrutiny → Compelling interest + narrow tailoring required.'
+                }
+              ]
+            },
+            {
+              id: 'quasi-suspect',
+              label: 'Quasi-suspect class (gender, legitimacy)?',
+              children: [
+                {
+                  id: 'intermediate',
+                  label: 'Intermediate Scrutiny → Important interest + substantial relation.'
+                }
+              ]
+            },
+            {
+              id: 'non-suspect',
+              label: 'All other classifications or economic regulation.',
+              children: [
+                {
+                  id: 'rational',
+                  label: 'Rational Basis → Legitimate interest + rational relation.'
+                },
+                {
+                  id: 'rbb',
+                  label: 'Rational Basis with Bite → Animus or targeting of unpopular groups can still fail.'
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]}
+/>

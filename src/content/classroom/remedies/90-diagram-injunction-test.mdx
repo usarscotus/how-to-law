@@ -1,0 +1,69 @@
+---
+title: "Injunction Factors Matrix"
+slug: "diagram-injunction-test"
+module: "remedies"
+moduleLabel: "Remedies"
+level: "Beginner"
+est_minutes: 6
+summary: "Visualize the four-factor test for preliminary and permanent injunctions."
+objectives:
+  - "Apply the equitable factors that courts weigh before issuing injunctive relief."
+  - "Differentiate standards for preliminary versus permanent injunctions."
+  - "Evaluate how public interest and balance of hardships influence equitable discretion."
+tags:
+  - "remedies"
+  - "injunctions"
+order: 90
+---
+
+Equity courts weigh multiple factors when deciding whether to grant injunctive relief. Thinking in terms of a matrix clarifies how likelihood of success, irreparable harm, balance of equities, and public interest interact.
+
+Consult this chart when drafting or opposing a request for injunction to make sure each factor is supported with specific evidence and tailored relief.
+
+<MatrixCompare
+  client:load
+  title="Equitable Factors"
+  columns={[
+    { id: 'prelim', label: 'Preliminary Injunction' },
+    { id: 'permanent', label: 'Permanent Injunction' },
+    { id: 'notes', label: 'Practice Notes' }
+  ]}
+  rows={[
+    {
+      id: 'likelihood',
+      label: 'Likelihood of Success',
+      cells: {
+        prelim: 'Substantial likelihood on merits; sliding scale in some circuits.',
+        permanent: 'Actual success on merits required after trial.',
+        notes: 'Gather record evidence early; strength here can offset other factors on a sliding scale.'
+      }
+    },
+    {
+      id: 'harm',
+      label: 'Irreparable Harm',
+      cells: {
+        prelim: 'Movant must show harm not compensable by money damages absent immediate relief.',
+        permanent: 'Continued irreparable injury if injunction denied.',
+        notes: 'Document unique harms like loss of constitutional rights or trade secrets.'
+      }
+    },
+    {
+      id: 'balance',
+      label: 'Balance of Equities',
+      cells: {
+        prelim: 'Hardships to movant vs. defendant during litigation.',
+        permanent: 'Hardships considering final relief and ongoing obligations.',
+        notes: 'Tailor scope to minimize undue burden; consider security bond for prelim relief.'
+      }
+    },
+    {
+      id: 'public-interest',
+      label: 'Public Interest',
+      cells: {
+        prelim: 'Weighs public consequences of provisional relief.',
+        permanent: 'Public benefits or harms from long-term injunction.',
+        notes: 'Government defendants often argue sovereign interests; constitutional violations favor injunction.'
+      }
+    }
+  ]}
+/>

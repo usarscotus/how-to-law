@@ -1,0 +1,64 @@
+---
+title: "Character Evidence Matrix"
+slug: "diagram-404-405-map"
+module: "evidence"
+moduleLabel: "Evidence"
+level: "Beginner"
+est_minutes: 6
+summary: "Compare Rule 404 and Rule 405 pathways for using character evidence in civil and criminal cases."
+objectives:
+  - "Differentiate propensity bans from permissible non-propensity uses under Rule 404(b)."
+  - "Identify when a criminal defendant or prosecutor may open the door to character proof."
+  - "Match the proper method of proving character under Rule 405."
+tags:
+  - "evidence"
+  - "character evidence"
+order: 91
+---
+
+Character evidence problems require attention to both purpose and method. The rules distinguish between barred propensity arguments and allowed uses like motive or identity, and then dictate whether reputation, opinion, or specific acts may be shown.
+
+This matrix lays out the choices so you can see at a glance when character is in issue, when a defendant may introduce good character, and how the prosecution may rebut.
+
+<MatrixCompare
+  client:load
+  title="Rules 404 & 405 Overview"
+  columns={[
+    { id: 'criminal-def', label: 'Criminal Defendant' },
+    { id: 'criminal-pros', label: 'Criminal Prosecutor' },
+    { id: 'civil', label: 'Civil Case' },
+    { id: 'non-propensity', label: 'Rule 404(b) Non-Propensity Uses' }
+  ]}
+  rows={[
+    {
+      id: 'propensity',
+      label: 'Propensity Evidence',
+      cells: {
+        criminal-def: 'May offer pertinent trait via reputation or opinion to show good character.',
+        criminal-pros: 'May rebut with reputation or opinion once defendant opens door; can cross on specific acts.',
+        civil: 'Generally barred unless character is an essential element (defamation, negligent entrustment).',
+        non-propensity: 'Offered for motive, opportunity, intent, preparation, plan, knowledge, identity, absence of mistake.'
+      }
+    },
+    {
+      id: 'methods',
+      label: 'Methods under Rule 405',
+      cells: {
+        criminal-def: 'Direct: reputation or opinion; specific acts only if character is essential element.',
+        criminal-pros: 'Rebuttal: reputation or opinion; cross-exam on specific acts; extrinsic evidence limited.',
+        civil: 'When essential element, parties may prove by reputation, opinion, or specific instances.',
+        non-propensity: 'Specific acts allowed if probative of non-propensity purpose and passes Rule 403.'
+      }
+    },
+    {
+      id: 'other-doors',
+      label: 'Victim Character & Other Doors',
+      cells: {
+        criminal-def: 'May offer victim’s pertinent trait; prosecution may rebut and attack defendant’s same trait.',
+        criminal-pros: 'In homicide, can offer victim’s peacefulness after attack on victim or self-defense claim.',
+        civil: 'Victim character rarely relevant unless essential element.',
+        non-propensity: '404(b) applies to defendant or victim if notice and balancing satisfied.'
+      }
+    }
+  ]}
+/>

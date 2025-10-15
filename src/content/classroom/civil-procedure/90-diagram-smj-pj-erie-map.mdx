@@ -1,0 +1,78 @@
+---
+title: "Jurisdiction & Erie Matrix"
+slug: "diagram-smj-pj-erie-map"
+module: "civil-procedure"
+moduleLabel: "Civil Procedure"
+level: "Intermediate"
+est_minutes: 8
+summary: "Contrast subject-matter jurisdiction, personal jurisdiction, and Erie doctrine considerations in one map."
+objectives:
+  - "Differentiate the prerequisites for subject-matter and personal jurisdiction in federal court."
+  - "Identify the governing law analysis when Erie requires a forum choice between state and federal rules."
+  - "Spot overlap issues where jurisdictional defects intersect with Erie outcomes."
+tags:
+  - "civil procedure"
+  - "jurisdiction"
+order: 90
+---
+
+Federal civil procedure questions often jumble jurisdiction and Erie together. Keeping them straight requires a quick reference for the statutory hooks, constitutional limits, and choice-of-law consequences that flow from each doctrine.
+
+The matrix lines up the core questions, tests, and remedies for subject-matter jurisdiction, personal jurisdiction, and Erie so you can identify what must be raised, when, and how courts resolve conflicts between state and federal authority.
+
+<MatrixCompare
+  client:load
+  title="SMJ vs. PJ vs. Erie"
+  columns={[
+    { id: 'smj', label: 'Subject-Matter Jurisdiction' },
+    { id: 'pj', label: 'Personal Jurisdiction' },
+    { id: 'erie', label: 'Erie / Choice of Law' }
+  ]}
+  rows={[
+    {
+      id: 'source',
+      label: 'Primary Source',
+      cells: {
+        smj: 'Article III grants and 28 U.S.C. §§ 1331, 1332, supplemental jurisdiction.',
+        pj: 'Due Process Clause plus long-arm statute authorizing reach.',
+        erie: 'Erie Railroad v. Tompkins, Rules Enabling Act, Hanna framework.'
+      }
+    },
+    {
+      id: 'core-test',
+      label: 'Core Test',
+      cells: {
+        smj: 'Arising under federal question or complete diversity with amount in controversy > $75,000; supplemental under § 1367.',
+        pj: 'Minimum contacts + purposeful availment + fairness; specific vs. general jurisdiction.',
+        erie: 'Is there a federal statute/rule on point? If yes and valid, apply it; otherwise outcome-determinative and twin aims of Erie.'
+      }
+    },
+    {
+      id: 'timing',
+      label: 'Timing & Waiver',
+      cells: {
+        smj: 'Cannot be waived; courts raise sua sponte at any time.',
+        pj: 'Must be raised in first Rule 12 response or waived; consent cures defect.',
+        erie: 'Raised when selecting governing law for claims; analyzed at motion or trial stage.'
+      }
+    },
+    {
+      id: 'remedy',
+      label: 'Remedy if Failing',
+      cells: {
+        smj: 'Dismiss without prejudice for lack of jurisdiction.',
+        pj: 'Dismiss or transfer under 28 U.S.C. § 1406 if in interest of justice.',
+        erie: 'Apply state substantive law or federal procedural rule consistent with Rules Enabling Act.'
+      }
+    },
+    {
+      id: 'pitfalls',
+      label: 'Common Pitfalls',
+      cells: {
+        smj: 'Ignoring citizenship of LLC members or failing to aggregate claims correctly.',
+        pj: 'Relying solely on stream-of-commerce without purposeful targeting.',
+        erie: 'Mislabeling substantive vs. procedural; forgetting Byrd balancing when federal policy strong.'
+      }
+    }
+  ]}
+/>
