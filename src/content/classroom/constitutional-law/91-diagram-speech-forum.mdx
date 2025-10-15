@@ -1,0 +1,74 @@
+---
+title: "Speech Forum Matrix"
+slug: "diagram-speech-forum"
+module: "constitutional-law"
+moduleLabel: "Constitutional Law"
+level: "Beginner"
+est_minutes: 6
+summary: "Compare public forum categories to see how forum status shapes the First Amendment test."
+objectives:
+  - "Identify traditional, designated, and limited public forums along with nonpublic forums."
+  - "Match each forum type with the applicable time, place, and manner or reasonableness standards."
+  - "Spot when content discrimination triggers strict scrutiny even outside a traditional forum."
+tags:
+  - "constitutional law"
+  - "first amendment"
+order: 91
+---
+
+Forum analysis helps courts balance free speech access against government control of property. Once you classify a forum, you know whether strict scrutiny or a more deferential reasonableness test applies to restrictions on expressive activity.
+
+Use the matrix to visualize how forum type, the nature of the restriction, and permissible government interests interact. It offers quick reminders about content neutrality, viewpoint discrimination, and the government speech doctrine.
+
+<MatrixCompare
+  client:load
+  title="Public Forum Standards"
+  columns={[
+    { id: 'traditional', label: 'Traditional Public Forum' },
+    { id: 'designated', label: 'Designated Public Forum' },
+    { id: 'limited', label: 'Limited / Limited Public Forum' },
+    { id: 'nonpublic', label: 'Nonpublic Forum' }
+  ]}
+  rows={[
+    {
+      id: 'access',
+      label: 'Access & Typical Examples',
+      cells: {
+        traditional: 'Streets, sidewalks, parks; historically open to expressive activity.',
+        designated: 'Campus auditoriums opened for debate; government invites broad expressive use.',
+        limited: 'School mail system or municipal theater reserved for specific subjects or speakers.',
+        nonpublic: 'Military base, airport terminal, workplace; property not open to the public for speech.'
+      }
+    },
+    {
+      id: 'standard',
+      label: 'Content-Neutral Regulations',
+      cells: {
+        traditional: 'Time, place, and manner limits require narrow tailoring, significant interest, ample alternatives.',
+        designated: 'Same test as traditional forums while designation lasts.',
+        limited: 'Reasonable in light of forum purpose and viewpoint neutral.',
+        nonpublic: 'Reasonable and viewpoint neutral; great deference to property management.'
+      }
+    },
+    {
+      id: 'content-based',
+      label: 'Content-Based Restrictions',
+      cells: {
+        traditional: 'Strict scrutiny; rarely sustained absent compelling interest.',
+        designated: 'Strict scrutiny unless government closes the forum altogether.',
+        limited: 'Must be reasonable within the limited scope but cannot discriminate by viewpoint.',
+        nonpublic: 'Permitted if reasonable and not viewpoint-based; viewpoint discrimination fails.'
+      }
+    },
+    {
+      id: 'government-speech',
+      label: 'Government Speech / Control',
+      cells: {
+        traditional: 'Government may speak, but still constrained when regulating private speech.',
+        designated: 'Government can end designation but cannot favor viewpoints midstream.',
+        limited: 'May define subject matter or speaker class at the outset.',
+        nonpublic: 'Broad discretion to manage mission-related communication.'
+      }
+    }
+  ]}
+/>

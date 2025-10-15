@@ -1,0 +1,74 @@
+---
+title: "Hearsay Decision Tree"
+slug: "diagram-hearsay-tree"
+module: "evidence"
+moduleLabel: "Evidence"
+level: "Intermediate"
+est_minutes: 8
+summary: "Step through whether an out-of-court statement is hearsay and, if so, whether an exclusion or exception applies."
+objectives:
+  - "Apply the definition of hearsay and identify statements offered for a non-truth purpose."
+  - "Distinguish between hearsay exclusions under Rule 801(d) and exceptions under Rules 803–807."
+  - "Spot Confrontation Clause issues after finding an exception."
+tags:
+  - "evidence"
+  - "hearsay"
+order: 90
+---
+
+Hearsay analysis rewards a structured approach. Start with whether a statement is offered for its truth, then move through declarant availability, categorical exclusions, and exceptions.
+
+This decision tree guides you through each branch so you can reach the correct admissibility ruling while keeping testimonial statements and the Confrontation Clause on your radar.
+
+<DecisionTree
+  client:load
+  title="Is the Statement Admissible?"
+  nodes={[
+    {
+      id: 'statement',
+      label: 'Is there an out-of-court statement by a declarant?',
+      children: [
+        { id: 'no-statement', label: 'No → Hearsay rules not triggered.' },
+        {
+          id: 'purpose',
+          label: 'Yes → Is it offered to prove the truth of the matter asserted?',
+          children: [
+            {
+              id: 'non-truth',
+              label: 'Offered for another purpose (effect on listener, impeachment, verbal act) → Not hearsay.'
+            },
+            {
+              id: 'truth',
+              label: 'Offered for truth → Does a Rule 801(d) exclusion apply?',
+              children: [
+                {
+                  id: 'party-opponent',
+                  label: 'Opposing party statement or adoptive admission → Not hearsay under 801(d)(2).'
+                },
+                {
+                  id: 'prior',
+                  label: 'Certain prior statements by declarant-witness (prior inconsistent under oath, prior consistent, IDs).'
+                },
+                {
+                  id: 'exceptions',
+                  label: 'If not excluded, does an exception apply?',
+                  children: [
+                    { id: 'present-sense', label: 'Present sense impression or excited utterance.' },
+                    { id: 'medical', label: 'Statements for medical diagnosis or treatment.' },
+                    { id: 'business', label: 'Records exceptions (business, public, learned treatises).' },
+                    { id: 'unavailability', label: 'Declarant unavailable? Then consider former testimony, dying declaration, statement against interest.' },
+                    { id: 'residual', label: 'Residual exception with guarantees of trustworthiness.' }
+                  ]
+                },
+                {
+                  id: 'confrontation',
+                  label: 'If exception applies and statement is testimonial, check Confrontation Clause compliance.'
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]}
+/>

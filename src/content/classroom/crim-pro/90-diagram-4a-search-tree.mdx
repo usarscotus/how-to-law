@@ -1,0 +1,74 @@
+---
+title: "Fourth Amendment Search Tree"
+slug: "diagram-4a-search-tree"
+module: "crim-pro"
+moduleLabel: "Criminal Procedure"
+level: "Intermediate"
+est_minutes: 8
+summary: "Follow the key questions that determine whether police conduct triggers the Fourth Amendment and requires a warrant."
+objectives:
+  - "Assess whether government action implicates a reasonable expectation of privacy."
+  - "Identify exceptions that excuse the warrant requirement."
+  - "Flag exclusionary rule considerations once a search is deemed unreasonable."
+tags:
+  - "criminal procedure"
+  - "fourth amendment"
+order: 90
+---
+
+Fourth Amendment analysis always starts with whether there was a search or seizure, then turns to the warrant preference, and finally to exceptions or remedies. Mapping the decision points helps keep doctrinal tests straight.
+
+This decision tree illustrates the sequence from state action through probable cause, warrant requirements, and common exceptions like consent, exigency, and the automobile doctrine.
+
+<DecisionTree
+  client:load
+  title="Was There a Search and Is It Reasonable?"
+  nodes={[
+    {
+      id: 'state-action',
+      label: 'Is the actor a government agent or private party acting as an instrument of the state?',
+      children: [
+        {
+          id: 'no-state',
+          label: 'Purely private conduct → Fourth Amendment not triggered.'
+        },
+        {
+          id: 'search-question',
+          label: 'Government conduct → Did it invade a reasonable expectation of privacy or trespass on a protected area?',
+          children: [
+            {
+              id: 'no-search',
+              label: 'No search (open fields, public view, third-party doctrine) → No warrant needed.'
+            },
+            {
+              id: 'search',
+              label: 'Yes search or seizure → Is there probable cause and a valid warrant?',
+              children: [
+                {
+                  id: 'warrant',
+                  label: 'Valid warrant supported by probable cause?'
+                },
+                {
+                  id: 'exceptions',
+                  label: 'If no warrant, does an exception apply?',
+                  children: [
+                    { id: 'consent', label: 'Consent given by one with authority.' },
+                    { id: 'exigency', label: 'Exigent circumstances or hot pursuit.' },
+                    { id: 'automobile', label: 'Automobile exception with probable cause.' },
+                    { id: 'search-incident', label: 'Search incident to lawful arrest.' },
+                    { id: 'plain-view', label: 'Plain view seizure with lawful vantage.' },
+                    { id: 'special-needs', label: 'Special needs / administrative search program.' }
+                  ]
+                },
+                {
+                  id: 'no-exception',
+                  label: 'No exception → Search presumptively unreasonable; consider exclusionary rule and good faith.'
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]}
+/>

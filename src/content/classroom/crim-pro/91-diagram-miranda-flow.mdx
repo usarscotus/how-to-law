@@ -1,0 +1,68 @@
+---
+title: "Miranda Timing Timeline"
+slug: "diagram-miranda-flow"
+module: "crim-pro"
+moduleLabel: "Criminal Procedure"
+level: "Beginner"
+est_minutes: 6
+summary: "Track when Miranda warnings are required and what happens after invocation."
+objectives:
+  - "Determine when custodial interrogation begins for Miranda purposes."
+  - "Differentiate between Fifth Amendment and Sixth Amendment protections."
+  - "Follow the remedies and re-initiation rules once warnings are invoked or waived."
+tags:
+  - "criminal procedure"
+  - "miranda"
+order: 91
+---
+
+Miranda doctrine turns on timing—custody, interrogation, warnings, invocation, and waiver. Plotting those milestones makes it easier to diagnose suppression issues in criminal procedure fact patterns.
+
+Use the timeline to follow a suspect from investigatory stop through post-warning statements, highlighting how police must honor the right to counsel and right to silence.
+
+<Timeline
+  client:load
+  title="Key Moments in Miranda Analysis"
+  events={[
+    {
+      id: 'stop',
+      label: 'Initial Encounter',
+      description: 'Terry stop or voluntary interview → No custody, Miranda not required.'
+    },
+    {
+      id: 'custody',
+      label: 'Custody Determination',
+      description: 'Formal arrest or restraint comparable to arrest triggers Miranda if interrogation follows.'
+    },
+    {
+      id: 'interrogation',
+      label: 'Interrogation Begins',
+      description: 'Express questioning or functional equivalent aimed at eliciting incriminating response.'
+    },
+    {
+      id: 'warnings',
+      label: 'Miranda Warnings Delivered',
+      description: 'Suspect informed of right to silence and counsel; statements presumptively inadmissible absent warnings.'
+    },
+    {
+      id: 'waiver',
+      label: 'Valid Waiver?',
+      description: 'Knowing, intelligent, voluntary waiver permits questioning; otherwise statements suppressed.'
+    },
+    {
+      id: 'invocation',
+      label: 'Invocation of Rights',
+      description: 'Clear request for counsel or silence requires interrogation to cease immediately.'
+    },
+    {
+      id: 'scrupulous-honor',
+      label: 'Scrupulously Honor',
+      description: 'Police must stop questioning; limited re-initiation after significant break with fresh warnings.'
+    },
+    {
+      id: 'post-charge',
+      label: 'Post-Charge Questioning',
+      description: 'Sixth Amendment attaches at formal charges; deliberate elicitation without counsel violates Massiah.'
+    }
+  ]}
+/>
