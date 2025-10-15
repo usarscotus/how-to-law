@@ -21,7 +21,11 @@ export const SYNONYMS: Record<string, string> = {
   frcp: 'Federal Rules of Civil Procedure',
   frcrp: 'Federal Rules of Criminal Procedure',
   fre: 'Federal Rules of Evidence',
-  'rule 404b': '404(b)'
+  'rule 404b': '404(b)',
+  brady: 'Brady',
+  daubert: 'Daubert',
+  miranda: 'Miranda warnings',
+  erie: 'Erie doctrine'
 };
 
 export function expandQuery(query: string) {
