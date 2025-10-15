@@ -19,10 +19,42 @@ A civil action begins with a complaint that invokes the court's <Term>jurisdicti
 
 Use this flow to map how parties move from initiation through trial, noting where <Term>summary judgment</Term> or settlement pressure can redirect the path.
 
-<Flow client:load items={[
-  { title: "File the Complaint", description: "Plaintiff drafts and files the complaint, pays fees, and ensures the pleading states a plausible claim for relief." },
-  { title: "Serve and Respond", description: "Defendant is served, evaluates defenses, and files an answer or Rule 12 motion challenging defects." },
-  { title: "Manage Discovery", description: "Parties exchange disclosures, conduct discovery, and attend conferences to organize the factual record." },
-  { title: "Pretrial Motions", description: "Strategic motions—especially summary judgment—test the sufficiency of the evidence before trial." },
-  { title: "Trial and Post-Judgment", description: "Court or jury resolves remaining disputes, followed by any post-trial motions or appeal." }
-]} />
+<section className="not-prose mt-8 rounded-2xl border border-border bg-card p-6 shadow-subtle">
+  <ol className="space-y-6">
+    <li className="flex gap-4">
+      <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-accent text-sm font-semibold text-accent-foreground">1</span>
+      <div className="space-y-2">
+        <h4 className="text-base font-semibold text-foreground">File the Complaint</h4>
+        <div className="text-sm text-foreground/90">Plaintiff drafts and files the complaint, pays fees, and ensures the pleading states a plausible claim for relief.</div>
+      </div>
+    </li>
+    <li className="flex gap-4">
+      <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-accent text-sm font-semibold text-accent-foreground">2</span>
+      <div className="space-y-2">
+        <h4 className="text-base font-semibold text-foreground">Serve and Respond</h4>
+        <div className="text-sm text-foreground/90">Defendant is served, evaluates defenses, and files an answer or Rule 12 motion challenging defects.</div>
+      </div>
+    </li>
+    <li className="flex gap-4">
+      <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-accent text-sm font-semibold text-accent-foreground">3</span>
+      <div className="space-y-2">
+        <h4 className="text-base font-semibold text-foreground">Manage Discovery</h4>
+        <div className="text-sm text-foreground/90">Parties exchange disclosures, conduct discovery, and attend conferences to organize the factual record.</div>
+      </div>
+    </li>
+    <li className="flex gap-4">
+      <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-accent text-sm font-semibold text-accent-foreground">4</span>
+      <div className="space-y-2">
+        <h4 className="text-base font-semibold text-foreground">Pretrial Motions</h4>
+        <div className="text-sm text-foreground/90">Strategic motions—especially summary judgment—test the sufficiency of the evidence before trial.</div>
+      </div>
+    </li>
+    <li className="flex gap-4">
+      <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-accent text-sm font-semibold text-accent-foreground">5</span>
+      <div className="space-y-2">
+        <h4 className="text-base font-semibold text-foreground">Trial and Post-Judgment</h4>
+        <div className="text-sm text-foreground/90">Court or jury resolves remaining disputes, followed by any post-trial motions or appeal.</div>
+      </div>
+    </li>
+  </ol>
+</section>
