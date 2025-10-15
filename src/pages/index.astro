@@ -4,7 +4,6 @@ import { getLessonOrder, modules } from '~/lib/utils';
 import { getCollection } from 'astro:content';
 
 const lessons = await getCollection('classroom');
-const lessonCount = lessons.length;
 const moduleMeta = modules.map((module) => {
   const moduleLessons = lessons
     .filter((lesson) => {
@@ -24,67 +23,81 @@ const activeModules = moduleMeta.filter((module) => module.lessonCount > 0);
 ---
 <BaseLayout
   title="How to Law"
-  description="Tutorial for lego law 101."
+  description="Friendly, community-written lessons covering the building blocks of United States law."
 >
   <section class="bg-background">
-    <div class="mx-auto max-w-6xl px-4 py-20 sm:px-6 lg:px-8">
-      <div class="grid gap-12 lg:grid-cols-[1.4fr_1fr] lg:items-center">
-        <div class="space-y-6">
-          <p class="text-sm font-semibold uppercase tracking-wide text-accent">Structured legal learning</p>
-          <h1 class="text-4xl font-bold tracking-tight text-foreground sm:text-5xl">
-            Learn the fundamentals of U.S. law and our legal system for USAR.
-          </h1>
-          <p class="text-lg text-foreground/75">
-            This website helps distill doctrine, procedure, and strategy into concise lessons designed to teach fundamentals so beginners can learn how the law works in our roleplay environment.
-          </p>
-          <div class="flex flex-wrap items-center gap-4">
-            <a
-              href="/how-to-law/classroom/"
-              class="inline-flex items-center justify-center rounded-full bg-accent px-6 py-3 text-base font-semibold text-accent-foreground shadow-subtle transition hover:opacity-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
-            >
-              Enter the classroom
-            </a>
-            <a
-              href="/how-to-law/resources/"
-              class="inline-flex items-center justify-center rounded-full border border-border px-6 py-3 text-base font-semibold text-foreground transition hover:border-accent/60 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
-            >
-              View resources
-            </a>
-          </div>
+    <div class="mx-auto flex max-w-4xl flex-col gap-10 px-4 py-16 sm:px-6 lg:px-8">
+      <div class="space-y-6 text-center sm:text-left">
+        <h1 class="text-4xl font-bold tracking-tight text-foreground sm:text-5xl">
+          Learn U.S. law basics — free &amp; community-made
+        </h1>
+        <p class="text-lg text-foreground/80">
+          Learn alongside neighbors, classmates, and fellow volunteers. Our plain-language lessons walk through essential U.S. legal concepts and procedures so anyone can build confidence navigating everyday civic life.
+        </p>
+        <div class="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
+          <a
+            href="/how-to-law/classroom/"
+            class="inline-flex items-center justify-center rounded-full bg-accent px-6 py-3 text-base font-semibold text-accent-foreground shadow-subtle transition focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-accent"
+          >
+            Start learning
+          </a>
+          <a
+            href="#modules"
+            class="inline-flex items-center justify-center rounded-full border border-border px-6 py-3 text-base font-semibold text-foreground transition hover:border-accent/60 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-accent"
+          >
+            Browse topics
+          </a>
+          <a
+            href="/how-to-law/search/"
+            class="inline-flex items-center justify-center rounded-full border border-border px-6 py-3 text-base font-semibold text-foreground transition hover:border-accent/60 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-accent"
+          >
+            Search lessons
+          </a>
         </div>
-        <div class="rounded-3xl border border-border bg-card/80 p-8 shadow-subtle">
-          <h2 class="text-lg font-semibold text-foreground">Program snapshot</h2>
-          <dl class="mt-6 space-y-4 text-sm text-foreground/80">
-            <div class="flex items-center justify-between">
-              <dt class="font-medium text-muted">Modules published</dt>
-              <dd class="text-lg font-semibold text-foreground">{activeModules.length}</dd>
+      </div>
+      <div class="grid gap-6 sm:grid-cols-[minmax(0,1fr)] sm:gap-6 lg:grid-cols-[minmax(0,2fr)_minmax(0,1fr)] lg:items-start">
+        <div class="rounded-3xl border border-border bg-card/80 p-6 shadow-subtle">
+          <h2 class="text-lg font-semibold text-foreground">How it works</h2>
+          <dl class="mt-6 grid gap-5 sm:grid-cols-3">
+            <div class="flex flex-col gap-2 rounded-2xl bg-background/70 p-4 text-left">
+              <dt class="text-sm font-semibold text-foreground">Learn together</dt>
+              <dd class="text-sm text-foreground/80">
+                Short lessons share community insights with links to primary sources and further reading.
+              </dd>
             </div>
-            <div class="flex items-center justify-between">
-              <dt class="font-medium text-muted">Lessons available</dt>
-              <dd class="text-lg font-semibold text-foreground">{lessonCount}</dd>
+            <div class="flex flex-col gap-2 rounded-2xl bg-background/70 p-4 text-left">
+              <dt class="text-sm font-semibold text-foreground">Practice skills</dt>
+              <dd class="text-sm text-foreground/80">
+                Quizzes, examples, and checklists help you practice applying legal principles to real-life scenarios.
+              </dd>
             </div>
-            <div class="flex items-start gap-3 rounded-2xl bg-background/70 p-4">
-              <span class="mt-1 inline-flex h-2 w-2 shrink-0 rounded-full bg-accent" aria-hidden="true" />
-              <p>
-                Lessons include objectives, worked examples, glossary popovers, and knowledge checks with explanations.
-              </p>
-            </div>
-            <div class="flex items-start gap-3 rounded-2xl bg-background/70 p-4">
-              <span class="mt-1 inline-flex h-2 w-2 shrink-0 rounded-full bg-accent" aria-hidden="true" />
-              <p>
-                Built-in accessibility and responsive design make the material usable on any device or assistive technology.
-              </p>
+            <div class="flex flex-col gap-2 rounded-2xl bg-background/70 p-4 text-left">
+              <dt class="text-sm font-semibold text-foreground">Share knowledge</dt>
+              <dd class="text-sm text-foreground/80">
+                Contribute ideas, flag updates, and celebrate wins as we keep the guide current and approachable.
+              </dd>
             </div>
           </dl>
+        </div>
+        <div class="rounded-3xl border border-destructive/40 bg-destructive/5 p-6 shadow-subtle">
+          <h2 class="text-base font-semibold text-destructive">Important reminder</h2>
+          <p class="mt-3 text-sm text-destructive/90">
+            Not legal advice. Not affiliated with any court.
+          </p>
+          <p class="mt-2 text-sm text-foreground/80">
+            Always consult a licensed attorney for guidance on your specific situation. This site is for learning and community support only.
+          </p>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="border-t border-border/50 bg-card/40">
+  <section id="modules" class="border-t border-border/50 bg-card/40">
     <div class="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:px-8">
-      <h2 class="text-2xl font-semibold text-foreground">Explore the modules</h2>
-      <p class="mt-2 text-foreground/70">Start with foundations, then branch into doctrine, procedure, and Supreme Court practice.</p>
+      <h2 class="text-2xl font-semibold text-foreground">Browse the classroom</h2>
+      <p class="mt-2 text-foreground/70">
+        Pick a topic to start exploring U.S. legal foundations, rights, and procedures.
+      </p>
       <div class="mt-10 grid gap-8 md:grid-cols-2">
         {activeModules.map((module) => (
           <article class="flex h-full flex-col justify-between rounded-3xl border border-border bg-background/80 p-6 shadow-subtle">
@@ -95,9 +108,9 @@ const activeModules = moduleMeta.filter((module) => module.lessonCount > 0);
             </div>
             <a
               href={module.nextLesson}
-              class="mt-6 inline-flex items-center justify-center rounded-full bg-accent/10 px-4 py-2 text-sm font-semibold text-accent transition hover:bg-accent/15 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+              class="mt-6 inline-flex items-center justify-center rounded-full bg-accent/10 px-4 py-2 text-sm font-semibold text-accent transition hover:bg-accent/15 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-accent"
             >
-              View module
+              Start this module
             </a>
           </article>
         ))}
@@ -109,33 +122,33 @@ const activeModules = moduleMeta.filter((module) => module.lessonCount > 0);
     <div class="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:px-8">
       <div class="grid gap-8 lg:grid-cols-2 lg:items-center">
         <div class="space-y-4">
-          <h2 class="text-2xl font-semibold text-foreground">Learning approach</h2>
+          <h2 class="text-2xl font-semibold text-foreground">Learning support</h2>
           <ul class="space-y-3 text-sm text-foreground/80">
             <li class="flex items-start gap-3">
               <span class="mt-1 inline-flex h-2 w-2 shrink-0 rounded-full bg-accent" aria-hidden="true" />
-              Primary sources drive every explanation, with cross-references to statutes, rules, and landmark decisions.
+              Friendly summaries highlight key statutes, constitutional principles, and court structures.
             </li>
             <li class="flex items-start gap-3">
               <span class="mt-1 inline-flex h-2 w-2 shrink-0 rounded-full bg-accent" aria-hidden="true" />
-              Worked hypotheticals show how doctrine operates from investigation through appeal.
+              Scenario walk-throughs show how legal steps unfold from first questions through resolution.
             </li>
             <li class="flex items-start gap-3">
               <span class="mt-1 inline-flex h-2 w-2 shrink-0 rounded-full bg-accent" aria-hidden="true" />
-              FlexSearch powers fast lookup across lessons and the glossary for on-demand review.
+              Search and glossary tools make it easy to revisit definitions and explore related lessons.
             </li>
           </ul>
         </div>
         <div class="rounded-3xl border border-border bg-card/80 p-6 shadow-subtle">
-          <h3 class="text-lg font-semibold text-foreground">Featured tools</h3>
+          <h3 class="text-lg font-semibold text-foreground">Community-driven resources</h3>
           <ul class="mt-4 space-y-3 text-sm text-foreground/80">
             <li>
-              <strong class="text-foreground">Glossary popovers:</strong> hover or focus on key terms for definitions and citations.
+              <strong class="text-foreground">Lesson feedback:</strong> share suggestions to help keep content accessible and accurate.
             </li>
             <li>
-              <strong class="text-foreground">Interactive quizzes:</strong> build retention with feedback and stored best scores.
+              <strong class="text-foreground">Glossary popovers:</strong> focus or hover on key terms for friendly definitions and citations.
             </li>
             <li>
-              <strong class="text-foreground">Process flows:</strong> follow procedural steps for litigation, appeals, and remedies.
+              <strong class="text-foreground">Downloadable guides:</strong> print checklists and flowcharts to support group study or workshops.
             </li>
           </ul>
         </div>
