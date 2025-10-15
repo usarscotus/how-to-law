@@ -41,7 +41,7 @@
     "id": "all-writs-power",
     "term": "all writs power",
     "def": "Authority allowing federal courts to issue writs necessary to support their jurisdiction.",
-    "cite": "28 U.S.C. § 1651"
+    "cite": "28 U.S.C. \u00a7 1651"
   },
   {
     "id": "alford-plea",
@@ -120,7 +120,12 @@
     "id": "attenuation-doctrine",
     "term": "attenuation doctrine",
     "def": "Exclusionary rule exception when connection between unlawful police conduct and evidence is remote.",
-    "cite": "Brown v. Illinois (1975)"
+    "cite": "Brown v. Illinois (1975)",
+    "aliases": [
+      "attenuation",
+      "attenuation exception",
+      "attenuation doctrine"
+    ]
   },
   {
     "id": "attractive-nuisance",
@@ -173,7 +178,11 @@
     "id": "brady-disclosure",
     "term": "Brady disclosure",
     "def": "Prosecution duty to disclose material exculpatory evidence to the defense.",
-    "cite": "Brady (1963)"
+    "cite": "Brady (1963)",
+    "aliases": [
+      "Brady",
+      "Brady material"
+    ]
   },
   {
     "id": "bright-line-rule",
@@ -185,7 +194,9 @@
     "term": "probable cause",
     "def": "Reasonable grounds to believe a crime occurred and the suspect committed it.",
     "aliases": [
-      "PC"
+      "PC",
+      "probable cause standard",
+      "PC standard"
     ]
   },
   {
@@ -211,7 +222,12 @@
   {
     "id": "business-records",
     "term": "business records",
-    "def": "Hearsay exception for regularly kept records of a business activity."
+    "def": "Hearsay exception for regularly kept records of a business activity.",
+    "aliases": [
+      "records of regularly conducted activity",
+      "Rule 803(6)",
+      "business records exception"
+    ]
   },
   {
     "id": "bystander-liability",
@@ -284,7 +300,10 @@
   {
     "id": "collateral-estoppel",
     "term": "collateral estoppel",
-    "def": "Issue preclusion preventing relitigation of matters actually litigated and decided."
+    "def": "Issue preclusion preventing relitigation of matters actually litigated and decided.",
+    "aliases": [
+      "issue preclusion"
+    ]
   },
   {
     "id": "collateral-order-doctrine",
@@ -408,7 +427,9 @@
     "aliases": [
       "Daubert",
       "Rule 702",
-      "expert gatekeeping"
+      "expert gatekeeping",
+      "Daubert standard",
+      "Rule 702 standard"
     ],
     "def": "Requirement that judges assess reliability and relevance of expert testimony before admission.",
     "cite": "Daubert (1993)"
@@ -475,7 +496,8 @@
     "def": "Court ruling taking case from jury because no reasonable juror could find otherwise.",
     "aliases": [
       "JMOL",
-      "JNOV"
+      "JNOV",
+      "judgment notwithstanding the verdict"
     ]
   },
   {
@@ -543,7 +565,10 @@
     "id": "erie-doctrine",
     "term": "Erie doctrine",
     "def": "Mandates federal courts in diversity apply state substantive law and federal procedural law.",
-    "cite": "Erie (1938)"
+    "cite": "Erie (1938)",
+    "aliases": [
+      "Erie"
+    ]
   },
   {
     "id": "estoppel",
@@ -558,12 +583,19 @@
   {
     "id": "excited-utterance",
     "term": "excited utterance",
-    "def": "Hearsay exception for statement relating to startling event made while under stress."
+    "def": "Hearsay exception for statement relating to startling event made while under stress.",
+    "aliases": [
+      "Rule 803(2)",
+      "startling event statement"
+    ]
   },
   {
     "id": "exclusionary-rule",
     "term": "exclusionary rule",
-    "def": "Remedy suppressing evidence obtained in violation of constitutional rights."
+    "def": "Remedy suppressing evidence obtained in violation of constitutional rights.",
+    "aliases": [
+      "suppression rule"
+    ]
   },
   {
     "id": "executive-privilege",
@@ -595,7 +627,8 @@
     "id": "federal-rules-of-civil-procedure",
     "term": "Federal Rules of Civil Procedure",
     "aliases": [
-      "FRCP"
+      "FRCP",
+      "Civil Rules"
     ],
     "def": "Comprehensive rules governing civil litigation in United States federal courts."
   },
@@ -603,7 +636,8 @@
     "id": "federal-rules-of-criminal-procedure",
     "term": "Federal Rules of Criminal Procedure",
     "aliases": [
-      "FRCrP"
+      "FRCrP",
+      "Criminal Rules"
     ],
     "def": "Rules regulating federal criminal proceedings from charging through appeal."
   },
@@ -611,7 +645,8 @@
     "id": "federal-rules-of-evidence",
     "term": "Federal Rules of Evidence",
     "aliases": [
-      "FRE"
+      "FRE",
+      "Evidence Rules"
     ],
     "def": "Rules governing admissibility and presentation of evidence in federal courts."
   },
@@ -703,7 +738,11 @@
   {
     "id": "heightened-scrutiny",
     "term": "intermediate scrutiny",
-    "def": "Review requiring law be substantially related to important governmental interest."
+    "def": "Review requiring law be substantially related to important governmental interest.",
+    "aliases": [
+      "intermediate scrutiny test",
+      "intermediate review"
+    ]
   },
   {
     "id": "hostile-witness",
@@ -737,7 +776,9 @@
     "cite": "Strickland (1984)",
     "aliases": [
       "Strickland",
-      "Strickland test"
+      "Strickland test",
+      "ineffective assistance",
+      "Strickland prejudice standard"
     ]
   },
   {
@@ -768,7 +809,11 @@
   {
     "id": "rational-basis-review",
     "term": "rational basis review",
-    "def": "Lowest level of constitutional scrutiny requiring law be rationally related to legitimate interest."
+    "def": "Lowest level of constitutional scrutiny requiring law be rationally related to legitimate interest.",
+    "aliases": [
+      "rational basis",
+      "RBR"
+    ]
   },
   {
     "id": "interpleader",
@@ -823,7 +868,9 @@
     "aliases": [
       "PJ",
       "specific jurisdiction",
-      "general jurisdiction"
+      "general jurisdiction",
+      "personal jurisdiction",
+      "PJ jurisdiction"
     ]
   },
   {
@@ -900,7 +947,10 @@
   {
     "id": "mandamus",
     "term": "writ of mandamus",
-    "def": "Order directing an official to perform a nondiscretionary duty."
+    "def": "Order directing an official to perform a nondiscretionary duty.",
+    "aliases": [
+      "writ of mandamus"
+    ]
   },
   {
     "id": "mandatory-minimum",
@@ -923,7 +973,9 @@
     "def": "Advice of rights police must give before custodial interrogation.",
     "cite": "Miranda (1966)",
     "aliases": [
-      "Miranda"
+      "Miranda",
+      "Miranda rights",
+      "Miranda warning"
     ]
   },
   {
@@ -1244,7 +1296,10 @@
   {
     "id": "res-judicata",
     "term": "claim preclusion",
-    "def": "Bars relitigation of claims that were or could have been raised in prior action with final judgment."
+    "def": "Bars relitigation of claims that were or could have been raised in prior action with final judgment.",
+    "aliases": [
+      "res judicata"
+    ]
   },
   {
     "id": "respondeat-superior",
@@ -1280,7 +1335,11 @@
     "id": "right-to-counsel",
     "term": "right to counsel",
     "def": "Guarantee that criminal defendants have assistance of attorney at critical stages.",
-    "cite": "Gideon (1963)"
+    "cite": "Gideon (1963)",
+    "aliases": [
+      "Sixth Amendment counsel right",
+      "Gideon right"
+    ]
   },
   {
     "id": "right-to-jury",
@@ -1296,13 +1355,17 @@
   {
     "id": "rule-11",
     "term": "Rule 11 sanctions",
-    "def": "Penalties for filings lacking legal or factual basis in federal civil practice."
+    "def": "Penalties for filings lacking legal or factual basis in federal civil practice.",
+    "aliases": [
+      "Rule 11"
+    ]
   },
   {
     "id": "rule-404b",
     "term": "Rule 404(b)",
     "aliases": [
-      "404(b)"
+      "404(b)",
+      "other acts evidence"
     ],
     "def": "Evidence rule permitting prior bad acts to show non-propensity purposes like motive, intent, or plan.",
     "cite": "Fed. R. Evid. 404(b)"
@@ -1437,14 +1500,20 @@
   {
     "id": "strict-scrutiny",
     "term": "strict scrutiny",
-    "def": "Highest judicial review requiring law be narrowly tailored to compelling interest."
+    "def": "Highest judicial review requiring law be narrowly tailored to compelling interest.",
+    "aliases": [
+      "strict scrutiny review",
+      "strict scrutiny test",
+      "SS test"
+    ]
   },
   {
     "id": "subject-matter-jurisdiction",
     "term": "subject matter jurisdiction",
     "def": "Court's authority to hear particular type of case.",
     "aliases": [
-      "SMJ"
+      "SMJ",
+      "subject matter jurisdiction"
     ]
   },
   {
@@ -1514,7 +1583,11 @@
   {
     "id": "takings-clause",
     "term": "Takings Clause",
-    "def": "Requires government to pay just compensation when taking private property for public use."
+    "def": "Requires government to pay just compensation when taking private property for public use.",
+    "aliases": [
+      "takings",
+      "regulatory takings"
+    ]
   },
   {
     "id": "temporary-restraining-order",
@@ -1686,5 +1759,65 @@
     "term": "Younger abstention",
     "def": "Federal courts decline to interfere with ongoing state proceedings absent extraordinary circumstances.",
     "cite": "Younger (1971)"
+  },
+  {
+    "id": "per-curiam-opinion",
+    "term": "per curiam opinion",
+    "def": "Unsigned appellate decision issued by the court as a whole without attribution to an individual judge.",
+    "cite": "Bush v. Gore (2000)",
+    "aliases": [
+      "per curiam",
+      "PC opinion"
+    ]
+  },
+  {
+    "id": "prior-restraint",
+    "term": "prior restraint",
+    "def": "Government action that prohibits speech or publication before it occurs, presumptively unconstitutional.",
+    "cite": "Near (1931)",
+    "aliases": [
+      "gag order",
+      "preventive censorship"
+    ]
+  },
+  {
+    "id": "public-forum-doctrine",
+    "term": "public forum doctrine",
+    "def": "First Amendment framework classifying government property to determine permissible speech restrictions.",
+    "cite": "Perry Educ. Ass'n (1983)",
+    "aliases": [
+      "forum doctrine",
+      "forum analysis"
+    ]
+  },
+  {
+    "id": "sovereign-immunity",
+    "term": "sovereign immunity",
+    "def": "Principle that the government cannot be sued without its consent, subject to statutory waivers.",
+    "cite": "Hans (1890)",
+    "aliases": [
+      "governmental immunity",
+      "Eleventh Amendment immunity"
+    ]
+  },
+  {
+    "id": "inevitable-discovery",
+    "term": "inevitable discovery doctrine",
+    "def": "Exclusionary rule exception allowing evidence if police would have lawfully found it anyway.",
+    "cite": "Nix (1984)",
+    "aliases": [
+      "inevitable discovery",
+      "independent line discovery"
+    ]
+  },
+  {
+    "id": "statement-against-interest",
+    "term": "statement against interest",
+    "def": "Hearsay exception for statements so damaging to the declarant that a reasonable person would not have made them unless true.",
+    "cite": "Fed. R. Evid. 804(b)(3)",
+    "aliases": [
+      "statements against interest",
+      "Rule 804(b)(3)"
+    ]
   }
 ]
