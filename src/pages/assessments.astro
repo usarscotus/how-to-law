@@ -1,0 +1,31 @@
+---
+import BaseLayout from '~/layouts/BaseLayout.astro';
+import RoleExam from '~/components/RoleExam';
+---
+<BaseLayout
+  title="Role-based knowledge assessments"
+  description="Choose a 30-question assessment tailored to lawyers, judges, justices, or multi-role practitioners."
+>
+  <section class="border-b border-border/60 bg-background/60">
+    <div class="mx-auto max-w-5xl px-4 py-16 sm:px-6 lg:px-8">
+      <div class="space-y-6 text-center">
+        <p class="text-sm font-semibold uppercase tracking-wide text-accent">Assessment hub</p>
+        <h1 class="text-4xl font-bold text-foreground sm:text-5xl">Put your legal training to the test</h1>
+        <p class="mx-auto max-w-3xl text-base text-foreground/80">
+          Each assessment mirrors the skills emphasized throughout the classroom modules. Select the path that matches your
+          responsibilities and answer one question at a time. When you finish, review your overall score and see how you performed
+          across each major area of law without revealing specific answers.
+        </p>
+        <p class="mx-auto max-w-2xl rounded-3xl border border-accent/40 bg-accent/10 px-5 py-4 text-sm text-foreground/85">
+          Copying, cutting, or opening the context menu is disabled on this page to encourage authentic recall. Keep your notes
+          nearby before you begin.
+        </p>
+      </div>
+    </div>
+  </section>
+  <section class="bg-background">
+    <div class="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:px-8">
+      <RoleExam client:load />
+    </div>
+  </section>
+</BaseLayout>
