@@ -1,0 +1,75 @@
+---
+import BaseLayout from '~/layouts/BaseLayout.astro';
+---
+<BaseLayout
+  title="About How to Law"
+  description="Learn how the How to Law project is organized, community-driven, and built for learners."
+>
+  <section class="bg-background">
+    <div class="mx-auto flex max-w-4xl flex-col gap-10 px-4 py-16 sm:px-6 lg:px-8">
+      <header class="space-y-4">
+        <p class="text-sm font-semibold uppercase tracking-wide text-accent">About this project</p>
+        <h1 class="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">Community-built learning for roleplay law</h1>
+        <p class="text-base text-foreground/80">
+          How to Law is a volunteer collaboration designed to help roleplayers understand U.S. legal concepts. Everyone here is a peer—no one is offering professional representation, and nothing on this site is a substitute for qualified legal counsel in real life.
+        </p>
+      </header>
+      <div class="grid gap-8 lg:grid-cols-2">
+        <article class="rounded-3xl border border-border bg-card/80 p-6 shadow-subtle">
+          <h2 class="text-xl font-semibold text-foreground">What this is</h2>
+          <ul class="mt-4 space-y-3 text-sm text-foreground/80">
+            <li class="flex items-start gap-3">
+              <span class="mt-1 inline-flex h-2 w-2 shrink-0 rounded-full bg-accent" aria-hidden="true" />
+              A curriculum that connects doctrine, procedure, and strategy for in-game legal play.
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="mt-1 inline-flex h-2 w-2 shrink-0 rounded-full bg-accent" aria-hidden="true" />
+              Lessons, glossaries, and assessments authored by community members with citations to primary sources where possible.
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="mt-1 inline-flex h-2 w-2 shrink-0 rounded-full bg-accent" aria-hidden="true" />
+              A living project that welcomes edits, feedback, and new modules as the universe evolves.
+            </li>
+          </ul>
+        </article>
+        <article class="rounded-3xl border border-border bg-card/80 p-6 shadow-subtle">
+          <h2 class="text-xl font-semibold text-foreground">What this is not</h2>
+          <ul class="mt-4 space-y-3 text-sm text-foreground/80">
+            <li class="flex items-start gap-3">
+              <span class="mt-1 inline-flex h-2 w-2 shrink-0 rounded-full bg-accent" aria-hidden="true" />
+              Not legal advice. Always confirm rules with your community, and seek licensed professionals for real-world issues.
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="mt-1 inline-flex h-2 w-2 shrink-0 rounded-full bg-accent" aria-hidden="true" />
+              Not a commercial product—there are no clients, fees, or hidden services attached.
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="mt-1 inline-flex h-2 w-2 shrink-0 rounded-full bg-accent" aria-hidden="true" />
+              Not a finished textbook. Expect ongoing revisions and open threads for contributions.
+            </li>
+          </ul>
+        </article>
+      </div>
+      <div class="grid gap-8 rounded-3xl border border-border bg-card/70 p-6 shadow-subtle lg:grid-cols-[1.1fr_0.9fr]">
+        <div class="space-y-4">
+          <h2 class="text-xl font-semibold text-foreground">How the curriculum is organized</h2>
+          <p class="text-sm text-foreground/80">
+            Modules group lessons by theme: foundations, courtroom practice, doctrine, and advanced strategies. Each module lists its lessons in recommended order, with learning objectives, references, and practice questions. The glossary and search tools help you jump to supporting concepts whenever you need them.
+          </p>
+        </div>
+        <div class="space-y-4">
+          <h3 class="text-base font-semibold text-foreground">Progress and privacy</h3>
+          <p class="text-sm text-foreground/80">
+            Your quiz scores and lesson checkmarks live in your browser using local storage. That means only you can see them, they do not sync across devices, and clearing your cache will reset your progress. No accounts or tracking pixels are required to learn here.
+          </p>
+        </div>
+      </div>
+      <footer class="rounded-3xl border border-border bg-background/70 p-6 text-sm text-foreground/80">
+        <h2 class="text-base font-semibold text-foreground">Keep the disclaimer in mind</h2>
+        <p class="mt-2">
+          Everything published on How to Law is for collaborative storytelling and education in the USAR setting. It is not legal advice, does not create any attorney-client relationship, and should not be relied on for real-world legal decisions. When in doubt, talk with your moderators or a licensed attorney.
+        </p>
+      </footer>
+    </div>
+  </section>
+</BaseLayout>

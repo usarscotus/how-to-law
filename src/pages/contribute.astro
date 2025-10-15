@@ -1,0 +1,115 @@
+---
+import BaseLayout from '~/layouts/BaseLayout.astro';
+---
+<BaseLayout
+  title="Contribute to How to Law"
+  description="Learn how to collaborate on lessons, diagrams, and quizzes for the How to Law project."
+  noIndex
+>
+  <section class="bg-background">
+    <div class="mx-auto flex max-w-4xl flex-col gap-10 px-4 py-16 sm:px-6 lg:px-8">
+      <header class="space-y-4">
+        <p class="text-sm font-semibold uppercase tracking-wide text-accent">Help it grow</p>
+        <h1 class="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">Join the writing room</h1>
+        <p class="text-base text-foreground/80">
+          Every page here was drafted, reviewed, and polished by community members. Whether you love outlining doctrine, sketching visual aids, or writing practice questions, there is room for your voice.
+        </p>
+      </header>
+      <article class="space-y-6 rounded-3xl border border-border bg-card/80 p-6 shadow-subtle">
+        <div class="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+          <h2 class="text-xl font-semibold text-foreground">Start with the style highlights</h2>
+          <a
+            href="/how-to-law/docs/STYLE_GUIDE.md"
+            class="inline-flex items-center justify-center rounded-full bg-accent px-4 py-2 text-sm font-semibold text-accent-foreground shadow-subtle transition hover:opacity-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+          >
+            Read the style guide
+          </a>
+        </div>
+        <p class="text-sm text-foreground/80">
+          The style guide covers voice, formatting, and accessibility patterns that keep lessons consistent. Skim it before you open a pull request so your edits slide smoothly into review.
+        </p>
+      </article>
+      <article class="grid gap-6 rounded-3xl border border-border bg-card/70 p-6 shadow-subtle lg:grid-cols-2">
+        <div class="space-y-4">
+          <h2 class="text-xl font-semibold text-foreground">Topics we are eager to add</h2>
+          <ul class="space-y-3 text-sm text-foreground/80">
+            <li class="flex items-start gap-3">
+              <span class="mt-1 inline-flex h-2 w-2 shrink-0 rounded-full bg-accent" aria-hidden="true" />
+              Trial mechanics: voir dire, evidentiary objections, and jury instructions for the USAR setting.
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="mt-1 inline-flex h-2 w-2 shrink-0 rounded-full bg-accent" aria-hidden="true" />
+              Administrative and agency law basics for in-universe regulatory bodies.
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="mt-1 inline-flex h-2 w-2 shrink-0 rounded-full bg-accent" aria-hidden="true" />
+              Appellate practice beyond the Supreme Court module, including standards of review and briefing tips.
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="mt-1 inline-flex h-2 w-2 shrink-0 rounded-full bg-accent" aria-hidden="true" />
+              Scenario-based exercises that blend criminal procedure with constitutional issues.
+            </li>
+          </ul>
+        </div>
+        <div class="space-y-4">
+          <h2 class="text-xl font-semibold text-foreground">Lesson frontmatter checklist</h2>
+          <p class="text-sm text-foreground/80">
+            New lessons live in the <code>src/content/classroom</code> collection. Copy an existing entry and update the frontmatter fields below before you write:
+          </p>
+          <pre class="overflow-x-auto rounded-2xl bg-background/90 p-4 text-xs text-foreground/90"><code>---
+title: &quot;Your Lesson Title&quot;
+module: module-id
+lesson: 3
+summary: &quot;One-sentence hook for the lesson.&quot;
+objectives:
+  - &quot;Learners will be able to...&quot;
+references:
+  - label: &quot;Statute or case name&quot;
+    cite: &quot;123 U.S. 456&quot;
+quizId: your-quiz-slug
+---</code></pre>
+          <p class="text-xs text-foreground/70">
+            Keep filenames kebab-cased, increment the <code>lesson</code> order, and update the module index if you add or remove lessons.
+          </p>
+        </div>
+      </article>
+      <article class="grid gap-6 rounded-3xl border border-border bg-card/80 p-6 shadow-subtle lg:grid-cols-2">
+        <div class="space-y-4">
+          <h2 class="text-xl font-semibold text-foreground">Diagrams and process flows</h2>
+          <p class="text-sm text-foreground/80">
+            Sketch your idea in Markdown or share a link to a collaborative design file. Call out the story beats, labels, and citations each panel should include. Reviewers can help convert the concept into accessible SVGs that match the site palette.
+          </p>
+          <p class="text-sm text-foreground/80">
+            When you open the pull request, attach alt-text in the description and note any animation needs so we can test for reduced-motion settings.
+          </p>
+        </div>
+        <div class="space-y-4">
+          <h2 class="text-xl font-semibold text-foreground">Quizzes and knowledge checks</h2>
+          <p class="text-sm text-foreground/80">
+            Draft three to five multiple-choice questions per lesson with answer rationales. Flag which objective each question reinforces. Store them in <code>src/content/quizzes</code> and reuse existing data structures for scoring so progress stays in each learner’s browser.
+          </p>
+          <p class="text-sm text-foreground/80">
+            If you are unsure how to format the schema, open an issue or draft PR with one example question and we will pair with you to finish the set.
+          </p>
+        </div>
+      </article>
+      <article class="rounded-3xl border border-border bg-background/70 p-6 shadow-subtle">
+        <h2 class="text-xl font-semibold text-foreground">Pull request etiquette</h2>
+        <ul class="mt-4 space-y-3 text-sm text-foreground/80">
+          <li class="flex items-start gap-3">
+            <span class="mt-1 inline-flex h-2 w-2 shrink-0 rounded-full bg-accent" aria-hidden="true" />
+            Start with a draft PR when you want early feedback. Summarize what is complete and where you need eyes.
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="mt-1 inline-flex h-2 w-2 shrink-0 rounded-full bg-accent" aria-hidden="true" />
+            Keep commits scoped and descriptive. Screenshots or GIFs are helpful when you update visuals.
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="mt-1 inline-flex h-2 w-2 shrink-0 rounded-full bg-accent" aria-hidden="true" />
+            Tag reviewers who know the module you are editing, respond to feedback with context, and celebrate new contributors.
+          </li>
+        </ul>
+      </article>
+    </div>
+  </section>
+</BaseLayout>
