@@ -130,8 +130,17 @@ export default defineConfig({
   hooks: {
     'astro:build:done': async ({ dir }) => {
       const distPath = fileURLToPath(dir);
-      await writeSearchIndex(distPath);
-      await writeSearchIndex(path.resolve('public'));
+      try {
+        await writeSearchIndex(distPath);
+      } catch (error) {
+        console.warn('Unable to generate search index in dist.', error);
+      }
+
+      try {
+        await writeSearchIndex(path.resolve('public'));
+      } catch (error) {
+        console.warn('Unable to update search index snapshot in public/.', error);
+      }
     }
   }
 });
