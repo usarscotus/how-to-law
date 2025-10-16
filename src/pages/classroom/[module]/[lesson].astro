@@ -1,93 +1,114 @@
 ---
 import LessonLayout from '~/layouts/LessonLayout.astro';
 import { getCollection, type CollectionEntry } from 'astro:content';
-import { getLessonOrder, getModuleMeta } from '~/lib/utils';
+import { getModuleMeta } from '~/lib/utils';
+import { Term, Quiz, Callout, Flow, CaseCard, ProgressBar, ProgressRing } from 'src/components';
 
-export function resolveLessonParams(entry: CollectionEntry<'classroom'>) {
-  const slugParts = entry.slug.split('/');
+type Lesson = CollectionEntry<'classroom'>;
+type Crumb = { label: string; href: string };
 
-  if (slugParts.length >= 2) {
-    return {
-      module: slugParts[0],
-      lesson: slugParts.slice(1).join('/')
-    };
-  }
+const moduleParam = Astro.params.module;
+const lessonParam = Astro.params.lesson;
 
-  if (slugParts.length === 1 && slugParts[0]) {
-    const idParts = entry.id.replace(/\.mdx?$/, '').split('/');
-    if (idParts.length >= 2) {
-      return {
-        module: idParts[0],
-        lesson: slugParts[0]
-      };
-    }
-  }
-
-  const idParts = entry.id.replace(/\.mdx?$/, '').split('/');
-  if (idParts.length >= 2) {
-    return {
-      module: idParts[idParts.length - 2],
-      lesson: idParts[idParts.length - 1]
-    };
-  }
-
-  throw new Error(`Unable to determine module and lesson for entry: ${entry.id}`);
+if (!moduleParam || !lessonParam) {
+  throw new Error('Missing module or lesson parameters.');
 }
 
-export async function getStaticPaths() {
-  const lessons = await getCollection('classroom');
-  return lessons.map((entry) => {
-    const { module, lesson } = resolveLessonParams(entry);
-    return {
-      params: { module, lesson }
-    };
-  });
-}
+const allLessons = await getCollection('classroom');
 
-const { module, lesson } = Astro.params;
-const lessons = await getCollection('classroom');
-const normalizedLessons = lessons.map((entry) => ({
-  entry,
-  ...resolveLessonParams(entry)
-}));
+const lessonsForModule = allLessons
+  .filter((entry) => entry.slug.split('/')[0] === moduleParam)
+  .map((entry, index) => ({ entry, index }));
 
-const moduleLessons = normalizedLessons
-  .filter((item) => item.module === module)
-  .sort((a, b) => getLessonOrder(a.entry) - getLessonOrder(b.entry));
+lessonsForModule.sort((a, b) => {
+  const orderA = typeof a.entry.data.order === 'number' ? a.entry.data.order : null;
+  const orderB = typeof b.entry.data.order === 'number' ? b.entry.data.order : null;
 
-const currentItem = moduleLessons.find((item) => item.lesson === lesson);
-const entry = currentItem?.entry;
-if (!entry || !currentItem) {
-  throw new Error('Lesson not found');
-}
+  if (orderA !== null && orderB !== null && orderA !== orderB) {
+    return orderA - orderB;
+  }
 
-const index = moduleLessons.findIndex((item) => item.entry.id === entry.id);
-const fallbackModuleTitle = entry.data.moduleTitle ?? entry.data.moduleLabel ?? entry.data.module;
-const moduleMeta = getModuleMeta(module ?? entry.data.module) ?? {
-  id: entry.data.module,
-  title: fallbackModuleTitle,
-  description: fallbackModuleTitle
+  if (orderA !== null && orderB === null) {
+    return -1;
+  }
+
+  if (orderA === null && orderB !== null) {
+    return 1;
+  }
+
+  const slugComparison = a.entry.slug.localeCompare(b.entry.slug);
+  if (slugComparison !== 0) {
+    return slugComparison;
+  }
+
+  return a.index - b.index;
+});
+
+const sortedLessons: Lesson[] = lessonsForModule.map((item) => item.entry);
+
+const getLessonSegment = (lesson: Lesson) => {
+  const [, second] = lesson.slug.split('/');
+  return second ?? lesson.slug;
 };
 
-const prevEntry = index > 0 ? moduleLessons[index - 1] : undefined;
-const nextEntry = index < moduleLessons.length - 1 ? moduleLessons[index + 1] : undefined;
+const currentLesson = sortedLessons.find((lesson) => getLessonSegment(lesson) === lessonParam);
 
-const toUrl = (item: (typeof moduleLessons)[number]) => `/how-to-law/classroom/${module}/${item.lesson}/`;
+if (!currentLesson) {
+  throw new Error(`Lesson not found for slug: ${lessonParam}`);
+}
+
+const currentIndex = sortedLessons.findIndex((lesson) => lesson.id === currentLesson.id);
+
+const prevLesson = currentIndex > 0 ? sortedLessons[currentIndex - 1] : undefined;
+const nextLesson = currentIndex < sortedLessons.length - 1 ? sortedLessons[currentIndex + 1] : undefined;
+
+const basePath = '/how-to-law';
+
+const moduleTitle =
+  currentLesson.data.moduleTitle ??
+  currentLesson.data.moduleLabel ??
+  currentLesson.data.module ??
+  moduleParam;
+
+const breadcrumbs: Crumb[] = [
+  { label: 'Home', href: `${basePath}/` },
+  { label: 'Classroom', href: `${basePath}/classroom/` },
+  { label: moduleTitle, href: `${basePath}/classroom/${moduleParam}/` },
+  { label: currentLesson.data.title ?? lessonParam, href: `${basePath}/classroom/${moduleParam}/${lessonParam}/` }
+];
+
+const moduleMeta = getModuleMeta(moduleParam) ?? {
+  id: moduleParam,
+  title: moduleTitle,
+  description: moduleTitle
+};
+
+const moduleHref = breadcrumbs[2]?.href ?? `${basePath}/classroom/${moduleParam}/`;
+const toUrl = (lesson: Lesson) => `${moduleHref}${getLessonSegment(lesson)}/`;
+
+const rendered = await currentLesson.render();
+const { Content } = rendered;
+
+const mdxComponents = { Term, Quiz, Callout, Flow, CaseCard, ProgressBar, ProgressRing };
+
+const patchedEntry = {
+  ...currentLesson,
+  async render() {
+    return {
+      ...rendered,
+      Content: (props: Parameters<typeof Content>[0]) => (
+        <Content {...props} components={mdxComponents} />
+      )
+    };
+  }
+} as Lesson;
 ---
 <LessonLayout
-  entry={entry}
+  entry={patchedEntry}
   moduleId={moduleMeta.id}
   moduleTitle={moduleMeta.title}
-  position={index + 1}
-  totalLessons={moduleLessons.length}
-  prevLesson={
-    prevEntry
-      ? { title: prevEntry.entry.data.title, url: toUrl(prevEntry) }
-      : undefined
-  }
-  nextLesson={
-    nextEntry
-      ? { title: nextEntry.entry.data.title, url: toUrl(nextEntry) }
-      : undefined
-  }
+  position={currentIndex + 1}
+  totalLessons={sortedLessons.length}
+  prevLesson={prevLesson ? { title: prevLesson.data.title, url: toUrl(prevLesson) } : undefined}
+  nextLesson={nextLesson ? { title: nextLesson.data.title, url: toUrl(nextLesson) } : undefined}
 />
